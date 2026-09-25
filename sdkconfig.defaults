@@ -1,0 +1,35 @@
+# Valeurs par defaut pour le portage Wesnoth "The South Guard" sur AKA
+# (ESP32-S3). Calque de sdkconfig.defaults d'Asteria (meme studio, meme
+# composant gamebuino), avec les ajustements propres a ce projet ci-dessous.
+
+CONFIG_IDF_TARGET="esp32s3"
+
+# TODO(a confirmer) : taille de flash reelle de la AKA -- 8 Mo suppose ici
+# par analogie avec Asteria, a verifier plutot qu'a copier aveuglement si un
+# probleme de partitionnement apparait au premier flash.
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="8MB"
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# PSRAM -- utile ici pour le JSON de campagne charge en RAM (quelques
+# dizaines de Ko par scenario) et les buffers audio/image, sans faire
+# pression sur la SRAM interne.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+
+# Frequence CPU : 160 MHz retenu (voir echange du <2026-09-13> -- profil
+# narratif, pas de besoin de temps reel exigeant, marge batterie/chaleur
+# preferee aux 240 MHz max disponibles sur ce chip).
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=160
+
+# Noms de fichiers longs sur la carte SD -- INDISPENSABLE ici : nos noms de
+# scenarios ("01_Born_to_the_Banner") et fichiers ("campaign_bilingual.json",
+# "008_Deoran.wav") depassent tous la limite courte 8.3. Meme bug que
+# rencontre sur le portage MicroPython d'Asteria (mkdir/fopen echouent sinon
+# avec errno=22/EINVAL).
+CONFIG_FATFS_LFN_HEAP=y
+
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192

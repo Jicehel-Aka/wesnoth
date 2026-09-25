@@ -1,0 +1,55 @@
+# .github/workflows/build-aka.yml
+#
+# Vérifie que le firmware AKA compile. Suit le même principe que
+# dark_and_under_color (autre portage AKA du même studio, déjà publié en
+# plusieurs releases) : espressif/install-esp-idf-action + idf.py build
+# directement, plutôt qu'une action tierce qui enrobe la commande.
+#
+# NOTE : je n'ai pas pu récupérer le contenu exact du workflow de
+# dark_and_under_color (mêmes limites que pour d'autres fichiers binaires/
+# dynamiques rencontrées plus tôt) -- ceci suit le même PRINCIPE, mais n'est
+# pas une copie littérale. Non testé faute de runner CI accessible ici.
+name: Build AKA firmware
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'components/**'
+      - 'main/**'
+      - 'CMakeLists.txt'
+      - 'sdkconfig.defaults'
+      - 'partitions.csv'
+      - '.github/workflows/build-aka.yml'
+  pull_request:
+  workflow_dispatch:
+  workflow_call:  # appelable depuis release.yml
+
+jobs:
+  build-aka:
+    name: ESP-IDF (esp32s3)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer ESP-IDF
+        uses: espressif/install-esp-idf-action@v1
+        with:
+          version: v5.3
+
+      - name: idf.py build
+        shell: bash
+        run: |
+          . $IDF_PATH/export.sh
+          idf.py set-target esp32s3
+          idf.py build
+
+      - name: Publier le firmware compilé
+        uses: actions/upload-artifact@v4
+        with:
+          name: wesnoth_sg-aka-firmware
+          path: |
+            build/*.bin
+            build/bootloader/*.bin
+            build/partition_table/*.bin
+          if-no-files-found: warn

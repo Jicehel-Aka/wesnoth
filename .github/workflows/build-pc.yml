@@ -1,0 +1,100 @@
+# .github/workflows/build-pc.yml
+#
+# Vérifie que la build PC (SDL2) compile sur Linux et Windows, dans le même
+# fichier -- même principe que dark_and_under_color. Notre build PC utilise
+# g++ directement (build_pc.sh) plutôt que CMake comme leur platform_sdl/,
+# donc les étapes de compilation diffèrent, mais la structure (deux jobs,
+# un artefact téléchargeable par OS) suit le même schéma.
+name: Build PC (Windows & Linux)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'components/wesnoth_sg/**'
+      - 'components/aka_font/**'
+      - 'pc/**'
+      - 'build_pc.sh'
+      - '.github/workflows/build-pc.yml'
+  pull_request:
+  workflow_dispatch:
+  workflow_call:  # appelable depuis release.yml, pour ne pas dupliquer ces jobs
+
+jobs:
+  build-linux:
+    name: Linux x64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer SDL2 et cJSON
+        run: sudo apt-get update && sudo apt-get install -y libsdl2-dev libcjson-dev
+
+      - name: Compiler
+        run: |
+          chmod +x build_pc.sh
+          ./build_pc.sh
+
+      - name: Publier le binaire
+        uses: actions/upload-artifact@v4
+        with:
+          name: wesnoth_sg-linux-x64
+          path: wesnoth_sg_pc
+
+  build-windows:
+    name: Windows x64
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-cjson
+            make
+
+      - name: Compiler
+        run: |
+          g++ -std=c++17 -Wno-narrowing -O2 \
+              -static-libgcc -static-libstdc++ \
+              -I pc/include \
+              $(pkg-config --cflags libcjson 2>/dev/null || echo -I/mingw64/include/cjson) \
+              -I components/wesnoth_sg -I components/aka_font/include \
+              components/wesnoth_sg/wesnoth_app.cpp \
+              components/wesnoth_sg/scene/scene.cpp \
+              components/wesnoth_sg/scene/story_scene.cpp \
+              components/wesnoth_sg/scene/battle_scene.cpp \
+              components/wesnoth_sg/battle/wdata.cpp \
+              components/wesnoth_sg/battle/game.cpp \
+              components/wesnoth_sg/battle/ai.cpp \
+              components/wesnoth_sg/battle/events.cpp \
+              components/wesnoth_sg/battle/campaign_state.cpp \
+              components/wesnoth_sg/audio/story_audio_sdl.cpp \
+              components/wesnoth_sg/platform/gb_port_sdl.cpp \
+              components/wesnoth_sg/platform/gb_port_common.cpp \
+              components/wesnoth_sg/story/campaign_loader.cpp \
+              pc/main_sdl.cpp \
+              $(sdl2-config --cflags --libs) \
+              -lcjson \
+              -o wesnoth_sg_pc.exe
+
+      - name: Regrouper les DLL necessaires avec l'executable
+        run: |
+          mkdir -p dist
+          cp wesnoth_sg_pc.exe dist/
+          for dll in SDL2.dll libcjson-1.dll libwinpthread-1.dll; do
+            if [ -f "/mingw64/bin/$dll" ]; then cp "/mingw64/bin/$dll" dist/; fi
+          done
+
+      - name: Publier le binaire (avec ses DLL)
+        uses: actions/upload-artifact@v4
+        with:
+          name: wesnoth_sg-windows-x64
+          path: dist/

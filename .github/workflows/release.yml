@@ -1,0 +1,62 @@
+# .github/workflows/release.yml
+#
+# Déclenché par un tag v*.*.* poussé, ou manuellement (avec le tag à
+# saisir) -- même principe que dark_and_under_color. Réutilise
+# build-pc.yml (Linux x64, Windows x64) et build-aka.yml (firmware ESP32-S3)
+# via `workflow_call`, puis publie un zip par plateforme :
+#   wesnoth_sg-linux-x64.zip, wesnoth_sg-windows-x64.zip,
+#   wesnoth_sg-aka-firmware.zip
+# Les données SD (sdcard_files/WESNOTH_SG) ne sont pas dans le dépôt : elles
+# restent à copier à part (pack SD).
+name: Release (AKA + Linux + Windows)
+
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag à publier (ex: v1.0.0)'
+        required: true
+
+jobs:
+  build-pc:
+    uses: ./.github/workflows/build-pc.yml
+
+  build-aka:
+    uses: ./.github/workflows/build-aka.yml
+
+  release:
+    name: Publier la release GitHub
+    needs: [build-pc, build-aka]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les binaires compilés
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Empaqueter chaque plateforme en zip
+        run: |
+          cd artifacts
+          for dir in */; do
+            name="${dir%/}"
+            (cd "$name" && zip -r "../${name}.zip" .)
+          done
+          ls -la
+
+      - name: Déterminer le tag
+        id: tagname
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Créer la release GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tagname.outputs.tag }}
+          generate_release_notes: true
+          files: artifacts/*.zip
