@@ -20,7 +20,7 @@ Authors:
  - Jean-Marie Papillon
 */
 #include "stdint.h"
-#include "gb_ll_LCD.h"
+#include "gb_ll_lcd.h"
 #pragma once
 
 class gb_graphics {
