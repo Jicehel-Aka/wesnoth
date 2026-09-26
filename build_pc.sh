@@ -5,7 +5,7 @@
 # projet a été écrit -- seul le mock hôte a pu y être testé) :
 #   - libsdl2-dev      (Debian/Ubuntu: apt install libsdl2-dev)
 #   - libcjson-dev      (apt install libcjson-dev)
-#   - sdl2-config disponible dans le PATH (fourni par libsdl2-dev)
+#   - le fichier pkg-config sdl2.pc disponible (fourni par libsdl2-dev)
 #
 # Usage:
 #   ./build_pc.sh
@@ -33,7 +33,7 @@ g++ -std=c++17 -Wno-narrowing -O2 -I pc/include \
     components/wesnoth_sg/platform/gb_port_common.cpp \
     components/wesnoth_sg/story/campaign_loader.cpp \
     pc/main_sdl.cpp \
-    $(sdl2-config --cflags --libs) \
+    $(pkg-config --cflags --libs sdl2 2>/dev/null || echo -lSDL2) \
     -lcjson \
     -o wesnoth_sg_pc
 

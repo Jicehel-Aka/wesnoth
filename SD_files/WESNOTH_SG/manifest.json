@@ -1,0 +1,2593 @@
+{
+  "voice_map_used": {
+    "narrator": "kal16",
+    "Deoran": "rms",
+    "Mari": "slt",
+    "unit": "slt",
+    "second_unit": "slt",
+    "Urza Mathin": "kal",
+    "unknown": "kal16",
+    "Zombie Mathin": "kal",
+    "Urza Fastik": "kal",
+    "Sir Gerrick": "awb",
+    "Minister Hylas": "kal16",
+    "Galdrad": "awb",
+    "Ethiliel": "slt",
+    "Vaenuith": "slt",
+    "Talchar": "rms",
+    "Ithelden": "rms",
+    "Urza Nalmath": "kal",
+    "Afalas": "kal",
+    "Mebrin": "awb"
+  },
+  "lines": [
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Our story begins during a time of great prosperity and peace in Wesnoth. Royal armies had destroyed the undead tombs in the east. The northern orc-forts were quiet and secure. The elves in the western forest kept to their own affairs. In the south, men built new towns and farms.",
+      "file": "01_Born_to_the_Banner/000_narrator.wav",
+      "bytes": 1488652
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Over time, in the absence of pressing danger, the South Guard grew complacent and lazy. Reports to the capital slowed, and in the spring of the ninth year, ceased altogether. Displeased with the Guard’s conduct, the Crown decided to send someone to investigate...",
+      "file": "01_Born_to_the_Banner/001_narrator.wav",
+      "bytes": 1432602
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 3,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Lieutenant Deoran, reporting for duty SIR! ...err, ma’am.",
+      "file": "01_Born_to_the_Banner/003_Deoran.wav",
+      "bytes": 363462
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 4,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Relax, Lieutenant. Fresh from the academy, are we?",
+      "file": "01_Born_to_the_Banner/004_Mari.wav",
+      "bytes": 341412
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 5,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Yes ma’am. —sir. And as His Majesty ordered, I’ve brought with me a contingent of fresh soldiers to reinforce Westin’s faltering South Guard!",
+      "file": "01_Born_to_the_Banner/005_Deoran.wav",
+      "bytes": 882960
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 6,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "I’m Mari. Got the same orders as you; guess someone wanted an officer with experience to keep an eye on you and your “fresh” company. Can’t imagine why.",
+      "file": "01_Born_to_the_Banner/006_Mari.wav",
+      "bytes": 819456
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 7,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Well, orders are orders. Come on over here, Deoran — let’s get a closer look at you.",
+      "file": "01_Born_to_the_Banner/007_Mari.wav",
+      "bytes": 493558
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 8,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Suit yourself. I’m sure you won’t need my help against those bandits anyway.",
+      "file": "01_Born_to_the_Banner/008_Mari.wav",
+      "bytes": 400506
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 10,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "(Bows) A pleasure to make your acquaintance, Captain.",
+      "file": "01_Born_to_the_Banner/010_Deoran.wav",
+      "bytes": 331270
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 11,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Wondering about those percentages that appear on the ground when you move a unit? That’s your soldiers’ terrain defense — their chance to evade enemy attacks.",
+      "file": "01_Born_to_the_Banner/011_narrator.wav",
+      "bytes": 741930
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 12,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Amazing, you know how to ride your horse. Now let’s see if you know how to swing your sword.",
+      "file": "01_Born_to_the_Banner/012_Mari.wav",
+      "bytes": 491352
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 13,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Behold!",
+      "file": "01_Born_to_the_Banner/013_Mari.wav",
+      "bytes": 74608
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 14,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "...a quintain? You want me to attack a practice dummy?",
+      "file": "01_Born_to_the_Banner/014_Deoran.wav",
+      "bytes": 325536
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 15,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "You have fifty pounds of armor and a horse, rookie. I’m fairly sure you’ll win.",
+      "file": "01_Born_to_the_Banner/015_Mari.wav",
+      "bytes": 456072
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 17,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Hey, this quintain fights back! I’m not about to lose to a dummy — let me attack again!",
+      "file": "01_Born_to_the_Banner/017_Deoran.wav",
+      "bytes": 516490
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 18,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Nice try, but you already used up your chance to attack. Now it’s the quintain’s turn to act.",
+      "file": "01_Born_to_the_Banner/018_Mari.wav",
+      "bytes": 522222
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 19,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The dummy gets a turn?",
+      "file": "01_Born_to_the_Banner/019_Deoran.wav",
+      "bytes": 157516
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 20,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Why not? It’s a magical quintain, on loan from the wizards’ academy at Alduin. It strikes twice per attack, and will sting something fierce if it hits you. Brace yourself!",
+      "file": "01_Born_to_the_Banner/020_Mari.wav",
+      "bytes": 911184
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 21,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "To end your turn, click the “End Turn” button in the bottom-right corner of the screen, or press Ctrl+Space.",
+      "file": "01_Born_to_the_Banner/021_narrator.wav",
+      "bytes": 654506
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 23,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’m injured; this is more dangerous than I expected. I should retreat to a village, where I can catch my breath and bandage my wounds.",
+      "file": "01_Born_to_the_Banner/023_Deoran.wav",
+      "bytes": 815046
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 24,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’m already seriously injured! If I attack now, I am sure to be vanquished. By a dummy, no less.",
+      "file": "01_Born_to_the_Banner/024_Deoran.wav",
+      "bytes": 670398
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 26,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "You’ve captured a village, which now flies the red-and-white colors of our banner. Each village we own provides us with some income — and importantly for you, provides a place to rest and recover.",
+      "file": "01_Born_to_the_Banner/026_Mari.wav",
+      "bytes": 925296
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 27,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Starting your turn in a village will heal you for 8 hitpoints. End your turn now.",
+      "file": "01_Born_to_the_Banner/027_narrator.wav",
+      "bytes": 418042
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 28,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Congratulations, you ran away from the dummy and licked your wounds in a village. I hope you’re proud.",
+      "file": "01_Born_to_the_Banner/028_Mari.wav",
+      "bytes": 538980
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 29,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve had enough of being humiliated by this dummy. Time to recruit some proper soldiers and smash that thing to pieces.",
+      "file": "01_Born_to_the_Banner/029_Deoran.wav",
+      "bytes": 678778
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 31,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Press Ctrl+R to recruit new soldiers. (Or right-click on a keep hex.)",
+      "file": "01_Born_to_the_Banner/031_narrator.wav",
+      "bytes": 496590
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 32,
+      "speaker": "unit",
+      "voice": "slt",
+      "text": "At your service, Commander Deoran! You should still have some gold left — I suggest you keep recruiting more soldiers.",
+      "file": "01_Born_to_the_Banner/032_unit.wav",
+      "bytes": 600720
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 33,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The quintain is repairing itself! Come on men, let’s go finish it off!",
+      "file": "01_Born_to_the_Banner/033_Deoran.wav",
+      "bytes": 483856
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 34,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Tip: Press “u” if you ever want to undo a move. Attacks cannot be undone.",
+      "file": "01_Born_to_the_Banner/034_narrator.wav",
+      "bytes": 423930
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 36,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "...he’s fine. Just out cold, and of no use to you for the rest of our journey.",
+      "file": "01_Born_to_the_Banner/036_Mari.wav",
+      "bytes": 400066
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 37,
+      "speaker": "second_unit",
+      "voice": "slt",
+      "text": "Hooray! The dummy is destroyed, and I’ve gained valuable combat experience!",
+      "file": "01_Born_to_the_Banner/037_second_unit.wav",
+      "bytes": 411532
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 38,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Not bad, you’ve smashed it to splinters. ...is it too late to mention that I was supposed to return that after we finished training? Maybe I can find a replacement once we reach Westin.",
+      "file": "01_Born_to_the_Banner/038_Mari.wav",
+      "bytes": 927942
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 39,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Of course before we can reach Westin, we’ll first have to fight our way past these bandits.",
+      "file": "01_Born_to_the_Banner/039_Mari.wav",
+      "bytes": 473272
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 40,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Are you... actually trying to fight the quintain? We don’t have all day. Hurry up and beat it.",
+      "file": "01_Born_to_the_Banner/040_Mari.wav",
+      "bytes": 489588
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 41,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "We’re going to have to cut things short, rookie. Look: bandits on the south road!",
+      "file": "01_Born_to_the_Banner/041_Mari.wav",
+      "bytes": 421234
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 42,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Bandits! Where?",
+      "file": "01_Born_to_the_Banner/042_Deoran.wav",
+      "bytes": 133260
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 43,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "Oh, what’s this? A lady and her loyal squire travelin’ south on this dangerous road? Tell ya what, we can offer ya protection ’round here for a small fee.",
+      "file": "01_Born_to_the_Banner/043_Urza_Mathin.wav",
+      "bytes": 826920
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 44,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Do you take us for fools? I ride south to reinforce Westin’s venerable South Guard, on orders from the King to ensure the region is kept safe and secure!",
+      "file": "01_Born_to_the_Banner/044_Deoran.wav",
+      "bytes": 964546
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 45,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The only danger around here is you, and I intend to put an end to it. Men, raise your spears!",
+      "file": "01_Born_to_the_Banner/045_Deoran.wav",
+      "bytes": 573378
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 46,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "Hah, like it would be that easy, child. I’m Urza Mathin, eldest of the four Urza brothers, and these are my thugs. Time to show you who the real power is in these parts!",
+      "file": "01_Born_to_the_Banner/046_Urza_Mathin.wav",
+      "bytes": 964072
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 48,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Are you going to help fight? We must drive these villains from the road!",
+      "file": "01_Born_to_the_Banner/048_Deoran.wav",
+      "bytes": 425202
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 49,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Officially, I’m only here as an observer. These ruffians don’t look too dangerous — you and your professional soldiers should be able to make short work of them, even without my sword.",
+      "file": "01_Born_to_the_Banner/049_Mari.wav",
+      "bytes": 932794
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 50,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Besides, it only took $quintain_killers.length of you to deal with my dummy. What’s a dozen muscly bandits compared to that?",
+      "file": "01_Born_to_the_Banner/050_Mari.wav",
+      "bytes": 713176
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 51,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Oh, now you want my help? I thought you were too clever to listen to my tutorial.",
+      "file": "01_Born_to_the_Banner/051_Mari.wav",
+      "bytes": 480328
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 52,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Look, officially I’m only here as an observer. These ruffians don’t look too dangerous — you and your professional soldiers should be able to make short work of them, even without my sword.",
+      "file": "01_Born_to_the_Banner/052_Mari.wav",
+      "bytes": 954402
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 53,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "You may toggle tips on or off at any time during the campaign by right-clicking anywhere and selecting “Tips: On/Off” in the menu.",
+      "file": "01_Born_to_the_Banner/053_narrator.wav",
+      "bytes": 684032
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 54,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Get out of my face!",
+      "file": "01_Born_to_the_Banner/054_Mari.wav",
+      "bytes": 146490
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 55,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "What happened to being a passive observer?",
+      "file": "01_Born_to_the_Banner/055_Deoran.wav",
+      "bytes": 251890
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 56,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "...self-defense doesn’t count.",
+      "file": "01_Born_to_the_Banner/056_Mari.wav",
+      "bytes": 195442
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 57,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "Stop right there! Not one hair further or I’ll bash your head in!",
+      "file": "01_Born_to_the_Banner/057_unknown.wav",
+      "bytes": 339108
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 58,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "The sun begins to set! Soon these Wesnoth soldiers will falter in the dark, while my thugs and I will fight at our best. Press the attack!",
+      "file": "01_Born_to_the_Banner/058_Urza_Mathin.wav",
+      "bytes": 778488
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 59,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Careful, Deoran. Unless you have overwhelming numbers, you may want to hunker down and hold a defensive position until dawn. Castles and especially villages (because they heal) make for good defensive positions.",
+      "file": "01_Born_to_the_Banner/059_Mari.wav",
+      "bytes": 1048776
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 60,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Day has come! We will be strongest in the light — now is the time for us to attack and drive these bandits from our lands. To me, men of the South Guard!",
+      "file": "01_Born_to_the_Banner/060_Deoran.wav",
+      "bytes": 860910
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 61,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "Ha, this will be an easy victory! These soldiers’ young commander must be a fool, for he fights my thugs at night while I am strong and he is weak.",
+      "file": "01_Born_to_the_Banner/061_Urza_Mathin.wav",
+      "bytes": 816028
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 62,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Get a move on, rookie! I’m sure those bandits have called for reinforcements — you’re running out of time to finish them off.",
+      "file": "01_Born_to_the_Banner/062_Mari.wav",
+      "bytes": 601602
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 63,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "Reinforcements from my brothers! Excellent. These lands belong to the brothers Urza!",
+      "file": "01_Born_to_the_Banner/063_Urza_Mathin.wav",
+      "bytes": 463294
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 64,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "We’ve run out of time, and now more enemies have arrived! We’ll have to retreat and bring more soldiers some other time. I really thought Deoran could handle this on his own...",
+      "file": "01_Born_to_the_Banner/064_Mari.wav",
+      "bytes": 872376
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 65,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "You are beaten, you bloodthirsty, balding bandit! Accosting travelers between Weldyn and Westin; what is the meaning of this? How have you become so bold as to strike at even trained soldiers!?",
+      "file": "01_Born_to_the_Banner/065_Deoran.wav",
+      "bytes": 1125952
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 66,
+      "speaker": "Urza Mathin",
+      "voice": "kal",
+      "text": "How... impossible... no! If I die... so will you!",
+      "file": "01_Born_to_the_Banner/066_Urza_Mathin.wav",
+      "bytes": 341524
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 67,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "What the—",
+      "file": "01_Born_to_the_Banner/067_Deoran.wav",
+      "bytes": 73726
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 68,
+      "speaker": "Zombie Mathin",
+      "voice": "kal",
+      "text": "Gruhh...",
+      "file": "01_Born_to_the_Banner/068_Zombie_Mathin.wav",
+      "bytes": 144132
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 69,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Look out!",
+      "file": "01_Born_to_the_Banner/069_Mari.wav",
+      "bytes": 78576
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 70,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Undead again. As if losing one arm to these things wasn’t bad enough, now they’re back for my second.",
+      "file": "01_Born_to_the_Banner/070_Mari.wav",
+      "bytes": 522664
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 71,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve never seen the like before in my life! That man clearly died, then stood right back up again! You say you’ve fought these things before, Mari?",
+      "file": "01_Born_to_the_Banner/071_Deoran.wav",
+      "bytes": 838420
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 72,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Yeah, I have. And no, simple bandits aren’t supposed to know how to create them. This reeks of black magic; powerful black magic.",
+      "file": "01_Born_to_the_Banner/072_Mari.wav",
+      "bytes": 727728
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 73,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "This brother said he was the eldest of four — the other three are doubtless still alive and causing trouble. How did petty outlaws get their hands on magic like this?",
+      "file": "01_Born_to_the_Banner/073_Deoran.wav",
+      "bytes": 882960
+    },
+    {
+      "scenario": "01_Born_to_the_Banner",
+      "beat_index": 74,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Maybe the locals in town will know something. Come on, let’s hurry onwards towards Westin, and hope we don’t run into any more trouble on the way.",
+      "file": "01_Born_to_the_Banner/074_Mari.wav",
+      "bytes": 737430
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 0,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "What’s this? Soldiers on the road from Tahn — that can only mean my brother Mathin is dead! Curses... the master should never have sent him here alongside me.",
+      "file": "02_Proven_by_the_Sword/000_Urza_Fastik.wav",
+      "bytes": 793946
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 1,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "I will avenge him. You fools will get no further, for I am second of the Urza brothers, and much more powerful than my late elder. Behold!",
+      "file": "02_Proven_by_the_Sword/001_Urza_Fastik.wav",
+      "bytes": 756372
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 2,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Another Urza brother, augmenting his ranks with the restless dead. The brothers must have been waiting on the road for travelers, ambushing civilians and raising their corpses as minions.",
+      "file": "02_Proven_by_the_Sword/002_Deoran.wav",
+      "bytes": 981304
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 3,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I know banditry is not uncommon in the lawless south, but necromancy!? Where is the rest of the South Guard? How have things gotten so far out of control?",
+      "file": "02_Proven_by_the_Sword/003_Deoran.wav",
+      "bytes": 861352
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 4,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Let’s find out. Deoran, you and your men deal with this bandit. Anyone who dies to those zombies will become one themselves, so don’t be stupid and remember what we practiced:",
+      "file": "02_Proven_by_the_Sword/004_Mari.wav",
+      "bytes": 879432
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 5,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Let’s find out. Deoran, you and your men deal with this bandit. Anyone who dies to those zombies will become one themselves, so don’t be stupid.",
+      "file": "02_Proven_by_the_Sword/005_Mari.wav",
+      "bytes": 747574
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 6,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Meanwhile, I’ll sneak past and get in contact with Westin — someone in town better know what’s going on here. If we’re lucky, I’ll return with reinforcements.",
+      "file": "02_Proven_by_the_Sword/006_Mari.wav",
+      "bytes": 785058
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 7,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Going alone? That sounds dangerous. What happened to staying an observer?",
+      "file": "02_Proven_by_the_Sword/007_Deoran.wav",
+      "bytes": 464892
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 8,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Well then. I hope Mari returns with the rest of the South Guard, but I shouldn’t count on it. I may only be a junior commander, but this outlaw underestimates me if he thinks I can’t beat him on my own.",
+      "file": "02_Proven_by_the_Sword/008_Deoran.wav",
+      "bytes": 1125510
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 9,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "For with each fight, we gain experience and grow stronger! If I have any veteran soldiers from the last battle, I may wish to recall them so they can continue to gain experience and eventually gain a promotion.",
+      "file": "02_Proven_by_the_Sword/009_Deoran.wav",
+      "bytes": 1206654
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 11,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Good, we’ve captured a village! The little flag waving from it will serve as a reminder that it’s under our control. It will remain that way until an enemy moves into it.",
+      "file": "02_Proven_by_the_Sword/011_Deoran.wav",
+      "bytes": 967632
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 12,
+      "speaker": "unit",
+      "voice": "slt",
+      "text": "Ha, this zombie is so slow and weak! Usually, moving next to an enemy unit prevents me from moving any further. But this frail, feeble Walking Corpse is easy to outmaneuver.",
+      "file": "02_Proven_by_the_Sword/012_unit.wav",
+      "bytes": 964104
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 13,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Unlike most units, level 0 units (such as Walking Corpses) do not exert a Zone of Control. Your units can move freely around them.",
+      "file": "02_Proven_by_the_Sword/013_narrator.wav",
+      "bytes": 787072
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 14,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "I’m nearly blind in this nighttime gloom... If we don’t keep our distance from the undead, we’re going to get massacred!",
+      "file": "02_Proven_by_the_Sword/014_unknown.wav",
+      "bytes": 632496
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 15,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Dawn breaks — the heroes grow strong while the villains grow weak. Men of the South Guard, now is our time to attack!",
+      "file": "02_Proven_by_the_Sword/015_Deoran.wav",
+      "bytes": 675250
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 16,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Ah, excellent! The South Guard fights my warriors at night, when we are at our best! I am fortunate that their commander is so inexperienced.",
+      "file": "02_Proven_by_the_Sword/016_Urza_Fastik.wav",
+      "bytes": 851506
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 17,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Idiot corpses, what are you doing? Don’t fight the South Guard during the day, when they’re at their best! ...how do I control these blasted things?",
+      "file": "02_Proven_by_the_Sword/017_Urza_Fastik.wav",
+      "bytes": 807264
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 18,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Yes that’s right, you foolish South Guard commander! Fight waist-deep in the river while my bandits are safe in their encampments!",
+      "file": "02_Proven_by_the_Sword/018_Urza_Fastik.wav",
+      "bytes": 670608
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 19,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Most of your units have only a 20% chance to evade when standing in shallow water, while in encampment terrain most of the bandits have 60%. Fighting with your units on poor terrain isn’t always a bad idea, but it is often not worth the disadvantage to your troops.",
+      "file": "02_Proven_by_the_Sword/019_narrator.wav",
+      "bytes": 1487220
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 20,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "If only it weren’t daytime, this would be the perfect fight for me...",
+      "file": "02_Proven_by_the_Sword/020_Urza_Fastik.wav",
+      "bytes": 360090
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 21,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "And in the middle of the night too! This is the perfect fight for me!",
+      "file": "02_Proven_by_the_Sword/021_Urza_Fastik.wav",
+      "bytes": 343442
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 22,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Hey, that’s not fair! I spent ages fortifying the road, you can’t just go around!",
+      "file": "02_Proven_by_the_Sword/022_Urza_Fastik.wav",
+      "bytes": 542696
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 23,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I had better hurry and finish off this bandit! If I take too long he may decide to flee, and then I’ll never get the chance to find out what he knows!",
+      "file": "02_Proven_by_the_Sword/023_Deoran.wav",
+      "bytes": 818134
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 24,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "We’ve caught you at last, you outlaw! Prepare to meet your end!",
+      "file": "02_Proven_by_the_Sword/024_Sir_Gerrick.wav",
+      "bytes": 370078
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 25,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Gah, more soldiers from Westin... Forget this, I’m getting out of here while I still have the chance!",
+      "file": "02_Proven_by_the_Sword/025_Urza_Fastik.wav",
+      "bytes": 564448
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 26,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "He’s gone! Good work defeating these undead, Deoran, but their leader has escaped...",
+      "file": "02_Proven_by_the_Sword/026_Mari.wav",
+      "bytes": 466216
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 27,
+      "speaker": "unit",
+      "voice": "slt",
+      "text": "Even with the power of darkness at my command... No, I can’t die yet! I— I can still escape!",
+      "file": "02_Proven_by_the_Sword/027_unit.wav",
+      "bytes": 493998
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 28,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Not so fast, outlaw — we’ve caught you at last! Time to clap you in irons.",
+      "file": "02_Proven_by_the_Sword/028_Sir_Gerrick.wav",
+      "bytes": 451222
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 29,
+      "speaker": "Urza Fastik",
+      "voice": "kal",
+      "text": "Urgh! Get these chains... off me...",
+      "file": "02_Proven_by_the_Sword/029_Urza_Fastik.wav",
+      "bytes": 246378
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 30,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Minister, don’t let him die! This is our best chance to finally get some answers.",
+      "file": "02_Proven_by_the_Sword/030_Mari.wav",
+      "bytes": 452544
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 31,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Mari, you’ve returned! And these must be the South Guard officers we were sent here to meet.",
+      "file": "02_Proven_by_the_Sword/031_Deoran.wav",
+      "bytes": 493998
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 32,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "Minister Hylas, archivist and local medic. A pleasure to make your acquaintance, Lieutenant Deoran.",
+      "file": "02_Proven_by_the_Sword/032_Minister_Hylas.wav",
+      "bytes": 606080
+    },
+    {
+      "scenario": "02_Proven_by_the_Sword",
+      "beat_index": 33,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Aye, an’ I’m Sir Gerrick, infantry commander o’ the South Guard! But now ain’t the time for talk — let’s get this prisoner back t’ town, and finally get some answers out o’ him.",
+      "file": "02_Proven_by_the_Sword/033_Sir_Gerrick.wav",
+      "bytes": 863116
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 0,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "The Vale of Blossoming Trees.",
+      "file": "02x_Westin/000_Minister_Hylas.wav",
+      "bytes": 159716
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 1,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "Other than that singular piece of information, I regret to report that Urza Fastik remains as recalcitrant as the day we first arrived.",
+      "file": "02x_Westin/001_Minister_Hylas.wav",
+      "bytes": 696010
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 2,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The vale... isn’t that an Aethenwood exclave? I can’t imagine the Aethenwood elves would have anything to do with necromancy, or ever offer aid to bandits... I hear they’re aloof even with regards to the king. Can we not learn more from our captive?",
+      "file": "02x_Westin/002_Deoran.wav",
+      "bytes": 1370266
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 3,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "I say we’re treatin’ him too gentle. Man like Fastik — he’s plenty used to roughing it. Lives are at stake, an’ too much coddling ain’t getting us nowhere.",
+      "file": "02x_Westin/003_Sir_Gerrick.wav",
+      "bytes": 780208
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 4,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "I fear there is a corruption in his soul, darker than even my light can illuminate. Now deprived of the dark magic that once suffused him, his very mind has begun to fade away.",
+      "file": "02x_Westin/004_Minister_Hylas.wav",
+      "bytes": 943752
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 5,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "Even were he willing, I am not sure he remembers anything other than what he has already told us.",
+      "file": "02x_Westin/005_Minister_Hylas.wav",
+      "bytes": 505652
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 6,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Hey, everyone. I’m done cleaning up the last of Fastik’s mess, but no trace of the other two brothers.",
+      "file": "02x_Westin/006_Mari.wav",
+      "bytes": 537216
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 7,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Thanks, Hylas. Shouldn’t there be a duke or prince or something around here? How did things get this bad?",
+      "file": "02x_Westin/007_Mari.wav",
+      "bytes": 511638
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 8,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Aye, officially these lands belong to Prince Arand; King Garard’s younger brother. Arand’s been tryin’ to build the place up. Last time he visited, His Highness said our home might someday be called the Jewel of the South!",
+      "file": "02x_Westin/008_Sir_Gerrick.wav",
+      "bytes": 1098610
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 9,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "But the kingdom is large, the prince has many holdings, an’ today Westin be but a small town. These Urza outlaws ha’ always been a nuisance, but once they somehow started raisin’ the dead things got out of hand, fast.",
+      "file": "02x_Westin/009_Sir_Gerrick.wav",
+      "bytes": 1129920
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 10,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "We dispatched messengers carrying word of our plight, only to have them intercepted on the road or waylaid at river crossings. You are the first contact we have had with the crown in some time, sirs Mari and Deoran. With your aid, we can defeat these outlaws and cleanse their undead.",
+      "file": "02x_Westin/010_Minister_Hylas.wav",
+      "bytes": 1406174
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 11,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Well, if we don’t have any other leads, then we’ll need to investigate this “Vale of Blossoming Trees” and hope it’s neither misdirection nor a trap. Sirs, do I have your permissions to take the infantry on a sortie?",
+      "file": "02x_Westin/011_Deoran.wav",
+      "bytes": 1177990
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 12,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Offerin’ to command the mission? Brave lad, but you shan’t have to go alone. Two o’ us officers will need to stay here and watch th’ town, but at least one o’ us should come with ye to help fight.",
+      "file": "02x_Westin/012_Sir_Gerrick.wav",
+      "bytes": 934116
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 13,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Take yer pick — either me, Minister Hylas, or tha’ Mari o’ yers. You don’t know much about how each of us fight yet, so ask and we’ll tell!",
+      "file": "02x_Westin/013_Sir_Gerrick.wav",
+      "bytes": 774474
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 14,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Hey, rookie. I’m all out of quintains, so if you want more bruises you’ll have to find another inanimate object to fight.",
+      "file": "02x_Westin/014_Mari.wav",
+      "bytes": 621448
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 15,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "...but I guess you’re asking about my skills, not yours. You never did get a chance to see me fight.",
+      "file": "02x_Westin/015_Mari.wav",
+      "bytes": 501054
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 16,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Hey, rookie. Yeah, you never did get a chance to see me fight.",
+      "file": "02x_Westin/016_Mari.wav",
+      "bytes": 359934
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 17,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Well, I’m a survivor. Fast-moving, light on my feet; good at evading, good at stabbing. Hard to pin down, whether in an attack or in an escape.",
+      "file": "02x_Westin/017_Mari.wav",
+      "bytes": 807990
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 18,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Mari has unusually high terrain defenses (her chance to evade enemy attacks). Her skirmisher ability lets her ignore enemies’ Zone of Control — she can move freely around enemy units without being stopped.",
+      "file": "02x_Westin/018_narrator.wav",
+      "bytes": 1091366
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 19,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Got a pretty good sling too, ’cuz there aren’t many ranged weapons that can be loaded one-handed. Altogether, I’ll bet I could outlast both Hylas and Gerrick in a 1-on-1. And you too, but that goes without saying.",
+      "file": "02x_Westin/019_Mari.wav",
+      "bytes": 1055832
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 20,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "And... if you come with me you’ll actually help fight? No more training, or observing, or running off right before the battle starts?",
+      "file": "02x_Westin/020_Deoran.wav",
+      "bytes": 755952
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 21,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Of course. Highwaymen are one thing, but necromancy is serious business. I just thought... well, after losing one arm to undead in the Estmarks, I hoped I was done dealing with this sort of thing.",
+      "file": "02x_Westin/021_Mari.wav",
+      "bytes": 993210
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 22,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "I already told you, didn’t I? Pay attention this time — I’ve got a sword and sling, skill at evading attacks, and can move freely around enemies without being stopped.",
+      "file": "02x_Westin/022_Mari.wav",
+      "bytes": 870612
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 23,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "I am a man of medicine, Lieutenant Deoran. The light within me can heal adjacent units just as quickly as can resting in a village. This doesn’t stack with healing from villages or other healers, however.",
+      "file": "02x_Westin/023_Minister_Hylas.wav",
+      "bytes": 1046556
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 24,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "In ranged combat, I also wield a highly accurate magical attack. Magical attacks always have a high chance to hit and are unaffected by terrain, making them ideal against evasive or fortified enemies.",
+      "file": "02x_Westin/024_Minister_Hylas.wav",
+      "bytes": 1159490
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 25,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I don’t mean to be rude, but... your leg looks badly injured. If you have healing magic, shouldn’t you have been able to cure it?",
+      "file": "02x_Westin/025_Deoran.wav",
+      "bytes": 728170
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 26,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "Born twisted, I’m afraid. At the time there was no healer in Westin, and the bones set poorly.",
+      "file": "02x_Westin/026_Minister_Hylas.wav",
+      "bytes": 542746
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 27,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "I’ve long-ago accepted my impairment. But as my potential commander, you should know that it does somewhat slow my movement on the battlefield, even more so than is Sir Gerrick by his armor.",
+      "file": "02x_Westin/027_Minister_Hylas.wav",
+      "bytes": 980434
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 28,
+      "speaker": "Minister Hylas",
+      "voice": "kal16",
+      "text": "Forgotten already? I can heal adjacent units for a moderate amount every turn. I wield a ranged magical attack that is highly accurate, irrespective of the terrain my opponent occupies.",
+      "file": "02x_Westin/028_Minister_Hylas.wav",
+      "bytes": 1017808
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 29,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Well lad, I’m a monster in melee, if you’ll forgive me the brag. My glaive hits harder than any spear, an’ my crushin’ shield bash can slow enemies.",
+      "file": "02x_Westin/029_Sir_Gerrick.wav",
+      "bytes": 786382
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 30,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Slowed enemies move at half speed and deal half damage.",
+      "file": "02x_Westin/030_narrator.wav",
+      "bytes": 296696
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 31,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "An’ while my armor may be heavy an’ cumbersome, it also gives me great resistance against bladed or piercing weapons. If you need someone t’ break an enemy line, I’m your man.",
+      "file": "02x_Westin/031_Sir_Gerrick.wav",
+      "bytes": 935880
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 32,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Well, like I said, I’ve got great damage resistance on account o’ me heavy armor, an’ I can slow enemies t’ halve both their speed an’ damage. Try not t’ forget this time!",
+      "file": "02x_Westin/032_Sir_Gerrick.wav",
+      "bytes": 931470
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 33,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve decided: Captain Mari, I’d like you to accompany me on our mission to the elven vale. Make ready the men — we leave at next dawn!",
+      "file": "02x_Westin/033_Deoran.wav",
+      "bytes": 766096
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 34,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Good luck, Deoran an’ Mari. We’re countin’ on you to stop the bandits an’ undead!",
+      "file": "02x_Westin/034_Sir_Gerrick.wav",
+      "bytes": 444166
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 35,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve decided: Minister Hylas, I’d like you to accompany me on our mission to the elven vale. Make ready the men — we leave at next dawn!",
+      "file": "02x_Westin/035_Deoran.wav",
+      "bytes": 789910
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 36,
+      "speaker": "Sir Gerrick",
+      "voice": "awb",
+      "text": "Good luck, Deoran an’ Hylas. We’re countin’ on you to stop the bandits an’ undead!",
+      "file": "02x_Westin/036_Sir_Gerrick.wav",
+      "bytes": 468420
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 37,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve decided: Sir Gerrick, I’d like you to accompany me on our mission to the elven vale. Make ready the men — we leave at next dawn!",
+      "file": "02x_Westin/037_Deoran.wav",
+      "bytes": 762126
+    },
+    {
+      "scenario": "02x_Westin",
+      "beat_index": 38,
+      "speaker": "Mari",
+      "voice": "slt",
+      "text": "Good luck, rookie. We’re counting on you to stop the bandits and undead!",
+      "file": "02x_Westin/038_Mari.wav",
+      "bytes": 378016
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 0,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "This magical rune must have triggered the illusions we saw earlier. Whatever magic it once held is now gone.",
+      "file": "03_Vale_of_Tears/000_Deoran.wav",
+      "bytes": 643056
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 1,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Whatever runic magic once guarded this side of the isthmus, it has already been exhausted.",
+      "file": "03_Vale_of_Tears/001_Deoran.wav",
+      "bytes": 511198
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 2,
+      "speaker": "Galdrad",
+      "voice": "awb",
+      "text": "Halt! Who enters our sacred vale without leave?",
+      "file": "03_Vale_of_Tears/002_Galdrad.wav",
+      "bytes": 288934
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 3,
+      "speaker": "Galdrad",
+      "voice": "awb",
+      "text": "Choose your words wisely, bandits. Speak, knowing that the penalty for trespassing on our lands is death.",
+      "file": "03_Vale_of_Tears/003_Galdrad.wav",
+      "bytes": 605130
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 4,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I—",
+      "file": "03_Vale_of_Tears/004_Deoran.wav",
+      "bytes": 66228
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 5,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "This is no bandit, for these humans bear the banner of the South Guard, not those rags of the Urzas. Though it remains to be seen whether this proves an improvement — why do you enter the hallowed isle of Elrath?",
+      "file": "03_Vale_of_Tears/005_Ethiliel.wav",
+      "bytes": 931470
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 6,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "To—",
+      "file": "03_Vale_of_Tears/006_Deoran.wav",
+      "bytes": 44178
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 7,
+      "speaker": "Vaenuith",
+      "voice": "slt",
+      "text": "To ask our help, no doubt. There is darkness in the air, corruption in the earth. Someone has been meddling in the black magic. Let us not forget that it is you humans who first brought this perverse sorcery to our great continent, when you arrived here centuries ago.",
+      "file": "03_Vale_of_Tears/007_Vaenuith.wav",
+      "bytes": 1333662
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 8,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I—",
+      "file": "03_Vale_of_Tears/008_Deoran.wav",
+      "bytes": 66228
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 9,
+      "speaker": "Talchar",
+      "voice": "rms",
+      "text": "The past has shown that your race cannot be trusted. A human untrained in the mystic arts is much more likely to be corrupted by such a force than to have the knowledge or ability to banish it.",
+      "file": "03_Vale_of_Tears/009_Talchar.wav",
+      "bytes": 1055392
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 10,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "But—",
+      "file": "03_Vale_of_Tears/010_Deoran.wav",
+      "bytes": 56086
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 11,
+      "speaker": "Vaenuith",
+      "voice": "slt",
+      "text": "Why should we treat with you now, when it is your kind’s inaction that has allowed this blight to grow unchecked? Begone with you, mayfly, and leave to us our peace.",
+      "file": "03_Vale_of_Tears/011_Vaenuith.wav",
+      "bytes": 824308
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 12,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "—but, but, I have scarcely been here a month! I could not have acted on something that began before my arrival! And besides, this is not the fault of “my kind” but of the Urza brothe—",
+      "file": "03_Vale_of_Tears/012_Deoran.wav",
+      "bytes": 1056274
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 13,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "(deep breath)",
+      "file": "03_Vale_of_Tears/013_Deoran.wav",
+      "bytes": 106360
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 14,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "...honorable elves, I am Commander Deoran, of Westin’s South Guard. I cannot speak for the past, but in the present we need your help.",
+      "file": "03_Vale_of_Tears/014_Deoran.wav",
+      "bytes": 812400
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 15,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Our farms and villages are plundered by criminals, casting dark spells and defiling the dead. We learned that this vale is a place of importance to them, and came seeking answers.",
+      "file": "03_Vale_of_Tears/015_Deoran.wav",
+      "bytes": 1007764
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 16,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Whence did our foes learn their grim power? How do we find the source of this spreading corruption, so that we may destroy it? Good elves of the vale, can you not aid us in our plight?",
+      "file": "03_Vale_of_Tears/016_Deoran.wav",
+      "bytes": 1008204
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 17,
+      "speaker": "Ithelden",
+      "voice": "rms",
+      "text": "...",
+      "file": "03_Vale_of_Tears/017_Ithelden.wav",
+      "bytes": 20364
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 18,
+      "speaker": "Ithelden",
+      "voice": "rms",
+      "text": "...very well, outlander. The challenge is passed. Enter, and greet us as we are in life.",
+      "file": "03_Vale_of_Tears/018_Ithelden.wav",
+      "bytes": 547360
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 19,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "!?",
+      "file": "03_Vale_of_Tears/019_Deoran.wav",
+      "bytes": 20364
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 20,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "They weren’t real elves at all! It was some kind of... prerecorded illusion? Half-alive echo? Was this something to help protect the valley from intruders?",
+      "file": "03_Vale_of_Tears/020_Deoran.wav",
+      "bytes": 881638
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 21,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Undead! In an elven valley?? And a caged elf, too!",
+      "file": "03_Vale_of_Tears/021_Deoran.wav",
+      "bytes": 350232
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 23,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Rain or snow have no impact on gameplay. If weather is distracting or reduces performance, you can disable it by opening the Preferences menu (Ctrl-P), by selecting “Display” and unchecking “Animate Map.”",
+      "file": "03_Vale_of_Tears/023_narrator.wav",
+      "bytes": 1182642
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 24,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "The humans return, but this time bearing the banners of Westin... If you’re here to help, attack this foul cage and smash it open!",
+      "file": "03_Vale_of_Tears/024_Ethiliel.wav",
+      "bytes": 648348
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 26,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Oh, the joy of once more spreading my wings! And to be saved by humans, of all things... who are you? Is this not some new deceit of the Urzas?",
+      "file": "03_Vale_of_Tears/026_Ethiliel.wav",
+      "bytes": 742282
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 27,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I recognize you from the illusion! Peace, friend, for I am Deoran of the South Guard, and my allegiance lies with Westin, not those deplorable Urza brothers. But by Haldric, will you please tell what has happened here!?",
+      "file": "03_Vale_of_Tears/027_Deoran.wav",
+      "bytes": 1248990
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 28,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "What has happened? You mudlings have slain my friends, taken our sage, imprisoned me here these long and terrible moons! ...but if you truly are of the South Guard, then you are not to blame.",
+      "file": "03_Vale_of_Tears/028_Ethiliel.wav",
+      "bytes": 1002030
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 29,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "They came at night, more than a season ago. I did not see all that transpired, but I heard the screams... Most of us were artisans and scholars, no match for your clubs and axes! My mentor, our great sage Mebrin, was taken away in chains; a foul insult for such a wise old elf.",
+      "file": "03_Vale_of_Tears/029_Ethiliel.wav",
+      "bytes": 1493304
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 30,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "I, too, was left alive — perhaps by dint of my high status — but the rest of the survivors were executed one-by-one in cold blood. Not long after, their bodies began to be defiled by wicked undeath, raised anew by the outlaw brothers to do their dark bidding...",
+      "file": "03_Vale_of_Tears/030_Ethiliel.wav",
+      "bytes": 1300588
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 31,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Ah, such a beautiful tingling in my fingertips! Intoxicating, exalting... the master’s magic whispers promises of life eternal, whispers beautiful secrets...",
+      "file": "03_Vale_of_Tears/031_Urza_Nalmath.wav",
+      "bytes": 985096
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 32,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "But what’s this? I’ve arrived just in time, for we have guests, human guests! Welcome, welcome. I’m so pleased to have visitors, for I’ve seen nary a living soul since the last of my living followers joined the hordes of eternal unlife.",
+      "file": "03_Vale_of_Tears/032_Urza_Nalmath.wav",
+      "bytes": 1323366
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 33,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Vermin! Scum! You black-souled degenerate! Where is your younger brother? What have you done with my sage Mebrin?",
+      "file": "03_Vale_of_Tears/033_Ethiliel.wav",
+      "bytes": 577348
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 34,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Ethiliel, I’m aghast! Have you not enjoyed our lovely times together? So many good memories... if only the master hadn’t instructed me to leave you intact, we could have had even more!",
+      "file": "03_Vale_of_Tears/034_Urza_Nalmath.wav",
+      "bytes": 1049758
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 35,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "But that command was so many moons ago... now that the little bird has slipped her cage, perhaps the rules can be different, hmm?",
+      "file": "03_Vale_of_Tears/035_Urza_Nalmath.wav",
+      "bytes": 741456
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 36,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "You always were the cruelest of my captors, Urza Nalmath. May your creator have mercy on you now that I am free, for I will not!",
+      "file": "03_Vale_of_Tears/036_Ethiliel.wav",
+      "bytes": 677454
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 37,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Ethiliel, you poor, deluded girl. You of all people should know just how many undead I’ve raised up from the ruins of your little village. You and I and all your new human friends are going to have such fun together...",
+      "file": "03_Vale_of_Tears/037_Urza_Nalmath.wav",
+      "bytes": 1064454
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 38,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Vermin! Scum! You black-souled degenerate! You always were the cruelest of my captors, Urza Nalmath. May your creator have mercy on you once I get free, for I will not!",
+      "file": "03_Vale_of_Tears/038_Ethiliel.wav",
+      "bytes": 896632
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 39,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Ethiliel, I’m aghast! Have you not been enjoying our lovely times together? So many good memories... if only the master hadn’t instructed me to leave you intact, we could have had even more!",
+      "file": "03_Vale_of_Tears/039_Urza_Nalmath.wav",
+      "bytes": 1088158
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 40,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "But I certainly can’t allow you to be freed by these human visitors. You of all people should know just how many undead I’ve raised up from the ruins of your little village. You and I and all your new human friends are going to have such fun together...",
+      "file": "03_Vale_of_Tears/040_Urza_Nalmath.wav",
+      "bytes": 1183282
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 41,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Wait a moment, did you humans know I was coming? You’re not supposed to be so close to my camp, not supposed to be here at all... No, this simply won’t do. I’ll have to raise a few more of my beauties to slow you down.",
+      "file": "03_Vale_of_Tears/041_Urza_Nalmath.wav",
+      "bytes": 1199754
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 42,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Even the largest hordes have their limits — we must defend these ruins until this bandit’s magic runs low! Prepare for battle, soldiers of the South Guard, and brace for incoming attack!",
+      "file": "03_Vale_of_Tears/042_Deoran.wav",
+      "bytes": 1084056
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 44,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’m not used to fighting in fog like this! What a mess...",
+      "file": "03_Vale_of_Tears/044_Deoran.wav",
+      "bytes": 333034
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 45,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The sun is our ally! They’re afraid to fight in the light.",
+      "file": "03_Vale_of_Tears/045_Deoran.wav",
+      "bytes": 331270
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 46,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I will need to recruit units if I want to weather the undead assault! I should first move to a keep, then press Ctrl+R to recruit or Alt+R to recall.",
+      "file": "03_Vale_of_Tears/046_Deoran.wav",
+      "bytes": 990564
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 47,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I have recruited fresh soldiers, but not yet recalled any of my veterans! Without recalling I’ll struggle to build a strong army.",
+      "file": "03_Vale_of_Tears/047_Deoran.wav",
+      "bytes": 770506
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 48,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "If you have high-XP survivors from previous battles, remember to press Alt+R and recall them so they can continue gaining experience and be promoted to higher levels.",
+      "file": "03_Vale_of_Tears/048_Deoran.wav",
+      "bytes": 1000708
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 49,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "Guuuhhh...",
+      "file": "03_Vale_of_Tears/049_unknown.wav",
+      "bytes": 172654
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 50,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "What manner of undeath have you inflicted upon this poor elf! This is even worse than the walking corpses we’ve already fought, if such a thing is possible.",
+      "file": "03_Vale_of_Tears/050_Deoran.wav",
+      "bytes": 795642
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 51,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Undeath!? You offend me, good sir — this lovely lady is still alive... although come to think of it, she might wish she weren’t. Such a supple body; such an alluring voice. Isn’t she charming?",
+      "file": "03_Vale_of_Tears/051_Urza_Nalmath.wav",
+      "bytes": 1101036
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 52,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "Graaahhh...",
+      "file": "03_Vale_of_Tears/052_unknown.wav",
+      "bytes": 199494
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 53,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "So many of my soldiers are poisoned! I should position them on a village or next to Ethiliel, so they can begin to recover.",
+      "file": "03_Vale_of_Tears/053_Deoran.wav",
+      "bytes": 764332
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 54,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Look! The fog is fading! I think we’ve survived the attack!",
+      "file": "03_Vale_of_Tears/054_Deoran.wav",
+      "bytes": 373606
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 55,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "No, my magic is waning! The beautiful whispers are fading! My hands shake, my face sweats; I need you back, please... I can’t bear to experience the world like this!",
+      "file": "03_Vale_of_Tears/055_Urza_Nalmath.wav",
+      "bytes": 1068566
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 56,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "More power, I need more powerful minions. More power will exalt me again, intoxicate me again! The others warned me not to, but the master always told me what I needed to know. Yes, yes!",
+      "file": "03_Vale_of_Tears/056_Urza_Nalmath.wav",
+      "bytes": 1101730
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 57,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "Nnrrgh!! No, I created you! Attack them, not me! The master never taught me how to control these things!",
+      "file": "03_Vale_of_Tears/057_Urza_Nalmath.wav",
+      "bytes": 742458
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 58,
+      "speaker": "Urza Nalmath",
+      "voice": "kal",
+      "text": "You won’t even exist without me! My power is what keeps you standing! You’re sealing your own re-deaths!",
+      "file": "03_Vale_of_Tears/058_Urza_Nalmath.wav",
+      "bytes": 572166
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 59,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "More... power...",
+      "file": "03_Vale_of_Tears/059_unknown.wav",
+      "bytes": 122886
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 60,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "More... death...",
+      "file": "03_Vale_of_Tears/060_unknown.wav",
+      "bytes": 130984
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 61,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Slain by his own creations; a fitting end for such a villain! Good riddance to him.",
+      "file": "03_Vale_of_Tears/061_Deoran.wav",
+      "bytes": 476800
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 62,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "As for you, Ethiliel, you have endured much. I know this was just a small settlement in comparison to the great elven forests, but they were still your friends.",
+      "file": "03_Vale_of_Tears/062_Deoran.wav",
+      "bytes": 885606
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 63,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Ethiliel, you have endured much. I know this was just a small settlement in comparison to the great elven forests, but they were still your friends.",
+      "file": "03_Vale_of_Tears/063_Deoran.wav",
+      "bytes": 801376
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 64,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Come, let us remove you from this accursed place. My men and I will be happy to escort you north to the Aethenwood, where you will be among more of your kind and safe from any further harm.",
+      "file": "03_Vale_of_Tears/064_Deoran.wav",
+      "bytes": 1076560
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 65,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "...Ethiliel? I know you must be distraught to be the last of your town, but—",
+      "file": "03_Vale_of_Tears/065_Deoran.wav",
+      "bytes": 406680
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 66,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Distraught? Distraught!? I am vengeful! I am NOT the last of the valefolk — do not forget that our great sage Mebrin yet lives. I saw him dragged off in chains, taken south from here towards the Black Forest.",
+      "file": "03_Vale_of_Tears/066_Ethiliel.wav",
+      "bytes": 1092876
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 67,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Do not speak ill of that which you do not understand, human. My teacher may be old, but I know him to be clever and resilient: a master of magic, both the light and the dark, and held in the highest esteem by all from the Aethenwood. We must not abandon the last of my friends to an uncertain fate — shall you not help me find him and rescue him?",
+      "file": "03_Vale_of_Tears/067_Ethiliel.wav",
+      "bytes": 1714246
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 68,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "But despite the danger, my instinct is to help. One Urza brother yet remains. If we can find and catch him in the Black Forest, we could finally put an end to all this necromancy! And if Mebrin really does still live, then rescuing him is simply the right thing to do.",
+      "file": "03_Vale_of_Tears/068_Deoran.wav",
+      "bytes": 1562100
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 69,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Ethiliel, we’ll go.",
+      "file": "03_Vale_of_Tears/069_Deoran.wav",
+      "bytes": 165894
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 0,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "It’s so cold here! And this fog is so thick. This is quite a change from fighting bandits in the farmlands near Westin!",
+      "file": "04_Choice_in_the_Fog/000_Deoran.wav",
+      "bytes": 712734
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 1,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Indeed. Before us lies the Black River — and so too must Mebrin, great sage of the elves. He is here! I feel wisps of his magic reaching out to me from nearby...",
+      "file": "04_Choice_in_the_Fog/001_Ethiliel.wav",
+      "bytes": 833568
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 2,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Listen well, humans, for the great sage Mebrin is ancient, and has no love for your kind. He personally bore witness to Lich-Lord Jevyan and his terrible invasion, in days back when the land was still young. Should anyone truly understand the undead and how the Urzas learned to summon them, it will be Mebrin.",
+      "file": "04_Choice_in_the_Fog/002_Ethiliel.wav",
+      "bytes": 1498596
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 3,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "With the three elder Urza brothers defeated, only the youngest remains to oppose us. Mebrin must be his captive, and these woods must be filled with bandits and undead.",
+      "file": "04_Choice_in_the_Fog/003_Deoran.wav",
+      "bytes": 925296
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 5,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "We should find their leader, the final Urza brother. That will surely shed some light on the situation.",
+      "file": "04_Choice_in_the_Fog/005_Deoran.wav",
+      "bytes": 575584
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 6,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "These undead are too much! I am slain...",
+      "file": "04_Choice_in_the_Fog/006_Afalas.wav",
+      "bytes": 259420
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 7,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "We came here to fight the bandits, but for them to have perished on their own? Something feels very wrong here...",
+      "file": "04_Choice_in_the_Fog/007_Deoran.wav",
+      "bytes": 576466
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 8,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "I see torches movin’ in the fog... Thank th’ light, it’s living men!",
+      "file": "04_Choice_in_the_Fog/008_Afalas.wav",
+      "bytes": 440814
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 9,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Please, please, just hear me out. I knows my men and I’ve done evil, and I knows that you seek to destroy us out of revenge. Ah’m sorry my brothers attacked you. It was never my intention to cause everyone so much suffering.",
+      "file": "04_Choice_in_the_Fog/009_Afalas.wav",
+      "bytes": 1317380
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 10,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "It was “never your intention”!? You loathsome vermin locked me in a cage! You dragged Mebrin off in chains; my kind, gentle teacher! Deoran, why are we stooping so low as to even speak with this pig?",
+      "file": "04_Choice_in_the_Fog/010_Ethiliel.wav",
+      "bytes": 1011732
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 11,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "I swear I ain’t your enemy! I’ll gladly tell ye what I know. I admit that near a year ago, me brothers and I ventured into the valley of the elves in secret, to plunder and steal. Many we killed. It was wrong, I know, and I am sorry for it.",
+      "file": "04_Choice_in_the_Fog/011_Afalas.wav",
+      "bytes": 1375636
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 12,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "But there was one who we captured; a powerful and magical sage. Away from his people, he offered to teach us the secrets o’ summonin’ the dead.",
+      "file": "04_Choice_in_the_Fog/012_Afalas.wav",
+      "bytes": 818288
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 13,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "A complete and utter lie from complete and utter scum. I studied magic under Mebrin for many decades and know him well — my teacher would never lead undead, he would destroy them!",
+      "file": "04_Choice_in_the_Fog/013_Ethiliel.wav",
+      "bytes": 796524
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 14,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "It’s true that Mebrin was more powerful than any of the corpses we raised, yet he didn’t resist ’em. They took him into the caves, and soon after skeletal horrors started to emerge.",
+      "file": "04_Choice_in_the_Fog/014_Afalas.wav",
+      "bytes": 951162
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 15,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Now my boys and I have returned to try an’ put a stop to it, but there’s just too many. Unless ye helps me now, Mebrin’s undead may soon be strong enough to besiege Westin itself!",
+      "file": "04_Choice_in_the_Fog/015_Afalas.wav",
+      "bytes": 976078
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 16,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "I knows I’m a criminal. My men and I have committed wrongdoing’s in the past, but at least in the fight against the undead, we can be your friends! They’re as much our enemies as they’re yours!",
+      "file": "04_Choice_in_the_Fog/016_Afalas.wav",
+      "bytes": 1020190
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 17,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Deoran, you would trust the word of a thief and murderer over me, your friend and ally? This criminal will abandon you the moment he finds a chance!",
+      "file": "04_Choice_in_the_Fog/017_Ethiliel.wav",
+      "bytes": 747132
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 18,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Think of the destruction this man and his brothers wrought on your people. Think of the horrors they inflicted upon me, caged and left to suffer amidst the stinking corpses of my friends!",
+      "file": "04_Choice_in_the_Fog/018_Ethiliel.wav",
+      "bytes": 881638
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 19,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Peace, let me think! If I listen to Ethiliel I must fight the bandits, but if I ally with the bandits Ethiliel will surely abandon us...",
+      "file": "04_Choice_in_the_Fog/019_Deoran.wav",
+      "bytes": 804462
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 20,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Your crimes are too great, Urza Afalas, and your word cannot be trusted. You will fall alongside the undead you helped create!",
+      "file": "04_Choice_in_the_Fog/020_Deoran.wav",
+      "bytes": 724200
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 21,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "You will pay for taking Mebrin from us! Once I rescue him from your clutches, I never again intend to leave his side.",
+      "file": "04_Choice_in_the_Fog/021_Ethiliel.wav",
+      "bytes": 580876
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 22,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Then this parley is over! You may have caused the doom of all of us!",
+      "file": "04_Choice_in_the_Fog/022_Afalas.wav",
+      "bytes": 374300
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 24,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "This must be the cave the bandit spoke about, but there is no sign of Mebrin. Perhaps Afalas really was lying.",
+      "file": "04_Choice_in_the_Fog/024_Deoran.wav",
+      "bytes": 647466
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 25,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "The ghoul guarding the cave is defeated! I agreed to help Ethiliel bring Urza Afalas to justice, but perhaps there would be merit in venturing further inside...",
+      "file": "04_Choice_in_the_Fog/025_Deoran.wav",
+      "bytes": 889576
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 26,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Deoran, what are you doing? You would abandon our fight and let this criminal walk free!?",
+      "file": "04_Choice_in_the_Fog/026_Ethiliel.wav",
+      "bytes": 449458
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 27,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Author’s note — this is a “secret” path, and somewhat more challenging than the regular options. Are you sure you want to proceed?",
+      "file": "04_Choice_in_the_Fog/027_narrator.wav",
+      "bytes": 646662
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 28,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’m sorry, Ethiliel, but fighting these bandits doesn’t feel right. My soldiers and I are going to descend down into this cave, to find out the truth for ourselves.",
+      "file": "04_Choice_in_the_Fog/028_Deoran.wav",
+      "bytes": 972042
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 29,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "And how shall I defeat Urza Afalas without your help? He will surely escape, free from justice for his foul deeds! Was this your plan all along, to string me along with false promises?",
+      "file": "04_Choice_in_the_Fog/029_Ethiliel.wav",
+      "bytes": 1033782
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 30,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Humans! All you humans are the same! I should never have expected your kind to help me find Mebrin. Deoran, even your vile conspiracies shall not keep the elves from our greatest sage. Soon all of you humans shall learn that the Aethenwood protects its own!",
+      "file": "04_Choice_in_the_Fog/030_Ethiliel.wav",
+      "bytes": 1316904
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 31,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Well, that could have gone better... I only hope that we will find the truth of the matter down in these caves.",
+      "file": "04_Choice_in_the_Fog/031_Deoran.wav",
+      "bytes": 594546
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 32,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "You... have doomed us all...",
+      "file": "04_Choice_in_the_Fog/032_Afalas.wav",
+      "bytes": 159478
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 33,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Justice. Thank you for your aid, Deoran. I know it was hard for you to turn against your own kind — you have earned my respect.",
+      "file": "04_Choice_in_the_Fog/033_Ethiliel.wav",
+      "bytes": 622330
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 34,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I’ve searched all the tents, but cannot find Mebrin anywhere in the bandit camp. Ethiliel, do you still sense his magic nearby?",
+      "file": "04_Choice_in_the_Fog/034_Deoran.wav",
+      "bytes": 754188
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 35,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Yes I do, and without that distracting criminal on my mind I can feel Mebrin clearer than ever. I sense joy. I sense power... I sense...",
+      "file": "04_Choice_in_the_Fog/035_Ethiliel.wav",
+      "bytes": 791674
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 36,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "...",
+      "file": "04_Choice_in_the_Fog/036_Ethiliel.wav",
+      "bytes": 16396
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 37,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "...Humans, we should leave.",
+      "file": "04_Choice_in_the_Fog/037_Ethiliel.wav",
+      "bytes": 166336
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 38,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "What? But what about rescuing—",
+      "file": "04_Choice_in_the_Fog/038_Deoran.wav",
+      "bytes": 205144
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 39,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "We need to leave, now!!",
+      "file": "04_Choice_in_the_Fog/039_Ethiliel.wav",
+      "bytes": 148254
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 40,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I am sorry Ethiliel, but Afalas’s words ring true. If Mebrin has truly fallen to undeath, then mankind must unite against him.",
+      "file": "04_Choice_in_the_Fog/040_Deoran.wav",
+      "bytes": 829158
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 41,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "You would free me from one Urza, only to betray me to another? All you humans are the same! You are no better than these outlaws, the very pigs who defiled your dead and sacked your farms.",
+      "file": "04_Choice_in_the_Fog/041_Ethiliel.wav",
+      "bytes": 935440
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 42,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Deoran, even your conspiring with criminals shall not keep from us our greatest sage. Soon all of you vile humans shall learn that the Aethenwood protects its own!",
+      "file": "04_Choice_in_the_Fog/042_Ethiliel.wav",
+      "bytes": 853854
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 43,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "That must’ve been a tough decision. Thank ye.",
+      "file": "04_Choice_in_the_Fog/043_Afalas.wav",
+      "bytes": 268978
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 44,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Don’t make me regret it. Guide us to Mebrin, and we will verify your story ourselves.",
+      "file": "04_Choice_in_the_Fog/044_Deoran.wav",
+      "bytes": 502378
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 45,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "The old elf’s cave is southeast of m’ camp. My outlaws’ll fight his shamblin’ hordes, but I leave it up to you soldiers to push into Mebrin’s cave and strike the finishin’ blow.",
+      "file": "04_Choice_in_the_Fog/045_Afalas.wav",
+      "bytes": 982672
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 47,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Ack! Thank you for your help with the dead, but my men an’ I have given all we have. Now, there’s something I have to make right.",
+      "file": "04_Choice_in_the_Fog/047_Afalas.wav",
+      "bytes": 704610
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 48,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I suppose that’s what I get for relying on outlaws... We’ll have to finish Mebrin and his undead on our own.",
+      "file": "04_Choice_in_the_Fog/048_Deoran.wav",
+      "bytes": 615274
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 49,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Who comes... My old tormentors?",
+      "file": "04_Choice_in_the_Fog/049_Mebrin.wav",
+      "bytes": 219256
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 50,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "I am Deoran, soldier of the South Guard! We have come to put an end to your villainy, Mebrin of the elves — if that is who you are.",
+      "file": "04_Choice_in_the_Fog/050_Deoran.wav",
+      "bytes": 728170
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 51,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Mebrin? No, I am called Mal M’Brin now, mortals. It is the name I took when I unchained myself from the shallow-mindedness of my kind and passed over into enlightenment.",
+      "file": "04_Choice_in_the_Fog/051_Mebrin.wav",
+      "bytes": 934116
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 52,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "There is infinity at the brink of death... I have touched the void at the heart of all things, and I have begun to probe the mystic arts far beyond what any living elf knows.",
+      "file": "04_Choice_in_the_Fog/052_Mebrin.wav",
+      "bytes": 819016
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 53,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "You’ve gone even more mad than before! I wish to Haldric my brothers and I had never laid eyes upon you.",
+      "file": "04_Choice_in_the_Fog/053_Afalas.wav",
+      "bytes": 533832
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 54,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Mad? I am furious!! You accursed mudlings took me and tormented me, tortured me for sport! I did not know day from night... the light and the shadows, heat and cold all bled together amidst my pain...",
+      "file": "04_Choice_in_the_Fog/054_Mebrin.wav",
+      "bytes": 1062448
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 55,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "He’s lyin’, Deoran! Me an’ my brothers questioned him, maybe roughed him up a little, but we ne’er did nothin’ worse!",
+      "file": "04_Choice_in_the_Fog/055_Afalas.wav",
+      "bytes": 670752
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 56,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "You thought me weak; powerless under your lash. But I have had my revenge — I taught the summoning of powers beyond the control of your feeble kin, powers that fed upon your race’s filth and greed. I knew that once the first strand of black magic left my hands, there would be no turning back. But I would suffer this humiliation no longer...",
+      "file": "04_Choice_in_the_Fog/056_Mebrin.wav",
+      "bytes": 1719096
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 57,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Content with only meagre tricks, you mayflies never even noticed as I slowly brought you under my thrall! The Urza brothers sought to enslave me, but it is they who became my slaves in the end.",
+      "file": "04_Choice_in_the_Fog/057_Mebrin.wav",
+      "bytes": 1040838
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 58,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Urza Afalas was right! Whatever you were like in life, in death you’ve gone mad with power!",
+      "file": "04_Choice_in_the_Fog/058_Deoran.wav",
+      "bytes": 523104
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 59,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Mad? I am furious!! You accursed mudlings took me and tormented me, tortured me for sport! I knew that once the first strand of black magic left my hands, there would be no turning back. But I would suffer this humiliation no longer...",
+      "file": "04_Choice_in_the_Fog/059_Mebrin.wav",
+      "bytes": 1293090
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 60,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "I taught the summoning of powers beyond the control of your feeble kin, powers that fed upon your race’s filth and greed. Content with only meagre tricks, you mayflies never even noticed as I slowly brought you under my thrall! The Urza brothers sought to enslave me, but it is they who became my slaves in the end.",
+      "file": "04_Choice_in_the_Fog/060_Mebrin.wav",
+      "bytes": 1624282
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 61,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Rise, my minions, and let all vermin tremble! The race of man shall be stricken off the face of the green world. Your corpses will serve me! Your bones will dance for my pleasure! I’ll make humanity into the mindless slaves that you all deserve to be!",
+      "file": "04_Choice_in_the_Fog/061_Mebrin.wav",
+      "bytes": 1293090
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 62,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "I done enough evil in my life. Time t’ do somethin’ good fer a change.",
+      "file": "04_Choice_in_the_Fog/062_Afalas.wav",
+      "bytes": 433064
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 63,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Attack!",
+      "file": "04_Choice_in_the_Fog/063_Deoran.wav",
+      "bytes": 70198
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 64,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Yes, yes, step into the mouth of my cave. Fight me in the dead of night, when I am at my best!",
+      "file": "04_Choice_in_the_Fog/064_Mebrin.wav",
+      "bytes": 540744
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 65,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "You dare strike me?! Puny humans, I’m darkness incarnate! I’m power beyond your comprehension!",
+      "file": "04_Choice_in_the_Fog/065_Mebrin.wav",
+      "bytes": 542508
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 66,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "You think you can destroy me? Were Ethiliel here I might have held back, but you humans are nothing but a worthless blight upon this wretched world. Suffer and die.",
+      "file": "04_Choice_in_the_Fog/066_Mebrin.wav",
+      "bytes": 807550
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 67,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Ah ha, ha ha ha ha. You think I am beaten so easily, beaten by mere mortals? I should flee down into my caves, should summon my great armies up from below...",
+      "file": "04_Choice_in_the_Fog/067_Mebrin.wav",
+      "bytes": 869730
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 68,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "But why bother? I am no stranger to pain, Deoran of the humans. At least peace may finally come... for me. But not for you...",
+      "file": "04_Choice_in_the_Fog/068_Mebrin.wav",
+      "bytes": 696858
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 69,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "You have only sown the seeds of your own destruction, for Ethiliel will avenge me. I felt her emotions, felt her intentions, fed her intentions... Accursed humans, you may have struck me down, but I have already won my revenge...",
+      "file": "04_Choice_in_the_Fog/069_Mebrin.wav",
+      "bytes": 1222530
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 70,
+      "speaker": "Ethiliel",
+      "voice": "slt",
+      "text": "Do not delay, Deoran! If we do not finish off this vermin Afalas soon, he shall surely make his escape!",
+      "file": "04_Choice_in_the_Fog/070_Ethiliel.wav",
+      "bytes": 606894
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 71,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Better hurry, Deoran. Whatever Mebrin’s plans are, he gets closer to finishin’ them every day. We’ve got to finish him off soon!",
+      "file": "04_Choice_in_the_Fog/071_Afalas.wav",
+      "bytes": 741026
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 72,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "You are running out of turns to complete this scenario! See your objectives by pressing Ctrl+J, and remember that the turn limit can be seen in the top-left-hand corner.",
+      "file": "04_Choice_in_the_Fog/072_narrator.wav",
+      "bytes": 926378
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 73,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "We have moved so slowly! If the last Urza brother was ever here, he has surely fled by now, and we still have no answers...",
+      "file": "04_Choice_in_the_Fog/073_Deoran.wav",
+      "bytes": 722878
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 74,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "You have run out of turns to complete the scenario, and have been defeated!",
+      "file": "04_Choice_in_the_Fog/074_narrator.wav",
+      "bytes": 398154
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 75,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "Hey, boss, it’s me. Anyone still alive out here?",
+      "file": "04_Choice_in_the_Fog/075_unknown.wav",
+      "bytes": 362256
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 76,
+      "speaker": "Afalas",
+      "voice": "kal",
+      "text": "Finally, what took ye so long! C’mon, let’s get us all out o’ here afore that crazy elf lady kills any more o’ us!",
+      "file": "04_Choice_in_the_Fog/076_Afalas.wav",
+      "bytes": 754090
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 77,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "Urza Afalas has fled up the river! If he ever held Mebrin prisoner, the gentle sage is now far beyond our reach...",
+      "file": "04_Choice_in_the_Fog/077_Deoran.wav",
+      "bytes": 672604
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 78,
+      "speaker": "unknown",
+      "voice": "kal16",
+      "text": "Neep, neep!",
+      "file": "04_Choice_in_the_Fog/078_unknown.wav",
+      "bytes": 129644
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 79,
+      "speaker": "Mebrin",
+      "voice": "awb",
+      "text": "Ah ha, ha ha ha ha. You have tarried too long, mayflies! My messenger brings news — your beloved town of Westin has been destroyed!",
+      "file": "04_Choice_in_the_Fog/079_Mebrin.wav",
+      "bytes": 722436
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 80,
+      "speaker": "Deoran",
+      "voice": "rms",
+      "text": "What? How is this possible! With the undead armies fighting us here, how could Westin have already fallen?",
+      "file": "04_Choice_in_the_Fog/080_Deoran.wav",
+      "bytes": 569410
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 81,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "You have run out of turns to complete the scenario, and have been defeated!",
+      "file": "04_Choice_in_the_Fog/081_narrator.wav",
+      "bytes": 398154
+    }
+  ],
+  "total_bytes": 203151856,
+  "total_lines": 285,
+  "failed": []
+}

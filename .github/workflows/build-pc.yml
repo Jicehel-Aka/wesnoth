@@ -81,7 +81,7 @@ jobs:
               components/wesnoth_sg/platform/gb_port_common.cpp \
               components/wesnoth_sg/story/campaign_loader.cpp \
               pc/main_sdl.cpp \
-              $(sdl2-config --cflags --libs) \
+              $(pkg-config --cflags --libs sdl2 2>/dev/null || echo -I/mingw64/include/SDL2 -lSDL2) \
               -lcjson \
               -o wesnoth_sg_pc.exe
 
