@@ -173,8 +173,15 @@ void pinMode( gpio_num_t pin, uint8_t u8_level )
     gpio_func_sel( pin , PIN_FUNC_GPIO);
     if ( u8_level == OUTPUT )
     {
-        gpio_set_direction(pin, GPIO_MODE_OUTPUT );
-        gpio_input_enable(pin);
+        // GPIO_MODE_OUTPUT seul desactive le tampon d'entree (gpio_input_enable
+        // n'existe plus sous IDF 5.3) : digitalRead() sur une broche mise en
+        // OUTPUT ne relirait alors plus l'etat reellement pilote. On utilise
+        // GPIO_MODE_INPUT_OUTPUT, qui active les deux tampons sur la meme
+        // broche et conserve donc ce comportement (aucun appelant connu de ce
+        // fichier n'en depend actuellement -- digitalRead(LCD_FMARK) porte sur
+        // une broche laissee en INPUT -- mais rien ne garantit qu'aucun autre
+        // module de gamebuino ne s'appuie sur cette relecture).
+        gpio_set_direction(pin, GPIO_MODE_INPUT_OUTPUT);
     }
     else
     {

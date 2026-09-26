@@ -20,6 +20,7 @@ Authors:
  - Jean-Marie Papillon
 */
 
+#include "esp_idf_version.h"
 #include "gb_common.h"
 #include "gb_ll_i2c.h"
 #include "gb_ll_expander.h"
@@ -123,9 +124,17 @@ int gb_ll_init_i2S()
         .dma_frame_num = GB_AUDIO_BUFFER_SAMPLE_COUNT, // 256 x 16b samples
         .auto_clear_after_cb = false,
         .auto_clear_before_cb = false,
-        .allow_pd = false,
         .intr_priority = 3,
     };
+    // allow_pd (retenue de l'etat du peripherique en veille legere) n'existe
+    // pas encore dans i2s_chan_config_t sous IDF 5.3 -- ce projet compile en
+    // 5.3 (voir .github/workflows/build-aka.yml). Sur une IDF plus recente
+    // qui l'exposerait, on la met explicitement a false (comportement
+    // identique a l'initialisation par defaut) : rien ne change dans les
+    // deux cas, seule la portabilite du fichier entre versions est amelioree.
+#if defined(ESP_IDF_VERSION) && ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 4, 0)
+    tx_chan_cfg.allow_pd = false;
+#endif
 
     ESP_ERROR_CHECK(i2s_new_channel(&tx_chan_cfg, &tx_chan, NULL));
 
