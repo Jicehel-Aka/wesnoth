@@ -19,10 +19,22 @@
  **/
 #pragma once
 
+// aka_font a sa PROPRE copie de cette police (identique a celle de
+// components/gamebuino/include_lib/font8x8_basic.h -- meme source, meme
+// contenu), incluse depuis un fichier different de celui de gamebuino. Les
+// deux etant de simples tableaux globaux (liaison externe), les combiner
+// dans le meme .elf declenche un symbole en double a l'edition de liens
+// finale (rencontre en pratique : gb_graphics.cpp de gamebuino + gb_port_aka
+// de wesnoth_sg, qui utilise aka_font -- echec seulement au tout dernier
+// lien, pas a la compilation ni a l'archivage de chaque .a). D'ou le static
+// ci-dessous : liaison interne, une copie privee par unite de compilation,
+// jamais visible de l'exterieur -- necessaire pour tout composant destine a
+// cohabiter avec gamebuino, comme c'est le but affiche d'aka_font.
+
 
 // Constant: font8x8_basic
 // Contains an 8x8 font map for unicode points U+0000 - U+007F (basic latin)
-char font8x8_basic[128][8] = {
+static const char font8x8_basic[128][8] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0000 (nul)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0001
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0002
