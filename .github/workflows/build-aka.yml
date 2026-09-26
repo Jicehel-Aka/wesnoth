@@ -37,10 +37,28 @@ jobs:
         with:
           version: v5.3
 
+      # Contournement d'un échec connu de cette action : le téléchargement
+      # d'un outil (typiquement esp-rom-elfs, requis par IDF 5.3+ pour le
+      # décodage des traces) échoue en silence pendant l'installation --
+      # l'action se termine quand même en succès, et c'est `export.sh` qui
+      # découvre le trou et arrête tout net au step suivant (« ERROR: tool
+      # esp-rom-elfs has no installed versions »). On complète donc
+      # explicitement l'installation ici, AVANT tout `export.sh`, en
+      # s'appuyant directement sur idf_tools.py (IDF_PATH est déjà exporté
+      # par l'action ci-dessus) plutôt que sur le PATH/venv qu'export.sh
+      # est justement censé mettre en place.
+      - name: Completer l'installation des outils ESP-IDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 "$IDF_PATH/tools/idf_tools.py" install --targets=esp32s3
+          python3 "$IDF_PATH/tools/idf_tools.py" install esp-rom-elfs
+
       - name: idf.py build
         shell: bash
         run: |
-          . $IDF_PATH/export.sh
+          set -euo pipefail
+          . "$IDF_PATH/export.sh"
           idf.py set-target esp32s3
           idf.py build
 
