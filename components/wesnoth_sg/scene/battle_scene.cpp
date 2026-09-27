@@ -311,6 +311,8 @@ void BattleScene::on_a() {
             next_unit();
         } else if (it == "Objectifs") {
             mode_ = Mode::Objectives;
+        } else if (it.rfind("Astuces", 0) == 0) {
+            wsg::campaign_state().tips_enabled = !wsg::campaign_state().tips_enabled;
         }
         return;
     }
@@ -511,6 +513,7 @@ void BattleScene::update(SceneManager& mgr) {
             }
         menu_items_.push_back("Unité suivante");
         menu_items_.push_back("Objectifs");
+        menu_items_.push_back(wsg::campaign_state().tips_enabled ? "Astuces : Activées" : "Astuces : Désactivées");
         menu_items_.push_back("Retour");
         menu_sel_ = 0;
         mode_ = Mode::Menu;
@@ -611,7 +614,19 @@ void BattleScene::draw_panel() {
     char buf[128];
     // ligne 1 : unité sous le curseur (ou sélectionnée) + terrain et défense
     wsg::Unit* u = g.unit_at(cursor_);
-    if (!u && (mode_ == Mode::Selected)) u = g.unit_by_uid(sel_uid_);
+    if (!u) {
+        // Case vide : affiche quand même le % de défense, mais celui d'une
+        // unité de référence -- la défense dépend du movetype, donc sans
+        // unité on ne peut rien afficher d'utile. On garde celle qui vient
+        // d'être sélectionnée/déplacée (sel_uid_ n'est remis à zéro qu'au
+        // « recommencer ») même après le retour en Mode::Idle qui suit un
+        // déplacement/une attaque/une action de menu -- sinon le % de
+        // défense disparaissait dès qu'on quittait le mode Selected, ce qui
+        // rendait impossible de repérer une case à l'avance entre deux
+        // actions.
+        wsg::Unit* ref = g.unit_by_uid(sel_uid_);
+        if (ref && ref->alive()) u = ref;
+    }
     const std::string& tname = g.terrain(cursor_).name;
     if (u) {
         snprintf(buf, sizeof buf, "%s PV%d/%d XP%d/%d PM%d | %s %d%%", uname(*u).c_str(), u->hp, u->max_hp,

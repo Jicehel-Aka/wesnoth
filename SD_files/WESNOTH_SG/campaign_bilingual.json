@@ -669,7 +669,7 @@
         {
           "type": "dialogue",
           "speaker": "Deoran",
-          "text": "I will need to recruit units if I want to weather the undead assault! I should first move to a keep, then open the menu (MENU button) to recruit or recall units."
+          "text": "I will need to recruit units to weather the undead assault! First move to a keep, then use the menu (MENU button) to recruit or recall."
         },
         {
           "type": "dialogue",
@@ -679,7 +679,7 @@
         {
           "type": "dialogue",
           "speaker": "Deoran",
-          "text": "If you have high-XP survivors from previous battles, remember to open the menu (MENU button) and recall them so they can continue gaining experience and be promoted to higher levels."
+          "text": "If you have high-XP survivors from previous battles, recall them from the menu (MENU button) to keep gaining experience."
         },
         {
           "type": "dialogue",
@@ -1180,7 +1180,7 @@
         {
           "type": "dialogue",
           "speaker": "narrator",
-          "text": "You are running out of turns to complete this scenario! See your objectives from the menu (MENU button), and remember that the turn limit can be seen in the top-left-hand corner.",
+          "text": "Running out of turns! Check your objectives from the menu (MENU button); the turn limit is in the top-left corner.",
           "portrait": "wesnoth-icon.png"
         },
         {

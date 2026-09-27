@@ -3,12 +3,16 @@
 scenarios de bataille) : retire les balises de mise en forme Pango/WML
 (<span color='...'>, <b>, <i>, ...) laissees telles quelles par le WML
 d'origine -- notre police 8x8 ne sait pas les interpreter, donc sans ce
-nettoyage elles s'affichent litteralement a l'ecran -- et corrige les
-instructions de raccourcis clavier PC (Ctrl+R, Ctrl+Space, Ctrl+J, Alt+R,
-touche "u", clic droit...) qui n'ont pas de sens sur l'AKA.
+nettoyage elles s'affichent litteralement a l'ecran -- et applique un
+fichier de VERROUS TEXTE (text_overrides.json) : des remplacements
+exacte-sous-chaine -> texte final, qui remplacent les instructions de
+raccourcis clavier PC (Ctrl+R, Ctrl+Space...) sans sens sur l'AKA, ou
+toute autre reecriture manuelle qu'on veut voir survivre a une prochaine
+regeneration complete des donnees.
 
 Usage:
     python3 fix_story_hotkeys.py FICHIER.json [FICHIER2.json ...] [-o sortie.json]
+                                  [--overrides text_overrides.json]
 
 Sans -o (ou avec plusieurs fichiers en entree), chaque fichier est corrige
 en place (une sauvegarde .bak est ecrite a cote au premier passage).
@@ -19,13 +23,34 @@ de l'arbre JSON (ids, coordonnees, chemins d'image...) n'est jamais touche,
 pour eviter de casser un attribut qui contiendrait un '<'/'>' non lie a de
 la mise en forme (peu probable mais on ne prend pas le risque).
 
+--- Verrouiller un texte pour de bon ---
+Quand un texte a ete corrige/reecrit a la main (traduction, reformulation,
+suppression d'un passage qui ne colle plus a notre moteur...) et qu'on ne
+veut pas avoir a refaire ce travail a chaque fois qu'on regenere les
+donnees depuis les sources Wesnoth (nouvelle campagne, mise a jour amont,
+etc.), on l'ajoute a text_overrides.json plutot que de l'editer une seule
+fois dans le JSON genere :
+
+    {"old": "<texte original extrait tel quel du WML>",
+     "new": "<texte final qu'on veut voir affiche>"}
+
+Ce script est deja le dernier maillon de la chaine de generation (relance
+apres extract_scenario.py) : tant que le "old" apparait mot pour mot dans
+un texte genere, le verrou s'applique automatiquement, quelle que soit la
+scene/le fichier/l'index concerne. Si le WML amont change ce texte (nouvelle
+version de la campagne, correction upstream...), le "old" ne matchera plus
+nulle part -- le script le signale explicitement en fin d'execution
+("verrou(s) OBSOLETE(S)") pour qu'on aille verifier/reecrire l'entree au
+lieu de laisser le verrou disparaitre silencieusement.
+
 Hypothese de controle AKA a confirmer avec Jicehel : Recruter / Rappeler /
 Objectifs / Fin de tour passent tous par le menu ouvert avec le bouton MENU.
-Si ce n'est pas le cas, ajuste REPLACEMENTS ci-dessous (une seule table,
-pas de logique eparpillee ailleurs) et relance le script.
+Si ce n'est pas le cas, ajuste text_overrides.json (pas de logique
+eparpillee ailleurs) et relance le script.
 """
 import argparse
 import json
+import os
 import shutil
 import sys
 
@@ -35,6 +60,10 @@ TEXT_KEYS = {
     "text", "text_fr", "text_en", "message", "reason", "caption",
     "objectives", "note", "label",
 }
+
+DEFAULT_OVERRIDES_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "text_overrides.json"
+)
 
 
 def strip_markup(s: str) -> str:
@@ -56,108 +85,49 @@ def strip_markup(s: str) -> str:
     return s
 
 
-# (motif exact, une fois les balises retirees -> texte de remplacement)
-# Les motifs sont des sous-chaines simples (pas de regex) pour rester
-# faciles a relire/completer.
-REPLACEMENTS = [
-    (
-        "To end your turn, click the “End Turn” button in the "
-        "bottom-right corner of the screen, or press Ctrl+Space.",
-        "To end your turn, open the menu (MENU button) and choose "
-        "“End Turn”.",
-    ),
-    (
-        "Press Ctrl+R to recruit new soldiers. (Or right-click on a keep hex.)",
-        "Move onto your keep, then open the menu (MENU button) and choose "
-        "“Recruit” to recruit new soldiers.",
-    ),
-    (
-        "Tip: Press “u” if you ever want to undo a move. Attacks "
-        "cannot be undone.",
-        "Tip: Press the D button if you ever want to undo a move. Attacks "
-        "cannot be undone.",
-    ),
-    (
-        "You may toggle tips on or off at any time during the campaign by "
-        "right-clicking anywhere and selecting “Tips: On/Off” in "
-        "the menu.",
-        "You may toggle tips on or off at any time during the campaign by "
-        "opening the menu (MENU button) and selecting “Tips: On/Off”.",
-    ),
-    (
-        "Rain or snow have no impact on gameplay. If weather is distracting "
-        "or reduces performance, you can disable it by opening the "
-        "Preferences menu (Ctrl-P), by selecting “Display” and "
-        "unchecking “Animate Map.”",
-        "Rain or snow have no impact on gameplay.",
-    ),
-    (
-        "I will need to recruit units if I want to weather the undead "
-        "assault! I should first move to a keep, then press Ctrl+R to "
-        "recruit or Alt+R to recall.",
-        "I will need to recruit units if I want to weather the undead "
-        "assault! I should first move to a keep, then open the menu (MENU "
-        "button) to recruit or recall units.",
-    ),
-    (
-        "If you have high-XP survivors from previous battles, remember to "
-        "press Alt+R and recall them so they can continue gaining "
-        "experience and be promoted to higher levels.",
-        "If you have high-XP survivors from previous battles, remember to "
-        "open the menu (MENU button) and recall them so they can continue "
-        "gaining experience and be promoted to higher levels.",
-    ),
-    (
-        "You are running out of turns to complete this scenario! See your "
-        "objectives by pressing Ctrl+J, and remember that the turn limit "
-        "can be seen in the top-left-hand corner.",
-        "You are running out of turns to complete this scenario! See your "
-        "objectives from the menu (MENU button), and remember that the "
-        "turn limit can be seen in the top-left-hand corner.",
-    ),
-    (
-        "To see what damage resistances and vulnerabilities a unit has, "
-        "right-click it and select “Unit Type Description.”",
-        "Every unit’s damage resistances and vulnerabilities are shown "
-        "in the info panel at the bottom of the screen.",
-    ),
-    (
-        "For a full description of what one of your units can do, "
-        "right-click it and select “Unit Type Description.”",
-        "Every unit’s full description is shown in the info panel at "
-        "the bottom of the screen.",
-    ),
-    ("Use “Ctrl+R” to recruit a soldier first!",
-     "Open the menu (MENU button) and recruit a soldier first!"),
-    ("Press Ctrl+R to recruit new soldiers.",
-     "Open the menu (MENU button) and choose “Recruit” to recruit "
-     "new soldiers."),
-]
+def load_overrides(path: str):
+    """Charge la liste de verrous texte depuis un fichier JSON.
+
+    Format : liste d'objets {"old": ..., "new": ...} (un "_comment" optionnel
+    est ignore). Absence de fichier -> liste vide (pas une erreur : le
+    nettoyage de balises reste utile seul).
+    """
+    if not path or not os.path.isfile(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        raw = json.load(f)
+    overrides = []
+    for entry in raw:
+        old, new = entry.get("old"), entry.get("new")
+        if old is None or new is None:
+            continue
+        overrides.append((old, new))
+    return overrides
 
 
-def walk(obj, counter, stripped):
+def walk(obj, overrides, counter, stripped):
     if isinstance(obj, dict):
         for k, v in list(obj.items()):
             if k in TEXT_KEYS and isinstance(v, str):
                 cleaned = strip_markup(v)
                 if cleaned != v:
                     stripped[0] += 1
-                for old, repl in REPLACEMENTS:
+                for old, repl in overrides:
                     if old in cleaned:
                         cleaned = cleaned.replace(old, repl)
                         counter[old] = counter.get(old, 0) + 1
                 obj[k] = cleaned
             else:
-                walk(v, counter, stripped)
+                walk(v, overrides, counter, stripped)
     elif isinstance(obj, list):
         for v in obj:
-            walk(v, counter, stripped)
+            walk(v, overrides, counter, stripped)
 
 
-def process(path, out_path, counter, stripped):
+def process(path, out_path, overrides, counter, stripped):
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
-    walk(data, counter, stripped)
+    walk(data, overrides, counter, stripped)
     dest = out_path or path
     if dest == path:
         shutil.copyfile(path, path + ".bak")
@@ -169,19 +139,32 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("json_paths", nargs="+")
     ap.add_argument("-o", "--output", default=None)
+    ap.add_argument("--overrides", default=DEFAULT_OVERRIDES_PATH,
+                     help="Fichier JSON de verrous texte "
+                          "(defaut : text_overrides.json a cote du script)")
     args = ap.parse_args()
     if args.output and len(args.json_paths) > 1:
         sys.exit("-o n'est utilisable qu'avec un seul fichier en entree")
 
+    overrides = load_overrides(args.overrides)
+
     counter, stripped = {}, [0]
     for p in args.json_paths:
-        process(p, args.output, counter, stripped)
+        process(p, args.output, overrides, counter, stripped)
 
     print(f"{stripped[0]} valeur(s) avec balises retirees ; "
-          f"{sum(counter.values())} remplacement(s) de raccourci applique(s) "
-          f"sur {len(counter)} motif(s) distinct(s):")
+          f"{sum(counter.values())} verrou(s) texte applique(s) "
+          f"sur {len(counter)}/{len(overrides)} motif(s) connus:")
     for old, n in counter.items():
         print(f"  [{n}x] {old[:70]}...")
+
+    stale = [old for old, _ in overrides if old not in counter]
+    if stale:
+        print(f"\n/!\\ {len(stale)} verrou(s) OBSOLETE(S) (plus trouve(s) dans "
+              f"les fichiers traites -- le texte source a peut-etre change, "
+              f"a verifier dans {os.path.basename(args.overrides)}):")
+        for old in stale:
+            print(f"  - {old[:70]}...")
 
 
 if __name__ == "__main__":

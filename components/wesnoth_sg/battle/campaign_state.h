@@ -28,6 +28,12 @@ struct CampaignState {
     std::vector<PersistentUnit> roster;   // camp 1 tel qu'à la fin du dernier scénario joué
     bool has_gold = false;
     int gold = 0;                          // or reporté (déjà calculé : bonus + pourcentage)
+
+    // Bascule "Astuces : Activées/Désactivées" du menu de bataille (voir
+    // battle_scene.cpp). Persiste d'un scénario à l'autre comme le reste de
+    // cet état. Seuls les messages marqués tip="yes" (WNode) sont concernés
+    // -- voir EventEngine::queue_message dans events.cpp.
+    bool tips_enabled = true;
 };
 
 CampaignState& campaign_state();

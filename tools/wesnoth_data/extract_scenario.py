@@ -239,6 +239,9 @@ def eval_cond(node, st):
     return ok
 
 
+NO_AUTO_CHOICE = "__none__"
+
+
 def run_action(n, st, choose):
     t = n.tag
     if t == "unit":
@@ -346,13 +349,22 @@ def run_action(n, st, choose):
             st.intro.append(message_json(n))
         opts = n.all("option")
         if opts:
-            pick = None
-            for o in opts:
-                if choose and choose in repr_node(o):
-                    pick = o
-            pick = pick or opts[0]
-            for cmd in pick.all("command"):
-                run_actions(cmd, st, choose)
+            if choose == NO_AUTO_CHOICE:
+                # Aucune option n'est jouée : utilisé avec --start-event pour
+                # sauter entièrement la branche tutoriel/skip_tutoriel (les
+                # deux modifient l'état -- tour, or -- avant de rejouer
+                # play_battle) et construire nous-mêmes un scénario "frais",
+                # sans ces effets de bord.
+                pick = None
+            else:
+                pick = None
+                for o in opts:
+                    if choose and choose in repr_node(o):
+                        pick = o
+                pick = pick or opts[0]
+            if pick is not None:
+                for cmd in pick.all("command"):
+                    run_actions(cmd, st, choose)
     elif t == "remove_event":
         for i in [x.strip() for x in n.get("id", "").split(",") if x.strip()]:
             st.removed.add(i)
@@ -460,7 +472,16 @@ def main():
     ap.add_argument("--terrain-json", required=True)
     ap.add_argument("--difficulty", default="NORMAL", choices=list(DIFF_INDEX))
     ap.add_argument("--choose", default="skip_tutorial",
-                    help="texte à rechercher pour choisir une option de [message]")
+                    help="texte à rechercher pour choisir une option de [message] "
+                         "(valeur spéciale \"__none__\" : ne joue aucune option -- "
+                         "à combiner avec --start-event)")
+    ap.add_argument("--start-event", default=None,
+                    help="au lieu de laisser le [message][option] choisi enchaîner "
+                         "naturellement (fire_event skip_tutorial/play_tutorial...), "
+                         "déclenche directement cet événement nommé après \"start\". "
+                         "Sert à extraire l'état de bataille \"frais\" (tour 1, or "
+                         "plein) sans les effets de bord d'une branche de tutoriel : "
+                         "--choose __none__ --start-event play_battle")
     ap.add_argument("--macros", help="dossier data/core/macros : macros réelles du cœur")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
@@ -517,6 +538,8 @@ def main():
     # déroulé de la mise en place
     fire("prestart", st, a.choose)
     fire("start", st, a.choose)
+    if a.start_event:
+        fire(a.start_event, st, a.choose)
 
     # victoire / défaite liées à la mort d'une unité (événements de haut niveau
     # ET événements posés pendant la mise en place)

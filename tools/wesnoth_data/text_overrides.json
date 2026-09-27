@@ -1,0 +1,55 @@
+[
+  {
+    "old": "To end your turn, click the “End Turn” button in the bottom-right corner of the screen, or press Ctrl+Space.",
+    "new": "To end your turn, open the menu (MENU button) and choose “End Turn”."
+  },
+  {
+    "old": "Press Ctrl+R to recruit new soldiers. (Or right-click on a keep hex.)",
+    "new": "Move onto your keep, then open the menu (MENU button) and choose “Recruit” to recruit new soldiers."
+  },
+  {
+    "old": "Tip: Press “u” if you ever want to undo a move. Attacks cannot be undone.",
+    "new": "Tip: Press the D button if you ever want to undo a move. Attacks cannot be undone."
+  },
+  {
+    "old": "You may toggle tips on or off at any time during the campaign by right-clicking anywhere and selecting “Tips: On/Off” in the menu.",
+    "new": "You may toggle tips on or off at any time during the campaign by opening the menu (MENU button) and selecting “Tips: On/Off”."
+  },
+  {
+    "_comment": "Notre extraction prend toujours la branche 'tutoriel passe' (limite d'architecture, cf. README) ; ce message accusait a tort le joueur d'avoir fait ce choix.",
+    "old": "\n\nBecause you skipped the tutorial, tips are currently off.",
+    "new": ""
+  },
+  {
+    "old": "Rain or snow have no impact on gameplay. If weather is distracting or reduces performance, you can disable it by opening the Preferences menu (Ctrl-P), by selecting “Display” and unchecking “Animate Map.”",
+    "new": "Rain or snow have no impact on gameplay."
+  },
+  {
+    "old": "I will need to recruit units if I want to weather the undead assault! I should first move to a keep, then press Ctrl+R to recruit or Alt+R to recall.",
+    "new": "I will need to recruit units to weather the undead assault! First move to a keep, then use the menu (MENU button) to recruit or recall."
+  },
+  {
+    "old": "If you have high-XP survivors from previous battles, remember to press Alt+R and recall them so they can continue gaining experience and be promoted to higher levels.",
+    "new": "If you have high-XP survivors from previous battles, recall them from the menu (MENU button) to keep gaining experience."
+  },
+  {
+    "old": "You are running out of turns to complete this scenario! See your objectives by pressing Ctrl+J, and remember that the turn limit can be seen in the top-left-hand corner.",
+    "new": "Running out of turns! Check your objectives from the menu (MENU button); the turn limit is in the top-left corner."
+  },
+  {
+    "old": "To see what damage resistances and vulnerabilities a unit has, right-click it and select “Unit Type Description.”",
+    "new": "Every unit’s damage resistances and vulnerabilities are shown in the info panel at the bottom of the screen."
+  },
+  {
+    "old": "For a full description of what one of your units can do, right-click it and select “Unit Type Description.”",
+    "new": "Every unit’s full description is shown in the info panel at the bottom of the screen."
+  },
+  {
+    "old": "Use “Ctrl+R” to recruit a soldier first!",
+    "new": "Open the menu (MENU button) and recruit a soldier first!"
+  },
+  {
+    "old": "Press Ctrl+R to recruit new soldiers.",
+    "new": "Open the menu (MENU button) and choose “Recruit” to recruit new soldiers."
+  }
+]

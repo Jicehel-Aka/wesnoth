@@ -316,6 +316,10 @@ std::string EventEngine::portrait_for(const Unit* u, const std::string& image) c
 }
 
 void EventEngine::queue_message(const WNode& n, const Ctx& c) {
+    // Bascule « Astuces : Activées/Désactivées » du menu de bataille : les
+    // messages marqués tip="yes" (nos propres conseils, pas le WML original
+    // qui n'a pas cette distinction) sont simplement sautés quand désactivés.
+    if (n.get("tip") == "yes" && !wsg::campaign_state().tips_enabled) return;
     std::string sp = n.get("speaker");
     Unit* u = nullptr;
     if (sp == "unit") u = c.u1 ? g_.unit_by_uid(c.u1) : nullptr;

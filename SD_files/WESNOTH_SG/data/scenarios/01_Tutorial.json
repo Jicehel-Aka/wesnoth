@@ -136,11 +136,26 @@
     },
     {
       "speaker": "Mari",
-      "message": "Move Deoran next to the quintain and attack it. Watch the percentage shown on the ground — that’s your chance to hit. Press the D button any time if you want to undo a move; attacks themselves cannot be undone."
+      "message": "Move Deoran next to the quintain and attack it."
     },
     {
       "speaker": "Mari",
-      "message": "Careful — it’s a magical quintain, on loan from the wizards’ academy at Alduin. It strikes back twice per attack, so don’t be surprised if it stings. When you’re done acting, open the menu (MENU button) and choose “End Turn.”"
+      "tip": "yes",
+      "message": "Watch the percentage shown on the ground — that’s your chance to hit."
+    },
+    {
+      "speaker": "Mari",
+      "tip": "yes",
+      "message": "Tip: press the D button any time if you want to undo a move; attacks themselves cannot be undone."
+    },
+    {
+      "speaker": "Mari",
+      "message": "Careful — it’s a magical quintain, on loan from the wizards’ academy at Alduin. It strikes back twice per attack, so don’t be surprised if it stings."
+    },
+    {
+      "speaker": "Mari",
+      "tip": "yes",
+      "message": "When you’re done acting, open the menu (MENU button) and choose “End Turn.”"
     }
   ],
   "runtime_events": [
@@ -163,7 +178,15 @@
           "t": "message",
           "a": {
             "speaker": "Mari",
-            "message": "At your service, Commander Deoran! Move onto your keep and open the menu (MENU button) to recruit soldiers whenever you have the gold for it — you’ll need every spear you can get before we reach Westin."
+            "message": "At your service, Commander Deoran! You’ll need every spear you can get before we reach Westin."
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Mari",
+            "tip": "yes",
+            "message": "Move onto your keep, then open the menu (MENU button) to recruit soldiers whenever you have the gold for it."
           }
         }
       ]
