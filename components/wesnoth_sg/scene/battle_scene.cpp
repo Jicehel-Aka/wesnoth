@@ -16,6 +16,9 @@
 #include <fstream>
 #include <sstream>
 
+#if defined(ESP_PLATFORM)
+#include "aka_runtime/aka_runtime.h"
+#endif
 #include "audio/story_audio.h"
 #include "battle/ai.h"
 #include "cJSON.h"
