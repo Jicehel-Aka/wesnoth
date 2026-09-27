@@ -1,0 +1,6648 @@
+{
+  "source": "Battle for Wesnoth (GPL/CC-BY-SA) — généré par gen_data.py",
+  "trait_effects_note": "valeurs standard Wesnoth saisies (traits.cfg non fourni)",
+  "global_traits": [
+    "strong",
+    "quick",
+    "intelligent",
+    "resilient"
+  ],
+  "trait_effects": {
+    "strong": {
+      "melee_damage": 1,
+      "hp": 1
+    },
+    "quick": {
+      "mp": 1,
+      "hp_percent": -5
+    },
+    "intelligent": {
+      "xp_percent": -20
+    },
+    "resilient": {
+      "hp": 4,
+      "hp_per_level": 1
+    },
+    "dextrous": {
+      "ranged_damage": 1
+    },
+    "healthy": {
+      "hp_per_level": 1,
+      "always_rest_heal": 1
+    },
+    "weak": {
+      "melee_damage": -1,
+      "hp": -1
+    },
+    "slow": {
+      "mp": -1,
+      "hp_percent": 5
+    },
+    "dim": {
+      "xp_percent": 20
+    },
+    "aged": {
+      "hp": -8,
+      "mp": -1,
+      "melee_damage": -1
+    },
+    "fearless": {
+      "fearless": 1
+    },
+    "feral": {
+      "village_defense_cap": 50
+    },
+    "loyal": {
+      "loyal": 1
+    },
+    "undead": {
+      "immune_poison": 1,
+      "immune_drain": 1,
+      "immune_plague": 1
+    },
+    "mechanical": {
+      "immune_poison": 1,
+      "immune_drain": 1,
+      "immune_plague": 1
+    },
+    "elemental": {
+      "immune_poison": 1,
+      "immune_drain": 1,
+      "immune_plague": 1
+    }
+  },
+  "races": {
+    "bats": {
+      "num_traits": 2,
+      "ignore_global": 0,
+      "traits": []
+    },
+    "elf": {
+      "num_traits": 2,
+      "ignore_global": 0,
+      "traits": [
+        "dextrous"
+      ]
+    },
+    "human": {
+      "num_traits": 2,
+      "ignore_global": 0,
+      "traits": []
+    },
+    "mechanical": {
+      "num_traits": 1,
+      "ignore_global": 1,
+      "traits": [
+        "mechanical"
+      ]
+    },
+    "monster": {
+      "num_traits": 0,
+      "ignore_global": 0,
+      "traits": []
+    },
+    "ship": {
+      "num_traits": 2,
+      "ignore_global": 1,
+      "traits": [
+        "mechanical"
+      ]
+    },
+    "troll": {
+      "num_traits": 2,
+      "ignore_global": 1,
+      "traits": [
+        "strong",
+        "quick",
+        "resilient",
+        "fearless"
+      ]
+    },
+    "undead": {
+      "num_traits": 1,
+      "ignore_global": 1,
+      "traits": [
+        "undead"
+      ]
+    }
+  },
+  "movetypes": {
+    "armoredfoot": {
+      "costs": {
+        "shallow_water": 4,
+        "reef": 3,
+        "swamp_water": 4,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 4,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 90,
+        "reef": 80,
+        "swamp_water": 90,
+        "flat": 70,
+        "sand": 80,
+        "forest": 60,
+        "hills": 60,
+        "village": 60,
+        "castle": 50,
+        "cave": 60,
+        "frozen": 80,
+        "fungus": 60
+      },
+      "resist": {
+        "blade": 50,
+        "pierce": 60,
+        "impact": 90,
+        "fire": 110,
+        "cold": 100,
+        "arcane": 90
+      }
+    },
+    "drakefoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 3,
+        "flat": 1,
+        "sand": 1,
+        "forest": 2,
+        "hills": 1,
+        "mountains": 1,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 3,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 80,
+        "flat": 70,
+        "sand": 60,
+        "forest": 60,
+        "hills": 60,
+        "mountains": 60,
+        "village": 60,
+        "castle": 60,
+        "cave": 70,
+        "frozen": 80,
+        "fungus": 60
+      },
+      "resist": {
+        "blade": 80,
+        "pierce": 100,
+        "impact": 70,
+        "fire": 50,
+        "cold": 150,
+        "arcane": 120
+      }
+    },
+    "dwarvishfoot": {
+      "costs": {},
+      "defense": {},
+      "resist": {
+        "blade": 80,
+        "pierce": 80,
+        "impact": 80,
+        "fire": 90,
+        "cold": 90,
+        "arcane": 90
+      }
+    },
+    "elusivefoot": {
+      "costs": {
+        "shallow_water": 2,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 60,
+        "reef": 50,
+        "swamp_water": 60,
+        "flat": 40,
+        "sand": 60,
+        "forest": 30,
+        "hills": 30,
+        "mountains": 30,
+        "village": 30,
+        "castle": 30,
+        "cave": 50,
+        "frozen": 60,
+        "fungus": 30
+      },
+      "resist": {
+        "blade": 130,
+        "pierce": 120,
+        "impact": 120,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 90
+      }
+    },
+    "float": {
+      "costs": {
+        "deep_water": 1,
+        "shallow_water": 1,
+        "reef": 2,
+        "swamp_water": 2
+      },
+      "defense": {
+        "deep_water": 50,
+        "shallow_water": 50,
+        "reef": 50,
+        "swamp_water": 60
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 110,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 40
+      },
+      "flying": 1
+    },
+    "fly": {
+      "costs": {
+        "cave": 3,
+        "fungus": 3
+      },
+      "defense": {
+        "cave": 80,
+        "fungus": -70
+      },
+      "resist": {},
+      "flying": 1
+    },
+    "gruefoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 70,
+        "flat": 60,
+        "sand": 70,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 60,
+        "frozen": 70,
+        "fungus": 40
+      },
+      "resist": {
+        "blade": 90,
+        "pierce": 70,
+        "impact": 100,
+        "fire": 90,
+        "cold": 60,
+        "arcane": 90
+      }
+    },
+    "largefoot": {
+      "costs": {
+        "shallow_water": 2,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 1,
+        "mountains": 2,
+        "village": 1,
+        "castle": 1,
+        "cave": 1,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 80,
+        "flat": 70,
+        "sand": 70,
+        "forest": 60,
+        "hills": 50,
+        "mountains": 40,
+        "village": 60,
+        "castle": 60,
+        "cave": 60,
+        "frozen": 80,
+        "fungus": 50
+      },
+      "resist": {
+        "blade": 80,
+        "pierce": 80,
+        "impact": 100,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 110
+      }
+    },
+    "lizard": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 1,
+        "flat": 1,
+        "sand": 1,
+        "forest": 2,
+        "hills": 1,
+        "mountains": 2,
+        "village": 1,
+        "castle": 1,
+        "cave": 1,
+        "frozen": 4,
+        "fungus": 1
+      },
+      "defense": {
+        "shallow_water": 60,
+        "reef": 60,
+        "swamp_water": 40,
+        "flat": 60,
+        "sand": 40,
+        "forest": 40,
+        "hills": 40,
+        "mountains": 40,
+        "village": 50,
+        "castle": 40,
+        "cave": 40,
+        "frozen": 70,
+        "fungus": 40
+      },
+      "resist": {
+        "blade": 110,
+        "pierce": 80,
+        "impact": 110,
+        "fire": 120,
+        "cold": 120,
+        "arcane": 90
+      }
+    },
+    "mountainfoot": {
+      "costs": {},
+      "defense": {},
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 90
+      }
+    },
+    "mounted": {
+      "costs": {
+        "shallow_water": 4,
+        "reef": 3,
+        "swamp_water": 4,
+        "flat": 1,
+        "sand": 2,
+        "forest": 3,
+        "hills": 2,
+        "village": 1,
+        "castle": 1,
+        "cave": 4,
+        "frozen": 2,
+        "fungus": 4
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 80,
+        "flat": 60,
+        "sand": 70,
+        "forest": -70,
+        "hills": 60,
+        "village": 60,
+        "castle": 60,
+        "cave": 80,
+        "frozen": 70,
+        "fungus": -80
+      },
+      "resist": {
+        "blade": 80,
+        "pierce": 120,
+        "impact": 70,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 90
+      }
+    },
+    "orcishfoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 3,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 1,
+        "mountains": 2,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 2,
+        "fungus": 3
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 70,
+        "flat": 60,
+        "sand": 70,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 60,
+        "frozen": 80,
+        "fungus": 60
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 100
+      }
+    },
+    "rodentfoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 1,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 1,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 60,
+        "flat": 50,
+        "sand": 50,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 50,
+        "castle": 50,
+        "cave": 40,
+        "frozen": 50,
+        "fungus": 50
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "fire": 100,
+        "cold": 90,
+        "arcane": 90
+      }
+    },
+    "scuttlefoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 3,
+        "mountains": 4,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 70,
+        "reef": 60,
+        "swamp_water": 60,
+        "flat": 60,
+        "sand": 60,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 60,
+        "frozen": 60,
+        "fungus": 50
+      },
+      "resist": {
+        "blade": 90,
+        "pierce": 90,
+        "impact": 30,
+        "fire": 200,
+        "cold": 120,
+        "arcane": 150
+      }
+    },
+    "ship": {
+      "costs": {
+        "deep_water": 1,
+        "shallow_water": 2,
+        "swamp_water": 2,
+        "reef": 3,
+        "village": 1
+      },
+      "defense": {
+        "deep_water": 60,
+        "shallow_water": 70,
+        "swamp_water": 80,
+        "reef": 90
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 110,
+        "fire": 130,
+        "cold": 70,
+        "arcane": 40
+      },
+      "flying": 1
+    },
+    "smallfly": {
+      "costs": {
+        "cave": 1,
+        "fungus": 2
+      },
+      "defense": {
+        "cave": 40,
+        "fungus": 40
+      },
+      "resist": {},
+      "flying": 1
+    },
+    "smallfoot": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 3,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 3,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 80,
+        "flat": 60,
+        "sand": 70,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 60,
+        "frozen": 80,
+        "fungus": 50
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "fire": 100,
+        "cold": 100,
+        "arcane": 90
+      }
+    },
+    "swimmer": {
+      "costs": {
+        "deep_water": 1,
+        "shallow_water": 1,
+        "reef": 2,
+        "swamp_water": 1,
+        "flat": 2,
+        "sand": 2,
+        "forest": 4,
+        "hills": 4,
+        "village": 1,
+        "castle": 1,
+        "cave": 3,
+        "frozen": 2,
+        "fungus": 3
+      },
+      "defense": {
+        "deep_water": 50,
+        "shallow_water": 40,
+        "reef": 30,
+        "swamp_water": 40,
+        "flat": 70,
+        "sand": 70,
+        "forest": 70,
+        "hills": 70,
+        "village": 60,
+        "castle": 60,
+        "cave": 80,
+        "frozen": 70,
+        "fungus": 80
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "fire": 100,
+        "cold": 80,
+        "arcane": 100
+      }
+    },
+    "treefolk": {
+      "costs": {
+        "shallow_water": 2,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 1,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 3,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 80,
+        "swamp_water": 70,
+        "flat": 80,
+        "sand": 80,
+        "forest": 60,
+        "hills": 70,
+        "mountains": 70,
+        "village": 80,
+        "castle": 80,
+        "cave": 80,
+        "frozen": 80,
+        "fungus": 70
+      },
+      "resist": {
+        "blade": 100,
+        "pierce": 40,
+        "impact": 60,
+        "fire": 150,
+        "cold": 100,
+        "arcane": 120
+      }
+    },
+    "undeadfoot": {
+      "costs": {
+        "deep_water": 3,
+        "shallow_water": 2,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 2,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "deep_water": 90,
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 70,
+        "flat": 60,
+        "sand": 70,
+        "forest": 50,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 60,
+        "frozen": 70,
+        "fungus": 40
+      },
+      "resist": {
+        "blade": 90,
+        "pierce": 70,
+        "impact": 110,
+        "fire": 120,
+        "cold": 40,
+        "arcane": 140
+      }
+    },
+    "undeadspirit": {
+      "costs": {
+        "deep_water": 2,
+        "shallow_water": 2,
+        "reef": 2,
+        "swamp_water": 1,
+        "flat": 1,
+        "sand": 1,
+        "forest": 1,
+        "hills": 1,
+        "mountains": 1,
+        "village": 1,
+        "castle": 1,
+        "cave": 1,
+        "frozen": 1,
+        "unwalkable": 1,
+        "fungus": 1
+      },
+      "defense": {
+        "cave": 50,
+        "fungus": 50
+      },
+      "resist": {
+        "blade": 50,
+        "pierce": 50,
+        "impact": 50,
+        "fire": 90,
+        "cold": 30,
+        "arcane": 110
+      },
+      "flying": 1
+    },
+    "woodland": {
+      "costs": {
+        "shallow_water": 3,
+        "reef": 2,
+        "swamp_water": 2,
+        "flat": 1,
+        "sand": 2,
+        "forest": 1,
+        "hills": 2,
+        "mountains": 3,
+        "village": 1,
+        "castle": 1,
+        "cave": 3,
+        "frozen": 2,
+        "fungus": 2
+      },
+      "defense": {
+        "shallow_water": 80,
+        "reef": 70,
+        "swamp_water": 70,
+        "flat": 60,
+        "sand": 70,
+        "forest": 30,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 70,
+        "frozen": 70,
+        "fungus": 50
+      },
+      "resist": {}
+    },
+    "woodlandfloat": {
+      "costs": {
+        "deep_water": 2,
+        "shallow_water": 1,
+        "reef": 1,
+        "swamp_water": 1,
+        "flat": 1,
+        "sand": 1,
+        "forest": 1,
+        "hills": 1,
+        "mountains": 2,
+        "village": 1,
+        "castle": 1,
+        "cave": 2,
+        "frozen": 1,
+        "fungus": 2,
+        "unwalkable": 2
+      },
+      "defense": {
+        "deep_water": 70,
+        "shallow_water": 60,
+        "reef": 50,
+        "swamp_water": 60,
+        "flat": 50,
+        "sand": 60,
+        "forest": 30,
+        "hills": 50,
+        "mountains": 40,
+        "village": 40,
+        "castle": 40,
+        "cave": 70,
+        "frozen": 60,
+        "fungus": 50,
+        "unwalkable": 70
+      },
+      "resist": {},
+      "flying": 1
+    }
+  },
+  "types": {
+    "Arch Mage": {
+      "name": "Arch Mage",
+      "race": "human",
+      "hp": 54,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 63,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/arch-mage.png",
+      "profile": "portraits/humans/mage-arch.webp",
+      "adv": [
+        "Great Mage"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "fireball",
+          "type": "fire",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "fire": 80
+      }
+    },
+    "Assassin": {
+      "name": "Assassin",
+      "race": "human",
+      "hp": 51,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 46,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/assassin.png",
+      "profile": "portraits/humans/assassin.webp",
+      "adv": [],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": [
+            "backstab"
+          ]
+        },
+        {
+          "name": "throwing knives",
+          "type": "blade",
+          "range": "ranged",
+          "dmg": 5,
+          "num": 3,
+          "spec": [
+            "poison"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Bandit": {
+      "name": "Bandit",
+      "race": "human",
+      "hp": 50,
+      "mp": 5,
+      "xp": 61,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 22,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/bandit.png",
+      "profile": "portraits/humans/bandit.webp",
+      "adv": [
+        "Highwayman"
+      ],
+      "attacks": [
+        {
+          "name": "mace-spiked",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        }
+      ]
+    },
+    "Banebow": {
+      "name": "Banebow",
+      "race": "undead",
+      "hp": 55,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 52,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/banebow.png",
+      "profile": "portraits/undead/banebow.webp",
+      "adv": [],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 14,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      },
+      "amla": 1
+    },
+    "Blood Bat": {
+      "name": "Blood Bat",
+      "race": "bats",
+      "hp": 27,
+      "mp": 9,
+      "xp": 37,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 23,
+      "movetype": "smallfly",
+      "image": "units/bats/bloodbat-se-3.png",
+      "profile": "portraits/monsters/bat-red.webp",
+      "adv": [
+        "Dread Bat"
+      ],
+      "attacks": [
+        {
+          "name": "fangs",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 3,
+          "spec": [
+            "drains"
+          ]
+        }
+      ],
+      "resist": {
+        "cold": 70
+      },
+      "defense": {
+        "village": 50
+      },
+      "musthave": [
+        "feral"
+      ]
+    },
+    "Boat": {
+      "name": "Boat",
+      "race": "mechanical",
+      "hp": 1,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 10,
+      "movetype": "float",
+      "image": "scenery/boat.png",
+      "profile": "portraits/transport/crew-boat.webp",
+      "adv": [],
+      "amla": 1
+    },
+    "Bone Shooter": {
+      "name": "Bone Shooter",
+      "race": "undead",
+      "hp": 42,
+      "mp": 5,
+      "xp": 60,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 24,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/bone-shooter.png",
+      "profile": "portraits/undead/bone-shooter.webp",
+      "adv": [
+        "Banebow"
+      ],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      }
+    },
+    "Bowman": {
+      "name": "Bowman",
+      "race": "human",
+      "hp": 33,
+      "mp": 5,
+      "xp": 35,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 14,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/bowman.png",
+      "profile": "portraits/humans/bowman.webp",
+      "adv": [
+        "Longbowman"
+      ],
+      "attacks": [
+        {
+          "name": "short sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Cage": {
+      "name": "Caged Elf",
+      "race": "mechanical",
+      "hp": 35,
+      "mp": 0,
+      "xp": 25,
+      "level": 0,
+      "alignment": "neutral",
+      "cost": 9,
+      "image": "misc/blank-hex.png",
+      "profile": "items/cage.png",
+      "adv": [],
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "cold": 100,
+        "fire": 100,
+        "arcane": 40
+      }
+    },
+    "Cavalier": {
+      "name": "Cavalier",
+      "race": "human",
+      "hp": 64,
+      "mp": 9,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 62,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/cavalier/cavalier.png",
+      "profile": "portraits/humans/cavalier.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 10,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 20,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 70,
+        "impact": 60,
+        "cold": 80
+      },
+      "amla": 1
+    },
+    "Cavalier Commander": {
+      "name": "Cavalier",
+      "race": "human",
+      "hp": 79,
+      "mp": 9,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 70,
+      "movetype": "mounted",
+      "image": "units/deoran3/deoran.png",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 10,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 20,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 100,
+        "impact": 100,
+        "cold": 100
+      },
+      "amla": 1
+    },
+    "Cavalryman": {
+      "name": "Cavalryman",
+      "race": "human",
+      "hp": 34,
+      "mp": 8,
+      "xp": 44,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 17,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/cavalryman/cavalryman.png",
+      "profile": "portraits/humans/cavalryman.webp",
+      "adv": [
+        "Dragoon"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "impact": 60,
+        "cold": 80
+      }
+    },
+    "Cavalryman Commander": {
+      "name": "Cavalryman",
+      "race": "human",
+      "hp": 47,
+      "mp": 8,
+      "xp": 30,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 19,
+      "movetype": "mounted",
+      "image": "units/deoran1/deoran.png",
+      "adv": [
+        "Dragoon Commander"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 100,
+        "impact": 100,
+        "cold": 100
+      }
+    },
+    "Deathblade": {
+      "name": "Deathblade",
+      "race": "undead",
+      "hp": 39,
+      "mp": 6,
+      "xp": 100,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 34,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/deathblade.png",
+      "profile": "portraits/undead/deathblade.webp",
+      "adv": [],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "axe",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 5,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "impact": 120,
+        "pierce": 40
+      },
+      "amla": 1
+    },
+    "Dragoon": {
+      "name": "Dragoon",
+      "race": "human",
+      "hp": 49,
+      "mp": 9,
+      "xp": 80,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 29,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/dragoon/dragoon.png",
+      "profile": "portraits/humans/cavalier.webp",
+      "adv": [
+        "Cavalier"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 70,
+        "impact": 60,
+        "cold": 80
+      }
+    },
+    "Dragoon Commander": {
+      "name": "Dragoon",
+      "race": "human",
+      "hp": 67,
+      "mp": 8,
+      "xp": 75,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 40,
+      "movetype": "mounted",
+      "image": "units/deoran2/deoran.png",
+      "adv": [
+        "Cavalier Commander"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 100,
+        "impact": 100,
+        "cold": 100
+      }
+    },
+    "Draug": {
+      "name": "Draug",
+      "race": "undead",
+      "hp": 68,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 70,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/draug.png",
+      "profile": "portraits/undead/draug.webp",
+      "adv": [],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "axe",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 12,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      },
+      "amla": 1
+    },
+    "Dread Bat": {
+      "name": "Dread Bat",
+      "race": "bats",
+      "hp": 33,
+      "mp": 9,
+      "xp": 100,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 32,
+      "movetype": "smallfly",
+      "image": "units/bats/dreadbat-se-3.png",
+      "profile": "portraits/monsters/bat-dread.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "fangs",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 4,
+          "spec": [
+            "drains"
+          ]
+        }
+      ],
+      "resist": {
+        "cold": 70
+      },
+      "defense": {
+        "village": 50
+      },
+      "amla": 1,
+      "musthave": [
+        "feral"
+      ]
+    },
+    "Duelist": {
+      "name": "Duelist",
+      "race": "human",
+      "hp": 44,
+      "mp": 7,
+      "xp": 80,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 29,
+      "movetype": "elusivefoot",
+      "image": "units/human-loyalists/duelist.png",
+      "profile": "portraits/humans/duelist.webp",
+      "adv": [
+        "Master at Arms"
+      ],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "cold": 90
+      }
+    },
+    "Elvish Archer": {
+      "name": "Elvish Archer",
+      "race": "elf",
+      "hp": 29,
+      "mp": 6,
+      "xp": 44,
+      "level": 1,
+      "alignment": "neutral",
+      "cost": 17,
+      "movetype": "woodland",
+      "image": "units/elves-wood/archer.png",
+      "profile": "portraits/elves/archer.webp",
+      "adv": [
+        "Elvish Ranger",
+        "Elvish Marksman"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 5,
+          "num": 4,
+          "spec": []
+        }
+      ]
+    },
+    "Elvish Avenger": {
+      "name": "Elvish Avenger",
+      "race": "elf",
+      "hp": 55,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 55,
+      "movetype": "woodland",
+      "image": "units/elves-wood/avenger.png",
+      "profile": "portraits/elves/ranger.webp",
+      "adv": [],
+      "abilities": [
+        "ambush"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "shallow_water": 70,
+        "swamp_water": 60,
+        "sand": 60
+      },
+      "costs": {
+        "shallow_water": 2,
+        "mountains": 2
+      },
+      "amla": 1
+    },
+    "Elvish Captain": {
+      "name": "Elvish Captain",
+      "race": "elf",
+      "hp": 47,
+      "mp": 5,
+      "xp": 85,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 28,
+      "movetype": "woodland",
+      "image": "units/elves-wood/captain.png",
+      "profile": "portraits/elves/captain.webp",
+      "adv": [
+        "Elvish Marshal"
+      ],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 5,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Elvish Champion": {
+      "name": "Elvish Champion",
+      "race": "elf",
+      "hp": 70,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 60,
+      "movetype": "woodland",
+      "image": "units/elves-wood/champion.png",
+      "profile": "portraits/elves/hero.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 5,
+          "spec": [
+            "honed"
+          ]
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 9,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Elvish Druid": {
+      "name": "female^Elvish Druid",
+      "race": "elf",
+      "hp": 36,
+      "mp": 5,
+      "xp": 85,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 25,
+      "movetype": "woodland",
+      "image": "units/elves-wood/druid.png",
+      "profile": "portraits/elves/druid.webp",
+      "adv": [
+        "Elvish Shyde"
+      ],
+      "abilities": [
+        "heals_8",
+        "cures"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 4,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "ensnare",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "slow"
+          ]
+        },
+        {
+          "name": "thorns",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ]
+    },
+    "Elvish Enchantress": {
+      "name": "female^Elvish Enchantress",
+      "race": "elf",
+      "hp": 50,
+      "mp": 5,
+      "xp": 180,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 57,
+      "movetype": "woodland",
+      "image": "units/elves-wood/enchantress.png",
+      "profile": "portraits/elves/sorceress.webp",
+      "adv": [
+        "Elvish Sylph"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "entangle",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 4,
+          "spec": [
+            "slow"
+          ]
+        },
+        {
+          "name": "faerie fire",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 90
+      }
+    },
+    "Elvish Fighter": {
+      "name": "Elvish Fighter",
+      "race": "elf",
+      "hp": 33,
+      "mp": 5,
+      "xp": 37,
+      "level": 1,
+      "alignment": "neutral",
+      "cost": 14,
+      "movetype": "woodland",
+      "image": "units/elves-wood/fighter/fighter.png",
+      "profile": "portraits/elves/fighter.webp",
+      "adv": [
+        "Elvish Captain",
+        "Elvish Hero"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 3,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Elvish Hero": {
+      "name": "Elvish Hero",
+      "race": "elf",
+      "hp": 51,
+      "mp": 5,
+      "xp": 80,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 26,
+      "movetype": "woodland",
+      "image": "units/elves-wood/hero.png",
+      "profile": "portraits/elves/hero.webp",
+      "adv": [
+        "Elvish Champion"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Elvish Marksman": {
+      "name": "Elvish Marksman",
+      "race": "elf",
+      "hp": 37,
+      "mp": 6,
+      "xp": 80,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 34,
+      "movetype": "woodland",
+      "image": "units/elves-wood/marksman.png",
+      "profile": "portraits/elves/marksman.webp",
+      "adv": [
+        "Elvish Sharpshooter"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "longbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 9,
+          "num": 4,
+          "spec": [
+            "marksman"
+          ]
+        }
+      ]
+    },
+    "Elvish Marshal": {
+      "name": "Elvish Marshal",
+      "race": "elf",
+      "hp": 60,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 67,
+      "movetype": "woodland",
+      "image": "units/elves-wood/marshal.png",
+      "profile": "portraits/elves/captain.webp",
+      "adv": [],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 10,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Elvish Ranger": {
+      "name": "Elvish Ranger",
+      "race": "elf",
+      "hp": 42,
+      "mp": 6,
+      "xp": 85,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 31,
+      "movetype": "woodland",
+      "image": "units/elves-wood/ranger.png",
+      "profile": "portraits/elves/ranger.webp",
+      "adv": [
+        "Elvish Avenger"
+      ],
+      "abilities": [
+        "ambush"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "shallow_water": 70,
+        "swamp_water": 60,
+        "sand": 60
+      },
+      "costs": {
+        "shallow_water": 2,
+        "mountains": 2
+      }
+    },
+    "Elvish Shaman": {
+      "name": "female^Elvish Shaman",
+      "race": "elf",
+      "hp": 26,
+      "mp": 5,
+      "xp": 32,
+      "level": 1,
+      "alignment": "neutral",
+      "cost": 15,
+      "movetype": "woodland",
+      "image": "units/elves-wood/shaman.png",
+      "profile": "portraits/elves/shaman.webp",
+      "adv": [
+        "Elvish Druid",
+        "Elvish Sorceress"
+      ],
+      "abilities": [
+        "heals_4"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 3,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "entangle",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 2,
+          "spec": [
+            "slow"
+          ]
+        }
+      ]
+    },
+    "Elvish Sharpshooter": {
+      "name": "Elvish Sharpshooter",
+      "race": "elf",
+      "hp": 47,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 55,
+      "movetype": "woodland",
+      "image": "units/elves-wood/sharpshooter.png",
+      "profile": "portraits/elves/marksman.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "longbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 5,
+          "spec": [
+            "marksman"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Elvish Shyde": {
+      "name": "female^Elvish Shyde",
+      "race": "elf",
+      "hp": 46,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 52,
+      "movetype": "woodlandfloat",
+      "image": "units/elves-wood/shyde.png",
+      "profile": "portraits/elves/shyde.webp",
+      "adv": [],
+      "abilities": [
+        "heals_8",
+        "cures"
+      ],
+      "attacks": [
+        {
+          "name": "faerie touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "magical"
+          ]
+        },
+        {
+          "name": "ensnare",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": [
+            "slow"
+          ]
+        },
+        {
+          "name": "thorns",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Elvish Sorceress": {
+      "name": "female^Elvish Sorceress",
+      "race": "elf",
+      "hp": 41,
+      "mp": 5,
+      "xp": 90,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 34,
+      "movetype": "woodland",
+      "image": "units/elves-wood/sorceress.png",
+      "profile": "portraits/elves/sorceress.webp",
+      "adv": [
+        "Elvish Enchantress"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 4,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "entangle",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 3,
+          "spec": [
+            "slow"
+          ]
+        },
+        {
+          "name": "faerie fire",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 100
+      }
+    },
+    "Elvish Sylph": {
+      "name": "female^Elvish Sylph",
+      "race": "elf",
+      "hp": 60,
+      "mp": 6,
+      "xp": 200,
+      "level": 4,
+      "alignment": "neutral",
+      "cost": 110,
+      "movetype": "woodlandfloat",
+      "image": "units/elves-wood/sylph.png",
+      "profile": "portraits/elves/sylph.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "faerie touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        },
+        {
+          "name": "gossamer",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 5,
+          "spec": [
+            "slow"
+          ]
+        },
+        {
+          "name": "faerie fire",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 5,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 80
+      },
+      "amla": 1
+    },
+    "Fencer": {
+      "name": "Fencer",
+      "race": "human",
+      "hp": 28,
+      "mp": 6,
+      "xp": 42,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 16,
+      "movetype": "elusivefoot",
+      "image": "units/human-loyalists/fencer.png",
+      "profile": "portraits/humans/fencer.webp",
+      "adv": [
+        "Duelist"
+      ],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 4,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "cold": 90
+      }
+    },
+    "Footpad": {
+      "name": "Footpad",
+      "race": "human",
+      "hp": 30,
+      "mp": 7,
+      "xp": 35,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 14,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/footpad.png",
+      "profile": "portraits/humans/footpad.webp",
+      "adv": [
+        "Outlaw"
+      ],
+      "attacks": [
+        {
+          "name": "club",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 4,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 5,
+          "num": 2,
+          "spec": []
+        }
+      ]
+    },
+    "Fugitive": {
+      "name": "Fugitive",
+      "race": "human",
+      "hp": 68,
+      "mp": 7,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 55,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/fugitive.png",
+      "profile": "portraits/humans/outlaw.webp",
+      "adv": [],
+      "abilities": [
+        "concealment"
+      ],
+      "attacks": [
+        {
+          "name": "mace-spiked",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 11,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "General": {
+      "name": "General",
+      "race": "human",
+      "hp": 55,
+      "mp": 6,
+      "xp": 105,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 66,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/general.png",
+      "profile": "portraits/humans/general.webp",
+      "adv": [
+        "Grand Marshal"
+      ],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 9,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 90,
+        "pierce": 90,
+        "impact": 90
+      },
+      "amla": 1
+    },
+    "Ghast": {
+      "name": "Ghast",
+      "race": "undead",
+      "hp": 65,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 50,
+      "movetype": "gruefoot",
+      "image": "units/undead/ghast.png",
+      "profile": "portraits/undead/ghoul.webp",
+      "adv": [],
+      "abilities": [
+        "feeding"
+      ],
+      "attacks": [
+        {
+          "name": "bite",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 12,
+          "num": 3,
+          "spec": [
+            "poison"
+          ]
+        }
+      ],
+      "resist": {
+        "pierce": 90,
+        "impact": 80,
+        "arcane": 70
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Ghoul": {
+      "name": "Ghoul",
+      "race": "undead",
+      "hp": 33,
+      "mp": 5,
+      "xp": 30,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 16,
+      "movetype": "gruefoot",
+      "image": "units/undead/ghoul.png",
+      "profile": "portraits/undead/ghoul.webp",
+      "adv": [
+        "Necrophage"
+      ],
+      "attacks": [
+        {
+          "name": "claws",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 4,
+          "num": 3,
+          "spec": [
+            "poison"
+          ]
+        }
+      ],
+      "resist": {
+        "pierce": 90,
+        "impact": 80,
+        "arcane": 70
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Giant Rat": {
+      "name": "Giant Rat",
+      "race": "monster",
+      "hp": 15,
+      "mp": 4,
+      "xp": 25,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 5,
+      "movetype": "rodentfoot",
+      "image": "units/monsters/giant-rat.png",
+      "profile": "portraits/monsters/giant-rat.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "bite",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 2,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Grand Knight": {
+      "name": "Grand Knight",
+      "race": "human",
+      "hp": 84,
+      "mp": 7,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 86,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/grand-knight/grand-knight.png",
+      "profile": "portraits/humans/grand-knight.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 12,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "lance",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 19,
+          "num": 2,
+          "spec": [
+            "charge"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Grand Marshal": {
+      "name": "Grand Marshal",
+      "race": "human",
+      "hp": 68,
+      "mp": 6,
+      "xp": 200,
+      "level": 4,
+      "alignment": "lawful",
+      "cost": 101,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/marshal.png",
+      "profile": "portraits/humans/marshal.webp",
+      "adv": [],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 10,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 80,
+        "pierce": 80,
+        "impact": 80
+      },
+      "amla": 1
+    },
+    "Great Mage": {
+      "name": "Great Mage",
+      "race": "human",
+      "hp": 65,
+      "mp": 5,
+      "xp": 200,
+      "level": 4,
+      "alignment": "neutral",
+      "cost": 110,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/great-mage.png",
+      "profile": "portraits/humans/mage-arch.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 9,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "fireball",
+          "type": "fire",
+          "range": "ranged",
+          "dmg": 17,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "fire": 70
+      },
+      "amla": 1
+    },
+    "Halberdier": {
+      "name": "Halberdier",
+      "race": "human",
+      "hp": 72,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 52,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/halberdier.png",
+      "profile": "portraits/humans/halberdier.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "halberd",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 15,
+          "num": 3,
+          "spec": [
+            "firststrike"
+          ]
+        },
+        {
+          "name": "halberd",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 19,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "pierce": 60
+      },
+      "amla": 1
+    },
+    "Heavy Infantryman": {
+      "name": "Heavy Infantryman",
+      "race": "human",
+      "hp": 38,
+      "mp": 4,
+      "xp": 40,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 19,
+      "movetype": "armoredfoot",
+      "image": "units/human-loyalists/heavyinfantry.png",
+      "profile": "portraits/humans/heavy-infantry.webp",
+      "adv": [
+        "Shock Trooper"
+      ],
+      "attacks": [
+        {
+          "name": "mace",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 11,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "extra_traits": [
+        "fearless"
+      ]
+    },
+    "Highwayman": {
+      "name": "Highwayman",
+      "race": "human",
+      "hp": 70,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 46,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/highwayman.png",
+      "profile": "portraits/humans/bandit.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "mace-spiked",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 11,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Horseman": {
+      "name": "Horseman",
+      "race": "human",
+      "hp": 38,
+      "mp": 8,
+      "xp": 54,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 24,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/horseman/horseman.png",
+      "profile": "portraits/humans/horseman.webp",
+      "adv": [
+        "Knight",
+        "Lancer"
+      ],
+      "attacks": [
+        {
+          "name": "spear",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 9,
+          "num": 2,
+          "spec": [
+            "charge"
+          ]
+        }
+      ]
+    },
+    "Huntsman": {
+      "name": "Huntsman",
+      "race": "human",
+      "hp": 53,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 47,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/huntsman.png",
+      "profile": "portraits/humans/huntsman.webp",
+      "adv": [],
+      "abilities": [
+        "swamp_lurk"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 4,
+          "spec": [
+            "marksman"
+          ]
+        }
+      ],
+      "defense": {
+        "forest": 40,
+        "swamp_water": 40
+      },
+      "costs": {
+        "swamp_water": 2
+      },
+      "amla": 1
+    },
+    "Iron Mauler": {
+      "name": "Iron Mauler",
+      "race": "human",
+      "hp": 64,
+      "mp": 4,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 49,
+      "movetype": "armoredfoot",
+      "image": "units/human-loyalists/siegetrooper.png",
+      "profile": "portraits/humans/iron-mauler.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "flail",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 25,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "amla": 1,
+      "extra_traits": [
+        "fearless"
+      ]
+    },
+    "Javelineer": {
+      "name": "Javelineer",
+      "race": "human",
+      "hp": 48,
+      "mp": 5,
+      "xp": 100,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 24,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/javelineer.png",
+      "profile": "portraits/humans/javelineer.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "spear",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": [
+            "firststrike"
+          ]
+        },
+        {
+          "name": "javelin",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 13,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "pierce": 60
+      },
+      "amla": 1
+    },
+    "King of Wesnoth": {
+      "name": "King of Wesnoth",
+      "race": "human",
+      "hp": 105,
+      "mp": 7,
+      "xp": 250,
+      "level": 5,
+      "alignment": "lawful",
+      "cost": 233,
+      "movetype": "mounted",
+      "image": "units/garard/garard.png",
+      "profile": "portraits/garard.webp",
+      "adv": [],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 12,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "lance",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 19,
+          "num": 2,
+          "spec": [
+            "charge"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Knight": {
+      "name": "Knight",
+      "race": "human",
+      "hp": 58,
+      "mp": 8,
+      "xp": 100,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 50,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/knight/knight.png",
+      "profile": "portraits/humans/knight.webp",
+      "adv": [
+        "Paladin",
+        "Grand Knight"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "lance",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 14,
+          "num": 2,
+          "spec": [
+            "charge"
+          ]
+        }
+      ]
+    },
+    "Lancer": {
+      "name": "Lancer",
+      "race": "human",
+      "hp": 50,
+      "mp": 10,
+      "xp": 100,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 47,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/lancer/lancer.png",
+      "profile": "portraits/humans/lancer.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "lance",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 12,
+          "num": 3,
+          "spec": [
+            "charge"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Lich": {
+      "name": "Lich",
+      "race": "undead",
+      "hp": 60,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 90,
+      "movetype": "undeadfoot",
+      "image": "units/undead-necromancers/lich.png",
+      "profile": "portraits/undead/lich.webp",
+      "adv": [],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "arcane",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": [
+            "drains"
+          ]
+        },
+        {
+          "name": "chill tempest",
+          "type": "cold",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        },
+        {
+          "name": "shadow wave",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 9,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "costs": {
+        "shallow_water": 3
+      },
+      "amla": 1
+    },
+    "Lieutenant": {
+      "name": "Lieutenant",
+      "race": "human",
+      "hp": 40,
+      "mp": 6,
+      "xp": 85,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 31,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/lieutenant.png",
+      "profile": "portraits/humans/lieutenant.webp",
+      "adv": [
+        "General"
+      ],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 2,
+          "spec": []
+        }
+      ]
+    },
+    "Longbowman": {
+      "name": "Longbowman",
+      "race": "human",
+      "hp": 51,
+      "mp": 5,
+      "xp": 65,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 23,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/longbowman.png",
+      "profile": "portraits/humans/longbowman.webp",
+      "adv": [
+        "Master Bowman"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 10,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Mage": {
+      "name": "Mage",
+      "race": "human",
+      "hp": 24,
+      "mp": 5,
+      "xp": 48,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 20,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/mage.png",
+      "profile": "portraits/humans/mage.webp",
+      "adv": [
+        "White Mage",
+        "Red Mage"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 5,
+          "num": 1,
+          "spec": []
+        },
+        {
+          "name": "missile",
+          "type": "fire",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ]
+    },
+    "Mage of Light": {
+      "name": "Mage of Light",
+      "race": "human",
+      "hp": 47,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 59,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/white-cleric.png",
+      "profile": "portraits/humans/mage-light.webp",
+      "adv": [],
+      "abilities": [
+        "illumination",
+        "heals_8",
+        "cures"
+      ],
+      "attacks": [
+        {
+          "name": "flail",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "lightbeam",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 12,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 50
+      },
+      "amla": 1
+    },
+    "Master Bowman": {
+      "name": "Master Bowman",
+      "race": "human",
+      "hp": 67,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 50,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/masterbowman.png",
+      "profile": "portraits/humans/master-bowman.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 11,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Master Fencer": {
+      "name": "Master Fencer",
+      "race": "human",
+      "hp": 72,
+      "mp": 7,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 60,
+      "movetype": "elusivefoot",
+      "image": "units/mari3/mari.png",
+      "adv": [],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 7,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Master Infantryman": {
+      "name": "Master Infantryman",
+      "race": "human",
+      "hp": 74,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 60,
+      "movetype": "armoredfoot",
+      "image": "units/infantry-commander.png",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "glaive",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 19,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "shield",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 21,
+          "num": 2,
+          "spec": [
+            "slow"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Master at Arms": {
+      "name": "Master at Arms",
+      "race": "human",
+      "hp": 57,
+      "mp": 7,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 44,
+      "movetype": "elusivefoot",
+      "image": "units/human-loyalists/master-at-arms.png",
+      "profile": "portraits/humans/master-at-arms.webp",
+      "adv": [],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "crossbow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 20,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "cold": 90
+      },
+      "amla": 1
+    },
+    "Merchant Carrack": {
+      "name": "Merchant Carrack",
+      "race": "ship",
+      "hp": 130,
+      "mp": 8,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 77,
+      "movetype": "ship",
+      "image": "units/transport/transport-galleon.png",
+      "profile": "portraits/transport/crew-transport_galleon.webp",
+      "adv": [],
+      "abilities": [
+        "heals_4",
+        "cures"
+      ],
+      "attacks": [
+        {
+          "name": "ram",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 18,
+          "num": 1,
+          "spec": [
+            "charge"
+          ]
+        },
+        {
+          "name": "archers",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 5,
+          "spec": []
+        }
+      ],
+      "amla": 1,
+      "musthave": [
+        "oceangoing"
+      ]
+    },
+    "Necrophage": {
+      "name": "Necrophage",
+      "race": "undead",
+      "hp": 47,
+      "mp": 5,
+      "xp": 61,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 23,
+      "movetype": "gruefoot",
+      "image": "units/undead/necrophage.png",
+      "profile": "portraits/undead/ghoul.webp",
+      "adv": [
+        "Ghast"
+      ],
+      "abilities": [
+        "feeding"
+      ],
+      "attacks": [
+        {
+          "name": "claws",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 9,
+          "num": 3,
+          "spec": [
+            "poison"
+          ]
+        }
+      ],
+      "resist": {
+        "pierce": 90,
+        "impact": 80,
+        "arcane": 70
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Nightgaunt": {
+      "name": "Nightgaunt",
+      "race": "undead",
+      "hp": 35,
+      "mp": 7,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 71,
+      "movetype": "undeadspirit",
+      "image": "units/undead-spirit/nightgaunt.png",
+      "profile": "portraits/undead/nightgaunt.webp",
+      "adv": [],
+      "abilities": [
+        "nightstalk",
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "claws",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 10,
+          "num": 3,
+          "spec": [
+            "backstab"
+          ]
+        }
+      ],
+      "amla": 1
+    },
+    "Outlaw": {
+      "name": "Outlaw",
+      "race": "human",
+      "hp": 47,
+      "mp": 7,
+      "xp": 71,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 24,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/outlaw.png",
+      "profile": "portraits/humans/outlaw.webp",
+      "adv": [
+        "Fugitive"
+      ],
+      "attacks": [
+        {
+          "name": "mace-spiked",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 8,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Paladin": {
+      "name": "Paladin",
+      "race": "human",
+      "hp": 77,
+      "mp": 8,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 80,
+      "movetype": "mounted",
+      "image": "units/human-loyalists/paladin/paladin.png",
+      "profile": "portraits/humans/paladin.webp",
+      "adv": [],
+      "abilities": [
+        "heals_4"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "arcane",
+          "range": "melee",
+          "dmg": 8,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "lance",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 16,
+          "num": 2,
+          "spec": [
+            "charge"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 60
+      },
+      "amla": 1
+    },
+    "Peasant": {
+      "name": "Peasant",
+      "race": "human",
+      "hp": 18,
+      "mp": 5,
+      "xp": 19,
+      "level": 0,
+      "alignment": "lawful",
+      "cost": 8,
+      "movetype": "smallfoot",
+      "image": "units/human-peasants/peasant.png",
+      "profile": "portraits/humans/peasant.webp",
+      "adv": [
+        "Spearman",
+        "Bowman"
+      ],
+      "attacks": [
+        {
+          "name": "pitchfork",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 5,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "pitchfork",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 1,
+          "spec": []
+        }
+      ]
+    },
+    "Pikeman": {
+      "name": "Pikeman",
+      "race": "human",
+      "hp": 55,
+      "mp": 5,
+      "xp": 69,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 24,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/pikeman.png",
+      "profile": "portraits/humans/pikeman.webp",
+      "adv": [
+        "Halberdier"
+      ],
+      "attacks": [
+        {
+          "name": "pike",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 10,
+          "num": 3,
+          "spec": [
+            "firststrike"
+          ]
+        }
+      ],
+      "resist": {
+        "pierce": 60
+      }
+    },
+    "Pirate Carrack": {
+      "name": "Pirate Carrack",
+      "race": "ship",
+      "hp": 130,
+      "mp": 8,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 82,
+      "movetype": "ship",
+      "image": "units/transport/pirate-galleon.png",
+      "profile": "portraits/transport/crew-pirate_galleon.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "ram",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 18,
+          "num": 1,
+          "spec": [
+            "charge"
+          ]
+        },
+        {
+          "name": "ballistae",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 21,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "grapple",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 4,
+          "spec": [
+            "slow"
+          ]
+        }
+      ],
+      "amla": 1,
+      "musthave": [
+        "oceangoing"
+      ]
+    },
+    "Poacher": {
+      "name": "Poacher",
+      "race": "human",
+      "hp": 33,
+      "mp": 5,
+      "xp": 28,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 14,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/poacher.png",
+      "profile": "portraits/humans/trapper.webp",
+      "adv": [
+        "Trapper"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 3,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "forest": 40,
+        "swamp_water": 50
+      },
+      "costs": {
+        "swamp_water": 2
+      }
+    },
+    "Prince of Wesnoth": {
+      "name": "Prince of Wesnoth",
+      "race": "human",
+      "hp": 78,
+      "mp": 4,
+      "xp": 150,
+      "level": 4,
+      "alignment": "lawful",
+      "movetype": "armoredfoot",
+      "image": "units/arand/arand.png",
+      "adv": [],
+      "abilities": [
+        "leadership"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 18,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 70,
+        "impact": 90,
+        "fire": 100,
+        "cold": 100
+      },
+      "amla": 1
+    },
+    "Quintain": {
+      "name": "Quintain",
+      "race": "mechanical",
+      "hp": 40,
+      "mp": 0,
+      "xp": 50,
+      "level": 1,
+      "alignment": "neutral",
+      "cost": 12,
+      "movetype": "smallfoot",
+      "image": "units/quintain/quintain.png",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "flail",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "arcane": 0
+      },
+      "amla": 1
+    },
+    "Ranger": {
+      "name": "Ranger",
+      "race": "human",
+      "hp": 64,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 50,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/ranger.png",
+      "profile": "portraits/humans/ranger.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "castle": 50,
+        "forest": 40,
+        "frozen": 70,
+        "hills": 40,
+        "reef": 50,
+        "sand": 60,
+        "shallow_water": 60,
+        "swamp_water": 40
+      },
+      "costs": {
+        "forest": 1,
+        "frozen": 2,
+        "hills": 1,
+        "mountains": 2,
+        "shallow_water": 2,
+        "swamp_water": 2
+      },
+      "amla": 1
+    },
+    "Red Mage": {
+      "name": "Red Mage",
+      "race": "human",
+      "hp": 42,
+      "mp": 5,
+      "xp": 83,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 35,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/red-mage.png",
+      "profile": "portraits/humans/mage-red.webp",
+      "adv": [
+        "Arch Mage",
+        "Silver Mage"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "fireball",
+          "type": "fire",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "fire": 90
+      }
+    },
+    "Revenant": {
+      "name": "Revenant",
+      "race": "undead",
+      "hp": 47,
+      "mp": 5,
+      "xp": 78,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 28,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/revenant/revenant.png",
+      "profile": "portraits/undead/revenant.webp",
+      "adv": [
+        "Draug"
+      ],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "axe",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      }
+    },
+    "Rogue": {
+      "name": "Rogue",
+      "race": "human",
+      "hp": 40,
+      "mp": 6,
+      "xp": 80,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 25,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/rogue.png",
+      "profile": "portraits/humans/thief.webp",
+      "adv": [
+        "Assassin"
+      ],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 3,
+          "spec": [
+            "backstab"
+          ]
+        },
+        {
+          "name": "throwing knives",
+          "type": "blade",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Royal Guard": {
+      "name": "Royal Guard",
+      "race": "human",
+      "hp": 74,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "lawful",
+      "cost": 61,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/royalguard.png",
+      "profile": "portraits/humans/royal-guard.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 11,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 80,
+        "impact": 80
+      },
+      "amla": 1
+    },
+    "Shadow": {
+      "name": "Shadow",
+      "race": "undead",
+      "hp": 24,
+      "mp": 7,
+      "xp": 77,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 44,
+      "movetype": "undeadspirit",
+      "image": "units/undead-spirit/shadow-s-2.png",
+      "profile": "portraits/undead/shadow.webp",
+      "adv": [
+        "Nightgaunt"
+      ],
+      "abilities": [
+        "nightstalk",
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "claws",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 3,
+          "spec": [
+            "backstab"
+          ]
+        }
+      ]
+    },
+    "Shock Trooper": {
+      "name": "Shock Trooper",
+      "race": "human",
+      "hp": 52,
+      "mp": 4,
+      "xp": 65,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 28,
+      "movetype": "armoredfoot",
+      "image": "units/human-loyalists/shocktrooper.png",
+      "profile": "portraits/humans/iron-mauler.webp",
+      "adv": [
+        "Iron Mauler"
+      ],
+      "attacks": [
+        {
+          "name": "flail",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 18,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "extra_traits": [
+        "fearless"
+      ]
+    },
+    "Silver Mage": {
+      "name": "Silver Mage",
+      "race": "human",
+      "hp": 48,
+      "mp": 6,
+      "xp": 150,
+      "level": 3,
+      "alignment": "neutral",
+      "cost": 59,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/silver-mage.png",
+      "profile": "portraits/humans/mage-silver.webp",
+      "adv": [],
+      "abilities": [
+        "teleport"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "missile",
+          "type": "fire",
+          "range": "ranged",
+          "dmg": 9,
+          "num": 4,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "fire": 50,
+        "cold": 50
+      },
+      "amla": 1
+    },
+    "Skeleton": {
+      "name": "Skeleton",
+      "race": "undead",
+      "hp": 34,
+      "mp": 5,
+      "xp": 39,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 15,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/skeleton/skeleton.png",
+      "profile": "portraits/undead/skeleton.webp",
+      "adv": [
+        "Revenant",
+        "Deathblade"
+      ],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "axe",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      }
+    },
+    "Skeleton Archer": {
+      "name": "Skeleton Archer",
+      "race": "undead",
+      "hp": 31,
+      "mp": 5,
+      "xp": 35,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 14,
+      "movetype": "undeadfoot",
+      "image": "units/undead-skeletal/archer/archer.png",
+      "profile": "portraits/undead/archer.webp",
+      "adv": [
+        "Bone Shooter"
+      ],
+      "abilities": [
+        "submerge"
+      ],
+      "attacks": [
+        {
+          "name": "fist",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 3,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 60,
+        "pierce": 40,
+        "impact": 120
+      }
+    },
+    "Skiff": {
+      "name": "Skiff",
+      "race": "ship",
+      "hp": 90,
+      "mp": 8,
+      "xp": 70,
+      "level": 2,
+      "alignment": "neutral",
+      "cost": 42,
+      "movetype": "ship",
+      "image": "units/transport/skiff/skiff.png",
+      "profile": "portraits/transport/crew-boat.webp",
+      "adv": [
+        "Merchant Carrack",
+        "Pirate Carrack"
+      ],
+      "attacks": [
+        {
+          "name": "ram",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 15,
+          "num": 1,
+          "spec": [
+            "charge"
+          ]
+        },
+        {
+          "name": "archers",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "musthave": [
+        "oceangoing"
+      ]
+    },
+    "Soulless": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 28,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "smallfoot",
+      "image": "units/undead/soulless.png",
+      "profile": "portraits/undead/soulless.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:ant": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 26,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "orcishfoot",
+      "image": "units/undead/soulless-ant.png",
+      "profile": "portraits/undead/zombie-ant.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:bat": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 24,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "fly",
+      "image": "units/undead/soulless-bat-se-3.png",
+      "profile": "portraits/undead/zombie-bat.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "cold": 70
+      },
+      "defense": {
+        "cave": 50,
+        "fungus": 50,
+        "deep_water": 50
+      },
+      "costs": {
+        "cave": 1,
+        "fungus": 1,
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:beast_rider": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "largefoot",
+      "image": "units/undead/soulless-beastrider.png",
+      "profile": "portraits/undead/zombie-beastrider.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:boar": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 31,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "smallfoot",
+      "image": "units/undead/soulless-boar.png",
+      "profile": "portraits/undead/zombie-boar.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "village": 50
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:bug": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 26,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "orcishfoot",
+      "image": "units/undead/soulless-bug.png",
+      "profile": "portraits/undead/zombie-bug.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:cat": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 32,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "woodland",
+      "image": "units/undead/soulless-cat.png",
+      "profile": "portraits/undead/zombie-cat.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "cave": 2
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:drake": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 36,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "drakefoot",
+      "image": "units/undead/soulless-drake.png",
+      "profile": "portraits/undead/zombie-drake.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "unwalkable": 90
+      },
+      "costs": {
+        "unwalkable": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:dwarf": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 3,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "dwarvishfoot",
+      "image": "units/undead/soulless-dwarf.png",
+      "profile": "portraits/undead/zombie-dwarf.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:falcon": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 28,
+      "mp": 6,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "fly",
+      "image": "units/undead/soulless-falcon.png",
+      "profile": "portraits/undead/zombie-falcon.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "mountains": 40,
+        "deep_water": 50
+      },
+      "costs": {
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:fish": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 29,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "swimmer",
+      "image": "units/undead/soulless-fish.png",
+      "profile": "portraits/undead/zombie-fish.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "sand": 60,
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "sand": 1,
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:goblin": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 23,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "smallfoot",
+      "image": "units/undead/soulless-goblin.png",
+      "profile": "portraits/undead/zombie-goblin.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:gryphon": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "fly",
+      "image": "units/undead/soulless-gryphon.png",
+      "profile": "portraits/undead/zombie-gryphon.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "mountains": 40,
+        "deep_water": 50
+      },
+      "costs": {
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:horse": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 28,
+      "mp": 6,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "mounted",
+      "image": "units/undead/soulless-horse.png",
+      "profile": "portraits/undead/zombie-horse.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:mounted": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "mounted",
+      "image": "units/undead/soulless-mounted.png",
+      "profile": "portraits/undead/zombie-rider.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:rat": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 20,
+      "mp": 3,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 5,
+      "movetype": "rodentfoot",
+      "image": "units/undead/soulless-rat.png",
+      "profile": "portraits/undead/zombie-rat.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:sand_scorpion": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "scuttlefoot",
+      "image": "units/undead/soulless-scorpion.png",
+      "profile": "portraits/undead/zombie-scorpion.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:saurian": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 25,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "lizard",
+      "image": "units/undead/soulless-saurian.png",
+      "profile": "portraits/undead/zombie-saurian.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:scorpion": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "scuttlefoot",
+      "image": "units/undead/soulless-scorpion.png",
+      "profile": "portraits/undead/zombie-scorpion.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "blade": 90,
+        "pierce": 80,
+        "impact": 110,
+        "fire": 90,
+        "cold": 110,
+        "arcane": 80
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:serpent": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 29,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "swimmer",
+      "image": "units/undead/soulless-serpent.png",
+      "profile": "portraits/undead/zombie-serpent.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "sand": 60,
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "sand": 1,
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:spider": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 36,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "mountainfoot",
+      "image": "units/undead/soulless-spider.png",
+      "profile": "portraits/undead/zombie-spider.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:swimmer": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 28,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "swimmer",
+      "image": "units/undead/soulless-swimmer.png",
+      "profile": "portraits/undead/zombie-swimmer.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "deep_water": 1
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:troll": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 33,
+      "mp": 4,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "largefoot",
+      "image": "units/undead/soulless-troll.png",
+      "profile": "portraits/undead/zombie-troll.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:wolf": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 30,
+      "mp": 5,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "orcishfoot",
+      "image": "units/undead/soulless-wolf.png",
+      "profile": "portraits/undead/zombie-wolf.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "village": 50
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Soulless:wose": {
+      "name": "Soulless",
+      "race": "undead",
+      "hp": 40,
+      "mp": 3,
+      "xp": 50,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "treefolk",
+      "image": "units/undead/soulless-wose.png",
+      "profile": "portraits/undead/zombie-wose.webp",
+      "adv": [],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "amla": 1,
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Spearman": {
+      "name": "Spearman",
+      "race": "human",
+      "hp": 36,
+      "mp": 5,
+      "xp": 42,
+      "level": 1,
+      "alignment": "lawful",
+      "cost": 14,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/spearman.png",
+      "profile": "portraits/humans/spearman.webp",
+      "adv": [
+        "Swordsman",
+        "Pikeman",
+        "Javelineer"
+      ],
+      "attacks": [
+        {
+          "name": "spear",
+          "type": "pierce",
+          "range": "melee",
+          "dmg": 7,
+          "num": 3,
+          "spec": [
+            "firststrike"
+          ]
+        },
+        {
+          "name": "javelin",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 1,
+          "spec": []
+        }
+      ]
+    },
+    "Statue": {
+      "name": "Statue",
+      "race": "mechanical",
+      "hp": 50,
+      "mp": 0,
+      "level": 0,
+      "alignment": "neutral",
+      "cost": 30,
+      "image": "misc/blank-hex.png",
+      "profile": "units/statue-westin.png",
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "cold": 100,
+        "fire": 100,
+        "arcane": 40
+      }
+    },
+    "Swordsman": {
+      "name": "Swordsman",
+      "race": "human",
+      "hp": 55,
+      "mp": 5,
+      "xp": 80,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 29,
+      "movetype": "smallfoot",
+      "image": "units/human-loyalists/swordsman.png",
+      "profile": "portraits/humans/swordsman.webp",
+      "adv": [
+        "Royal Guard"
+      ],
+      "attacks": [
+        {
+          "name": "sword",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 8,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "resist": {
+        "blade": 80,
+        "impact": 80
+      }
+    },
+    "Thief": {
+      "name": "Thief",
+      "race": "human",
+      "hp": 24,
+      "mp": 6,
+      "xp": 29,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "elusivefoot",
+      "image": "units/human-outlaws/thief.png",
+      "profile": "portraits/humans/thief.webp",
+      "adv": [
+        "Rogue"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 4,
+          "num": 3,
+          "spec": [
+            "backstab"
+          ]
+        }
+      ]
+    },
+    "Thug": {
+      "name": "Thug",
+      "race": "human",
+      "hp": 32,
+      "mp": 5,
+      "xp": 32,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/thug.png",
+      "profile": "portraits/humans/thug.webp",
+      "adv": [
+        "Bandit"
+      ],
+      "attacks": [
+        {
+          "name": "club",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 5,
+          "num": 4,
+          "spec": []
+        }
+      ]
+    },
+    "Townsfolk": {
+      "name": "Townsfolk",
+      "race": "human",
+      "hp": 16,
+      "mp": 4,
+      "xp": 25,
+      "level": 0,
+      "alignment": "lawful",
+      "cost": 6,
+      "movetype": "smallfoot",
+      "image": "units/townsfolk/worker.png",
+      "adv": [],
+      "resist": {
+        "blade": 130,
+        "pierce": 120,
+        "impact": 120,
+        "arcane": 80,
+        "fire": 100,
+        "cold": 100
+      },
+      "costs": {
+        "mountain": 2
+      },
+      "amla": 1
+    },
+    "Trapdoor": {
+      "name": "Cellar Trapdoor",
+      "race": "mechanical",
+      "hp": 100,
+      "mp": 0,
+      "xp": 25,
+      "level": 0,
+      "alignment": "neutral",
+      "cost": 9,
+      "image": "misc/blank-hex.png",
+      "profile": "scenery/trapdoor-centered.png",
+      "adv": [],
+      "resist": {
+        "blade": 100,
+        "pierce": 100,
+        "impact": 100,
+        "cold": 100,
+        "fire": 100,
+        "arcane": 40
+      }
+    },
+    "Trapper": {
+      "name": "Trapper",
+      "race": "human",
+      "hp": 49,
+      "mp": 5,
+      "xp": 73,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 21,
+      "movetype": "smallfoot",
+      "image": "units/human-outlaws/trapper.png",
+      "profile": "portraits/humans/trapper.webp",
+      "adv": [
+        "Huntsman",
+        "Ranger"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 4,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 4,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "forest": 40,
+        "swamp_water": 50
+      },
+      "costs": {
+        "swamp_water": 2
+      }
+    },
+    "Troll": {
+      "name": "Troll",
+      "race": "troll",
+      "hp": 55,
+      "mp": 5,
+      "xp": 58,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 25,
+      "movetype": "largefoot",
+      "image": "units/trolls/grunt.png",
+      "profile": "portraits/trolls/troll.png",
+      "adv": [
+        "Troll Warrior"
+      ],
+      "abilities": [
+        "regenerates_8"
+      ],
+      "attacks": [
+        {
+          "name": "club",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 14,
+          "num": 2,
+          "spec": []
+        }
+      ]
+    },
+    "Troll Rocklobber": {
+      "name": "Troll Rocklobber",
+      "race": "troll",
+      "hp": 53,
+      "mp": 5,
+      "xp": 100,
+      "level": 2,
+      "alignment": "chaotic",
+      "cost": 25,
+      "movetype": "largefoot",
+      "image": "units/trolls/lobber.png",
+      "profile": "portraits/trolls/troll-rocklobber.webp",
+      "adv": [],
+      "abilities": [
+        "regenerates_8"
+      ],
+      "attacks": [
+        {
+          "name": "fist",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 10,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 19,
+          "num": 1,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Troll Warrior": {
+      "name": "Troll Warrior",
+      "race": "troll",
+      "hp": 70,
+      "mp": 5,
+      "xp": 150,
+      "level": 3,
+      "alignment": "chaotic",
+      "cost": 49,
+      "movetype": "largefoot",
+      "image": "units/trolls/warrior.png",
+      "profile": "portraits/trolls/troll-warrior.webp",
+      "adv": [],
+      "abilities": [
+        "regenerates_8"
+      ],
+      "attacks": [
+        {
+          "name": "hammer",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 20,
+          "num": 2,
+          "spec": []
+        }
+      ],
+      "amla": 1
+    },
+    "Troll Whelp": {
+      "name": "Troll Whelp",
+      "race": "troll",
+      "hp": 42,
+      "mp": 4,
+      "xp": 36,
+      "level": 1,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "largefoot",
+      "image": "units/trolls/whelp.png",
+      "profile": "portraits/trolls/whelp.webp",
+      "adv": [
+        "Troll",
+        "Troll Rocklobber"
+      ],
+      "abilities": [
+        "regenerates_8"
+      ],
+      "attacks": [
+        {
+          "name": "fist",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 7,
+          "num": 2,
+          "spec": []
+        }
+      ]
+    },
+    "Vampire Bat": {
+      "name": "Vampire Bat",
+      "race": "bats",
+      "hp": 16,
+      "mp": 8,
+      "xp": 22,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 13,
+      "movetype": "smallfly",
+      "image": "units/bats/bat-se-3.png",
+      "profile": "portraits/monsters/bat.webp",
+      "adv": [
+        "Blood Bat"
+      ],
+      "attacks": [
+        {
+          "name": "fangs",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 4,
+          "num": 2,
+          "spec": [
+            "drains"
+          ]
+        }
+      ],
+      "resist": {
+        "cold": 70
+      },
+      "defense": {
+        "village": 50
+      },
+      "musthave": [
+        "feral"
+      ]
+    },
+    "Veteran Fencer": {
+      "name": "Veteran Fencer",
+      "race": "human",
+      "hp": 55,
+      "mp": 7,
+      "xp": 75,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 35,
+      "movetype": "elusivefoot",
+      "image": "units/mari2/mari.png",
+      "adv": [
+        "Master Fencer"
+      ],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Veteran Fencer:relaxed": {
+      "name": "Veteran Fencer",
+      "race": "human",
+      "hp": 55,
+      "mp": 7,
+      "xp": 75,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 35,
+      "movetype": "elusivefoot",
+      "image": "units/mari2/mari-relaxed.png",
+      "adv": [
+        "Master Fencer"
+      ],
+      "abilities": [
+        "skirmisher"
+      ],
+      "attacks": [
+        {
+          "name": "saber",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 5,
+          "num": 5,
+          "spec": []
+        },
+        {
+          "name": "sling",
+          "type": "impact",
+          "range": "ranged",
+          "dmg": 6,
+          "num": 3,
+          "spec": []
+        }
+      ]
+    },
+    "Veteran Infantryman": {
+      "name": "Veteran Infantryman",
+      "race": "human",
+      "hp": 55,
+      "mp": 5,
+      "xp": 75,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 35,
+      "movetype": "armoredfoot",
+      "image": "units/infantry-lieutenant.png",
+      "adv": [
+        "Master Infantryman"
+      ],
+      "attacks": [
+        {
+          "name": "glaive",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 13,
+          "num": 3,
+          "spec": []
+        },
+        {
+          "name": "shield",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 15,
+          "num": 2,
+          "spec": [
+            "slow"
+          ]
+        }
+      ]
+    },
+    "Walking Corpse": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 18,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "smallfoot",
+      "image": "units/undead/zombie.png",
+      "profile": "portraits/undead/walking-corpse.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:ant": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 16,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "orcishfoot",
+      "image": "units/undead/zombie-ant.png",
+      "profile": "portraits/undead/zombie-ant.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:bat": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 15,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "fly",
+      "image": "units/undead/zombie-bat-se-3.png",
+      "profile": "portraits/undead/zombie-bat.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "cold": 70
+      },
+      "defense": {
+        "cave": 50,
+        "fungus": 50,
+        "deep_water": 50
+      },
+      "costs": {
+        "cave": 1,
+        "fungus": 1,
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:beast_rider": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 23,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "largefoot",
+      "image": "units/undead/zombie-beastrider.png",
+      "profile": "portraits/undead/zombie-beastrider.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:boar": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 19,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "smallfoot",
+      "image": "units/undead/zombie-boar.png",
+      "profile": "portraits/undead/zombie-boar.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "village": 50
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:bug": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 16,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "orcishfoot",
+      "image": "units/undead/zombie-bug.png",
+      "profile": "portraits/undead/zombie-bug.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:cat": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 19,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "woodland",
+      "image": "units/undead/zombie-cat.png",
+      "profile": "portraits/undead/zombie-cat.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "cave": 40
+      },
+      "costs": {
+        "cave": 2
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:drake": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 23,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "drakefoot",
+      "image": "units/undead/zombie-drake.png",
+      "profile": "portraits/undead/zombie-drake.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "unwalkable": 90
+      },
+      "costs": {
+        "unwalkable": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:dwarf": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 3,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "dwarvishfoot",
+      "image": "units/undead/zombie-dwarf.png",
+      "profile": "portraits/undead/zombie-dwarf.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:falcon": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 16,
+      "mp": 6,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "fly",
+      "image": "units/undead/zombie-falcon.png",
+      "profile": "portraits/undead/zombie-falcon.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "mountains": 40,
+        "deep_water": 50
+      },
+      "costs": {
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:fish": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 20,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "swimmer",
+      "image": "units/undead/zombie-fish.png",
+      "profile": "portraits/undead/zombie-fish.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "sand": 60,
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "sand": 1,
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:goblin": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 13,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "smallfoot",
+      "image": "units/undead/zombie-goblin.png",
+      "profile": "portraits/undead/zombie-goblin.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:gryphon": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "fly",
+      "image": "units/undead/zombie-gryphon.png",
+      "profile": "portraits/undead/zombie-gryphon.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "mountains": 40,
+        "deep_water": 50
+      },
+      "costs": {
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:horse": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 18,
+      "mp": 6,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "mounted",
+      "image": "units/undead/zombie-horse.png",
+      "profile": "portraits/undead/zombie-horse.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:mounted": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "mounted",
+      "image": "units/undead/zombie-mounted.png",
+      "profile": "portraits/undead/zombie-rider.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:rat": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 12,
+      "mp": 3,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 5,
+      "movetype": "rodentfoot",
+      "image": "units/undead/zombie-rat.png",
+      "profile": "portraits/undead/zombie-rat.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:sand_scorpion": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "scuttlefoot",
+      "image": "units/undead/zombie-scorpion.png",
+      "profile": "portraits/undead/zombie-scorpion.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:saurian": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 16,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "lizard",
+      "image": "units/undead/zombie-saurian.png",
+      "profile": "portraits/undead/zombie-saurian.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:scorpion": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "scuttlefoot",
+      "image": "units/undead/zombie-scorpion.png",
+      "profile": "portraits/undead/zombie-scorpion.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "blade": 90,
+        "pierce": 80,
+        "impact": 110,
+        "fire": 90,
+        "cold": 110,
+        "arcane": 80
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:serpent": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 20,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "swimmer",
+      "image": "units/undead/zombie-serpent.png",
+      "profile": "portraits/undead/zombie-serpent.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "sand": 60,
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "sand": 1,
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:spider": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 25,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "mountainfoot",
+      "image": "units/undead/zombie-spider.png",
+      "profile": "portraits/undead/zombie-spider.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:swimmer": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 18,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "swimmer",
+      "image": "units/undead/zombie-swimmer.png",
+      "profile": "portraits/undead/zombie-swimmer.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 50
+      },
+      "costs": {
+        "forest": 4,
+        "hills": 4,
+        "deep_water": 1
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:troll": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 21,
+      "mp": 4,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "largefoot",
+      "image": "units/undead/zombie-troll.png",
+      "profile": "portraits/undead/zombie-troll.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:wolf": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 19,
+      "mp": 5,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "orcishfoot",
+      "image": "units/undead/zombie-wolf.png",
+      "profile": "portraits/undead/zombie-wolf.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "village": 50
+      },
+      "costs": {
+        "deep_water": 4
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "Walking Corpse:wose": {
+      "name": "Walking Corpse",
+      "race": "undead",
+      "hp": 26,
+      "mp": 3,
+      "xp": 24,
+      "level": 0,
+      "alignment": "chaotic",
+      "cost": 8,
+      "movetype": "treefolk",
+      "image": "units/undead/zombie-wose.png",
+      "profile": "portraits/undead/zombie-wose.webp",
+      "adv": [
+        "Soulless"
+      ],
+      "attacks": [
+        {
+          "name": "touch",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": [
+            "plague"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 120
+      },
+      "defense": {
+        "deep_water": 90
+      },
+      "costs": {
+        "deep_water": 3
+      },
+      "musthave": [
+        "fearless"
+      ]
+    },
+    "White Mage": {
+      "name": "White Mage",
+      "race": "human",
+      "hp": 35,
+      "mp": 5,
+      "xp": 75,
+      "level": 2,
+      "alignment": "lawful",
+      "cost": 31,
+      "movetype": "smallfoot",
+      "image": "units/human-magi/white-mage.png",
+      "profile": "portraits/humans/mage-white.webp",
+      "adv": [
+        "Mage of Light"
+      ],
+      "abilities": [
+        "heals_8",
+        "cures"
+      ],
+      "attacks": [
+        {
+          "name": "staff",
+          "type": "impact",
+          "range": "melee",
+          "dmg": 6,
+          "num": 2,
+          "spec": []
+        },
+        {
+          "name": "lightbeam",
+          "type": "arcane",
+          "range": "ranged",
+          "dmg": 9,
+          "num": 3,
+          "spec": [
+            "magical"
+          ]
+        }
+      ],
+      "resist": {
+        "arcane": 70
+      }
+    },
+    "Woodsman": {
+      "name": "Woodsman",
+      "race": "human",
+      "hp": 18,
+      "mp": 5,
+      "xp": 19,
+      "level": 0,
+      "alignment": "neutral",
+      "cost": 10,
+      "movetype": "smallfoot",
+      "image": "units/human-peasants/woodsman.png",
+      "profile": "portraits/humans/woodsman.webp",
+      "adv": [
+        "Bowman",
+        "Poacher"
+      ],
+      "attacks": [
+        {
+          "name": "dagger",
+          "type": "blade",
+          "range": "melee",
+          "dmg": 3,
+          "num": 1,
+          "spec": []
+        },
+        {
+          "name": "bow",
+          "type": "pierce",
+          "range": "ranged",
+          "dmg": 4,
+          "num": 3,
+          "spec": []
+        }
+      ],
+      "defense": {
+        "forest": 40,
+        "swamp_water": 50
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@
 #include "battle/campaign_state.h"
 #include "cJSON.h"
 #include "platform/gb_port.h"
+#include "text_markup.h"
 
 namespace wsg {
 
@@ -339,7 +340,7 @@ void EventEngine::queue_message(const WNode& n, const Ctx& c) {
     const bool narrator = sp == "narrator" || (sp.empty() && !u);
     if (!narrator && !u) return;                 // orateur absent ou mort
     EventMessage m;
-    m.text = subst(n.get("message"), c);
+    m.text = wesnoth_sg::strip_markup(subst(n.get("message"), c));
     if (m.text.empty() && !n.child("option")) return;
     m.speaker = n.get("caption", u ? (u->name.empty() ? u->t->name : u->name) : "");
     m.portrait = portrait_for(u, n.get("image"));
@@ -349,7 +350,7 @@ void EventEngine::queue_message(const WNode& n, const Ctx& c) {
         if (k.tag != "option") continue;
         const WNode* si = k.child("show_if");
         if (si && !cond(*si, c)) continue;
-        m.options.push_back(subst(k.get("message", k.get("label")), c));
+        m.options.push_back(wesnoth_sg::strip_markup(subst(k.get("message", k.get("label")), c)));
         opts.push_back(&k);
     }
     if (!opts.empty()) {

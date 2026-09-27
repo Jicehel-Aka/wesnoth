@@ -2585,6 +2585,24 @@
       "text": "You have run out of turns to complete the scenario, and have been defeated!",
       "file": "04_Choice_in_the_Fog/081_narrator.wav",
       "bytes": 398154
+    },
+    {
+      "scenario": "01_Tutorial",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Our story begins during a time of great prosperity and peace in Wesnoth. Royal armies had destroyed the undead tombs in the east. The northern orc-forts were quiet and secure. The elves in the western forest kept to their own affairs. In the south, men built new towns and farms.",
+      "file": "01_Tutorial/000_narrator.wav",
+      "bytes": 1488652
+    },
+    {
+      "scenario": "01_Tutorial",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "voice": "kal16",
+      "text": "Over time, in the absence of pressing danger, the South Guard grew complacent and lazy. Reports to the capital slowed, and in the spring of the ninth year, ceased altogether. Displeased with the Guard’s conduct, the Crown decided to send someone to investigate...",
+      "file": "01_Tutorial/001_narrator.wav",
+      "bytes": 1432602
     }
   ],
   "total_bytes": 203151856,

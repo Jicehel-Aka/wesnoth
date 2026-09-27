@@ -8,6 +8,7 @@
 
 #include "cJSON.h"
 #include "esp_log.h"
+#include "text_markup.h"
 
 static const char* TAG = "campaign_loader";
 
@@ -121,8 +122,8 @@ bool campaign_load(const char* campaign_json_path,
             Beat beat;
             beat.type = parse_beat_type(cjson_str(beat_obj, "type").c_str());
             beat.speaker = cjson_str(beat_obj, "speaker");
-            beat.text_en = cjson_str(beat_obj, "text_en", cjson_str(beat_obj, "text").c_str());
-            beat.text_fr = cjson_str(beat_obj, "text_fr");
+            beat.text_en = wesnoth_sg::strip_markup(cjson_str(beat_obj, "text_en", cjson_str(beat_obj, "text").c_str()));
+            beat.text_fr = wesnoth_sg::strip_markup(cjson_str(beat_obj, "text_fr"));
             beat.has_fr = !beat.text_fr.empty();
             // "image" pour les story_screen, "portrait" pour les dialogues
             // (cf. wml_story_parser.py) -- les deux tombent dans le meme

@@ -26,3 +26,9 @@ et `images/portraits/types/` dans `/sdcard/WESNOTH_SG/`.
 - `extract_scenario.py` : rejoue les événements de mise en place d'un scénario
   (difficulté `--difficulty`, choix de message `--choose`, par défaut on passe le tutoriel).
 - `gen_assets.py` : tuiles hexagonales, sprites en couleurs d'équipe, portraits de type.
+- `fix_story_hotkeys.py` : corrige dans `campaign_bilingual.json` les instructions de
+  raccourcis clavier PC copiées telles quelles du WML d'origine (Ctrl+R, Ctrl+Space,
+  Ctrl+J, Alt+R, touche "u", clic droit...) qui n'ont pas de sens sur l'AKA, en les
+  remplaçant par les vraies actions manette (menu, boutons). À relancer après chaque
+  régénération de `campaign_bilingual.json` :
+  `python3 fix_story_hotkeys.py /sdcard/WESNOTH_SG/campaign_bilingual.json`

@@ -35,11 +35,17 @@ jobs:
           chmod +x build_pc.sh
           ./build_pc.sh
 
+      - name: Regrouper le binaire et le LISEZMOI
+        run: |
+          mkdir -p dist
+          cp wesnoth_sg_pc dist/
+          cp docs/LISEZMOI_PC.txt dist/
+
       - name: Publier le binaire
         uses: actions/upload-artifact@v4
         with:
           name: wesnoth_sg-linux-x64
-          path: wesnoth_sg_pc
+          path: dist/
 
   build-windows:
     name: Windows x64
@@ -89,6 +95,7 @@ jobs:
         run: |
           mkdir -p dist
           cp wesnoth_sg_pc.exe dist/
+          cp docs/LISEZMOI_PC.txt dist/
           for dll in SDL2.dll libcjson-1.dll libwinpthread-1.dll; do
             if [ -f "/mingw64/bin/$dll" ]; then cp "/mingw64/bin/$dll" dist/; fi
           done

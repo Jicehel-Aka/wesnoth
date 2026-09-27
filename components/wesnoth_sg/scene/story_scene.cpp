@@ -215,9 +215,18 @@ void StoryScene::render() {
 
     switch (beat.type) {
         case BeatType::StoryScreen: {
-            std::string bg_path = "/sdcard/WESNOTH_SG/images/" + as_bmp(beat.image);
-            if (beat.image.empty() || !gb::blit_bmp(bg_path.c_str())) {
-                gb::clear(kBg);
+            // On efface toujours l'écran avant de dessiner le fond : les BMP
+            // d'arrière-plan issus de la conversion des images Wesnoth ne
+            // font pas forcément exactement 320x240 (crop/format d'origine
+            // variable), et blit_bmp() ne peint que les pixels couverts par
+            // l'image. Sans ce clear(), toute zone hors de l'image gardait le
+            // contenu de la frame précédente (ex: le texte du tout premier
+            // écran narratif restait visible en permanence par-dessus les
+            // écrans suivants).
+            gb::clear(kBg);
+            if (!beat.image.empty()) {
+                std::string bg_path = "/sdcard/WESNOTH_SG/images/" + as_bmp(beat.image);
+                gb::blit_bmp(bg_path.c_str());
             }
             // Bande de texte en bas d'écran, sur le fond narratif : sa hauteur
             // suit la longueur du texte (les longs écrans ne débordent plus).

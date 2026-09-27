@@ -1,9 +1,9 @@
 {
   "scenarios": [
     {
-      "id": "01_Born_to_the_Banner",
-      "name": "Born to the Banner",
-      "next_scenario": "02_Proven_by_the_Sword",
+      "id": "01_Tutorial",
+      "name": "A Lesson in Arms",
+      "next_scenario": "01_Born_to_the_Banner",
       "beats": [
         {
           "type": "story_screen",
@@ -14,446 +14,14 @@
           "type": "story_screen",
           "text": "Over time, in the absence of pressing danger, the South Guard grew complacent and lazy. Reports to the capital slowed, and in the spring of the ninth year, ceased altogether. Displeased with the Guard’s conduct, the Crown decided to send someone to investigate...",
           "image": "story/summer.webp"
-        },
-        {
-          "type": "character_enters",
-          "id": "Deoran",
-          "name": "Deoran",
-          "unit_type": "Cavalryman Commander"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Lieutenant Deoran, reporting for duty SIR! ...err, ma’am.",
-          "portrait": "portraits/deoran-glad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Relax, Lieutenant. Fresh from the academy, are we?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Yes ma’am. —sir. And as His Majesty ordered, I’ve brought with me a contingent of fresh soldiers to reinforce Westin’s faltering South Guard!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "I’m Mari. Got the same orders as you; guess someone wanted an officer with experience to keep an eye on you and your “fresh” company. Can’t imagine why."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Well, orders are orders. Come on over here, Deoran — let’s get a closer look at you."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Suit yourself. I’m sure you won’t need my help against those bandits anyway."
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "Move Deoran next to Mari",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "(Bows) A pleasure to make your acquaintance, Captain."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "Wondering about those percentages that appear on the ground when you move a unit? That’s your soldiers’ terrain defense — their chance to evade enemy attacks.",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Amazing, you know how to ride your horse. Now let’s see if you know how to swing your sword."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Behold!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "...a quintain? You want me to attack a practice dummy?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "You have fifty pounds of armor and a horse, rookie. I’m fairly sure you’ll win."
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "Attack the dummy",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Hey, this quintain fights back! I’m not about to lose to a dummy — let me attack again!",
-          "portrait": "portraits/deoran-mad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Nice try, but you already used up your chance to attack. Now it’s the quintain’s turn to act."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "The dummy gets a turn?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Why not? It’s a magical quintain, on loan from the wizards’ academy at Alduin. It strikes twice per attack, and will sting something fierce if it hits you. Brace yourself!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "To end your turn, click the “End Turn” button in the bottom-right corner of the screen, or press Ctrl+Space.",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "End your turn",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "I’m injured; this is more dangerous than I expected. I should retreat to a village, where I can catch my breath and bandage my wounds.",
-          "portrait": "portraits/deoran-sad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "I’m already seriously injured! If I attack now, I am sure to be vanquished. By a dummy, no less."
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "End your turn on a village",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "You’ve captured a village, which now flies the red-and-white colors of our banner. Each village we own provides us with some income — and importantly for you, provides a place to rest and recover."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "Starting your turn in a village will heal you for 8 hitpoints. End your turn now.",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Congratulations, you ran away from the dummy and licked your wounds in a village. I hope you’re proud."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "I’ve had enough of being humiliated by this dummy. Time to recruit some proper soldiers and smash that thing to pieces."
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "Recruit some soldiers",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "Press Ctrl+R to recruit new soldiers. (Or right-click on a keep hex.)",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "unit",
-          "text": "At your service, Commander Deoran! You should still have some gold left — I suggest you keep recruiting more soldiers."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "The quintain is repairing itself! Come on men, let’s go finish it off!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "Tip: Press “u” if you ever want to undo a move. Attacks cannot be undone.",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "Destroy Mari’s quintain",
-              "condition": "win"
-            },
-            {
-              "description": "Get yourself killed",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "...he’s fine. Just out cold, and of no use to you for the rest of our journey."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "second_unit",
-          "text": "Hooray! The dummy is destroyed, and I’ve gained valuable combat experience!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Not bad, you’ve smashed it to splinters. ...is it too late to mention that I was supposed to return that after we finished training? Maybe I can find a replacement once we reach Westin."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Of course before we can reach Westin, we’ll first have to fight our way past these bandits."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Are you... actually trying to fight the quintain? We don’t have all day. Hurry up and beat it."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "We’re going to have to cut things short, rookie. Look: bandits on the south road!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Bandits! Where?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "Oh, what’s this? A lady and her loyal squire travelin’ south on this dangerous road? Tell ya what, we can offer ya protection ’round here for a small fee."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Do you take us for fools? I ride south to reinforce Westin’s venerable South Guard, on orders from the King to ensure the region is kept safe and secure!",
-          "portrait": "portraits/deoran-mad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "The only danger around here is you, and I intend to put an end to it. Men, raise your spears!",
-          "portrait": "portraits/deoran-mad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "Hah, like it would be that easy, child. I’m Urza Mathin, eldest of the four Urza brothers, and these are my thugs. Time to show you who the real power is in these parts!"
-        },
-        {
-          "type": "objectives",
-          "items": [
-            {
-              "description": "Defeat Urza Mathin",
-              "condition": "win"
-            },
-            {
-              "description": "Death of Deoran",
-              "condition": "lose"
-            },
-            {
-              "description": "Death of Mari",
-              "condition": "lose"
-            }
-          ]
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Are you going to help fight? We must drive these villains from the road!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Officially, I’m only here as an observer. These ruffians don’t look too dangerous — you and your professional soldiers should be able to make short work of them, even without my sword."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Besides, it only took $quintain_killers.length of you to deal with my dummy. What’s a dozen muscly bandits compared to that?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Oh, now you want my help? I thought you were too clever to listen to my tutorial."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Look, officially I’m only here as an observer. These ruffians don’t look too dangerous — you and your professional soldiers should be able to make short work of them, even without my sword."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "narrator",
-          "text": "You may toggle tips on or off at any time during the campaign by right-clicking anywhere and selecting “Tips: On/Off” in the menu.",
-          "portrait": "wesnoth-icon.png"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Get out of my face!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "What happened to being a passive observer?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "...self-defense doesn’t count."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "unknown",
-          "text": "Stop right there! Not one hair further or I’ll bash your head in!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "The sun begins to set! Soon these Wesnoth soldiers will falter in the dark, while my thugs and I will fight at our best. Press the attack!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Careful, Deoran. Unless you have overwhelming numbers, you may want to hunker down and hold a defensive position until dawn. Castles and especially villages (because they heal) make for good defensive positions."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "Day has come! We will be strongest in the light — now is the time for us to attack and drive these bandits from our lands. To me, men of the South Guard!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "Ha, this will be an easy victory! These soldiers’ young commander must be a fool, for he fights my thugs at night while I am strong and he is weak."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Get a move on, rookie! I’m sure those bandits have called for reinforcements — you’re running out of time to finish them off."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "Reinforcements from my brothers! Excellent. These lands belong to the brothers Urza!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "We’ve run out of time, and now more enemies have arrived! We’ll have to retreat and bring more soldiers some other time. I really thought Deoran could handle this on his own..."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "You are beaten, you bloodthirsty, balding bandit! Accosting travelers between Weldyn and Westin; what is the meaning of this? How have you become so bold as to strike at even trained soldiers!?",
-          "portrait": "portraits/deoran-mad.webp"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Urza Mathin",
-          "text": "How... impossible... no! If I die... so will you!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "What the—"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Zombie Mathin",
-          "text": "Gruhh..."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Look out!"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Undead again. As if losing one arm to these things wasn’t bad enough, now they’re back for my second."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "I’ve never seen the like before in my life! That man clearly died, then stood right back up again! You say you’ve fought these things before, Mari?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Yeah, I have. And no, simple bandits aren’t supposed to know how to create them. This reeks of black magic; powerful black magic."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Deoran",
-          "text": "This brother said he was the eldest of four — the other three are doubtless still alive and causing trouble. How did petty outlaws get their hands on magic like this?"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "Mari",
-          "text": "Maybe the locals in town will know something. Come on, let’s hurry onwards towards Westin, and hope we don’t run into any more trouble on the way."
         }
       ]
+    },
+    {
+      "id": "01_Born_to_the_Banner",
+      "name": "Born to the Banner",
+      "next_scenario": "02_Proven_by_the_Sword",
+      "beats": []
     },
     {
       "id": "02_Proven_by_the_Sword",
@@ -976,7 +544,7 @@
         {
           "type": "dialogue",
           "speaker": "narrator",
-          "text": "Rain or snow have no impact on gameplay. If weather is distracting or reduces performance, you can disable it by opening the Preferences menu (Ctrl-P), by selecting “Display” and unchecking “Animate Map.”",
+          "text": "Rain or snow have no impact on gameplay.",
           "portrait": "wesnoth-icon.png"
         },
         {
@@ -1101,7 +669,7 @@
         {
           "type": "dialogue",
           "speaker": "Deoran",
-          "text": "I will need to recruit units if I want to weather the undead assault! I should first move to a keep, then press Ctrl+R to recruit or Alt+R to recall."
+          "text": "I will need to recruit units if I want to weather the undead assault! I should first move to a keep, then open the menu (MENU button) to recruit or recall units."
         },
         {
           "type": "dialogue",
@@ -1111,7 +679,7 @@
         {
           "type": "dialogue",
           "speaker": "Deoran",
-          "text": "If you have high-XP survivors from previous battles, remember to press Alt+R and recall them so they can continue gaining experience and be promoted to higher levels."
+          "text": "If you have high-XP survivors from previous battles, remember to open the menu (MENU button) and recall them so they can continue gaining experience and be promoted to higher levels."
         },
         {
           "type": "dialogue",
@@ -1612,7 +1180,7 @@
         {
           "type": "dialogue",
           "speaker": "narrator",
-          "text": "You are running out of turns to complete this scenario! See your objectives by pressing Ctrl+J, and remember that the turn limit can be seen in the top-left-hand corner.",
+          "text": "You are running out of turns to complete this scenario! See your objectives from the menu (MENU button), and remember that the turn limit can be seen in the top-left-hand corner.",
           "portrait": "wesnoth-icon.png"
         },
         {
