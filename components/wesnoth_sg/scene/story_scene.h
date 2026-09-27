@@ -35,6 +35,17 @@ private:
     size_t beat_index_ = 0;
     bool loaded_ = false;
     bool beat_just_entered_ = true;
+
+    // Pagination des textes trop longs pour la boîte (récit ou dialogue) --
+    // remise à zéro à chaque nouveau beat. Voir dialog_max_lines()/
+    // current_lines() dans story_scene.cpp.
+    int dlg_page_ = 0;
+    int dialog_max_lines(const Beat& beat) const;
+    // Décalage horizontal du texte pour un beat Dialogue (kPortraitSize+14 si
+    // un portrait sera dessiné, 10 sinon) -- factorisé pour que update()
+    // (pagination) et render() calculent la même largeur de ligne. Sans objet
+    // pour StoryScreen (marge fixe des deux côtés).
+    int dialog_text_x(const Beat& beat) const;
 };
 
 StoryScene& story_scene();  // instance unique, cf. title_scene() dans Asteria

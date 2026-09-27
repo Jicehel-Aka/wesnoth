@@ -143,8 +143,12 @@ bool campaign_load(const char* campaign_json_path,
                         cjson_str(line_obj, "scenario") == scenario.id &&
                         cJSON_GetObjectItemCaseSensitive(line_obj, "beat_index") &&
                         cJSON_GetObjectItemCaseSensitive(line_obj, "beat_index")->valueint == idx) {
-                        beat.audio_path = cjson_str(line_obj, "file");
-                        break;
+                        // "lang" absent == anglais (entrées historiques, avant le
+                        // support du français) ; une entrée "fr" alimente le
+                        // second chemin audio sans écraser l'anglais.
+                        const std::string lang = cjson_str(line_obj, "lang", "en");
+                        if (lang == "fr") beat.audio_path_fr = cjson_str(line_obj, "file");
+                        else beat.audio_path = cjson_str(line_obj, "file");
                     }
                 }
             }

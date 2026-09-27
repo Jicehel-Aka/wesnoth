@@ -26,7 +26,8 @@ struct Beat {
     std::string text_fr;      // peut être vide si pas de traduction trouvée
     bool has_fr = false;
     std::string image;        // portrait ou background, chemin relatif SD
-    std::string audio_path;   // rempli séparément depuis manifest.json (TTS)
+    std::string audio_path;   // rempli séparément depuis manifest.json (TTS, anglais)
+    std::string audio_path_fr;  // idem, voix française (manifest.json, lang="fr")
     bool show_title = false;  // pour story_screen : affiche le titre de la campagne
 };
 

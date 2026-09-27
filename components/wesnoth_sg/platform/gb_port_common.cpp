@@ -40,4 +40,36 @@ int text_wrapped(int x, int y, int max_width_px, int line_height_px,
     return lines_drawn;
 }
 
+std::vector<std::string> wrap_text_lines(int max_width_px, const std::string& s) {
+    std::vector<std::string> out;
+    std::istringstream words(s);
+    std::string word, line;
+    auto flush_line = [&]() {
+        if (!line.empty()) { out.push_back(line); line.clear(); }
+    };
+    while (words >> word) {
+        std::string candidate = line.empty() ? word : (line + " " + word);
+        if (text_width(candidate.c_str()) > max_width_px && !line.empty()) {
+            flush_line();
+            line = word;
+        } else {
+            line = candidate;
+        }
+    }
+    flush_line();
+    return out;
+}
+
+int draw_text_lines(int x, int y, int line_height_px,
+                     const std::vector<std::string>& lines, Color c,
+                     int first_line, int max_lines) {
+    int drawn = 0;
+    int cur_y = y;
+    for (int i = first_line; i < (int)lines.size() && drawn < max_lines; ++i, ++drawn) {
+        text(x, cur_y, lines[i].c_str(), c);
+        cur_y += line_height_px;
+    }
+    return drawn;
+}
+
 }  // namespace gb

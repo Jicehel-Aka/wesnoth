@@ -49,33 +49,6 @@ std::string as_bmp(const std::string& path) {
 
 StoryScene& story_scene() { static StoryScene s; return s; }
 
-// Nombre de lignes que produira gb::text_wrapped (coupure aux espaces et aux
-// retours à la ligne), pour dimensionner la boîte avant de dessiner.
-static int count_wrapped_lines(const std::string& s, int max_w) {
-    int lines = 0;
-    size_t start = 0;
-    while (start <= s.size()) {
-        size_t nl = s.find('\n', start);
-        std::string para = s.substr(start, nl == std::string::npos ? std::string::npos : nl - start);
-        std::string cur;
-        size_t i = 0;
-        int para_lines = 1;
-        while (i < para.size()) {
-            size_t sp = para.find(' ', i);
-            std::string w = para.substr(i, sp == std::string::npos ? std::string::npos : sp - i);
-            std::string trial = cur.empty() ? w : cur + " " + w;
-            if (!cur.empty() && gb::text_width(trial.c_str()) > max_w) { ++para_lines; cur = w; }
-            else cur = trial;
-            if (sp == std::string::npos) break;
-            i = sp + 1;
-        }
-        lines += para_lines;
-        if (nl == std::string::npos) break;
-        start = nl + 1;
-    }
-    return lines;
-}
-
 // TODO(à ajuster avec de vrais assets) : chemins de campagne sur SD. Suit la
 // convention akaRuntime : /sdcard/<gameId>/... -- gameId="WESNOTH_SG" fixé
 // dans main.cpp (akaRuntime.begin("WESNOTH_SG")).
@@ -93,6 +66,7 @@ void StoryScene::enter() {
     scenario_index_ = 0;
     beat_index_ = 0;
     beat_just_entered_ = true;
+    dlg_page_ = 0;
 }
 
 const std::string& StoryScene::current_text(const Beat& beat) const {
@@ -139,16 +113,51 @@ void StoryScene::update(SceneManager& mgr) {
     const Beat& beat = scenario.beats[beat_index_];
 
     if (beat_just_entered_) {
-        if (!beat.audio_path.empty()) {
-            std::string full_path = std::string("/sdcard/WESNOTH_SG/audio/") + beat.audio_path;
+        // Voix française si dispo et langue courante = français ; sinon on
+        // retombe sur l'anglais (comme pour le texte, cf. current_text()).
+        const std::string& path = (language_ == Language::French && !beat.audio_path_fr.empty())
+                                       ? beat.audio_path_fr
+                                       : beat.audio_path;
+        if (!path.empty()) {
+            std::string full_path = std::string("/sdcard/WESNOTH_SG/audio/") + path;
             story_audio::play_line(full_path);
         }
         beat_just_entered_ = false;
     }
 
     if (gb::buttons_pressed() & gb::BTN_A) {
-        advance_to_next_beat(mgr);
+        int max_lines = dialog_max_lines(beat);
+        int width = (beat.type == BeatType::StoryScreen)
+                        ? gb::SCREEN_W - 20
+                        : gb::SCREEN_W - dialog_text_x(beat) - 10;
+        int total_lines = (int)gb::wrap_text_lines(width, current_text(beat)).size();
+        if ((dlg_page_ + 1) * max_lines < total_lines) {
+            ++dlg_page_;  // encore du texte : page suivante avant de passer au beat suivant
+        } else {
+            advance_to_next_beat(mgr);
+        }
     }
+}
+
+// Lignes de texte qui tiennent dans la boîte de ce beat sans déborder de
+// l'écran. Dialogue : boîte fixe (96px de portrait + marges) en bas d'écran.
+// StoryScreen : boîte élastique (voir render()), mais plafonnée à la hauteur
+// d'écran -- au-delà, on paginė aussi plutôt que de laisser déborder.
+int StoryScene::dialog_max_lines(const Beat& beat) const {
+    if (beat.type == BeatType::Dialogue) {
+        const int kPortraitSize = 96;
+        const int kBoxTop = gb::SCREEN_H - kPortraitSize - 8;
+        return std::max(1, (gb::SCREEN_H - (kBoxTop + 20) - 6) / 12);
+    }
+    return std::max(1, (gb::SCREEN_H - 16 - 4) / 12);
+}
+
+int StoryScene::dialog_text_x(const Beat& beat) const {
+    const int kPortraitSize = 96;
+    std::string portrait_path = beat.image.empty() ? default_portrait_for(beat.speaker) : beat.image;
+    if (portrait_path.empty()) return 10;
+    std::string full = "/sdcard/WESNOTH_SG/images/" + as_bmp(portrait_path);
+    return gb::file_exists(full.c_str()) ? kPortraitSize + 14 : 10;
 }
 
 // Récit et bataille : pour un scénario dont la bataille est jouable (JSON
@@ -169,6 +178,7 @@ void StoryScene::skip_hidden(SceneManager& mgr) {
     while (beat_index_ < sc.beats.size() && !beat_visible(sc, sc.beats[beat_index_])) ++beat_index_;
     if (beat_index_ >= sc.beats.size()) end_of_scenario(mgr);
     beat_just_entered_ = true;
+    dlg_page_ = 0;
 }
 
 void StoryScene::end_of_scenario(SceneManager& mgr) {
@@ -229,12 +239,19 @@ void StoryScene::render() {
                 gb::blit_bmp(bg_path.c_str());
             }
             // Bande de texte en bas d'écran, sur le fond narratif : sa hauteur
-            // suit la longueur du texte (les longs écrans ne débordent plus).
+            // suit la longueur du texte, plafonnée à l'écran -- au-delà, on
+            // paginė (dlg_page_) plutôt que de laisser déborder hors écran.
             const std::string& txt = current_text(beat);
-            int lines = count_wrapped_lines(txt, gb::SCREEN_W - 20);
-            int top = std::max(4, gb::SCREEN_H - 16 - lines * 12);
+            auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - 20, txt);
+            int max_lines = dialog_max_lines(beat);
+            int shown_lines = std::min((int)all_lines.size() - dlg_page_ * max_lines, max_lines);
+            shown_lines = std::max(0, shown_lines);
+            int top = std::max(4, gb::SCREEN_H - 16 - shown_lines * 12);
             gb::fill_rect(0, top - 8, gb::SCREEN_W, gb::SCREEN_H - top + 8, kBoxBg);
-            gb::text_wrapped(10, top, gb::SCREEN_W - 20, 12, txt, kText);
+            gb::draw_text_lines(10, top, 12, all_lines, kText, dlg_page_ * max_lines, max_lines);
+            if ((dlg_page_ + 1) * max_lines < (int)all_lines.size()) {
+                gb::text(gb::SCREEN_W - 16, gb::SCREEN_H - 12, "v", kSpeaker);
+            }
             break;
         }
         case BeatType::Dialogue: {
@@ -257,7 +274,14 @@ void StoryScene::render() {
             }
 
             gb::text(text_x, kBoxTop + 5, beat.speaker.c_str(), kSpeaker);
-            gb::text_wrapped(text_x, kBoxTop + 20, gb::SCREEN_W - text_x - 10, 12, current_text(beat), kText);
+            {
+                auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - text_x - 10, current_text(beat));
+                int max_lines = dialog_max_lines(beat);
+                gb::draw_text_lines(text_x, kBoxTop + 20, 12, all_lines, kText, dlg_page_ * max_lines, max_lines);
+                if ((dlg_page_ + 1) * max_lines < (int)all_lines.size()) {
+                    gb::text(gb::SCREEN_W - 16, gb::SCREEN_H - 12, "v", kSpeaker);
+                }
+            }
             break;
         }
         case BeatType::Objectives:

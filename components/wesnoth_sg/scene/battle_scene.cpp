@@ -429,13 +429,22 @@ void BattleScene::update(SceneManager& mgr) {
     if (events_->has_message()) {
         const wsg::EventMessage& m = events_->message();
         if (wsg::Unit* u = g.unit_by_uid(m.unit_uid)) { cursor_ = u->pos; follow(cursor_); }
-        if (!m.options.empty()) {
+        int max_lines = dialog_max_lines();
+        int tx_check = dialog_text_x(m);
+        int total_lines = (int)gb::wrap_text_lines(gb::SCREEN_W - tx_check - 6, m.text).size();
+        bool more_pages = (dlg_page_ + 1) * max_lines < total_lines;
+        if (more_pages) {
+            // Texte trop long : A/B tourne la page avant de proposer les
+            // choix ou de passer au message suivant.
+            if (p & (gb::BTN_A | gb::BTN_B)) ++dlg_page_;
+        } else if (!m.options.empty()) {
             int n = (int)m.options.size();
             if (p & gb::BTN_UP) dlg_sel_ = (dlg_sel_ + n - 1) % n;
             if (p & gb::BTN_DOWN) dlg_sel_ = (dlg_sel_ + 1) % n;
-            if (p & gb::BTN_A) { events_->choose(dlg_sel_); dlg_sel_ = 0; }
+            if (p & gb::BTN_A) { events_->choose(dlg_sel_); dlg_sel_ = 0; dlg_page_ = 0; }
         } else if (p & (gb::BTN_A | gb::BTN_B)) {
             events_->pop_message();
+            dlg_page_ = 0;
         }
         check_end();
         return;
@@ -732,6 +741,18 @@ void BattleScene::render() {
     }
 }
 
+// Lignes de texte qui tiennent dans la boîte (h=104) sans déborder de
+// l'écran : 18px avant le texte (nom du personnage), ~6px de marge basse,
+// interligne 10px. Fixe (ne dépend pas du portrait, qui ne change que tx).
+int BattleScene::dialog_max_lines() const {
+    const int h = 104;
+    return std::max(1, (h - 18 - 6) / 10);
+}
+
+int BattleScene::dialog_text_x(const wsg::EventMessage& m) const {
+    return (!m.portrait.empty() && gb::file_exists(m.portrait.c_str())) ? 106 : 6;
+}
+
 void BattleScene::draw_dialog() {
     // boîte de dialogue à la manière de Wesnoth : portrait, nom, texte
     const wsg::EventMessage& m = events_->message();
@@ -741,11 +762,25 @@ void BattleScene::draw_dialog() {
     int tx = 6;
     if (!m.portrait.empty() && gb::draw_image(m.portrait.c_str(), 4, y + 4)) tx = 106;
     if (!m.speaker.empty()) gb::text(tx, y + 5, m.speaker.c_str(), YELLOW);
-    int lines = gb::text_wrapped(tx, y + 18, gb::SCREEN_W - tx - 6, 10, m.text, WHITE);
-    for (size_t i = 0; i < m.options.size(); ++i) {
-        int oy = y + 22 + lines * 10 + (int)i * 11;
-        if ((int)i == dlg_sel_) gb::fill_rect(tx - 2, oy - 1, gb::SCREEN_W - tx - 4, 10, gb::rgb(60, 60, 90));
-        gb::text(tx, oy, m.options[i].c_str(), WHITE);
+
+    // Texte trop long pour la boîte : on ne dessine que la page courante
+    // (dlg_page_) plutôt que de laisser déborder hors de l'écran (bug
+    // signalé : dernière ligne coupée). Un petit indicateur "▼" annonce la
+    // suite quand il en reste.
+    auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - tx - 6, m.text);
+    int max_lines = dialog_max_lines();
+    int shown = gb::draw_text_lines(tx, y + 18, 10, all_lines, WHITE, dlg_page_ * max_lines, max_lines);
+    bool more = (dlg_page_ + 1) * max_lines < (int)all_lines.size();
+    if (more) {
+        gb::text(gb::SCREEN_W - 16, y + h - 12, "v", YELLOW);
+    }
+
+    if (!more) {
+        for (size_t i = 0; i < m.options.size(); ++i) {
+            int oy = y + 18 + shown * 10 + 4 + (int)i * 11;
+            if ((int)i == dlg_sel_) gb::fill_rect(tx - 2, oy - 1, gb::SCREEN_W - tx - 4, 10, gb::rgb(60, 60, 90));
+            gb::text(tx, oy, m.options[i].c_str(), WHITE);
+        }
     }
 }
 

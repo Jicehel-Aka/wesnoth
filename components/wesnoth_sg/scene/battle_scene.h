@@ -59,7 +59,17 @@ private:
     std::string next_scenario_;
     bool end_fired_ = false;
     int dlg_sel_ = 0;
+    int dlg_page_ = 0;   // pagination des messages trop longs pour la boîte (voir draw_dialog)
     void draw_dialog();
+    // Nombre de lignes de texte de dialogue qui tiennent dans la boîte fixe
+    // (h=104, cf. draw_dialog) sans déborder de l'écran -- partagé entre
+    // update() (pour savoir s'il reste une page) et draw_dialog() (pour ne
+    // dessiner que la page courante).
+    int dialog_max_lines() const;
+    // Décalage horizontal du texte (106 si un portrait existe et sera
+    // dessiné, 6 sinon) -- factorisé pour que update() (pagination) et
+    // draw_dialog() (rendu) calculent exactement la même largeur de ligne.
+    int dialog_text_x(const wsg::EventMessage& m) const;
     bool check_end();
     bool loaded_ = false;
     std::vector<uint16_t> canvas_;

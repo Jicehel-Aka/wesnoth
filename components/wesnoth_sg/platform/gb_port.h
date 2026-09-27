@@ -60,4 +60,16 @@ int      text_width(const char* s);
 int      text_wrapped(int x, int y, int max_width_px, int line_height_px,
                        const std::string& s, Color c);
 
+// Découpe `s` en lignes tenant dans max_width_px SANS rien dessiner (même
+// règle de césure que text_wrapped) -- utile pour paginer un texte trop long
+// pour la boîte de dialogue avant de savoir combien de lignes tiennent.
+std::vector<std::string> wrap_text_lines(int max_width_px, const std::string& s);
+
+// Dessine seulement les lignes [first_line, first_line+max_lines) du texte
+// pré-découpé par wrap_text_lines (pagination des dialogues trop longs pour
+// la boîte fixe). Renvoie le nombre de lignes effectivement dessinées.
+int      draw_text_lines(int x, int y, int line_height_px,
+                          const std::vector<std::string>& lines, Color c,
+                          int first_line, int max_lines);
+
 }  // namespace gb
