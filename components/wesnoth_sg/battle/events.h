@@ -40,12 +40,24 @@ struct WNode {
     std::string get(const std::string& k, const std::string& d = "") const;
     const WNode* child(const std::string& t) const;
     static WNode from_json(const cJSON* j);
+    // Inverse de from_json -- sert à ré-exporter les événements ajoutés
+    // dynamiquement en jeu ([event] imbriqué, cf. add_event()) au moment de
+    // la sauvegarde. L'appelant possède l'objet renvoyé (à insérer dans un
+    // parent cJSON, ou cJSON_Delete()).
+    cJSON* to_json() const;
 };
 
 struct EventMessage {
     std::string speaker;     // nom affiché (vide = narrateur)
     std::string portrait;    // chemin /sdcard/... (.bmp) ou vide
     std::string text;
+    std::string text_fr;     // traduction française, vide si non doublée (voir load())
+    // Doublage : uniquement pour les messages d'ouverture (intro_messages),
+    // qui forment une séquence fixe et indexée -- les messages déclenchés
+    // dynamiquement en jeu (die/moveto/...) restent muets (texte seul), le
+    // chemin n'a de sens que pour un index de scénario stable. Vide si ce
+    // message n'a pas de doublage (cf. tools/wesnoth_data/generate_audio.py).
+    std::string audio_path, audio_path_fr;   // chemins relatifs à /sdcard/WESNOTH_SG/audio/
     std::vector<std::string> options;
     int unit_uid = 0;
 };
@@ -53,8 +65,13 @@ struct EventMessage {
 class EventEngine {
 public:
     explicit EventEngine(Game& g) : g_(g) {}
-    // scenario_json : le JSON du scénario (clés "events" et "intro_messages")
-    void load(const std::string& scenario_json);
+    // scenario_json : le JSON du scénario (clés "events" et "intro_messages").
+    // queue_intro_messages=false lors de la reprise d'une sauvegarde en
+    // cours de bataille : les messages d'ouverture ont déjà été joués (et
+    // leurs éventuels effets déjà appliqués via les événements "start"/
+    // "prestart" qu'on ne refire pas non plus, cf. story/savegame.cpp) --
+    // seule la structure "events" doit être (re)connue du moteur.
+    void load(const std::string& scenario_json, bool queue_intro_messages = true);
     void attach();                               // branche le crochet de Game
     void fire(const std::string& name, int uid1, int uid2, HexCoord where);
 
@@ -65,6 +82,20 @@ public:
 
     const std::map<std::string, int>& unsupported() const { return unsupported_; }
     int fired_count() const { return fired_; }
+
+    // --- sauvegarde --------------------------------------------------------
+    // Sérialise events_ (y compris les événements ajoutés dynamiquement en
+    // jeu via [event], cf. add_event()) et vars_ ([variable]/[set_variable]).
+    // La file de messages en attente (queue_) n'est PAS sauvegardée : les
+    // points de sauvegarde (fin de tour, fin de scénario) sont toujours
+    // choisis quand elle est vide (has_message() == false).
+    void save_state(cJSON* out) const;
+    // Réapplique un état sauvegardé : reconstruit events_ par des appels à
+    // add_event() (pour recalculer noms/once exactement comme au chargement
+    // normal), dans le même ordre qu'à la sauvegarde, puis restaure le
+    // fanion dead de chacun. À appeler juste après load() (voir son
+    // paramètre queue_intro_messages) et avant toute reprise du jeu.
+    void load_state(const cJSON* in);
 
 private:
     struct Ctx { int u1 = 0, u2 = 0; HexCoord loc{-1, -1}; };

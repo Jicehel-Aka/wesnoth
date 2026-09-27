@@ -9,17 +9,20 @@ récit de la campagne (campaign_bilingual.json), en anglais ET en français.
   "mb-fr4" (féminin) quand elles sont installées (bien plus naturelles que
   la voix espeak-ng "fr-fr" de base), sinon repli automatique sur "fr-fr".
 
-Ne synthétise QUE les écrans de récit (story_screen/dialogue de
-campaign_bilingual.json) : les messages joués PENDANT une bataille
-(intro_messages/events des scenarios/*.json) n'ont pas de support audio
-dans le moteur (cf. events.cpp::queue_message) et ne sont donc pas
-concernés ici.
+Synthétise les écrans de récit (story_screen/dialogue de
+campaign_bilingual.json) ET, si --battle-scenarios-dir est fourni, les
+messages d'ouverture joués PENDANT une bataille (intro_messages des
+scenarios/*.json -- désormais doublés, cf. events.cpp::EventEngine::load()
+et battle_scene.cpp, qui recalculent le même nom de fichier sans passer par
+ce manifest). Les messages déclenchés dynamiquement en jeu (die/moveto/...)
+restent muets (texte seul) : pas de séquence stable à indexer.
 
 Usage :
     python3 generate_audio.py \
         --campaign /home/claude/w/gen/campaign_bilingual.json \
         --out-dir /home/claude/w/gen/sd_update/WESNOTH_SG/audio \
-        --manifest /home/claude/w/gen/sd_update/WESNOTH_SG/manifest.json
+        --manifest /home/claude/w/gen/sd_update/WESNOTH_SG/manifest.json \
+        --battle-scenarios-dir /home/claude/w/gen/data/scenarios
 
 Par défaut, ne régénère pas un fichier .wav déjà présent (rapide en cas de
 ré-exécution après un simple changement de texte ailleurs) ; --force
@@ -142,6 +145,65 @@ def synth_fr(text: str, voice: str, out_path: Path) -> bool:
         return False
 
 
+def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, args):
+    """Doublage des messages d'ouverture de bataille (intro_messages des
+    scenarios/*.json), désormais joués par battle_scene.cpp -- voir
+    events.cpp::EventEngine::load(), qui calcule EXACTEMENT le même nom de
+    fichier (scenario_id/intro_<idx:03d>_<slug>.wav) : ne pas changer l'un
+    sans l'autre. Le texte français vient du champ "message_fr" déjà écrit
+    dans le JSON (tools/wesnoth_data/add_intro_fr.py) ; un message sans
+    "message_fr" n'est doublé qu'en anglais."""
+    lines = []
+    n_gen_en = n_gen_fr = n_skip = 0
+    for path in sorted(Path(scenarios_dir).glob("*.json")):
+        sc_id = path.stem
+        if args.scenario and sc_id != args.scenario:
+            continue
+        d = json.loads(path.read_text(encoding="utf-8"))
+        for idx, msg in enumerate(d.get("intro_messages", [])):
+            text_en = (msg.get("message") or "").strip()
+            if not text_en:
+                continue
+            text_fr = (msg.get("message_fr") or "").strip()
+            speaker = msg.get("speaker") or "narrator"
+            voice_en = VOICE_MAP_EN.get(speaker, DEFAULT_VOICE_EN)
+            slug = slugify(speaker)
+
+            if args.lang in ("en", "both"):
+                rel = f"{sc_id}/intro_{idx:03d}_{slug}.wav"
+                out_path = out_dir / rel
+                if args.force or not out_path.exists():
+                    if synth_en(text_en, voice_en, out_path):
+                        n_gen_en += 1
+                        print(f"  [en] {rel}")
+                    else:
+                        continue
+                else:
+                    n_skip += 1
+                if out_path.exists():
+                    lines.append({"scenario": sc_id, "message_index": idx, "speaker": speaker,
+                                  "lang": "en", "voice": voice_en, "text": text_en,
+                                  "file": rel, "bytes": out_path.stat().st_size, "kind": "battle_intro"})
+
+            if args.lang in ("fr", "both") and text_fr:
+                voice_fr = resolve_fr_voice(voice_en, mbrola_ok)
+                rel_fr = f"{sc_id}_fr/intro_{idx:03d}_{slug}.wav"
+                out_path_fr = out_dir / rel_fr
+                if args.force or not out_path_fr.exists():
+                    if synth_fr(text_fr, voice_fr, out_path_fr):
+                        n_gen_fr += 1
+                        print(f"  [fr] {rel_fr} (voix={voice_fr})")
+                    else:
+                        continue
+                else:
+                    n_skip += 1
+                if out_path_fr.exists():
+                    lines.append({"scenario": sc_id, "message_index": idx, "speaker": speaker,
+                                  "lang": "fr", "voice": voice_fr, "text": text_fr,
+                                  "file": rel_fr, "bytes": out_path_fr.stat().st_size, "kind": "battle_intro"})
+    return lines, n_gen_en, n_gen_fr, n_skip
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--campaign", default="/home/claude/w/gen/campaign_bilingual.json")
@@ -152,6 +214,9 @@ def main():
     ap.add_argument("--lang", choices=["en", "fr", "both"], default="both",
                      help="Ne (re)generer qu'une langue (par defaut : les deux)")
     ap.add_argument("--scenario", default=None, help="Ne traiter qu'un seul scenario (id)")
+    ap.add_argument("--battle-scenarios-dir", default=None,
+                     help="Si fourni, double aussi les intro_messages des scenarios/*.json "
+                          "de ce dossier (bataille) en plus des beats de --campaign (recit).")
     args = ap.parse_args()
 
     if not shutil.which("flite"):
@@ -227,17 +292,42 @@ def main():
                         "file": rel_fr, "bytes": out_path_fr.stat().st_size,
                     })
 
+    if args.battle_scenarios_dir:
+        bl, be, bf, bs = process_battle_intros(Path(args.battle_scenarios_dir), out_dir, mbrola_ok, args)
+        lines += bl
+        n_gen_en += be
+        n_gen_fr += bf
+        n_skip += bs
+
+    # Fusion avec un manifest.json existant (clé = fichier .wav produit) :
+    # une exécution partielle (--lang/--scenario) ne doit JAMAIS effacer les
+    # entrées déjà enregistrées par une exécution précédente qui ne portait
+    # pas sur le même sous-ensemble (bug déjà rencontré une fois -- voir
+    # l'historique du projet).
+    existing = {}
+    manifest_path = Path(args.manifest)
+    if manifest_path.exists():
+        try:
+            old = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for ln in old.get("lines", []):
+                existing[ln.get("file")] = ln
+        except Exception:
+            pass
+    for ln in lines:
+        existing[ln["file"]] = ln
+    merged_lines = list(existing.values())
+
     manifest = {
         "voice_map_used": VOICE_MAP_EN,
         "fr_voice_map_used": {k: resolve_fr_voice(k, mbrola_ok) for k in set(VOICE_MAP_EN.values())},
-        "lines": lines,
+        "lines": merged_lines,
     }
-    Path(args.manifest).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.manifest).write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"\nTermine : {n_gen_en} fichier(s) anglais generes, {n_gen_fr} fichier(s) francais generes, "
           f"{n_skip} deja presents (non regeneres, utiliser --force sinon).")
-    print(f"Manifest ecrit : {args.manifest} ({len(lines)} entrees au total)")
+    print(f"Manifest ecrit : {manifest_path} ({len(merged_lines)} entrees au total, fusionne avec l'existant)")
 
 
 if __name__ == "__main__":

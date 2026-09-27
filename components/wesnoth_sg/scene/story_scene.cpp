@@ -63,10 +63,77 @@ void StoryScene::enter() {
         return;
     }
     story_audio::init();
+    // Le premier écran est le menu titre (Nouvelle partie / Continuer /
+    // Charger une sauvegarde), pas directement le premier scénario -- voir
+    // story/savegame.h. start_new_game() met en place scenario_index_ etc.
+    at_title_ = true;
+    title_mode_ = TitleMode::Menu;
+    title_sel_ = 0;
+}
+
+void StoryScene::start_new_game() {
+    at_title_ = false;
     scenario_index_ = 0;
     beat_index_ = 0;
     beat_just_entered_ = true;
     dlg_page_ = 0;
+    need_skip_ = true;
+}
+
+void StoryScene::start_from_save(int slot, SceneManager& mgr) {
+    SaveSlotInfo info = slot_info(slot);
+    if (!info.used) return;
+    at_title_ = false;
+    if (info.kind == "battle") {
+        BattleSaveRaw raw = load_battle_raw(slot);
+        if (raw.scenario_id.empty()) { at_title_ = true; return; }
+        battle_scene().resume_from_autosave(raw.scenario_id);
+        mgr.set(SceneId::BATTLE);
+    } else {
+        std::string next_id;
+        if (load_story_point(slot, &next_id, &wsg::campaign_state()) && !next_id.empty()) {
+            need_skip_ = false;
+            pending_resume_ = next_id;
+        } else {
+            at_title_ = true;
+        }
+    }
+}
+
+void StoryScene::update_title(SceneManager& mgr) {
+    uint32_t p = gb::buttons_pressed();
+    if (title_mode_ == TitleMode::Menu) {
+        const bool has_continue = slot_info(kAutoSlot).used;
+        const int n = 3;
+        if (p & gb::BTN_UP) title_sel_ = (title_sel_ + n - 1) % n;
+        if (p & gb::BTN_DOWN) title_sel_ = (title_sel_ + 1) % n;
+        if (p & gb::BTN_A) {
+            if (title_sel_ == 0) {
+                start_new_game();
+            } else if (title_sel_ == 1) {
+                if (has_continue) start_from_save(kAutoSlot, mgr);
+            } else {
+                load_list_ = list_manual_slots();
+                title_mode_ = TitleMode::LoadList;
+                title_sel_ = 0;
+            }
+        }
+    } else {  // LoadList
+        const int n = (int)load_list_.size() + 1;   // +1 pour "Retour"
+        if (p & gb::BTN_UP) title_sel_ = (title_sel_ + n - 1) % n;
+        if (p & gb::BTN_DOWN) title_sel_ = (title_sel_ + 1) % n;
+        if (p & gb::BTN_B) {
+            title_mode_ = TitleMode::Menu;
+            title_sel_ = 2;
+        } else if (p & gb::BTN_A) {
+            if (title_sel_ == (int)load_list_.size()) {
+                title_mode_ = TitleMode::Menu;
+                title_sel_ = 2;
+            } else if (load_list_[title_sel_].used) {
+                start_from_save(title_sel_ + 1, mgr);
+            }
+        }
+    }
 }
 
 const std::string& StoryScene::current_text(const Beat& beat) const {
@@ -81,6 +148,7 @@ void StoryScene::update(SceneManager& mgr) {
         mgr.set(SceneId::QUIT);
         return;
     }
+    if (at_title_) { update_title(mgr); return; }
 
 #if defined(ESP_PLATFORM)
     // La langue est choisie dans le menu système d'akaRuntime (déjà géré,
@@ -212,7 +280,35 @@ void StoryScene::advance_to_next_beat(SceneManager& mgr) {
 
 void story_scene_resume(const std::string& id) { story_scene().resume_at(id); }
 
+void StoryScene::render_title() {
+    const gb::Color kBg = gb::rgb(20, 16, 24);
+    const gb::Color kSel = gb::rgb(230, 220, 200);
+    const gb::Color kOff = gb::rgb(120, 112, 104);
+    const gb::Color kTitle = gb::rgb(230, 190, 80);
+    gb::clear(kBg);
+    gb::text(96, 40, "The South Guard", kTitle);
+    if (title_mode_ == TitleMode::Menu) {
+        const bool has_continue = slot_info(kAutoSlot).used;
+        const char* items[3] = {"Nouvelle partie", "Continuer", "Charger une sauvegarde"};
+        for (int i = 0; i < 3; ++i) {
+            gb::Color c = (i == 1 && !has_continue) ? gb::rgb(70, 66, 62) : (i == title_sel_ ? kSel : kOff);
+            gb::text(110, 100 + i * 20, items[i], c);
+        }
+    } else {
+        gb::text(40, 70, "Choisir un emplacement :", kSel);
+        for (int i = 0; i < (int)load_list_.size(); ++i) {
+            const SaveSlotInfo& s = load_list_[i];
+            std::string label = "Emplacement " + std::to_string(i + 1) + " : " + (s.used ? s.scenario_name : "(vide)");
+            if (s.used && s.turn > 0) label += " (tour " + std::to_string(s.turn) + ")";
+            gb::text(40, 92 + i * 18, label.c_str(), i == title_sel_ ? kSel : kOff);
+        }
+        gb::text(40, 92 + (int)load_list_.size() * 18, "Retour",
+                 title_sel_ == (int)load_list_.size() ? kSel : kOff);
+    }
+}
+
 void StoryScene::render() {
+    if (at_title_) { render_title(); return; }
     if (!loaded_ || scenario_index_ >= campaign_.scenarios.size()) return;
     const Scenario& scenario = campaign_.scenarios[scenario_index_];
     if (beat_index_ >= scenario.beats.size()) return;

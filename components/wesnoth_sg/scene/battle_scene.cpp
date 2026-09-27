@@ -16,9 +16,11 @@
 #include <fstream>
 #include <sstream>
 
+#include "audio/story_audio.h"
 #include "battle/ai.h"
 #include "cJSON.h"
 #include "platform/gb_port.h"
+#include "story/savegame.h"
 
 namespace wesnoth_sg {
 
@@ -90,27 +92,54 @@ bool BattleScene::load() {
     std::string map_file = (mf && cJSON_IsString(mf)) ? mf->valuestring : "";
     const cJSON* ns = cJSON_GetObjectItemCaseSensitive(j, "next_scenario");
     next_scenario_ = (ns && cJSON_IsString(ns)) ? ns->valuestring : "";
+    const cJSON* nm = cJSON_GetObjectItemCaseSensitive(j, "name");
+    scenario_name_ = (nm && cJSON_IsString(nm)) ? nm->valuestring : scenario_id_;
     cJSON_Delete(j);
     game_.reset(new wsg::Game(data_));
     if (!game_->load_scenario(sj, slurp(std::string(kRoot) + "maps/" + map_file))) {
         gb::log("BattleScene: échec du chargement du scénario");
         return false;
     }
-    // événements WML du scénario : dialogues d'ouverture puis déclencheurs
-    events_.reset(new wsg::EventEngine(*game_));
-    events_->load(sj);
-    events_->attach();
     end_fired_ = false;
     recalled_roster_idx_.clear();
+    msg_audio_pending_ = true;
+
+    // Reprise d'une sauvegarde automatique de bataille (mi-scénario) : ne
+    // rejoue ni les messages d'ouverture ni prestart/start/new turn (déjà
+    // vus une fois), on réapplique juste l'état exact au tour où on s'est
+    // arrêté. Ignoré (reprise silencieusement en scénario neuf) si l'unique
+    // autosave présent ne correspond pas au scénario demandé.
+    BattleSaveRaw save;
+    if (resume_from_autosave_) save = load_battle_raw(kAutoSlot);
+    const bool resuming = resume_from_autosave_ && save.scenario_id == scenario_id_;
+    resume_from_autosave_ = false;
+
+    events_.reset(new wsg::EventEngine(*game_));
+    events_->load(sj, /*queue_intro_messages=*/!resuming);
+    events_->attach();
     // Or reporté du scénario précédent (remplace l'or de départ du
     // scénario, comme le fait Wesnoth -- pas de cumul avec la valeur du
     // .json). Absent pour le tout premier scénario joué dans la session.
-    if (wsg::campaign_state().has_gold) {
+    if (!resuming && wsg::campaign_state().has_gold) {
         if (wsg::Side* s = game_->side(1)) s->gold = wsg::campaign_state().gold;
     }
     build_canvas();
-    game_->begin();
+    if (resuming) {
+        cJSON* gj = cJSON_Parse(save.game_json.c_str());
+        cJSON* ej = cJSON_Parse(save.events_json.c_str());
+        if (gj) { game_->load_state(gj); cJSON_Delete(gj); }
+        if (ej) { events_->load_state(ej); cJSON_Delete(ej); }
+    } else {
+        game_->begin();
+    }
     return true;
+}
+
+void BattleScene::autosave() {
+    if (!loaded_ || !game_ || !events_) return;
+    if (events_->has_message()) return;              // état incomplet (dialogue en attente)
+    if (game_->outcome() != wsg::Outcome::None) return;  // la bataille est finie, rien à reprendre
+    save_battle(kAutoSlot, scenario_id_, scenario_name_, *game_, *events_);
 }
 
 void BattleScene::hex_center(HexCoord h, int& cx, int& cy) const {
@@ -303,6 +332,7 @@ void BattleScene::on_a() {
         reach_.clear();
         if (it == "Fin de tour") {
             g.end_turn_of_current_side();
+            autosave();
             if (g.outcome() == wsg::Outcome::None) start_ai_if_needed();
         } else if (it == "Recruter") {
             build_recruit_list();
@@ -410,6 +440,12 @@ bool BattleScene::check_end() {
             cs.roster = g.harvest_roster(1);
             cs.gold = g.compute_carryover_gold(1);
             cs.has_gold = true;
+            // Sauvegarde automatique du point de reprise (fin de scénario) --
+            // écrase l'autosave de bataille : la bataille qui vient de se
+            // terminer n'a plus lieu d'être reprise. Rien à reprendre si
+            // c'est la dernière bataille de la campagne.
+            if (!next_scenario_.empty() && next_scenario_ != "null")
+                save_story_point(kAutoSlot, next_scenario_, scenario_name_, cs);
         }
         events_->fire(g.outcome() == wsg::Outcome::Victory ? "victory" : "defeat", 0, 0, {-1, -1});
     }
@@ -417,11 +453,24 @@ bool BattleScene::check_end() {
     return true;
 }
 
+const std::string& BattleScene::current_text(const wsg::EventMessage& m) const {
+    if (language_ == Language::French && !m.text_fr.empty()) return m.text_fr;
+    return m.text;
+}
+
 void BattleScene::update(SceneManager& mgr) {
     if (!loaded_) {
         if (gb::buttons_pressed() & (gb::BTN_A | gb::BTN_B)) mgr.set(SceneId::QUIT);
         return;
     }
+#if defined(ESP_PLATFORM)
+    // Même lecture que StoryScene::update() -- voir story_scene.cpp -- pour
+    // rester cohérente si le joueur bascule la langue système en cours de
+    // bataille (menu accessible hors bataille uniquement, mais la valeur
+    // peut avoir changé depuis le dernier passage par l'écran de récit).
+    const char* lang = akaRuntime.getLanguage();
+    language_ = (lang && lang[0] == 'f') ? Language::French : Language::English;
+#endif
     wsg::Game& g = *game_;
     uint32_t p = gb::buttons_pressed(), held = gb::buttons();
 
@@ -429,9 +478,16 @@ void BattleScene::update(SceneManager& mgr) {
     if (events_->has_message()) {
         const wsg::EventMessage& m = events_->message();
         if (wsg::Unit* u = g.unit_by_uid(m.unit_uid)) { cursor_ = u->pos; follow(cursor_); }
+        if (msg_audio_pending_) {
+            const std::string& path = (language_ == Language::French && !m.audio_path_fr.empty())
+                                           ? m.audio_path_fr
+                                           : m.audio_path;
+            if (!path.empty()) story_audio::play_line(std::string(kRoot) + "audio/" + path);
+            msg_audio_pending_ = false;
+        }
         int max_lines = dialog_max_lines();
         int tx_check = dialog_text_x(m);
-        int total_lines = (int)gb::wrap_text_lines(gb::SCREEN_W - tx_check - 6, m.text).size();
+        int total_lines = (int)gb::wrap_text_lines(gb::SCREEN_W - tx_check - 6, current_text(m)).size();
         bool more_pages = (dlg_page_ + 1) * max_lines < total_lines;
         if (more_pages) {
             // Texte trop long : A/B tourne la page avant de proposer les
@@ -441,10 +497,15 @@ void BattleScene::update(SceneManager& mgr) {
             int n = (int)m.options.size();
             if (p & gb::BTN_UP) dlg_sel_ = (dlg_sel_ + n - 1) % n;
             if (p & gb::BTN_DOWN) dlg_sel_ = (dlg_sel_ + 1) % n;
-            if (p & gb::BTN_A) { events_->choose(dlg_sel_); dlg_sel_ = 0; dlg_page_ = 0; }
+            if (p & gb::BTN_A) {
+                story_audio::stop();
+                events_->choose(dlg_sel_); dlg_sel_ = 0; dlg_page_ = 0; msg_audio_pending_ = true;
+            }
         } else if (p & (gb::BTN_A | gb::BTN_B)) {
+            story_audio::stop();
             events_->pop_message();
             dlg_page_ = 0;
+            msg_audio_pending_ = true;
         }
         check_end();
         return;
@@ -459,10 +520,25 @@ void BattleScene::update(SceneManager& mgr) {
                 } else {
                     mgr.set(SceneId::QUIT);
                 }
+            } else if (p & gb::BTN_MENU) {
+                mode_ = Mode::SaveMenu;
+                save_slot_sel_ = 0;
+                save_feedback_.clear();
             }
         } else {
             if (p & gb::BTN_A) { loaded_ = false; sel_uid_ = 0; reach_.clear(); enter(); }   // recommencer
             else if (p & gb::BTN_B) mgr.set(SceneId::QUIT);
+        }
+        return;
+    }
+    if (mode_ == Mode::SaveMenu) {
+        if (p & gb::BTN_UP) save_slot_sel_ = (save_slot_sel_ + kNumManualSlots - 1) % kNumManualSlots;
+        if (p & gb::BTN_DOWN) save_slot_sel_ = (save_slot_sel_ + 1) % kNumManualSlots;
+        if (p & gb::BTN_A) {
+            bool ok = save_story_point(save_slot_sel_ + 1, next_scenario_, scenario_name_, wsg::campaign_state());
+            save_feedback_ = ok ? "Sauvegardé." : "Échec de la sauvegarde.";
+        } else if (p & gb::BTN_B) {
+            mode_ = Mode::Over;
         }
         return;
     }
@@ -476,6 +552,7 @@ void BattleScene::update(SceneManager& mgr) {
             if (!st.text.empty()) log_ = st.text;
         } else {
             g.end_turn_of_current_side();
+            autosave();
             wsg::Side* s = g.side(g.current_side());
             if (s && s->human && !autoplay()) {
                 mode_ = Mode::Idle;
@@ -732,13 +809,32 @@ void BattleScene::render() {
     if (mode_ == Mode::Attack) draw_attack();
     if (mode_ == Mode::Ai) gb::text(gb::SCREEN_W - 40, TOP + 3, "IA...", YELLOW);
     if (events_ && events_->has_message()) { draw_dialog(); return; }
-    if (mode_ == Mode::Over) {
+    if (mode_ == Mode::Over || mode_ == Mode::SaveMenu) {
         bool win = g.outcome() == wsg::Outcome::Victory;
         gb::fill_rect(40, 84, 240, 64, PANEL);
         gb::text(60, 92, win ? "VICTOIRE" : "DÉFAITE", win ? GREEN : RED);
         gb::text_wrapped(60, 106, 210, 10, g.outcome_reason(), WHITE);
-        gb::text(60, 134, win ? "A : continuer" : "A : recommencer  B : quitter", GREY);
+        if (mode_ == Mode::Over) {
+            gb::text(60, 134, win ? "A : continuer  MENU : sauvegarder" : "A : recommencer  B : quitter", GREY);
+        }
     }
+    if (mode_ == Mode::SaveMenu) draw_save_menu();
+}
+
+void BattleScene::draw_save_menu() {
+    const int x = 30, y = 40, w = 260, h = 160;
+    gb::fill_rect(x, y, w, h, PANEL);
+    gb::text(x + 8, y + 6, "Sauvegarder la progression", YELLOW);
+    auto slots = list_manual_slots();
+    for (int i = 0; i < (int)slots.size(); ++i) {
+        int ry = y + 22 + i * 20;
+        if (i == save_slot_sel_) gb::fill_rect(x + 4, ry - 2, w - 8, 18, gb::rgb(60, 60, 90));
+        std::string label = "Emplacement " + std::to_string(i + 1) + " : ";
+        label += slots[i].used ? (slots[i].scenario_name + (slots[i].turn > 0 ? " (tour " + std::to_string(slots[i].turn) + ")" : ""))
+                                : "(vide)";
+        gb::text(x + 10, ry, label.c_str(), WHITE);
+    }
+    gb::text(x + 8, y + h - 16, save_feedback_.empty() ? "A : sauvegarder ici   B : retour" : save_feedback_.c_str(), GREY);
 }
 
 // Lignes de texte qui tiennent dans la boîte (h=104) sans déborder de
@@ -767,7 +863,7 @@ void BattleScene::draw_dialog() {
     // (dlg_page_) plutôt que de laisser déborder hors de l'écran (bug
     // signalé : dernière ligne coupée). Un petit indicateur "▼" annonce la
     // suite quand il en reste.
-    auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - tx - 6, m.text);
+    auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - tx - 6, current_text(m));
     int max_lines = dialog_max_lines();
     int shown = gb::draw_text_lines(tx, y + 18, 10, all_lines, WHITE, dlg_page_ * max_lines, max_lines);
     bool more = (dlg_page_ + 1) * max_lines < (int)all_lines.size();

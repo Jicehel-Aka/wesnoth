@@ -9,6 +9,7 @@
 #include "battle/events.h"
 #include "battle/game.h"
 #include "battle/wdata.h"
+#include "scene/language.h"
 #include "scene/scene.h"
 
 namespace wesnoth_sg {
@@ -25,11 +26,16 @@ public:
     void update(SceneManager&) override;
     void render() override;
     // Scénario à charger (id = nom du JSON dans data/scenarios/)
-    void set_scenario(const std::string& id) { scenario_id_ = id; loaded_ = false; }
+    void set_scenario(const std::string& id) { scenario_id_ = id; loaded_ = false; resume_from_autosave_ = false; }
+    // Comme set_scenario(), mais reprend l'état sauvegardé (save_auto.json)
+    // au lieu de démarrer le scénario à zéro -- utilisé par le menu titre
+    // ("Continuer") et par le mode autoplay des tests quand un autosave
+    // correspond au scénario demandé.
+    void resume_from_autosave(const std::string& id) { scenario_id_ = id; loaded_ = false; resume_from_autosave_ = true; }
     wsg::Game* game() { return game_.get(); }
 
 private:
-    enum class Mode { Idle, Selected, Attack, Recruit, Menu, Objectives, Ai, Over };
+    enum class Mode { Idle, Selected, Attack, Recruit, Menu, Objectives, Ai, Over, SaveMenu };
 
     bool load();
     void build_canvas();
@@ -52,14 +58,34 @@ private:
     void draw_attack();
 
     std::string scenario_id_ = "01_Born_to_the_Banner";
+    std::string scenario_name_;   // champ "name" du JSON, pour l'affichage des sauvegardes
     wsg::GameData data_;
     bool data_ok_ = false;
     std::unique_ptr<wsg::Game> game_;
     std::unique_ptr<wsg::EventEngine> events_;
     std::string next_scenario_;
     bool end_fired_ = false;
+    bool resume_from_autosave_ = false;
+    // Sauvegarde automatique (emplacement 0) : à chaque fin de tour (joueur
+    // ou IA) et à chaque fin de scénario -- voir savegame.h. Ne fait rien si
+    // un message est en attente (état incomplet) ou si la partie est finie.
+    void autosave();
+    int save_slot_sel_ = 0;             // curseur du menu "Sauvegarder" (0..4 = emplacements 1..5)
+    std::string save_feedback_;         // confirmation affichée brièvement après une sauvegarde manuelle
+    void draw_save_menu();
     int dlg_sel_ = 0;
     int dlg_page_ = 0;   // pagination des messages trop longs pour la boîte (voir draw_dialog)
+    // Langue courante (même enum que StoryScene, cf. scene/language.h) --
+    // relue depuis akaRuntime à chaque frame comme dans story_scene.cpp,
+    // pour rester cohérente si le joueur la change depuis le menu système
+    // pendant qu'une bataille est en cours.
+    Language language_ = Language::French;
+    // Doublage des messages d'ouverture (intro_messages, cf. events.h) :
+    // vrai tant que le message courant (front de la file) n'a pas encore
+    // déclenché sa lecture -- remis à vrai à chaque nouveau message (pop_
+    // message()/choose()) et au chargement du scénario.
+    bool msg_audio_pending_ = true;
+    const std::string& current_text(const wsg::EventMessage& m) const;
     void draw_dialog();
     // Nombre de lignes de texte de dialogue qui tiennent dans la boîte fixe
     // (h=104, cf. draw_dialog) sans déborder de l'écran -- partagé entre

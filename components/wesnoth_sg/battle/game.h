@@ -19,6 +19,8 @@
 #include "battle/campaign_state.h"
 #include "battle/wdata.h"
 
+struct cJSON;
+
 namespace wsg {
 
 struct Unit {
@@ -166,6 +168,19 @@ public:
 
     const GameData& data() const { return d_; }
     const std::vector<std::string>& objectives() const { return objectives_; }
+
+    // --- sauvegarde ------------------------------------------------------
+    // Sérialise l'état mutable de la partie en cours (unités, camps, villages,
+    // tour courant...) dans un objet cJSON déjà créé par l'appelant (voir
+    // story/savegame.cpp). À appeler après load_scenario()+begin() : la carte,
+    // les types d'unité et les identifiants de victoire/défaite du scénario
+    // ne sont PAS sauvegardés (ils sont ré-obtenus en rechargeant le même
+    // scenario_json au moment du chargement).
+    void save_state(cJSON* out) const;
+    // Réapplique un état précédemment sauvegardé par save_state(), par-dessus
+    // une partie déjà chargée (load_scenario()+begin() avec le MÊME
+    // scenario_json) : remplace units_/sides_[].gold/villages_/tour/etc.
+    void load_state(const cJSON* in);
 
 private:
     void start_side_turn(int side);

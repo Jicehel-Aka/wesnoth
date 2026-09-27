@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <cctype>
+#include <cstdio>
 #include <cstdlib>
 #include <sstream>
 
@@ -37,6 +38,16 @@ WNode WNode::from_json(const cJSON* j) {
         if (cJSON_IsString(e)) n.attrs.emplace_back(e->string, e->valuestring);
     cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(j, "c")) n.kids.push_back(from_json(e));
     return n;
+}
+
+cJSON* WNode::to_json() const {
+    cJSON* o = cJSON_CreateObject();
+    cJSON_AddStringToObject(o, "t", tag.c_str());
+    cJSON* a = cJSON_AddObjectToObject(o, "a");
+    for (const auto& kv : attrs) cJSON_AddStringToObject(a, kv.first.c_str(), kv.second.c_str());
+    cJSON* c = cJSON_AddArrayToObject(o, "c");
+    for (const auto& k : kids) cJSON_AddItemToArray(c, k.to_json());
+    return o;
 }
 
 namespace {
@@ -80,27 +91,93 @@ std::string safe(std::string n) {
 }
 const char* kPortraits = "/sdcard/WESNOTH_SG/images/portraits/";
 
+// Même convention que slugify() dans tools/wesnoth_data/generate_audio.py :
+// ne garde que les lettres/chiffres ASCII (nos noms de personnages n'ont pas
+// d'accents), "unknown" si le résultat est vide.
+std::string slug_for_audio(const std::string& name) {
+    std::string out;
+    for (char c : name) if (std::isalnum((unsigned char)c)) out += c;
+    return out.empty() ? "unknown" : out;
+}
+
 }  // namespace
 
 // ---------------------------------------------------------------------------
-void EventEngine::load(const std::string& scenario_json) {
+void EventEngine::load(const std::string& scenario_json, bool queue_intro_messages) {
     cJSON* j = cJSON_Parse(scenario_json.c_str());
     if (!j) return;
     const cJSON* e = nullptr;
     cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(j, "events")) add_event(WNode::from_json(e));
     // messages de la mise en place (événement « start »), joués en ouverture
-    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(j, "intro_messages")) {
-        WNode m;
-        m.tag = "message";
-        const cJSON* a = nullptr;
-        cJSON_ArrayForEach(a, e) if (cJSON_IsString(a)) m.attrs.emplace_back(a->string, a->valuestring);
-        queue_message(m, Ctx{});
+    // -- pas rejoués lors de la reprise d'une sauvegarde (déjà vus une fois).
+    if (queue_intro_messages) {
+        const cJSON* id_j = cJSON_GetObjectItemCaseSensitive(j, "id");
+        std::string scenario_id = (id_j && cJSON_IsString(id_j)) ? id_j->valuestring : "";
+        int idx = 0;
+        cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(j, "intro_messages")) {
+            WNode m;
+            m.tag = "message";
+            const cJSON* a = nullptr;
+            cJSON_ArrayForEach(a, e) if (cJSON_IsString(a)) m.attrs.emplace_back(a->string, a->valuestring);
+            size_t before = queue_.size();
+            queue_message(m, Ctx{});
+            // Doublage : chemin déterministe, calculé de la même façon que
+            // tools/wesnoth_data/generate_audio.py --scenario-intro (voir ce
+            // script) -- pas besoin de manifest.json pour ces messages fixes,
+            // juste de vérifier au dessin si le fichier existe (cf.
+            // battle_scene.cpp::draw_dialog).
+            if (queue_.size() > before && !scenario_id.empty()) {
+                const std::string* sp = m.find("speaker");
+                std::string slug = slug_for_audio(sp && !sp->empty() ? *sp : "narrator");
+                char idx_buf[16];
+                std::snprintf(idx_buf, sizeof idx_buf, "%03d", idx);
+                queue_.back().audio_path = scenario_id + "/intro_" + idx_buf + "_" + slug + ".wav";
+                queue_.back().audio_path_fr = scenario_id + "_fr/intro_" + idx_buf + "_" + slug + ".wav";
+            }
+            ++idx;
+        }
     }
     cJSON_Delete(j);
 }
 
 void EventEngine::attach() {
     g_.set_hook([this](const std::string& n, int a, int b, HexCoord w) { fire(n, a, b, w); });
+}
+
+void EventEngine::save_state(cJSON* out) const {
+    cJSON_AddNumberToObject(out, "fired", fired_);
+    cJSON* evs = cJSON_AddArrayToObject(out, "events");
+    for (const auto& ev : events_) {
+        cJSON* eo = cJSON_CreateObject();
+        cJSON_AddBoolToObject(eo, "dead", ev.dead);
+        cJSON_AddItemToObject(eo, "node", ev.node.to_json());
+        cJSON_AddItemToArray(evs, eo);
+    }
+    cJSON* vars = cJSON_AddObjectToObject(out, "vars");
+    for (const auto& kv : vars_) cJSON_AddStringToObject(vars, kv.first.c_str(), kv.second.c_str());
+}
+
+void EventEngine::load_state(const cJSON* in) {
+    // Reconstruit events_ dans le même ordre qu'à la sauvegarde, en repassant
+    // par add_event() (recalcule names_/once_/l'effet « même id » exactement
+    // comme au chargement normal) puis en réappliquant le fanion dead --
+    // couvre aussi bien les événements du scénario que ceux ajoutés
+    // dynamiquement en jeu via [event] (cf. add_event() appelé depuis exec()).
+    events_.clear();
+    const cJSON* f = cJSON_GetObjectItemCaseSensitive(in, "fired");
+    fired_ = (f && cJSON_IsNumber(f)) ? f->valueint : 0;
+    const cJSON* evs = cJSON_GetObjectItemCaseSensitive(in, "events");
+    const cJSON* e = nullptr;
+    cJSON_ArrayForEach(e, evs) {
+        const cJSON* node = cJSON_GetObjectItemCaseSensitive(e, "node");
+        add_event(WNode::from_json(node));
+        const cJSON* d = cJSON_GetObjectItemCaseSensitive(e, "dead");
+        events_.back().dead = d && cJSON_IsTrue(d);
+    }
+    vars_.clear();
+    const cJSON* vars = cJSON_GetObjectItemCaseSensitive(in, "vars");
+    cJSON* v = nullptr;
+    cJSON_ArrayForEach(v, vars) if (cJSON_IsString(v)) vars_[v->string] = v->valuestring;
 }
 
 void EventEngine::add_event(const WNode& n) {
@@ -346,6 +423,12 @@ void EventEngine::queue_message(const WNode& n, const Ctx& c) {
     EventMessage m;
     m.text = wesnoth_sg::strip_markup(subst(n.get("message"), c));
     if (m.text.empty() && !n.child("option")) return;
+    // Traduction française pré-calculée par tools/wesnoth_data/add_intro_fr.py
+    // (uniquement pour la séquence intro_messages, cf. load() ci-dessous) --
+    // vide pour les messages dynamiques (die/moveto/...), qui restent
+    // affichés en anglais comme avant.
+    if (!n.get("message_fr").empty())
+        m.text_fr = wesnoth_sg::strip_markup(subst(n.get("message_fr"), c));
     m.speaker = n.get("caption", u ? (u->name.empty() ? u->t->name : u->name) : "");
     m.portrait = portrait_for(u, n.get("image"));
     m.unit_uid = u ? u->uid : 0;

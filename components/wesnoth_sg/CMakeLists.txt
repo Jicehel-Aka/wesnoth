@@ -14,6 +14,7 @@ idf_component_register(
     "battle/campaign_state.cpp"
     "audio/story_audio.cpp"
     "story/campaign_loader.cpp"
+    "story/savegame.cpp"
     "platform/gb_port_common.cpp"
     "platform/gb_port_aka.cpp"
   INCLUDE_DIRS "."

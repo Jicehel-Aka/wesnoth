@@ -1,0 +1,6049 @@
+{
+ "id": "04_Choice_in_the_Fog",
+ "name": "Choice in the Fog",
+ "next_scenario": "05c_Into_the_Depths",
+ "difficulty": "NORMAL",
+ "map_file": "04_Choice_in_the_Fog.map",
+ "schedule": {
+  "type": "default",
+  "start_index": 2,
+  "order": [
+   "dawn",
+   "morning",
+   "afternoon",
+   "dusk",
+   "first_watch",
+   "second_watch"
+  ]
+ },
+ "experience_modifier": 90,
+ "turns": 15,
+ "current_turn": 1,
+ "sides": [
+  {
+   "side": 1,
+   "controller": "human",
+   "no_leader": "yes",
+   "team_name": "good",
+   "user_team_name": "South Guard",
+   "gold": "70",
+   "recruit": "Spearman,Bowman",
+   "defeat_condition": "never",
+   "save_id": "player_side"
+  },
+  {
+   "side": 2,
+   "color": "blue",
+   "controller": "ai",
+   "team_name": "bandits",
+   "user_team_name": "Urza Afalas",
+   "gold": "30",
+   "income": "6",
+   "recruit": "Poacher"
+  },
+  {
+   "side": 3,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "16",
+   "income": "2",
+   "recruit": "Walking Corpse"
+  },
+  {
+   "side": 4,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "16",
+   "income": "2",
+   "recruit": "Walking Corpse"
+  },
+  {
+   "side": 5,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "16",
+   "income": "2",
+   "recruit": "Walking Corpse"
+  },
+  {
+   "side": 6,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "16",
+   "income": "2",
+   "recruit": "Walking Corpse"
+  },
+  {
+   "side": 7,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "16",
+   "income": "2",
+   "recruit": "Walking Corpse"
+  },
+  {
+   "side": 8,
+   "color": "black",
+   "controller": "ai",
+   "team_name": "undead",
+   "user_team_name": "Undead",
+   "gold": "32",
+   "income": "2",
+   "recruit": "Skeleton Archer"
+  },
+  {
+   "side": 9,
+   "controller": "null",
+   "color": "blue",
+   "hidden": "yes",
+   "no_leader": "yes",
+   "team_name": "undead,bandits"
+  }
+ ],
+ "units": [
+  {
+   "side": 2,
+   "type": "Outlaw",
+   "id": "Afalas",
+   "name": "Urza Afalas",
+   "facing": "se",
+   "traits": [
+    "resilient",
+    "strong"
+   ],
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 3,
+   "type": "Skeleton Archer",
+   "id": "Gruth",
+   "name": "Gruth",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 4,
+   "type": "Skeleton Archer",
+   "id": "Gerd",
+   "name": "Gerd",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 5,
+   "type": "Skeleton Archer",
+   "id": "Gral",
+   "name": "Gral",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 6,
+   "type": "Skeleton Archer",
+   "id": "Grish",
+   "name": "Grish",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 7,
+   "type": "Skeleton Archer",
+   "id": "Gart",
+   "name": "Gart",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 8,
+   "type": "Necrophage",
+   "id": "Gruu",
+   "name": "Gruu",
+   "canrecruit": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 2,
+   "type": "Thug",
+   "x": 22,
+   "y": 11,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 2,
+   "type": "Poacher",
+   "x": 29,
+   "y": 8,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 3,
+   "type": "Walking Corpse",
+   "x": 9,
+   "y": 16,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 4,
+   "type": "Walking Corpse",
+   "x": 6,
+   "y": 23,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 4,
+   "type": "Walking Corpse",
+   "x": 3,
+   "y": 25,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 5,
+   "type": "Walking Corpse",
+   "x": 20,
+   "y": 24,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 7,
+   "type": "Walking Corpse",
+   "x": 36,
+   "y": 14,
+   "random_traits": "yes",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 9,
+   "type": "Thug",
+   "x": 16,
+   "y": 13,
+   "random_traits": "yes",
+   "role": "cutscene_thug",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  },
+  {
+   "side": 9,
+   "type": "Walking Corpse",
+   "x": 16,
+   "y": 14,
+   "random_traits": "yes",
+   "role": "cutscene_corpse",
+   "zone_guardian": {
+    "x": 20,
+    "y": 9,
+    "radius": 1
+   }
+  }
+ ],
+ "villages": [],
+ "objectives": [
+  {
+   "condition": "win",
+   "text": "Find the final Urza brother"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran or Captain Mari"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran or Sir Gerrick"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran or Minister Hylas"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran, Captain Mari, or Ethiliel"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran, Sir Gerrick, or Ethiliel"
+  },
+  {
+   "condition": "lose",
+   "text": "Death of Deoran, Minister Hylas, or Ethiliel"
+  },
+  {
+   "condition": "lose",
+   "text": "Turns run out"
+  }
+ ],
+ "gold_carryover": {
+  "bonus": true,
+  "percent": 40
+ },
+ "victory_on_death": [
+  {
+   "side": "8",
+   "canrecruit": "yes"
+  },
+  {
+   "id": "Afalas"
+  },
+  {
+   "id": "Mebrin"
+  }
+ ],
+ "defeat_on_death": [
+  {
+   "type": "Trapdoor"
+  },
+  {
+   "id": "Afalas"
+  },
+  {
+   "id": "Deoran"
+  },
+  {
+   "id": "Mari"
+  },
+  {
+   "id": "Sir Gerrick"
+  },
+  {
+   "id": "Minister Hylas"
+  },
+  {
+   "id": "Ethiliel",
+   "race": "elf",
+   "side": "1"
+  }
+ ],
+ "runtime_events": [],
+ "intro_messages": [
+  {
+   "speaker": "Deoran",
+   "message": "It’s so cold here! And this fog is so thick. This is quite a change from fighting bandits in the farmlands near Westin!"
+  },
+  {
+   "speaker": "Ethiliel",
+   "message": "Indeed. Before us lies the Black River — and so too must Mebrin, great sage of the elves. He is here! I feel wisps of his magic reaching out to me from nearby..."
+  },
+  {
+   "speaker": "Ethiliel",
+   "message": "Listen well, humans, for the great sage Mebrin is ancient, and has no love for your kind. He personally bore witness to Lich-Lord Jevyan and his terrible invasion, in days back when the land was still young. Should anyone truly understand the undead and how the Urzas learned to summon them, it will be Mebrin."
+  },
+  {
+   "speaker": "Deoran",
+   "message": "With the three elder Urza brothers defeated, only the youngest remains to oppose us. Mebrin must be his captive, and these woods must be filled with bandits and undead.\n\nDangerous though the task may be, I promise to help rescue your sage, Ethiliel."
+  }
+ ],
+ "events": [
+  {
+   "t": "event",
+   "a": {
+    "name": "side 2 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader2"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "2",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "2",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "2",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "2",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 2 turn refresh",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "role": "cutscene_corpse"
+       }
+      }
+     ]
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "moves": "0"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_thug"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 2 turn",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 3 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader3"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "3",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "3",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "3",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "3",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 3 turn refresh",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "role": "cutscene_thug"
+       }
+      }
+     ]
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "moves": "0"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_corpse"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 4 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader4"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "4",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "4",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "4",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "4",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 5 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader5"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "5",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "5",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "5",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "5",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 6 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader6"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "6",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "6",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "6",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "6",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 7 turn refresh",
+    "first_time_only": "no",
+    "id": "limit_moves_leader7"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "side": "7",
+        "canrecruit": "yes"
+       },
+       "c": [
+        {
+         "t": "filter_location",
+         "a": {
+          "terrain": "K*^*,*^K*"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_unit",
+         "a": {
+          "moves": "1"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "7",
+            "canrecruit": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "event",
+         "a": {
+          "name": "moveto"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "side": "7",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_location",
+             "a": {
+              "terrain": "K*^*,*^K*"
+             }
+            }
+           ]
+          },
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "$( min([1,$this_unit.moves]) )"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "7",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 3 turn",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "store_time_of_day"
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "time_of_day.id",
+        "equals": "morning"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "side": "3,4,5,6,7,8",
+          "canrecruit": "yes"
+         },
+         "c": [
+          {
+           "t": "filter_adjacent",
+           "a": {
+            "is_enemy": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "store_time_of_day"
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "time_of_day.id",
+        "equals": "midday"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "side": "3,4,5,6,7,8",
+          "canrecruit": "yes"
+         },
+         "c": [
+          {
+           "t": "filter_adjacent",
+           "a": {
+            "is_enemy": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "store_time_of_day"
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "time_of_day.id",
+        "equals": "afternoon"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "side": "3,4,5,6,7,8",
+          "canrecruit": "yes"
+         },
+         "c": [
+          {
+           "t": "filter_adjacent",
+           "a": {
+            "is_enemy": "yes"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        },
+        {
+         "t": "modify_side",
+         "a": {
+          "side": "3,4,5,6,7,8"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "3,4,5,6,7,8"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "prestart,refresh_experience",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "store_unit",
+     "a": {
+      "variable": "preload_modify_xp_units"
+     },
+     "c": [
+      {
+       "t": "filter"
+      }
+     ]
+    },
+    {
+     "t": "foreach",
+     "a": {
+      "array": "preload_modify_xp_units"
+     },
+     "c": [
+      {
+       "t": "do",
+       "c": [
+        {
+         "t": "modify_unit",
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "id": "$this_item.id"
+           }
+          },
+          {
+           "t": "object",
+           "a": {
+            "id": "xp_modifier_object"
+           }
+          }
+         ]
+        },
+        {
+         "t": "lua",
+         "a": {
+          "code": "<< local units = wesnoth.units.find"
+         }
+        },
+        {
+         "t": "clear_variable",
+         "a": {
+          "name": "premodified_unit_id"
+         }
+        },
+        {
+         "t": "modify_unit",
+         "a": {
+          "experience": "$( floor($this_unit.max_experience * $premodified_experience / $premodified_max_experience) )"
+         },
+         "c": [
+          {
+           "t": "filter",
+           "a": {
+            "id": "$this_item.id"
+           }
+          }
+         ]
+        },
+        {
+         "t": "if",
+         "c": [
+          {
+           "t": "variable",
+           "a": {
+            "name": "postmodified_experience",
+            "greater_than_equal_to": "$postmodified_max_experience"
+           }
+          },
+          {
+           "t": "then",
+           "c": [
+            {
+             "t": "modify_unit",
+             "a": {
+              "experience": "$( $postmodified_max_experience - 7 )"
+             },
+             "c": [
+              {
+               "t": "filter",
+               "a": {
+                "id": "$this_item.id"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "clear_variable",
+         "a": {
+          "name": "premodified_unit_id,premodified_experience,premodified_max_experience"
+         }
+        },
+        {
+         "t": "clear_variable",
+         "a": {
+          "name": "postmodified_experience,postmodified_max_experience"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "preload_modify_xp_units"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "prestart,side 1 turn end",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "unsynced",
+     "c": [
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "global_tmp",
+        "value": "0"
+       }
+      },
+      {
+       "t": "set_global_variable",
+       "a": {
+        "namespace": "TheSouthGuard",
+        "from_local": "global_tmp",
+        "to_global": "gamestate_global",
+        "side": "1",
+        "immediate": "yes"
+       }
+      },
+      {
+       "t": "clear_variable",
+       "a": {
+        "name": "global_tmp"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "gamestate_local",
+        "value": "0"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "global_tmp",
+        "value": "0"
+       }
+      },
+      {
+       "t": "set_global_variable",
+       "a": {
+        "namespace": "TheSouthGuard",
+        "from_local": "global_tmp",
+        "to_global": "saveloads_this_turn",
+        "side": "1",
+        "immediate": "yes"
+       }
+      },
+      {
+       "t": "clear_variable",
+       "a": {
+        "name": "global_tmp"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "sighted"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "role": "cutscene_thug"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "side": "2"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_thug"
+       }
+      }
+     ]
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "side": "3"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_corpse"
+       }
+      }
+     ]
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "attack end"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_thug"
+       }
+      },
+      {
+       "t": "filter_second",
+       "a": {
+        "role": "cutscene_corpse"
+       }
+      },
+      {
+       "t": "filter_condition",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "s04_phase",
+          "equals": "intro"
+         }
+        }
+       ]
+      },
+      {
+       "t": "companion_message",
+       "a": {
+        "message_mari": "This bandit fights against the undead instead of alongside them? That’s new.",
+        "message_gerrick": "Good lad, that bandit. I wonder what turned him ’gainst the dead?",
+        "message_hylas": "That outlaw struck at one of his own undead allies. How unexpected."
+       }
+      },
+      {
+       "t": "message",
+       "a": {
+        "speaker": "Deoran",
+        "message": "We should find their leader, the final Urza brother. That will surely shed some light on the situation."
+       }
+      },
+      {
+       "t": "micro_ai",
+       "a": {
+        "side": "2",
+        "action": "add",
+        "ai_type": "zone_guardian",
+        "station_x": "20",
+        "station_y": "9"
+       },
+       "c": [
+        {
+         "t": "filter",
+         "a": {
+          "role": "cutscene_thug"
+         }
+        },
+        {
+         "t": "filter_location",
+         "a": {
+          "x": "17-25",
+          "y": "5-12"
+         },
+         "c": [
+          {
+           "t": "not",
+           "a": {
+            "terrain": "Wo*^*"
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "sighted"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Afalas"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "choice"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "sighted"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Mebrin"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "trigger_mebrin"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "new turn,moveto,sighted,recruit,recall,attacker hits,attacker misses,defender hits,defender misses,last breath,die",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "unsynced",
+     "c": [
+      {
+       "t": "get_global_variable",
+       "a": {
+        "namespace": "TheSouthGuard",
+        "from_global": "gamestate_global",
+        "to_local": "global_tmp",
+        "side": "1"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "global_tmp",
+        "add": "1"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "global_tmp",
+        "value": "$global_tmp"
+       }
+      },
+      {
+       "t": "set_global_variable",
+       "a": {
+        "namespace": "TheSouthGuard",
+        "from_local": "global_tmp",
+        "to_global": "gamestate_global",
+        "side": "1",
+        "immediate": "yes"
+       }
+      },
+      {
+       "t": "clear_variable",
+       "a": {
+        "name": "global_tmp"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "gamestate_local",
+        "add": "1"
+       }
+      }
+     ]
+    },
+    {
+     "t": "allow_undo"
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "choice"
+   },
+   "c": [
+    {
+     "t": "modify_unit",
+     "a": {
+      "side": "2"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_thug"
+       }
+      }
+     ]
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "side": "3"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "role": "cutscene_corpse"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "choice"
+   },
+   "c": [
+    {
+     "t": "cancel_action"
+    },
+    {
+     "t": "remove_shroud",
+     "a": {
+      "side": "1",
+      "x": "23",
+      "y": "10",
+      "radius": "2"
+     }
+    },
+    {
+     "t": "lift_fog",
+     "a": {
+      "x": "23",
+      "y": "10",
+      "radius": "2"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "I see torches movin’ in the fog... Thank th’ light, it’s living men!"
+     }
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "message_mari": "What, do women not count as “living”? You Urzas have caused enough havoc with your undead raising, and I for one am fed up with it. Prepare to join your brothers, boy.",
+      "message_gerrick": "Ye need not thank anyone for our presence, wretch. You and yer brothers’ve killed too many good men, and defiled too many peaceful corpses. You’ll pay for what ye’ve done to our home.",
+      "message_hylas": "Dare not invoke the light in my presence, wielder of evil. You and your brothers have spread darkness and filth across this land. We are here to excise your corruption."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "Please, please, just hear me out. I knows my men and I’ve done evil, and I knows that you seek to destroy us out of revenge. Ah’m sorry my brothers attacked you. It was never my intention to cause everyone so much suffering."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "image": "portraits/ethiliel-mad.webp",
+      "message": "It was “never your intention”!? You loathsome vermin locked me in a cage! You dragged Mebrin off in chains; my kind, gentle teacher! Deoran, why are we stooping so low as to even speak with this pig?"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "I swear I ain’t your enemy! I’ll gladly tell ye what I know. I admit that near a year ago, me brothers and I ventured into the valley of the elves in secret, to plunder and steal. Many we killed. It was wrong, I know, and I am sorry for it."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "But there was one who we captured; a powerful and magical sage. Away from his people, he offered to teach us the secrets o’ summonin’ the dead.\n\nI saw the folly in doing such a thing, but my brothers were weak an’ foolish, and soon fell under the sway of the corrupting magic — becomin’ thralls of the very elf they’d sought to enslave. They called him “master”, and went from here to do his bidding."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "image": "portraits/ethiliel-mad.webp",
+      "message": "A complete and utter lie from complete and utter scum. I studied magic under Mebrin for many decades and know him well — my teacher would never lead undead, he would destroy them!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "It’s true that Mebrin was more powerful than any of the corpses we raised, yet he didn’t resist ’em. They took him into the caves, and soon after skeletal horrors started to emerge."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "Now my boys and I have returned to try an’ put a stop to it, but there’s just too many. Unless ye helps me now, Mebrin’s undead may soon be strong enough to besiege Westin itself!"
+     }
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "message_mari": "<i>(to Deoran) Elves aren’t so incorruptible and pure as they like to believe, but I trust Afalas about as far as I can throw him — and I’ve only got one arm. Shame neither Gerrick nor Hylas is here to weigh in...</i>",
+      "message_gerrick": "<i>(to Deoran) I’ve dealt with plenty o’ outlaws before, an’ my gut says this Afalas ain’t no different. He ain’t outright lyin’, but he ain’t tellin’ us everythin’ neither.</i>",
+      "message_hylas": "<i>(to Deoran) Sages and mystics of great skill and age are often the first to succumb to the taint of black magic. Knowledge and power are not enough to master undeath — the only way to conquer it is to resist the temptation altogether.</i>"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "I knows I’m a criminal. My men and I have committed wrongdoing’s in the past, but at least in the fight against the undead, we can be your friends! They’re as much our enemies as they’re yours!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "Deoran, you would trust the word of a thief and murderer over me, your friend and ally? This criminal will abandon you the moment he finds a chance!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "Think of the destruction this man and his brothers wrought on your people. Think of the horrors they inflicted upon me, caged and left to suffer amidst the stinking corpses of my friends!\n\nBelieve the truths you have seen, not the lies you have heard. No fake niceties can reverse the deaths that have already happened; no atonement taken now can set right the transgressions that have already come to pass!"
+     }
+    },
+    {
+     "t": "lua",
+     "a": {
+      "code": "<< wesnoth.interface.skip_messages(false) >>"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "Peace, let me think! <i>If I listen to Ethiliel I must fight the bandits, but if I ally with the bandits Ethiliel will surely abandon us...</i>"
+     },
+     "c": [
+      {
+       "t": "option",
+       "a": {
+        "label": "Side with Ethiliel"
+       },
+       "c": [
+        {
+         "t": "command",
+         "c": [
+          {
+           "t": "fire_event",
+           "a": {
+            "name": "elf_alliance"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "option",
+       "a": {
+        "label": "Side with Afalas"
+       },
+       "c": [
+        {
+         "t": "command",
+         "c": [
+          {
+           "t": "fire_event",
+           "a": {
+            "name": "bandit_alliance"
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "modify_turns",
+     "a": {
+      "value": "30"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Afalas"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "intro"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "These undead are too much! I am slain..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "We came here to fight the bandits, but for them to have perished on their own? Something feels very wrong here..."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Afalas"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "You... have doomed us all..."
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Mebrin"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "message_mari": "Time to un-die, un-dead. I’m fed up with this.",
+      "message_gerrick": "Ah’ve watched enough friends fall to yer creatures, lich. They didn’t die in vain.",
+      "message_hylas": "As the scalpel cuts away a tumor, so shall I cut your corruption out of this world. Your blight is ended, Mebrin of the elves."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "Ah ha, ha ha ha ha. You think I am beaten so easily, beaten by mere mortals? I should flee down into my caves, should summon my great armies up from below..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "But why bother? I am no stranger to pain, Deoran of the humans. At least peace may finally come... for me. But not for you..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "You have only sown the seeds of your own destruction, for Ethiliel will avenge me. I felt her emotions, felt her intentions, <b><i>fed</i></b> her intentions... Accursed humans, you may have struck me down, but I have already won my revenge..."
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Deoran"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "image": "portraits/deoran-sad.webp",
+      "message": "I have failed my kingdom and duty..."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Mari"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_deaths",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "Yeah... I should’ve figured I wouldn’t get a happy ending..."
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_defeat",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "endlevel",
+         "a": {
+          "result": "defeat"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Sir Gerrick"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_deaths",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I have given all in service of my kingdom..."
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_defeat",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "endlevel",
+         "a": {
+          "result": "defeat"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Minister Hylas"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_deaths",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "image": "portraits/hylas.webp",
+      "message": "May the Light guide you where I have failed..."
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "ignore_companion_defeat",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "endlevel",
+         "a": {
+          "result": "defeat"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Ethiliel",
+      "race": "elf",
+      "side": "1"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I have lost everything helping the humans... Now they will surely perish!"
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1",
+      "level": "1",
+      "formula": "if( (self.experience+8)>=self.max_experience and self.experience<self.max_experience, 1, 0 )"
+     },
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "id": "Deoran,Mari,Minister Hylas,Sir Gerrick"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_experienced_death",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "have_unit",
+       "a": {
+        "id": "Deoran"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I perish! Such wasted potential! I’d gained much experience, and was close to becoming something more..."
+     }
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "die"
+     },
+     "c": [
+      {
+       "t": "message",
+       "a": {
+        "speaker": "narrator",
+        "image": "wesnoth-icon.png",
+        "message": "<span color='    <<'>One of your high-experience units has died! Take care to protect your experienced soldiers, so that they can eventually advance to powerful Level 2 veterans.</span>"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "sg_experienced_death",
+        "value": "yes"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1",
+      "level": "2-99"
+     },
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "id": "Deoran,Mari,Minister Hylas,Sir Gerrick"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_veteran_death",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "have_unit",
+       "a": {
+        "id": "Deoran"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "Argh, I fall! All my hard-won battle experience is lost! I will not be easy to replace, Deoran..."
+     }
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "die"
+     },
+     "c": [
+      {
+       "t": "message",
+       "a": {
+        "speaker": "narrator",
+        "image": "wesnoth-icon.png",
+        "message": "<span color='    <<'>One of your high-level veterans has died! Take care to protect your promoted soldiers, so that you can recall them in future battles.</span>"
+       }
+      },
+      {
+       "t": "set_variable",
+       "a": {
+        "name": "sg_veteran_death",
+        "value": "yes"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "moveto"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "filter_location",
+       "a": {
+        "x": "23",
+        "y": "10",
+        "radius": "5"
+       }
+      }
+     ]
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "choice"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "moveto"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "filter_location",
+       "a": {
+        "x": "37",
+        "y": "12",
+        "radius": "15"
+       }
+      }
+     ]
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "choice"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "moveto"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "filter_location",
+       "a": {
+        "x": "33",
+        "y": "19",
+        "radius": "4"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "This must be the cave the bandit spoke about, but there is no sign of Mebrin. Perhaps Afalas really was lying."
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "moveto"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "filter_location",
+       "a": {
+        "x": "32",
+        "y": "18",
+        "radius": "2"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "and",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "time_of_day.id",
+          "equals": "first_watch"
+         }
+        },
+        {
+         "t": "or",
+         "c": [
+          {
+           "t": "variable",
+           "a": {
+            "name": "time_of_day.id",
+            "equals": "second_watch"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "Yes, yes, step into the mouth of my cave. Fight me in the dead of night, when I am at my best!"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "elf_alliance"
+   },
+   "c": [
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "s04_phase",
+      "value": "elf_alliance"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "Your crimes are too great, Urza Afalas, and your word cannot be trusted. You will fall alongside the undead you helped create!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "image": "portraits/ethiliel-mad.webp",
+      "message": "You will pay for taking Mebrin from us! Once I rescue him from your clutches, I never again intend to leave his side."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "Then this parley is over! You may have caused the doom of all of us!"
+     }
+    },
+    {
+     "t": "reset_fog",
+     "a": {
+      "reset_view": "yes"
+     }
+    },
+    {
+     "t": "redraw",
+     "a": {
+      "clear_shroud": "yes"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2",
+      "gold": "40"
+     }
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "8",
+      "type": "Walking Corpse",
+      "x": "30",
+      "y": "20",
+      "random_traits": "yes"
+     }
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "8",
+      "type": "Walking Corpse",
+      "x": "33",
+      "y": "19",
+      "random_traits": "yes"
+     }
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "8",
+      "type": "Walking Corpse",
+      "x": "36",
+      "y": "21",
+      "random_traits": "yes"
+     }
+    },
+    {
+     "t": "objectives",
+     "c": [
+      {
+       "t": "objective",
+       "a": {
+        "description": "Defeat Urza Afalas",
+        "condition": "win"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Captain Mari",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Mari",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Sir Gerrick",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Sir Gerrick",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Minister Hylas",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Minister Hylas",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Captain Mari, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Mari",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Sir Gerrick, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Sir Gerrick",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Minister Hylas, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Minister Hylas",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "gold_carryover",
+       "a": {
+        "bonus": "yes",
+        "carryover_percentage": "40"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "die"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "8",
+      "canrecruit": "yes"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "The ghoul guarding the cave is defeated! I agreed to help Ethiliel bring Urza Afalas to justice, but perhaps there would be merit in venturing further inside..."
+     },
+     "c": [
+      {
+       "t": "option",
+       "a": {
+        "label": "Continue fighting Urza Afalas"
+       },
+       "c": [
+        {
+         "t": "command",
+         "c": [
+          {
+           "t": "return"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "option",
+       "a": {
+        "label": "Enter the cave"
+       },
+       "c": [
+        {
+         "t": "command"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "Deoran, what are you doing? You would abandon our fight and let this criminal walk free!?"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "Author’s note — this is a “secret” path, and somewhat more challenging than the regular options. Are you sure you want to proceed?"
+     },
+     "c": [
+      {
+       "t": "option",
+       "a": {
+        "label": "Continue fighting Urza Afalas"
+       },
+       "c": [
+        {
+         "t": "command",
+         "c": [
+          {
+           "t": "return"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "option",
+       "a": {
+        "label": "Enter the cave"
+       },
+       "c": [
+        {
+         "t": "command"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "I’m sorry, Ethiliel, but fighting these bandits doesn’t feel right. My soldiers and I are going to descend down into this cave, to find out the truth for ourselves."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "And how shall I defeat Urza Afalas without your help? He will surely escape, free from justice for his foul deeds! Was this your plan all along, to string me along with false promises?"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "image": "portraits/ethiliel-mad.webp",
+      "message": "Humans! All you humans are the same! I should never have expected your kind to help me find Mebrin. Deoran, even your vile conspiracies shall not keep the elves from our greatest sage. Soon all of you humans shall learn that the Aethenwood protects its own!"
+     }
+    },
+    {
+     "t": "move_unit",
+     "a": {
+      "id": "Ethiliel",
+      "to_x": "3",
+      "to_y": "1"
+     }
+    },
+    {
+     "t": "store_unit",
+     "a": {
+      "variable": "stored_ethiliel",
+      "kill": "yes"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Ethiliel"
+       }
+      }
+     ]
+    },
+    {
+     "t": "delay",
+     "a": {
+      "time": "500"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "Well, that could have gone better... I only hope that we will find the truth of the matter down in these caves."
+     }
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "s04_phase"
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "victory",
+      "bonus": "yes",
+      "next_scenario": "05c_Into_the_Depths"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "die"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Afalas"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "kill",
+     "a": {
+      "side": "2",
+      "animate": "yes",
+      "fire_event": "[fire_event]",
+      "name": "{EVENTNAME}"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "Justice. Thank you for your aid, Deoran. I know it was hard for you to turn against your own kind — you have earned my respect."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "I’ve searched all the tents, but cannot find Mebrin anywhere in the bandit camp. Ethiliel, do you still sense his magic nearby?"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "Yes I do, and without that distracting criminal on my mind I can feel Mebrin clearer than ever. I sense joy. I sense power... I sense..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "...Humans, we should leave."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "What? But what about rescuing—"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "We need to leave, now!!"
+     }
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "s04_phase"
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "victory",
+      "bonus": "yes",
+      "next_scenario": "05b_Pebbles_in_the_Flood"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "die"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Mebrin"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "s04_phase"
+     }
+    },
+    {
+     "t": "store_unit",
+     "a": {
+      "variable": "stored_afalas"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Afalas"
+       }
+      }
+     ]
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "victory",
+      "bonus": "yes",
+      "next_scenario": "05a_The_Long_March"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "die"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "type": "Trapdoor"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "They’ve broken through the trapdoor and entered the refugee cellar! Even if we could still manage to win by force of arms, Westin is doomed without its people..."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "bandit_alliance"
+   },
+   "c": [
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "s04_phase",
+      "value": "bandit_alliance"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "I am sorry Ethiliel, but Afalas’s words ring true. If Mebrin has truly fallen to undeath, then mankind must unite against him."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "message": "You would free me from one Urza, only to betray me to another? All you humans are the same! You are no better than these outlaws, the very pigs who defiled your dead and sacked your farms."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Ethiliel",
+      "image": "portraits/ethiliel-mad.webp",
+      "message": "Deoran, even your conspiring with criminals shall not keep from us our greatest sage. Soon all of you vile humans shall learn that the Aethenwood protects its own!"
+     }
+    },
+    {
+     "t": "move_unit",
+     "a": {
+      "id": "Ethiliel",
+      "to_x": "3",
+      "to_y": "1"
+     }
+    },
+    {
+     "t": "store_unit",
+     "a": {
+      "variable": "stored_ethiliel",
+      "kill": "yes"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Ethiliel"
+       }
+      }
+     ]
+    },
+    {
+     "t": "delay",
+     "a": {
+      "time": "500"
+     }
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "profile": "portraits/urza-afalas.webp"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Afalas"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "That must’ve been a tough decision. Thank ye."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "Don’t make me regret it. Guide us to Mebrin, and we will verify your story ourselves."
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "2",
+      "team_name": "good"
+     }
+    },
+    {
+     "t": "reset_fog",
+     "a": {
+      "reset_view": "yes"
+     }
+    },
+    {
+     "t": "redraw",
+     "a": {
+      "clear_shroud": "yes"
+     }
+    },
+    {
+     "t": "remove_shroud",
+     "a": {
+      "side": "1",
+      "x": "34",
+      "y": "21",
+      "radius": "4"
+     }
+    },
+    {
+     "t": "remove_shroud",
+     "a": {
+      "side": "1",
+      "x": "30",
+      "y": "19",
+      "radius": "2"
+     }
+    },
+    {
+     "t": "delay",
+     "a": {
+      "time": "500"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "scroll": "no",
+      "message": "The old elf’s cave is southeast of m’ camp. My outlaws’ll fight his shamblin’ hordes, but I leave it up to you soldiers to push into Mebrin’s cave and strike the finishin’ blow."
+     }
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "side 2 turn",
+      "first_time_only": "no"
+     },
+     "c": [
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "store_time_of_day"
+      },
+      {
+       "t": "if",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "time_of_day.id",
+          "equals": "morning"
+         }
+        },
+        {
+         "t": "not",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "side": "2",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_adjacent",
+             "a": {
+              "is_enemy": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "then",
+         "c": [
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "store_time_of_day"
+      },
+      {
+       "t": "if",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "time_of_day.id",
+          "equals": "midday"
+         }
+        },
+        {
+         "t": "not",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "side": "2",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_adjacent",
+             "a": {
+              "is_enemy": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "then",
+         "c": [
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "store_time_of_day"
+      },
+      {
+       "t": "if",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "time_of_day.id",
+          "equals": "afternoon"
+         }
+        },
+        {
+         "t": "not",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "side": "2",
+            "canrecruit": "yes"
+           },
+           "c": [
+            {
+             "t": "filter_adjacent",
+             "a": {
+              "is_enemy": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "then",
+         "c": [
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          },
+          {
+           "t": "modify_side",
+           "a": {
+            "side": "2"
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      },
+      {
+       "t": "modify_side",
+       "a": {
+        "side": "2"
+       }
+      }
+     ]
+    },
+    {
+     "t": "kill",
+     "a": {
+      "side": "8",
+      "canrecruit": "yes",
+      "animate": "yes",
+      "fire_event": "[fire_event]",
+      "name": "{EVENTNAME}"
+     }
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "8",
+      "x": "34",
+      "y": "21",
+      "facing": "nw",
+      "type": "Lich",
+      "id": "Mebrin",
+      "name": "Mal M’Brin",
+      "profile": "portraits/mal-mbrin.webp",
+      "canrecruit": "yes"
+     },
+     "c": [
+      {
+       "t": "modifications",
+       "c": [
+        {
+         "t": "object"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "side 8 turn refresh",
+      "first_time_only": "no",
+      "id": "limit_moves_leader8"
+     },
+     "c": [
+      {
+       "t": "if",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "side": "8",
+          "canrecruit": "yes"
+         },
+         "c": [
+          {
+           "t": "filter_location",
+           "a": {
+            "terrain": "K*^*,*^K*"
+           }
+          }
+         ]
+        },
+        {
+         "t": "then",
+         "c": [
+          {
+           "t": "modify_unit",
+           "a": {
+            "moves": "0"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "8",
+              "canrecruit": "yes"
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "else",
+         "c": [
+          {
+           "t": "event",
+           "a": {
+            "name": "moveto"
+           },
+           "c": [
+            {
+             "t": "filter",
+             "a": {
+              "side": "8",
+              "canrecruit": "yes"
+             },
+             "c": [
+              {
+               "t": "filter_location",
+               "a": {
+                "terrain": "K*^*,*^K*"
+               }
+              }
+             ]
+            },
+            {
+             "t": "modify_unit",
+             "a": {
+              "moves": "$( min([0,$this_unit.moves]) )"
+             },
+             "c": [
+              {
+               "t": "filter",
+               "a": {
+                "side": "8",
+                "canrecruit": "yes"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "8",
+      "recruit": ""
+     }
+    },
+    {
+     "t": "objectives",
+     "c": [
+      {
+       "t": "objective",
+       "a": {
+        "description": "Defeat Mebrin",
+        "condition": "win"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Captain Mari",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Mari",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Sir Gerrick",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Sir Gerrick",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran or Minister Hylas",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Minister Hylas",
+            "side": "1"
+           }
+          },
+          {
+           "t": "not",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Captain Mari, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Mari",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Sir Gerrick, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Sir Gerrick",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Deoran, Minister Hylas, or Ethiliel",
+        "condition": "lose"
+       },
+       "c": [
+        {
+         "t": "show_if",
+         "c": [
+          {
+           "t": "have_unit",
+           "a": {
+            "id": "Minister Hylas",
+            "side": "1"
+           }
+          },
+          {
+           "t": "and",
+           "c": [
+            {
+             "t": "have_unit",
+             "a": {
+              "id": "Ethiliel",
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "gold_carryover",
+       "a": {
+        "bonus": "yes",
+        "carryover_percentage": "40"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attacker hits"
+   },
+   "c": [
+    {
+     "t": "filter_second",
+     "a": {
+      "id": "Afalas",
+      "formula": "(self.hitpoints < self.max_hitpoints/2)"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "afalas_flees"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attacker hits",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "consecutive_hits",
+      "add": "1"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "defender hits"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Afalas",
+      "formula": "(self.hitpoints < self.max_hitpoints/2)"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "afalas_flees"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "afalas_flees"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "Ack! Thank you for your help with the dead, but my men an’ I have given all we have. Now, there’s something I have to make right."
+     }
+    },
+    {
+     "t": "move_unit",
+     "a": {
+      "id": "Afalas",
+      "to_x": "3",
+      "to_y": "1"
+     }
+    },
+    {
+     "t": "store_unit",
+     "a": {
+      "variable": "stored_afalas",
+      "kill": "yes"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Afalas"
+       }
+      }
+     ]
+    },
+    {
+     "t": "kill",
+     "a": {
+      "side": "2",
+      "animate": "yes",
+      "fire_event": "[fire_event]",
+      "name": "{EVENTNAME}"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "I suppose that’s what I get for relying on outlaws... We’ll have to finish Mebrin and his undead on our own."
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "afalas_fled",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "enter hex"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "filter_location",
+       "a": {
+        "x": "32",
+        "y": "21",
+        "radius": "3"
+       }
+      }
+     ]
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "trigger_mebrin"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "trigger_mebrin"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "Who comes... My old tormentors?"
+     }
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "message_mari": "Gods... that skull, those eyes. I had almost hoped the lady was right, but now... even in the Estmarks I never thought I’d live to lay eyes on a lich.",
+      "message_gerrick": "Dear Haldric! I had almost hoped the lady was right, but now... Whatever that elf used to be in life, in death it’s become something far, far worse.",
+      "message_hylas": "Light protect us. I had almost hoped the lady was right, but now... Here lies the source of the spreading corruption: a lich most foul."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "I am Deoran, soldier of the South Guard! We have come to put an end to your villainy, Mebrin of the elves — if that is who you are."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "Mebrin? No, I am called Mal M’Brin now, mortals. It is the name I took when I unchained myself from the shallow-mindedness of my kind and passed over into enlightenment."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "There is infinity at the brink of death... I have touched the void at the heart of all things, and I have begun to probe the mystic arts far beyond what any living elf knows."
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "have_unit",
+       "a": {
+        "id": "Afalas"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Afalas",
+          "message": "You’ve gone even more mad than before! I wish to Haldric my brothers and I had never laid eyes upon you."
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "Mad? I am furious!! You accursed mudlings took me and tormented me, tortured me for sport! I did not know day from night... the light and the shadows, heat and cold all bled together amidst my pain..."
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Afalas",
+          "message": "He’s lyin’, Deoran! Me an’ my brothers questioned him, maybe roughed him up a little, but we ne’er did nothin’ worse!"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "You thought me weak; powerless under your lash. But I have had my revenge — I taught the summoning of powers beyond the control of your feeble kin, powers that fed upon your race’s filth and greed. I knew that once the first strand of black magic left my hands, there would be no turning back. But I would suffer this humiliation no longer..."
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "Content with only meagre tricks, you mayflies never even noticed as I slowly brought you under my thrall! The Urza brothers sought to enslave me, but it is they who became my slaves in the end."
+         }
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Deoran",
+          "image": "portraits/deoran-mad.webp",
+          "message": "Urza Afalas was right! Whatever you were like in life, in death you’ve gone mad with power!"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "Mad? I am furious!! You accursed mudlings took me and tormented me, tortured me for sport! I knew that once the first strand of black magic left my hands, there would be no turning back. But I would suffer this humiliation no longer..."
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "I taught the summoning of powers beyond the control of your feeble kin, powers that fed upon your race’s filth and greed. Content with only meagre tricks, you mayflies never even noticed as I slowly brought you under my thrall! The Urza brothers sought to enslave me, but it is they who became my slaves in the end."
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "6",
+      "type": "Skeleton Archer",
+      "x": "30",
+      "y": "20",
+      "random_traits": "yes",
+      "animate": "yes"
+     }
+    },
+    {
+     "t": "unit",
+     "a": {
+      "side": "6",
+      "type": "Skeleton",
+      "x": "33",
+      "y": "19",
+      "random_traits": "yes",
+      "animate": "yes"
+     }
+    },
+    {
+     "t": "modify_side",
+     "a": {
+      "side": "8",
+      "recruit": "Skeleton Archer"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Mebrin",
+      "message": "Rise, my minions, and let all vermin tremble! The race of man shall be stricken off the face of the green world. Your corpses will serve me! Your bones will dance for my pleasure! I’ll make humanity into the mindless slaves that you all deserve to be!"
+     }
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "speaker": "Deoran",
+      "message_mari": "After all Ethiliel’s kind words about you, I had yet a glimmer of hope that you might still be reasoned with. But it is now clear that words are of no further use. Captain Mari, are you with me?",
+      "message_gerrick": "After all Ethiliel’s kind words about you, I had yet a glimmer of hope that you might still be reasoned with. But it is now clear that words are of no further use. Sir Gerrick, are you with me?",
+      "message_hylas": "After all Ethiliel’s kind words about you, I had yet a glimmer of hope that you might still be reasoned with. But it is now clear that words are of no further use. Minister Hylas, are you with me?"
+     }
+    },
+    {
+     "t": "companion_message",
+     "a": {
+      "message_mari": "The rookie’s all grown up. I’m with you.",
+      "message_gerrick": "On your order, Master Deoran.",
+      "message_hylas": "Evil never rests — nor does the light that seeks to exterminate it."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Afalas",
+      "message": "I done enough evil in my life. Time t’ do somethin’ good fer a change."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "image": "portraits/deoran-mad.webp",
+      "message": "Attack!"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "new turn",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "store_time_of_day"
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "new turn"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_selfheal_info",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "have_unit",
+       "a": {
+        "id": "Ethiliel,Hylas",
+        "formula": "(self.hitpoints < self.max_hitpoints/2)"
+       },
+       "c": [
+        {
+         "t": "not",
+         "a": {
+          "race": "mechanical"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "id": "Ethiliel,Hylas",
+      "formula": "(self.hitpoints < self.max_hitpoints/2)",
+      "message": "My healing magic is potent, but I cannot use it to heal myself. I’ll have to spend some time in a village to recover."
+     },
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "race": "mechanical"
+       }
+      }
+     ]
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_selfheal_info",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter_second",
+     "a": {
+      "id": "Mebrin"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      }
+     ]
+    },
+    {
+     "t": "event",
+     "a": {
+      "name": "side 8 turn"
+     },
+     "c": [
+      {
+       "t": "message",
+       "a": {
+        "speaker": "Mebrin",
+        "message": "You dare strike me?! Puny humans, I’m darkness incarnate! I’m power beyond your comprehension!"
+       }
+      },
+      {
+       "t": "companion_message",
+       "a": {
+        "message_mari": "Oh, I understand just fine: you’re nothing but a pile of dead bones glued together into a crude imitation of life. I’ve smashed plenty of skeletons before you, and I’ll smash plenty after.",
+        "message_gerrick": "Aye, beyond my comprehension you may be, but I don’ need to understand you to destroy you. I know you’re evil, an’ that’s enough. Prepare to meet your maker, lich.",
+        "message_hylas": "You’re merely a servant of the power that corrupted you, lich! You’ve not mastered the darkness; it, instead, has enslaved you. We will put you out of your misery."
+       }
+      },
+      {
+       "t": "message",
+       "a": {
+        "speaker": "Mebrin",
+        "message": "<b><i>You</i></b> think you can destroy <b><i>me</i></b>? Were Ethiliel here I might have held back, but you humans are nothing but a worthless blight upon this wretched world. Suffer and die."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1",
+      "type_adv_tree": "Bowman"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "a": {
+      "range": "ranged"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "type_adv_tree": "Quintain,Thug,Walking Corpse,Ghoul,Skeleton"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_ranged_info",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_ranged_info",
+      "value": "yes"
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "second_unit.type",
+        "equals": "Quintain"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "unit",
+          "message": "I just made a <i><b>ranged attack</b></i>! I had to stand right next to this Quintain <i>(yes, this is different from how most games handle ranged attacks)</i>, but because the dummy has no ranged weapon of its own it was unable to retaliate."
+         }
+        }
+       ]
+      },
+      {
+       "t": "elseif",
+       "c": [
+        {
+         "t": "variable",
+         "a": {
+          "name": "second_unit.race",
+          "equals": "undead"
+         }
+        },
+        {
+         "t": "then",
+         "c": [
+          {
+           "t": "message",
+           "a": {
+            "speaker": "unit",
+            "message": "I just made a <i><b>ranged attack</b></i>! I had to stand right next to this $second_unit.language_name <i>(yes, this is different from how most games handle ranged attacks)</i>, but because the $second_unit.language_name has no ranged weapon of its own it was unable to retaliate."
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "else",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "unit",
+          "message": "I just made a <i><b>ranged attack</b></i>! I had to stand right next to this $second_unit.language_name <i>(yes, this is different from how most games handle ranged attacks)</i>, but because the $second_unit.language_name has no ranged weapon of his own he was unable to retaliate."
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "special_id": "magical"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "defense": "0-40"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "type": "quintain"
+         }
+        }
+       ]
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "id": "Urza Mathin"
+         }
+        }
+       ]
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_misses",
+        "greater_than": "2"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_hits",
+        "equals": "0"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_1",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I missed all $consecutive_misses strikes! I tried my best, but this enemy had a high chance to evade. I might have had better odds attacking a different enemy."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "A good commander understands the odds, and knows how to both exploit good luck and mitigate bad luck. After all, both good and bad luck are equally likely!"
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "lua",
+       "a": {
+        "code": "<< return ( == wesnoth.game_config.random_mode) >>"
+       }
+      },
+      {
+       "t": "then"
+      }
+     ]
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_rnginfo_1",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "special_id": "magical"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "defense": "60-90"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "type": "quintain"
+         }
+        }
+       ]
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "id": "Urza Mathin"
+         }
+        }
+       ]
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_hits",
+        "greater_than": "2"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_misses",
+        "equals": "0"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_1",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_2",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I got lucky and hit all $consecutive_hits strikes! Good luck will sometimes happen, but a good commander knows how to win without relying on it. After all, bad luck happens just as often as good luck!"
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_rnginfo_2",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "special_id": "magical"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "defense": "60-90"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "type": "quintain"
+         }
+        }
+       ]
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "id": "Urza Mathin"
+         }
+        }
+       ]
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_misses",
+        "greater_than": "2"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_hits",
+        "equals": "0"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_2",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_3",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I missed all $consecutive_misses strikes, even though my enemy had a low chance to evade! That’s unlucky, but bad luck happens just as often as good luck — a good commander knows how to plan around both!"
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_rnginfo_3",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "special_id": "magical"
+       }
+      }
+     ]
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "defense": "0-50"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "type": "quintain"
+         }
+        }
+       ]
+      },
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "a": {
+          "id": "Urza Mathin"
+         }
+        }
+       ]
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_hits",
+        "greater_than": "2"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "consecutive_misses",
+        "equals": "0"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_3",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_rnginfo_4",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "I hit all $consecutive_hits strikes, even though my enemy had a high chance to evade! Luck works both ways — sometimes I miss strikes when I was likely to hit, but sometimes I also hit strikes that I was likely to miss — like now!"
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_rnginfo_4",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "victory"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "not",
+       "c": [
+        {
+         "t": "have_unit",
+         "c": [
+          {
+           "t": "filter_side",
+           "c": [
+            {
+             "t": "enemy_of",
+             "a": {
+              "side": "1"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "set_achievement",
+         "a": {
+          "content_for": "the_south_guard",
+          "id": "tsg_s04"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "victory"
+   },
+   "c": [
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "consecutive_hits,consecutive_misses"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "turn 25"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Ethiliel",
+          "message": "Do not delay, Deoran! If we do not finish off this vermin Afalas soon, he shall surely make his escape!"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Afalas",
+          "message": "Better hurry, Deoran. Whatever Mebrin’s plans are, he gets closer to finishin’ them every day. We’ve got to finish him off soon!"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "<span color='    <<'>You are running out of turns to complete this scenario! See your objectives by pressing Ctrl+J, and remember that the turn limit can be seen in the top-left-hand corner.</span>"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "time over"
+   },
+   "c": [
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Deoran",
+      "message": "We have moved so slowly! If the last Urza brother was ever here, he has surely fled by now, and we still have no answers..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "<span color='    <<'>You have run out of turns to complete the scenario, and have been defeated!</span>"
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "side 1 turn 30 end"
+   },
+   "c": [
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "elf_alliance"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "remove_shroud",
+         "a": {
+          "side": "1",
+          "x": "21",
+          "y": "7",
+          "radius": "2"
+         }
+        },
+        {
+         "t": "lift_fog",
+         "a": {
+          "x": "21",
+          "y": "7",
+          "radius": "2"
+         }
+        },
+        {
+         "t": "remove_shroud",
+         "a": {
+          "side": "1",
+          "x": "22",
+          "y": "5",
+          "radius": "2"
+         }
+        },
+        {
+         "t": "lift_fog",
+         "a": {
+          "x": "22",
+          "y": "5",
+          "radius": "2"
+         }
+        },
+        {
+         "t": "unit",
+         "a": {
+          "side": "2",
+          "type": "Boat",
+          "x": "24",
+          "y": "4",
+          "random_traits": "yes"
+         }
+        },
+        {
+         "t": "move_unit",
+         "a": {
+          "type": "Boat",
+          "to_x": "20",
+          "to_y": "7"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "type": "boat",
+          "caption": "Sailor",
+          "image": "portaits/humans/ruffian.webp",
+          "message": "Hey, boss, it’s me. Anyone still alive out here?"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Afalas",
+          "message": "Finally, what took ye so long! C’mon, let’s get us all out o’ here afore that crazy elf lady kills any more o’ us!"
+         }
+        },
+        {
+         "t": "move_unit",
+         "a": {
+          "id": "Afalas",
+          "to_x": "21",
+          "to_y": "8"
+         }
+        },
+        {
+         "t": "kill",
+         "a": {
+          "id": "Afalas",
+          "animate": "yes",
+          "fire_event": "[fire_event]",
+          "name": "{EVENTNAME}"
+         }
+        },
+        {
+         "t": "move_unit",
+         "a": {
+          "type": "Boat",
+          "to_x": "35",
+          "to_y": "1"
+         }
+        },
+        {
+         "t": "kill",
+         "a": {
+          "side": "2",
+          "animate": "yes",
+          "fire_event": "[fire_event]",
+          "name": "{EVENTNAME}"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Deoran",
+          "message": "Urza Afalas has fled up the river! If he ever held Mebrin prisoner, the gentle sage is now far beyond our reach..."
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "s04_phase",
+        "equals": "bandit_alliance"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "unit",
+         "a": {
+          "side": "6",
+          "type": "Vampire Bat",
+          "x": "30",
+          "y": "13",
+          "random_traits": "yes",
+          "role": "messenger"
+         }
+        },
+        {
+         "t": "remove_shroud",
+         "a": {
+          "side": "1",
+          "x": "32",
+          "y": "19",
+          "radius": "4"
+         }
+        },
+        {
+         "t": "lift_fog",
+         "a": {
+          "x": "32",
+          "y": "19",
+          "radius": "4"
+         }
+        },
+        {
+         "t": "move_unit",
+         "a": {
+          "role": "messenger",
+          "to_x": "33",
+          "to_y": "19"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "role": "messenger",
+          "message": "Neep, neep!"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Mebrin",
+          "message": "Ah ha, ha ha ha ha. You have tarried too long, mayflies! My messenger brings news — your beloved town of Westin has been destroyed!"
+         }
+        },
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Deoran",
+          "message": "What? How is this possible! With the undead armies fighting us here, how could Westin have already fallen?"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "<span color='    <<'>You have run out of turns to complete the scenario, and have been defeated!</span>"
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Deoran"
+     }
+    },
+    {
+     "t": "filter_second",
+     "c": [
+      {
+       "t": "not",
+       "a": {
+        "type": "Quintain"
+       }
+      }
+     ]
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "cold_steel_tasted",
+        "boolean_not_equals": "yes"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "message",
+         "a": {
+          "speaker": "Deoran",
+          "image": "portraits/deoran-mad.webp",
+          "message": "Taste cold steel!"
+         }
+        },
+        {
+         "t": "set_variable",
+         "a": {
+          "name": "cold_steel_tasted",
+          "value": "yes"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "post_advance"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_advancements",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "<span color='    <<'>One of your units has reached max XP, and has advanced a level! It is now significantly more powerful, and has been fully healed!\n\nFor a full description of what one of your units can do, <b><i>right-click it and select “Unit Type Description.”</i></b></span>"
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_advancements",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "explain_turn_limit"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_turns_explained",
+        "not_equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_turns_explained",
+      "value": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack_end"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "filter_attack",
+     "a": {
+      "type": "pierce"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "type_adv_tree": "Skeleton,Skeleton Archer"
+     }
+    },
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "sg_pierce_info",
+        "not_equals": "yes"
+       }
+      },
+      {
+       "t": "variable",
+       "a": {
+        "name": "second_unit.hitpoints",
+        "greater_than": "0"
+       }
+      }
+     ]
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "sg_pierce_info",
+      "value": "yes"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "unit",
+      "message": "Our bows and spears are nearly useless against these skeletons! They have nothing for our shafts to pierce but air!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "narrator",
+      "image": "wesnoth-icon.png",
+      "message": "<span color='    <<'>To see what damage resistances and vulnerabilities a unit has, right-click it and select “Unit Type Description.”</span>"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "pre attack",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "consecutive_hits",
+      "value": "0"
+     }
+    },
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "consecutive_misses",
+      "value": "0"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attacker misses",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "set_variable",
+     "a": {
+      "name": "consecutive_misses",
+      "add": "1"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "preload",
+    "first_time_only": "no"
+   },
+   "c": [
+    {
+     "t": "filter_condition",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "enable_tutorial_elements",
+        "equals": "yes"
+       }
+      }
+     ]
+    },
+    {
+     "t": "get_global_variable",
+     "a": {
+      "namespace": "TheSouthGuard",
+      "from_global": "gamestate_global",
+      "to_local": "global_tmp",
+      "side": "1"
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "global_tmp",
+        "not_equals": "$gamestate_local"
+       }
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "get_global_variable",
+         "a": {
+          "namespace": "TheSouthGuard",
+          "from_global": "saveloads_this_turn",
+          "to_local": "global_tmp",
+          "side": "1"
+         }
+        },
+        {
+         "t": "set_variable",
+         "a": {
+          "name": "global_tmp",
+          "add": "1"
+         }
+        },
+        {
+         "t": "set_variable",
+         "a": {
+          "name": "global_tmp",
+          "value": "$global_tmp"
+         }
+        },
+        {
+         "t": "set_global_variable",
+         "a": {
+          "namespace": "TheSouthGuard",
+          "from_local": "global_tmp",
+          "to_global": "saveloads_this_turn",
+          "side": "1",
+          "immediate": "yes"
+         }
+        },
+        {
+         "t": "clear_variable",
+         "a": {
+          "name": "global_tmp"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "global_tmp"
+     }
+    },
+    {
+     "t": "get_global_variable",
+     "a": {
+      "namespace": "TheSouthGuard",
+      "from_global": "saveloads_this_turn",
+      "to_local": "global_tmp",
+      "side": "1"
+     }
+    },
+    {
+     "t": "if",
+     "c": [
+      {
+       "t": "variable",
+       "a": {
+        "name": "global_tmp",
+        "greater_than_equal_to": "4"
+       }
+      },
+      {
+       "t": "and",
+       "c": [
+        {
+         "t": "lua",
+         "a": {
+          "code": "<< return ( == wesnoth.game_config.random_mode) >>"
+         }
+        }
+       ]
+      },
+      {
+       "t": "then",
+       "c": [
+        {
+         "t": "get_global_variable",
+         "a": {
+          "namespace": "TheSouthGuard",
+          "from_global": "sg_saveload_info",
+          "to_local": "global_tmp",
+          "side": "1"
+         }
+        },
+        {
+         "t": "if",
+         "c": [
+          {
+           "t": "variable",
+           "a": {
+            "name": "global_tmp",
+            "not_equals": "yes"
+           }
+          },
+          {
+           "t": "then",
+           "c": [
+            {
+             "t": "set_variable",
+             "a": {
+              "name": "global_tmp",
+              "value": "yes"
+             }
+            },
+            {
+             "t": "set_global_variable",
+             "a": {
+              "namespace": "TheSouthGuard",
+              "from_local": "global_tmp",
+              "to_global": "sg_saveload_info",
+              "side": "1",
+              "immediate": "yes"
+             }
+            },
+            {
+             "t": "clear_variable",
+             "a": {
+              "name": "global_tmp"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "clear_variable",
+     "a": {
+      "name": "global_tmp"
+     }
+    }
+   ]
+  }
+ ],
+ "unsupported": {
+  "time_area": 1,
+  "remove_shroud": 1,
+  "lua": 16,
+  "unsynced": 1,
+  "companion_message": 3
+ }
+}

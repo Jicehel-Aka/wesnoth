@@ -1,11 +1,13 @@
 // scene/story_scene.h
 #pragma once
+#include <vector>
+
 #include "scene/scene.h"
+#include "scene/language.h"
 #include "story/campaign_loader.h"
+#include "story/savegame.h"
 
 namespace wesnoth_sg {
-
-enum class Language { French, English };
 
 class StoryScene : public Scene {
 public:
@@ -46,6 +48,19 @@ private:
     // (pagination) et render() calculent la même largeur de ligne. Sans objet
     // pour StoryScreen (marge fixe des deux côtés).
     int dialog_text_x(const Beat& beat) const;
+
+    // --- menu titre (Nouvelle partie / Continuer / Charger une sauvegarde) --
+    // affiché une fois au lancement, avant tout beat -- voir story/savegame.h
+    // pour ce que "Continuer" (autosave) et les 5 emplacements restaurent.
+    enum class TitleMode { Menu, LoadList };
+    bool at_title_ = true;
+    TitleMode title_mode_ = TitleMode::Menu;
+    int title_sel_ = 0;
+    std::vector<SaveSlotInfo> load_list_;
+    void update_title(SceneManager&);
+    void render_title();
+    void start_new_game();
+    void start_from_save(int slot, SceneManager&);   // slot = kAutoSlot ou 1..kNumManualSlots
 };
 
 StoryScene& story_scene();  // instance unique, cf. title_scene() dans Asteria

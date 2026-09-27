@@ -168,6 +168,23 @@ class State:
         self.unsupported[what] = self.unsupported.get(what, 0) + 1
 
 
+def parse_range(s):
+    """"5" -> {5} ; "0-99" -> {0,1,...,99} ; "1,3,7-9" -> {1,3,7,8,9}.
+    Renvoie None si un élément n'est pas numérique (liste d'id, pas de plage)."""
+    try:
+        out = set()
+        for part in s.split(","):
+            part = part.strip()
+            if "-" in part[1:]:  # [1:] pour ne pas casser un "-5" négatif éventuel
+                a, b = part.split("-", 1)
+                out.update(range(int(a), int(b) + 1))
+            else:
+                out.add(int(part))
+        return out
+    except ValueError:
+        return None
+
+
 def hex_dist(ax, ay, bx, by):
     def cube(x, y):
         z = x
@@ -275,11 +292,26 @@ def run_action(n, st, choose):
         xs, ys = n.get("x"), n.get("y")
         r = int(n.get("radius", "0"))
         if xs and ys:
-            cx, cy = int(xs), int(ys)
-            for y in range(len(st.grid)):
-                for x in range(len(st.grid[y])):
-                    if hex_dist(cx, cy, x, y) <= r and st.is_village(x, y):
-                        st.villages[(x, y)] = side
+            # Deux formes WML : un point + radius=N (rayon en cases autour
+            # d'un centre), ou des PLAGES "a-b" par coordonnée (rectangle --
+            # ex. side,x,y=2,0-99,0-10 pour attribuer d'un coup toutes les
+            # cases d'une zone). Les deux formes existent dans les scénarios
+            # de The South Guard.
+            xr = parse_range(xs)
+            yr = parse_range(ys)
+            if xr is not None and yr is not None and (r == 0 or "-" in xs or "-" in ys):
+                for y in range(len(st.grid)):
+                    if y not in yr:
+                        continue
+                    for x in range(len(st.grid[y])):
+                        if x in xr and st.is_village(x, y):
+                            st.villages[(x, y)] = side
+            else:
+                cx, cy = int(xs), int(ys)
+                for y in range(len(st.grid)):
+                    for x in range(len(st.grid[y])):
+                        if hex_dist(cx, cy, x, y) <= r and st.is_village(x, y):
+                            st.villages[(x, y)] = side
     elif t == "modify_side":
         s = st.sides.setdefault(int(n.get("side")), {})
         for k in ("gold", "income", "hidden", "team_name", "controller", "recruit"):
@@ -483,6 +515,12 @@ def main():
                          "plein) sans les effets de bord d'une branche de tutoriel : "
                          "--choose __none__ --start-event play_battle")
     ap.add_argument("--macros", help="dossier data/core/macros : macros réelles du cœur")
+    ap.add_argument("--companion", default="Sir Gerrick",
+                    choices=["Mari", "Sir Gerrick", "Minister Hylas"],
+                    help="[choose_companion] est une boîte de dialogue GUI2 non "
+                         "rejouable par cet extracteur hors-ligne : on fixe donc "
+                         "companion_id à cette valeur avant de jouer prestart/start, "
+                         "comme si ce compagnon avait toujours été choisi en 02x_Westin.")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
@@ -510,6 +548,11 @@ def main():
     terrain = json.load(open(a.terrain_json, encoding="utf-8"))["codes"]
     st = State(scen, os.path.join(a.campaign, "maps"), terrain)
     st.turns = int(scen.get("turns", "-1"))
+    # Choix figé du compagnon (voir --companion) : sert de valeur par défaut
+    # pour toute référence à $companion_id rencontrée pendant prestart/start,
+    # et pour la substitution dans les filtres victoire/défaite exportés
+    # plus bas (ex. [victory_on_death] filter id=$companion_id).
+    st.vars["companion_id"] = a.companion
 
     for s in scen.all("side"):
         sd = {k: v for k, v in s.attrs.items()
@@ -543,13 +586,25 @@ def main():
 
     # victoire / défaite liées à la mort d'une unité (événements de haut niveau
     # ET événements posés pendant la mise en place)
+    def subst_vars(attrs):
+        # Résout les références $nom_variable (ex. id=$companion_id) contre
+        # st.vars -- ne modifie que les valeurs qui commencent par "$", les
+        # autres passent inchangées.
+        out = {}
+        for k, v in attrs.items():
+            if isinstance(v, str) and v.startswith("$"):
+                out[k] = st.vars.get(v[1:], v)
+            else:
+                out[k] = v
+        return out
+
     death_win, death_lose = [], []
     for name in ("die", "last breath"):
         for ev in st.events.get(name, []):
             f = ev.first("filter")
             res = [c.get("result") for c in ev.walk() if c.tag == "endlevel"]
             if f is not None and res:
-                (death_win if res[0] == "victory" else death_lose).append(f.attrs)
+                (death_win if res[0] == "victory" else death_lose).append(subst_vars(f.attrs))
 
     # micro-IA « zone_guardian » posées par des événements (ex. Mari garde le
     # pont) : exportées comme comportement d'unité, appliqué dès le départ
@@ -581,7 +636,12 @@ def main():
         "turns": st.turns,
         "current_turn": st.current_turn,
         "sides": [dict(v, side=k) for k, v in sorted(st.sides.items())],
-        "units": st.units,
+        # Un [unit] sans "type" ne correspond jamais à une unité réellement
+        # posée sur la carte (il vient d'un noeud WML utilisé comme filtre/
+        # modèle -- ex. un [unit] partiel produit par une macro -- plutôt que
+        # d'un placement) : on l'exclut plutôt que de laisser le moteur C++
+        # tomber sur un type d'unité vide.
+        "units": [u for u in st.units if u.get("type")],
         "villages": [{"x": x, "y": y, "side": s} for (x, y), s in sorted(st.villages.items())],
         "objectives": st.objectives,
         "gold_carryover": st.gold_carryover,

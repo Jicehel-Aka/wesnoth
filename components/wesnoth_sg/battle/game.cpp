@@ -180,6 +180,7 @@ bool Game::load_scenario(const std::string& scenario_json, const std::string& ma
         cJSON_ArrayForEach(f, cJSON_GetObjectItemCaseSensitive(s, key)) {
             if (!jstr(f, "id").empty()) out.push_back("id:" + jstr(f, "id"));
             else if (!jstr(f, "type").empty()) out.push_back("type:" + jstr(f, "type"));
+            else if (!jstr(f, "role").empty()) out.push_back("role:" + jstr(f, "role"));
         }
     };
     filters("victory_on_death", victory_ids_);
@@ -941,10 +942,12 @@ void Game::check_outcome() {
     if (outcome_ != Outcome::None) return;
     auto dead = [&](const std::string& f) {
         bool by_type = f.compare(0, 5, "type:") == 0;
-        std::string v = f.substr(by_type ? 5 : 3);
+        bool by_role = f.compare(0, 5, "role:") == 0;
+        std::string v = f.substr((by_type || by_role) ? 5 : 3);
         bool any = false, any_dead = false;
         for (const auto& u : units_) {
-            if (by_type ? u.type_id == v : u.id == v) {
+            bool match = by_type ? u.type_id == v : (by_role ? u.role == v : u.id == v);
+            if (match) {
                 any = true;
                 if (!u.alive()) any_dead = true;
             }
@@ -955,6 +958,163 @@ void Game::check_outcome() {
         if (dead(f)) { outcome_ = Outcome::Defeat; outcome_reason_ = "Mort : " + f.substr(f.find(':') + 1); return; }
     for (const auto& f : victory_ids_)
         if (dead(f)) { outcome_ = Outcome::Victory; outcome_reason_ = f.substr(f.find(':') + 1) + " est vaincu"; return; }
+}
+
+// ---------------------------------------------------------------------------
+// Sauvegarde -- voir game.h. N'écrit/ne relit que l'état mutable : la carte,
+// les données d'unité (d_) et les identifiants victoire/défaite du scénario
+// restent ceux du scenario_json rechargé par l'appelant avant load_state()
+// (sauf victory_ids_/defeat_ids_, repris ici car modifiables par les
+// événements en jeu -- [modify_side] etc. -- donc pas toujours identiques
+// au JSON d'origine).
+// ---------------------------------------------------------------------------
+void Game::save_state(cJSON* out) const {
+    cJSON_AddNumberToObject(out, "turn", turn_);
+    cJSON_AddNumberToObject(out, "cur_side", cur_side_);
+    cJSON_AddNumberToObject(out, "next_uid", next_uid_);
+    cJSON_AddNumberToObject(out, "rng", (double)rng_);
+    cJSON_AddNumberToObject(out, "outcome", (int)outcome_);
+    cJSON_AddStringToObject(out, "outcome_reason", outcome_reason_.c_str());
+
+    cJSON* sides = cJSON_AddArrayToObject(out, "sides");
+    for (const auto& sd : sides_) {
+        cJSON* so = cJSON_CreateObject();
+        cJSON_AddNumberToObject(so, "id", sd.id);
+        cJSON_AddNumberToObject(so, "gold", sd.gold);
+        cJSON_AddNumberToObject(so, "income_mod", sd.income_mod);
+        cJSON_AddItemToArray(sides, so);
+    }
+    cJSON* vills = cJSON_AddArrayToObject(out, "villages");
+    for (const auto& v : villages_) {
+        cJSON* vo = cJSON_CreateObject();
+        cJSON_AddNumberToObject(vo, "x", v.pos.x);
+        cJSON_AddNumberToObject(vo, "y", v.pos.y);
+        cJSON_AddNumberToObject(vo, "owner", v.owner);
+        cJSON_AddItemToArray(vills, vo);
+    }
+    auto strs_to = [&](const char* key, const std::vector<std::string>& in) {
+        cJSON* arr = cJSON_AddArrayToObject(out, key);
+        for (const auto& s : in) cJSON_AddItemToArray(arr, cJSON_CreateString(s.c_str()));
+    };
+    strs_to("objectives", objectives_);
+    strs_to("victory_ids", victory_ids_);
+    strs_to("defeat_ids", defeat_ids_);
+
+    cJSON* units = cJSON_AddArrayToObject(out, "units");
+    for (const auto& u : units_) {
+        cJSON* uo = cJSON_CreateObject();
+        cJSON_AddNumberToObject(uo, "uid", u.uid);
+        cJSON_AddStringToObject(uo, "type_id", u.type_id.c_str());
+        cJSON_AddStringToObject(uo, "id", u.id.c_str());
+        cJSON_AddStringToObject(uo, "name", u.name.c_str());
+        cJSON_AddStringToObject(uo, "role", u.role.c_str());
+        cJSON_AddNumberToObject(uo, "side", u.side);
+        cJSON_AddNumberToObject(uo, "x", u.pos.x);
+        cJSON_AddNumberToObject(uo, "y", u.pos.y);
+        cJSON_AddNumberToObject(uo, "hp", u.hp);
+        cJSON_AddNumberToObject(uo, "max_hp", u.max_hp);
+        cJSON_AddNumberToObject(uo, "mp", u.mp);
+        cJSON_AddNumberToObject(uo, "max_mp", u.max_mp);
+        cJSON_AddNumberToObject(uo, "xp", u.xp);
+        cJSON_AddNumberToObject(uo, "max_xp", u.max_xp);
+        cJSON_AddNumberToObject(uo, "melee_bonus", u.melee_bonus);
+        cJSON_AddNumberToObject(uo, "ranged_bonus", u.ranged_bonus);
+        cJSON_AddNumberToObject(uo, "dmg_bonus", u.dmg_bonus);
+        cJSON* tr = cJSON_AddArrayToObject(uo, "traits");
+        for (const auto& t : u.traits) cJSON_AddItemToArray(tr, cJSON_CreateString(t.c_str()));
+        cJSON_AddBoolToObject(uo, "canrecruit", u.canrecruit);
+        cJSON_AddBoolToObject(uo, "guardian", u.guardian);
+        cJSON_AddBoolToObject(uo, "loyal", u.loyal);
+        cJSON_AddBoolToObject(uo, "fearless", u.fearless);
+        cJSON_AddBoolToObject(uo, "immune_poison", u.immune_poison);
+        cJSON_AddBoolToObject(uo, "immune_drain", u.immune_drain);
+        cJSON_AddBoolToObject(uo, "immune_plague", u.immune_plague);
+        cJSON_AddBoolToObject(uo, "always_rest_heal", u.always_rest_heal);
+        cJSON_AddNumberToObject(uo, "village_def_cap", u.village_def_cap);
+        cJSON_AddNumberToObject(uo, "zone_x", u.zone_x);
+        cJSON_AddNumberToObject(uo, "zone_y", u.zone_y);
+        cJSON_AddNumberToObject(uo, "zone_r", u.zone_r);
+        cJSON_AddBoolToObject(uo, "poisoned", u.poisoned);
+        cJSON_AddBoolToObject(uo, "slowed", u.slowed);
+        cJSON_AddBoolToObject(uo, "recallable", u.recallable);
+        cJSON_AddBoolToObject(uo, "attacked", u.attacked);
+        cJSON_AddBoolToObject(uo, "resting", u.resting);
+        cJSON_AddItemToArray(units, uo);
+    }
+}
+
+void Game::load_state(const cJSON* in) {
+    turn_ = jint(in, "turn", turn_);
+    cur_side_ = jint(in, "cur_side", cur_side_);
+    next_uid_ = jint(in, "next_uid", next_uid_);
+    const cJSON* rngv = cJSON_GetObjectItemCaseSensitive(in, "rng");
+    if (rngv && cJSON_IsNumber(rngv)) rng_ = (uint32_t)rngv->valuedouble;
+    outcome_ = (Outcome)jint(in, "outcome", (int)outcome_);
+    outcome_reason_ = jstr(in, "outcome_reason", outcome_reason_.c_str());
+
+    const cJSON* e = nullptr;
+    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(in, "sides")) {
+        if (Side* s = side(jint(e, "id"))) {
+            s->gold = jint(e, "gold", s->gold);
+            s->income_mod = jint(e, "income_mod", s->income_mod);
+        }
+    }
+    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(in, "villages")) {
+        HexCoord p{jint(e, "x"), jint(e, "y")};
+        for (auto& v : villages_) if (v.pos == p) v.owner = jint(e, "owner");
+    }
+    auto strs_from = [&](const char* key, std::vector<std::string>& out) {
+        out.clear();
+        const cJSON* it = nullptr;
+        cJSON_ArrayForEach(it, cJSON_GetObjectItemCaseSensitive(in, key))
+            if (cJSON_IsString(it)) out.push_back(it->valuestring);
+    };
+    strs_from("objectives", objectives_);
+    strs_from("victory_ids", victory_ids_);
+    strs_from("defeat_ids", defeat_ids_);
+
+    units_.clear();
+    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(in, "units")) {
+        Unit u;
+        u.uid = jint(e, "uid");
+        u.type_id = jstr(e, "type_id");
+        u.t = d_.type(u.type_id);
+        if (!u.t) {
+            printf("[wsg] load_state : type d'unite inconnu, unite ignoree : %s\n", u.type_id.c_str());
+            continue;
+        }
+        u.id = jstr(e, "id"); u.name = jstr(e, "name"); u.role = jstr(e, "role");
+        u.side = jint(e, "side", 1);
+        u.pos = {jint(e, "x"), jint(e, "y")};
+        u.hp = jint(e, "hp", 1); u.max_hp = jint(e, "max_hp", 1);
+        u.mp = jint(e, "mp"); u.max_mp = jint(e, "max_mp");
+        u.xp = jint(e, "xp"); u.max_xp = jint(e, "max_xp", 1);
+        u.melee_bonus = jint(e, "melee_bonus");
+        u.ranged_bonus = jint(e, "ranged_bonus");
+        u.dmg_bonus = jint(e, "dmg_bonus");
+        const cJSON* tr = nullptr;
+        cJSON_ArrayForEach(tr, cJSON_GetObjectItemCaseSensitive(e, "traits"))
+            if (cJSON_IsString(tr)) u.traits.push_back(tr->valuestring);
+        auto jbool = [&](const char* k) { const cJSON* v = cJSON_GetObjectItemCaseSensitive(e, k); return v && cJSON_IsTrue(v); };
+        u.canrecruit = jbool("canrecruit");
+        u.guardian = jbool("guardian");
+        u.loyal = jbool("loyal");
+        u.fearless = jbool("fearless");
+        u.immune_poison = jbool("immune_poison");
+        u.immune_drain = jbool("immune_drain");
+        u.immune_plague = jbool("immune_plague");
+        u.always_rest_heal = jbool("always_rest_heal");
+        u.village_def_cap = jint(e, "village_def_cap");
+        u.zone_x = jint(e, "zone_x", -1);
+        u.zone_y = jint(e, "zone_y", -1);
+        u.zone_r = jint(e, "zone_r");
+        u.poisoned = jbool("poisoned");
+        u.slowed = jbool("slowed");
+        u.recallable = jbool("recallable");
+        u.attacked = jbool("attacked");
+        u.resting = jbool("resting");
+        units_.push_back(std::move(u));
+    }
 }
 
 }  // namespace wsg
