@@ -32,6 +32,7 @@ g++ -std=c++17 -Wno-narrowing -O2 -I pc/include \
     components/wesnoth_sg/platform/gb_port_sdl.cpp \
     components/wesnoth_sg/platform/gb_port_common.cpp \
     components/wesnoth_sg/story/campaign_loader.cpp \
+    components/wesnoth_sg/story/savegame.cpp \
     pc/main_sdl.cpp \
     $(pkg-config --cflags --libs sdl2 2>/dev/null || echo -lSDL2) \
     -lcjson \
