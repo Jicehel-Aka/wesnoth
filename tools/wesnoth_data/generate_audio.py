@@ -155,6 +155,14 @@ def has_speakable_content(text: str) -> bool:
     return any(c.isalpha() for c in text)
 
 
+def needs_regen(out_path: Path, force: bool) -> bool:
+    """True si ce .wav doit (re)etre genere : --force, absent, ou present
+    mais vide (0 octet) -- filet de securite contre un fichier laisse
+    tronque par une execution precedente interrompue (Ctrl+C, coupure
+    d'alimentation...), sans forcer la regeneration de tout le reste."""
+    return force or not out_path.exists() or out_path.stat().st_size == 0
+
+
 def slugify(name: str) -> str:
     if not name:
         return "unknown"
@@ -335,7 +343,7 @@ def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, piper_voices, args)
             if args.lang in ("en", "both"):
                 rel = f"{sc_id}/intro_{idx:03d}_{slug}.wav"
                 out_path = out_dir / rel
-                if args.force or not out_path.exists():
+                if needs_regen(out_path, args.force):
                     if synth_en(text_en, voice_en, out_path):
                         n_gen_en += 1
                         print(f"  [en] {rel}")
@@ -351,7 +359,7 @@ def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, piper_voices, args)
             if args.lang in ("fr", "both") and text_fr and has_speakable_content(text_fr):
                 rel_fr = f"{sc_id}_fr/intro_{idx:03d}_{slug}.wav"
                 out_path_fr = out_dir / rel_fr
-                if args.force or not out_path_fr.exists():
+                if needs_regen(out_path_fr, args.force):
                     ok, voice_fr = synth_fr_any(text_fr, voice_en, out_path_fr, piper_voices,
                                                  args.fr_tts, mbrola_ok)
                     if ok:
@@ -453,7 +461,7 @@ def main():
             if args.lang in ("en", "both"):
                 rel = f"{sc_id}/{idx:03d}_{slug}.wav"
                 out_path = out_dir / rel
-                if args.force or not out_path.exists():
+                if needs_regen(out_path, args.force):
                     ok = synth_en(text_en, voice_en, out_path)
                     if ok:
                         n_gen_en += 1
@@ -473,7 +481,7 @@ def main():
             if args.lang in ("fr", "both") and text_fr.strip() and has_speakable_content(text_fr):
                 rel_fr = f"{sc_id}_fr/{idx:03d}_{slug}.wav"
                 out_path_fr = out_dir / rel_fr
-                if args.force or not out_path_fr.exists():
+                if needs_regen(out_path_fr, args.force):
                     ok, voice_fr = synth_fr_any(text_fr, voice_en, out_path_fr, piper_voices,
                                                  args.fr_tts, mbrola_ok)
                     if ok:

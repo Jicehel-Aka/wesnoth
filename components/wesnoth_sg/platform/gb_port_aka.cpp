@@ -1,8 +1,8 @@
-#include <vector>
-#include <cstring>
 // platform/gb_port_aka.cpp — SEUL fichier lié à gb_graphics/gb_core.
 // Patron repris directement de components/asteria/platform/gb_port_aka.cpp
 // (déjà vérifié en usage réel sur d'autres jeux AKA de ce studio).
+#include <vector>
+#include <cstring>
 #if defined(ESP_PLATFORM)
 #include "platform/gb_port.h"
 

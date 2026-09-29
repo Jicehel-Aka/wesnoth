@@ -2,6 +2,7 @@
 #pragma once
 #include <vector>
 
+#include "battle/campaign_state.h"
 #include "scene/campaign_root.h"
 #include "scene/scene.h"
 #include "scene/language.h"

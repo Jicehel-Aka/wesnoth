@@ -96,6 +96,17 @@ private:
     // dessiné, 6 sinon) -- factorisé pour que update() (pagination) et
     // draw_dialog() (rendu) calculent exactement la même largeur de ligne.
     int dialog_text_x(const wsg::EventMessage& m) const;
+    // Mise en page du dialogue courant (tx + retour à la ligne), mémorisée
+    // tant que le message et la page (dlg_page_) n'ont pas changé : sans ce
+    // cache, update() ET draw_dialog() relançaient wrap_text_lines() (et
+    // dialog_text_x(), qui teste l'existence du fichier de portrait sur la
+    // carte SD) à CHAQUE frame pendant tout l'affichage d'une boîte de
+    // dialogue -- soit un accès SD par frame là où le résultat ne change
+    // qu'au changement de message ou de page.
+    struct DialogLayout { int tx = 6; std::vector<std::string> lines; };
+    const DialogLayout& dialog_layout(const wsg::EventMessage& m) const;
+    mutable int dlg_cache_key_ = -1;    // (version message, page) encodés -- -1 = invalide
+    mutable DialogLayout dlg_cache_;
     bool check_end();
     bool loaded_ = false;
     std::vector<uint16_t> canvas_;

@@ -1,3 +1,5 @@
+// scene/scene.cpp — SceneManager::set() (voir scene.h) : bascule vers le
+// singleton StoryScene ou BattleScene demandé et l'initialise (enter()).
 #include "scene/scene.h"
 #include "scene/story_scene.h"
 #include "scene/battle_scene.h"

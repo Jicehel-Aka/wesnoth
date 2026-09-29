@@ -186,8 +186,14 @@ bool Game::load_scenario(const std::string& scenario_json, const std::string& ma
     filters("victory_on_death", victory_ids_);
     filters("defeat_on_death", defeat_ids_);
     objectives_.clear();
-    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(s, "objectives"))
-        objectives_.push_back((jstr(e, "condition") == "win" ? "+ " : "- ") + jstr(e, "text"));
+    // "text_fr" ajoute par tools/wesnoth_data/add_objectives_fr.py -- meme
+    // logique que message_fr (events.cpp) : absent -> repli sur l'anglais.
+    cJSON_ArrayForEach(e, cJSON_GetObjectItemCaseSensitive(s, "objectives")) {
+        std::string text_fr = jstr(e, "text_fr");
+        const std::string& text = (wsg::campaign_state().lang_fr && !text_fr.empty())
+            ? text_fr : jstr(e, "text");
+        objectives_.push_back((jstr(e, "condition") == "win" ? "+ " : "- ") + text);
+    }
     cJSON_Delete(s);
 
     outcome_ = Outcome::None;

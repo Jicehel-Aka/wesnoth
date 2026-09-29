@@ -34,6 +34,14 @@ struct CampaignState {
     // cet état. Seuls les messages marqués tip="yes" (WNode) sont concernés
     // -- voir EventEngine::queue_message dans events.cpp.
     bool tips_enabled = true;
+
+    // Miroir de StoryScene/BattleScene::language_ (scene/language.h),
+    // synchronisé par set_language() des deux scènes. Existe ici pour que
+    // les fonctions libres sans accès à l'instance de scène (uname() dans
+    // battle_scene.cpp, la substitution de $unit.name/$second_unit.name
+    // dans events.cpp) puissent choisir UnitTypeDef::name vs name_fr sans
+    // se passer la langue en paramètre partout.
+    bool lang_fr = true;
 };
 
 CampaignState& campaign_state();

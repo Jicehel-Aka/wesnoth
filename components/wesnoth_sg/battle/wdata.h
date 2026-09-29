@@ -29,7 +29,7 @@ struct Movetype {
 };
 
 struct UnitTypeDef {
-    std::string id, name, race, movetype;
+    std::string id, name, name_fr, race, movetype;
     int hp = 1, mp = 0, xp = 0, level = 0, cost = 0;
     int num_traits = -1;              // -1 : valeur de la race
     bool ignore_race_traits = false;

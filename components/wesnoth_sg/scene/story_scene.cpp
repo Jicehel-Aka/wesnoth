@@ -189,6 +189,7 @@ void StoryScene::update(SceneManager& mgr) {
     const char* lang = akaRuntime.getLanguage();
     language_ = (lang && lang[0] == 'f') ? Language::French : Language::English;
 #endif
+    wsg::campaign_state().lang_fr = (language_ == Language::French);
 
     if (!pending_resume_.empty()) {
         std::string id = pending_resume_;

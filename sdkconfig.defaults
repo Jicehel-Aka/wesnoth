@@ -25,6 +25,17 @@ CONFIG_SPIRAM_USE_MALLOC=y
 # preferee aux 240 MHz max disponibles sur ce chip).
 CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=160
 
+# Optimisation compilateur : rien n'etait fixe ici, donc ESP-IDF appliquait
+# son reglage par defaut (oriente taille -Os). Passe en "performance" (-O2,
+# meme niveau que le build PC/SDL, voir build_pc.sh) le 2026-09-29 pour
+# essai -- gain potentiel sur tout le moteur (IA, pathfinding, rendu) sans
+# les risques de l'assembleur main. Prix a surveiller : binaire plus gros
+# (flash 8 Mo partagee avec les assets, cf. CONFIG_ESPTOOLPY_FLASHSIZE_8MB
+# ci-dessus) -- verifier la taille du .bin apres un idf.py build et revenir
+# a CONFIG_COMPILER_OPTIMIZATION_SIZE=y si ca deborde ou si le gain ne se
+# sent pas en jeu.
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
 # Noms de fichiers longs sur la carte SD -- INDISPENSABLE ici : nos noms de
 # scenarios ("01_Born_to_the_Banner") et fichiers ("campaign_bilingual.json",
 # "008_Deoran.wav") depassent tous la limite courte 8.3. Meme bug que

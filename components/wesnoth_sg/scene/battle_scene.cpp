@@ -64,7 +64,25 @@ gb::Color side_color(const wsg::Side* s) {
     if (c == "purple") return gb::rgb(170, 40, 190);
     return gb::rgb(200, 200, 200);
 }
-std::string uname(const wsg::Unit& u) { return u.name.empty() ? u.t->name : u.name; }
+// Le nom PERSONNEL d'une unité (u.name, ex. "Deoran") n'est jamais traduit ;
+// seul le nom de TYPE (u.t->name, ex. "Cavalier") a une variante name_fr
+// (voir wdata.h/add_translate_unit_names.py) -- affichée quand la langue
+// courante (wsg::campaign_state().lang_fr, synchronisée juste au-dessus par
+// update()) est le français et qu'une traduction existe (sinon repli sur
+// l'anglais, comme pour tout ce qui n'a pas encore de _fr).
+std::string uname(const wsg::Unit& u) {
+    if (!u.name.empty()) return u.name;
+    if (wsg::campaign_state().lang_fr && !u.t->name_fr.empty()) return u.t->name_fr;
+    return u.t->name;
+}
+// Meme logique que ci-dessus mais pour un UnitTypeDef isole (menu de
+// recrutement, rappel par type sans instance d'unite vivante) ; fallback
+// explicite quand `td` est absent (id de type introuvable dans data_).
+std::string type_name(const wsg::UnitTypeDef* td, const std::string& fallback = "") {
+    if (!td) return fallback;
+    if (wsg::campaign_state().lang_fr && !td->name_fr.empty()) return td->name_fr;
+    return td->name;
+}
 
 const gb::Color WHITE = gb::rgb(240, 240, 240), GREY = gb::rgb(150, 150, 150),
                 YELLOW = gb::rgb(250, 220, 60), RED = gb::rgb(230, 50, 50),
@@ -237,7 +255,7 @@ void BattleScene::build_recruit_list() {
     if (!s) return;
     for (const auto& t : s->recruit) {
         const wsg::UnitTypeDef* td = data_.type(t);
-        recruit_names_.push_back(td ? td->name : t);
+        recruit_names_.push_back(type_name(td, t));
         recruit_cost_.push_back(td ? td->cost : 0);
         recruit_roster_idx_.push_back(-1);
     }
@@ -249,7 +267,7 @@ void BattleScene::build_recruit_list() {
         if (std::find(recalled_roster_idx_.begin(), recalled_roster_idx_.end(), (int)i) != recalled_roster_idx_.end())
             continue;                                          // déjà rappelé ce scénario (id vide : on suit l'index nous-mêmes)
         const wsg::UnitTypeDef* td = data_.type(p.type_id);
-        recruit_names_.push_back((p.name.empty() ? (td ? td->name : p.type_id) : p.name) + " (rappel)");
+        recruit_names_.push_back((p.name.empty() ? type_name(td, p.type_id) : p.name) + " (rappel)");
         recruit_cost_.push_back(wsg::Game::kRecallCost);
         recruit_roster_idx_.push_back((int)i);
     }
@@ -368,7 +386,7 @@ void BattleScene::on_a() {
                 const std::string type = s->recruit[menu_sel_];
                 const wsg::UnitTypeDef* td = data_.type(type);
                 if (g.recruit(s->id, type, where)) {
-                    log_ = "Recrue : " + (td ? td->name : type) + ".";
+                    log_ = "Recrue : " + type_name(td, type) + ".";
                     cursor_ = where; follow(cursor_);
                 } else {
                     log_ = "Pas assez d'or.";
@@ -378,7 +396,7 @@ void BattleScene::on_a() {
                 if (wsg::Unit* u2 = g.place_recall(p, where)) {
                     s->gold -= cost;
                     recalled_roster_idx_.push_back(roster_idx);
-                    log_ = "Rappel : " + (p.name.empty() ? p.type_id : p.name) + ".";
+                    log_ = "Rappel : " + (p.name.empty() ? type_name(data_.type(p.type_id), p.type_id) : p.name) + ".";
                     cursor_ = u2->pos; follow(cursor_);
                 }
             }
@@ -463,6 +481,14 @@ const std::string& BattleScene::current_text(const wsg::EventMessage& m) const {
     return m.text;
 }
 
+// Choix de dialogue [option] à l'index i : même logique que current_text(),
+// au cas par cas (un choix peut avoir sa traduction quand un autre non).
+static const std::string& option_text(const wsg::EventMessage& m, size_t i, Language lang) {
+    if (lang == Language::French && i < m.options_fr.size() && !m.options_fr[i].empty())
+        return m.options_fr[i];
+    return m.options[i];
+}
+
 void BattleScene::update(SceneManager& mgr) {
     if (!loaded_) {
         if (gb::buttons_pressed() & (gb::BTN_A | gb::BTN_B)) mgr.set(SceneId::QUIT);
@@ -476,6 +502,7 @@ void BattleScene::update(SceneManager& mgr) {
     const char* lang = akaRuntime.getLanguage();
     language_ = (lang && lang[0] == 'f') ? Language::French : Language::English;
 #endif
+    wsg::campaign_state().lang_fr = (language_ == Language::French);
     wsg::Game& g = *game_;
     uint32_t p = gb::buttons_pressed(), held = gb::buttons();
 
@@ -491,8 +518,7 @@ void BattleScene::update(SceneManager& mgr) {
             msg_audio_pending_ = false;
         }
         int max_lines = dialog_max_lines();
-        int tx_check = dialog_text_x(m);
-        int total_lines = (int)gb::wrap_text_lines(gb::SCREEN_W - tx_check - 6, current_text(m)).size();
+        int total_lines = (int)dialog_layout(m).lines.size();
         bool more_pages = (dlg_page_ + 1) * max_lines < total_lines;
         if (more_pages) {
             // Texte trop long : A/B tourne la page avant de proposer les
@@ -854,6 +880,22 @@ int BattleScene::dialog_text_x(const wsg::EventMessage& m) const {
     return (!m.portrait.empty() && gb::file_exists(m.portrait.c_str())) ? 106 : 6;
 }
 
+const BattleScene::DialogLayout& BattleScene::dialog_layout(const wsg::EventMessage& m) const {
+    // events_->message_version() change à chaque nouveau message (pop_
+    // message()/choose()) -- le texte retourné par wrap_text_lines() couvre
+    // TOUT le message (la pagination ne fait que choisir la tranche
+    // affichée, cf. draw_dialog), donc dlg_page_ n'a pas sa place dans cette
+    // clé : tant que le message n'a pas changé, rien à refaire (voir
+    // dlg_cache_ dans le .h).
+    const int key = events_->message_version();
+    if (key != dlg_cache_key_) {
+        dlg_cache_.tx = dialog_text_x(m);
+        dlg_cache_.lines = gb::wrap_text_lines(gb::SCREEN_W - dlg_cache_.tx - 6, current_text(m));
+        dlg_cache_key_ = key;
+    }
+    return dlg_cache_;
+}
+
 void BattleScene::draw_dialog() {
     // boîte de dialogue à la manière de Wesnoth : portrait, nom, texte
     const wsg::EventMessage& m = events_->message();
@@ -868,7 +910,7 @@ void BattleScene::draw_dialog() {
     // (dlg_page_) plutôt que de laisser déborder hors de l'écran (bug
     // signalé : dernière ligne coupée). Un petit indicateur "▼" annonce la
     // suite quand il en reste.
-    auto all_lines = gb::wrap_text_lines(gb::SCREEN_W - tx - 6, current_text(m));
+    const auto& all_lines = dialog_layout(m).lines;
     int max_lines = dialog_max_lines();
     int shown = gb::draw_text_lines(tx, y + 18, 10, all_lines, WHITE, dlg_page_ * max_lines, max_lines);
     bool more = (dlg_page_ + 1) * max_lines < (int)all_lines.size();
@@ -880,7 +922,7 @@ void BattleScene::draw_dialog() {
         for (size_t i = 0; i < m.options.size(); ++i) {
             int oy = y + 18 + shown * 10 + 4 + (int)i * 11;
             if ((int)i == dlg_sel_) gb::fill_rect(tx - 2, oy - 1, gb::SCREEN_W - tx - 4, 10, gb::rgb(60, 60, 90));
-            gb::text(tx, oy, m.options[i].c_str(), WHITE);
+            gb::text(tx, oy, option_text(m, i, language_).c_str(), WHITE);
         }
     }
 }

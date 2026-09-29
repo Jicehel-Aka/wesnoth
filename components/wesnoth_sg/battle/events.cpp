@@ -238,11 +238,13 @@ void EventEngine::pop_message() {
     if (queue_.empty()) return;
     if (!queue_.front().options.empty()) return;   // il faut choisir
     queue_.erase(queue_.begin());
+    ++msg_version_;
 }
 
 void EventEngine::choose(int opt) {
     if (queue_.empty() || queue_.front().options.empty()) return;
     queue_.erase(queue_.begin());
+    ++msg_version_;
     if (opt >= 0 && opt < (int)pending_options_.size()) {
         const WNode* o = pending_options_[opt];
         owned_.emplace_back();
@@ -271,8 +273,24 @@ std::string EventEngine::subst(const std::string& s, const Ctx& c) {
         Unit* u1 = c.u1 ? g_.unit_by_uid(c.u1) : nullptr;
         Unit* u2 = c.u2 ? g_.unit_by_uid(c.u2) : nullptr;
         std::string val;
-        if (var == "unit.name" && u1) val = u1->name.empty() ? u1->t->name : u1->name;
-        else if (var == "second_unit.name" && u2) val = u2->name.empty() ? u2->t->name : u2->name;
+        // .language_name (Wesnoth : nom de TYPE traduit, ex. "quintaine")
+        // distinct de .name (id brut cote WML original) -- ici, .name rend
+        // deja le nom de type traduit (voir type_name_fr ci-dessous) puisque
+        // notre moteur n'a pas la distinction id/nom-affiche de Wesnoth ; on
+        // traite donc .language_name comme un alias de .name pour les deux
+        // repliques du tutoriel qui l'utilisent ("I had to stand right next
+        // to this $second_unit.language_name..."). Avant ce correctif,
+        // .language_name n'etait reconnu par aucune branche ci-dessous et
+        // disparaissait silencieusement (substitution vide), meme en
+        // anglais -- pas un bug propre au francais.
+        auto type_name_fr = [](const Unit* u) -> std::string {
+            if (!u) return "";
+            if (!u->name.empty()) return u->name;   // nom PERSONNEL, jamais traduit
+            if (wsg::campaign_state().lang_fr && !u->t->name_fr.empty()) return u->t->name_fr;
+            return u->t->name;
+        };
+        if (var == "unit.name" || var == "unit.language_name") val = type_name_fr(u1);
+        else if (var == "second_unit.name" || var == "second_unit.language_name") val = type_name_fr(u2);
         else if (var == "unit.id" && u1) val = u1->id;
         else if (var == "x1") val = std::to_string(c.loc.x);
         else if (var == "y1") val = std::to_string(c.loc.y);
@@ -430,7 +448,9 @@ void EventEngine::queue_message(const WNode& n, const Ctx& c) {
     // affichés en anglais comme avant.
     if (!n.get("message_fr").empty())
         m.text_fr = wesnoth_sg::strip_markup(subst(n.get("message_fr"), c));
-    m.speaker = n.get("caption", u ? (u->name.empty() ? u->t->name : u->name) : "");
+    m.speaker = n.get("caption", u ? (u->name.empty()
+        ? (wsg::campaign_state().lang_fr && !u->t->name_fr.empty() ? u->t->name_fr : u->t->name)
+        : u->name) : "");
     m.portrait = portrait_for(u, n.get("image"));
     m.unit_uid = u ? u->uid : 0;
     std::vector<const WNode*> opts;
@@ -439,6 +459,10 @@ void EventEngine::queue_message(const WNode& n, const Ctx& c) {
         const WNode* si = k.child("show_if");
         if (si && !cond(*si, c)) continue;
         m.options.push_back(wesnoth_sg::strip_markup(subst(k.get("message", k.get("label")), c)));
+        // "message_fr"/"label_fr" ajoutés par add_intro_fr.py (mêmes options
+        // que pour l'anglais) ; entrée vide -> repli sur l'anglais à l'affichage.
+        std::string opt_fr = k.get("message_fr", k.get("label_fr"));
+        m.options_fr.push_back(opt_fr.empty() ? "" : wesnoth_sg::strip_markup(subst(opt_fr, c)));
         opts.push_back(&k);
     }
     if (!opts.empty()) {
@@ -553,7 +577,14 @@ void EventEngine::exec(const WNode& n, const Ctx& c) {
     } else if (t == "objectives") {
         std::vector<std::string> o;
         for (const auto& k : n.kids)
-            if (k.tag == "objective") o.push_back((k.get("condition") == "win" ? "+ " : "- ") + subst(k.get("description"), c));
+            if (k.tag == "objective") {
+                // "description_fr" ajoute par add_objectives_fr.py, meme
+                // logique que message_fr : repli sur l'anglais si absent.
+                std::string desc_fr = k.get("description_fr");
+                const std::string desc = (wsg::campaign_state().lang_fr && !desc_fr.empty())
+                    ? desc_fr : k.get("description");
+                o.push_back((k.get("condition") == "win" ? "+ " : "- ") + subst(desc, c));
+            }
         if (!o.empty()) g_.set_objectives(o);
     } else if (t == "endlevel") {
         std::string r = n.get("result", "victory");

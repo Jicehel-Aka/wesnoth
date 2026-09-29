@@ -118,6 +118,7 @@ bool GameData::load(const std::string& units_json, const std::string& terrain_js
         UnitTypeDef t;
         t.id = e->string;
         t.name = str(e, "name", e->string);
+        t.name_fr = str(e, "name_fr", "");  // absent -> reste en anglais (voir uname())
         t.race = str(e, "race");
         t.movetype = str(e, "movetype", "smallfoot");
         t.hp = num(e, "hp", 1);

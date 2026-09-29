@@ -59,6 +59,10 @@ struct EventMessage {
     // message n'a pas de doublage (cf. tools/wesnoth_data/generate_audio.py).
     std::string audio_path, audio_path_fr;   // chemins relatifs à /sdcard/WESNOTH_SG/audio/
     std::vector<std::string> options;
+    // Traductions des choix de dialogue [option], parallèle à "options" (même
+    // index) ; entrée vide si ce choix précis n'a pas de "message_fr"/"label_fr"
+    // -- repli sur l'anglais au cas par cas (voir choix affichés).
+    std::vector<std::string> options_fr;
     int unit_uid = 0;
 };
 
@@ -79,6 +83,11 @@ public:
     const EventMessage& message() const { return queue_.front(); }
     void pop_message();                          // message lu (sans option)
     void choose(int option);                     // message à options
+    // Incrémenté à chaque message affiché (pop_message/choose) : sert à
+    // BattleScene pour savoir quand invalider son cache de mise en page du
+    // dialogue (retour à la ligne, portrait...) plutôt que de le recalculer
+    // à chaque frame -- voir battle_scene.cpp.
+    int message_version() const { return msg_version_; }
 
     const std::map<std::string, int>& unsupported() const { return unsupported_; }
     int fired_count() const { return fired_; }
@@ -118,6 +127,7 @@ private:
     std::vector<Frame> stack_;
     std::deque<std::vector<WNode>> owned_;   // listes créées en cours de route
     std::vector<EventMessage> queue_;
+    int msg_version_ = 0;
     std::vector<const WNode*> pending_options_;
     Ctx pending_ctx_;
     bool waiting_ = false, running_ = false;

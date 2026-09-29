@@ -922,7 +922,8 @@
       ],
       "resist": {
         "fire": 80
-      }
+      },
+      "name_fr": "Archimage"
     },
     "Assassin": {
       "name": "Assassin",
@@ -962,7 +963,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Assassin"
     },
     "Bandit": {
       "name": "Bandit",
@@ -988,7 +990,8 @@
           "num": 4,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Bandit"
     },
     "Banebow": {
       "name": "Banebow",
@@ -1029,7 +1032,8 @@
         "pierce": 40,
         "impact": 120
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Archer de la dévastation"
     },
     "Blood Bat": {
       "name": "Blood Bat",
@@ -1066,7 +1070,8 @@
       },
       "musthave": [
         "feral"
-      ]
+      ],
+      "name_fr": "Chauve-souris sanguinaire"
     },
     "Boat": {
       "name": "Boat",
@@ -1081,7 +1086,8 @@
       "image": "scenery/boat.png",
       "profile": "portraits/transport/crew-boat.webp",
       "adv": [],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Bateau"
     },
     "Bone Shooter": {
       "name": "Bone Shooter",
@@ -1123,7 +1129,8 @@
         "blade": 60,
         "pierce": 40,
         "impact": 120
-      }
+      },
+      "name_fr": "Décocheur d'os"
     },
     "Bowman": {
       "name": "Bowman",
@@ -1157,7 +1164,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Archer"
     },
     "Cage": {
       "name": "Caged Elf",
@@ -1178,7 +1186,8 @@
         "cold": 100,
         "fire": 100,
         "arcane": 40
-      }
+      },
+      "name_fr": "Elfes emprisonnés"
     },
     "Cavalier": {
       "name": "Cavalier",
@@ -1216,7 +1225,8 @@
         "impact": 60,
         "cold": 80
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Cuirassier"
     },
     "Cavalier Commander": {
       "name": "Cavalier",
@@ -1253,7 +1263,8 @@
         "impact": 100,
         "cold": 100
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Cuirassier"
     },
     "Cavalryman": {
       "name": "Cavalryman",
@@ -1283,7 +1294,8 @@
       "resist": {
         "impact": 60,
         "cold": 80
-      }
+      },
+      "name_fr": "Hussard"
     },
     "Cavalryman Commander": {
       "name": "Cavalryman",
@@ -1313,7 +1325,8 @@
         "blade": 100,
         "impact": 100,
         "cold": 100
-      }
+      },
+      "name_fr": "Hussard"
     },
     "Deathblade": {
       "name": "Deathblade",
@@ -1346,7 +1359,8 @@
         "impact": 120,
         "pierce": 40
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Mortelame"
     },
     "Dragoon": {
       "name": "Dragoon",
@@ -1385,7 +1399,8 @@
         "blade": 70,
         "impact": 60,
         "cold": 80
-      }
+      },
+      "name_fr": "Dragon"
     },
     "Dragoon Commander": {
       "name": "Dragoon",
@@ -1423,7 +1438,8 @@
         "blade": 100,
         "impact": 100,
         "cold": 100
-      }
+      },
+      "name_fr": "Dragon"
     },
     "Draug": {
       "name": "Draug",
@@ -1456,7 +1472,8 @@
         "pierce": 40,
         "impact": 120
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Draug"
     },
     "Dread Bat": {
       "name": "Dread Bat",
@@ -1492,7 +1509,8 @@
       "amla": 1,
       "musthave": [
         "feral"
-      ]
+      ],
+      "name_fr": "Chauve-souris terrifiante"
     },
     "Duelist": {
       "name": "Duelist",
@@ -1532,7 +1550,8 @@
       ],
       "resist": {
         "cold": 90
-      }
+      },
+      "name_fr": "Duelliste"
     },
     "Elvish Archer": {
       "name": "Elvish Archer",
@@ -1567,7 +1586,8 @@
           "num": 4,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Archer elfe"
     },
     "Elvish Avenger": {
       "name": "Elvish Avenger",
@@ -1612,7 +1632,8 @@
         "shallow_water": 2,
         "mountains": 2
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Vengeur elfe"
     },
     "Elvish Captain": {
       "name": "Elvish Captain",
@@ -1649,7 +1670,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Capitaine elfe"
     },
     "Elvish Champion": {
       "name": "Elvish Champion",
@@ -1684,7 +1706,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Champion elfe"
     },
     "Elvish Druid": {
       "name": "female^Elvish Druid",
@@ -1734,7 +1757,8 @@
             "magical"
           ]
         }
-      ]
+      ],
+      "name_fr": "Druidesse elfe"
     },
     "Elvish Enchantress": {
       "name": "female^Elvish Enchantress",
@@ -1783,7 +1807,8 @@
       ],
       "resist": {
         "arcane": 90
-      }
+      },
+      "name_fr": "Enchanteresse elfe"
     },
     "Elvish Fighter": {
       "name": "Elvish Fighter",
@@ -1818,7 +1843,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Guerrier elfe"
     },
     "Elvish Hero": {
       "name": "Elvish Hero",
@@ -1852,7 +1878,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Héros elfe"
     },
     "Elvish Marksman": {
       "name": "Elvish Marksman",
@@ -1888,7 +1915,8 @@
             "marksman"
           ]
         }
-      ]
+      ],
+      "name_fr": "Tireur d'élite elfe"
     },
     "Elvish Marshal": {
       "name": "Elvish Marshal",
@@ -1924,7 +1952,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Maréchal elfe"
     },
     "Elvish Ranger": {
       "name": "Elvish Ranger",
@@ -1970,7 +1999,8 @@
       "costs": {
         "shallow_water": 2,
         "mountains": 2
-      }
+      },
+      "name_fr": "Rôdeur elfe"
     },
     "Elvish Shaman": {
       "name": "female^Elvish Shaman",
@@ -2010,7 +2040,8 @@
             "slow"
           ]
         }
-      ]
+      ],
+      "name_fr": "Chamane elfe"
     },
     "Elvish Sharpshooter": {
       "name": "Elvish Sharpshooter",
@@ -2045,7 +2076,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Franc-tireur elfe"
     },
     "Elvish Shyde": {
       "name": "female^Elvish Shyde",
@@ -2096,7 +2128,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Nymphe elfe"
     },
     "Elvish Sorceress": {
       "name": "female^Elvish Sorceress",
@@ -2145,7 +2178,8 @@
       ],
       "resist": {
         "arcane": 100
-      }
+      },
+      "name_fr": "Sorcière elfe"
     },
     "Elvish Sylph": {
       "name": "female^Elvish Sylph",
@@ -2195,7 +2229,8 @@
       "resist": {
         "arcane": 80
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Sylphide elfe"
     },
     "Fencer": {
       "name": "Fencer",
@@ -2227,7 +2262,8 @@
       ],
       "resist": {
         "cold": 90
-      }
+      },
+      "name_fr": "Bretteur"
     },
     "Footpad": {
       "name": "Footpad",
@@ -2261,7 +2297,8 @@
           "num": 2,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Petite frappe"
     },
     "Fugitive": {
       "name": "Fugitive",
@@ -2297,7 +2334,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Fugitif"
     },
     "General": {
       "name": "General",
@@ -2340,7 +2378,8 @@
         "pierce": 90,
         "impact": 90
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Général"
     },
     "Ghast": {
       "name": "Ghast",
@@ -2378,7 +2417,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Abomination"
     },
     "Ghoul": {
       "name": "Ghoul",
@@ -2414,7 +2454,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Goule"
     },
     "Giant Rat": {
       "name": "Giant Rat",
@@ -2439,7 +2480,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Rat géant"
     },
     "Grand Knight": {
       "name": "Grand Knight",
@@ -2474,7 +2516,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Grand chevalier"
     },
     "Grand Marshal": {
       "name": "Grand Marshal",
@@ -2515,7 +2558,8 @@
         "pierce": 80,
         "impact": 80
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Maréchal"
     },
     "Great Mage": {
       "name": "Great Mage",
@@ -2553,7 +2597,8 @@
       "resist": {
         "fire": 70
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Grand mage"
     },
     "Halberdier": {
       "name": "Halberdier",
@@ -2591,7 +2636,8 @@
       "resist": {
         "pierce": 60
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Hallebardier"
     },
     "Heavy Infantryman": {
       "name": "Heavy Infantryman",
@@ -2620,7 +2666,8 @@
       ],
       "extra_traits": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Fantassin lourd"
     },
     "Highwayman": {
       "name": "Highwayman",
@@ -2645,7 +2692,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Bandit de grand chemin"
     },
     "Horseman": {
       "name": "Horseman",
@@ -2674,7 +2722,8 @@
             "charge"
           ]
         }
-      ]
+      ],
+      "name_fr": "Cavalier"
     },
     "Huntsman": {
       "name": "Huntsman",
@@ -2719,7 +2768,8 @@
       "costs": {
         "swamp_water": 2
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Traqueur"
     },
     "Iron Mauler": {
       "name": "Iron Mauler",
@@ -2747,7 +2797,8 @@
       "amla": 1,
       "extra_traits": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Cogneur de fer"
     },
     "Javelineer": {
       "name": "Javelineer",
@@ -2785,7 +2836,8 @@
       "resist": {
         "pierce": 60
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Javeliniste"
     },
     "King of Wesnoth": {
       "name": "King of Wesnoth",
@@ -2823,7 +2875,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Roi de Wesnoth"
     },
     "Knight": {
       "name": "Knight",
@@ -2860,7 +2913,8 @@
             "charge"
           ]
         }
-      ]
+      ],
+      "name_fr": "Chevalier"
     },
     "Lancer": {
       "name": "Lancer",
@@ -2887,7 +2941,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Lancier"
     },
     "Lich": {
       "name": "Lich",
@@ -2940,7 +2995,8 @@
       "costs": {
         "shallow_water": 3
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Liche"
     },
     "Lieutenant": {
       "name": "Lieutenant",
@@ -2977,7 +3033,8 @@
           "num": 2,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Lieutenant"
     },
     "Longbowman": {
       "name": "Longbowman",
@@ -3011,7 +3068,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Grand archer"
     },
     "Mage": {
       "name": "Mage",
@@ -3048,7 +3106,8 @@
             "magical"
           ]
         }
-      ]
+      ],
+      "name_fr": "Mage"
     },
     "Mage of Light": {
       "name": "Mage of Light",
@@ -3091,7 +3150,8 @@
       "resist": {
         "arcane": 50
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Mage de lumière"
     },
     "Master Bowman": {
       "name": "Master Bowman",
@@ -3124,7 +3184,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Maître archer"
     },
     "Master Fencer": {
       "name": "Master Fencer",
@@ -3159,7 +3220,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Maître d’armes"
     },
     "Master Infantryman": {
       "name": "Master Infantryman",
@@ -3193,7 +3255,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Commandant d'infanterie"
     },
     "Master at Arms": {
       "name": "Master at Arms",
@@ -3232,7 +3295,8 @@
       "resist": {
         "cold": 90
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Maître d'armes"
     },
     "Merchant Carrack": {
       "name": "Merchant Carrack",
@@ -3274,7 +3338,8 @@
       "amla": 1,
       "musthave": [
         "oceangoing"
-      ]
+      ],
+      "name_fr": "Caraque marchande"
     },
     "Necrophage": {
       "name": "Necrophage",
@@ -3313,7 +3378,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Nécrophage"
     },
     "Nightgaunt": {
       "name": "Nightgaunt",
@@ -3344,7 +3410,8 @@
           ]
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Horreur nocturne"
     },
     "Outlaw": {
       "name": "Outlaw",
@@ -3378,7 +3445,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Hors-la-loi"
     },
     "Paladin": {
       "name": "Paladin",
@@ -3419,7 +3487,8 @@
       "resist": {
         "arcane": 60
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Paladin"
     },
     "Peasant": {
       "name": "Peasant",
@@ -3454,7 +3523,8 @@
           "num": 1,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Paysan"
     },
     "Pikeman": {
       "name": "Pikeman",
@@ -3485,7 +3555,8 @@
       ],
       "resist": {
         "pierce": 60
-      }
+      },
+      "name_fr": "Piquier"
     },
     "Pirate Carrack": {
       "name": "Pirate Carrack",
@@ -3533,7 +3604,8 @@
       "amla": 1,
       "musthave": [
         "oceangoing"
-      ]
+      ],
+      "name_fr": "Brigantin pirate"
     },
     "Poacher": {
       "name": "Poacher",
@@ -3574,7 +3646,8 @@
       },
       "costs": {
         "swamp_water": 2
-      }
+      },
+      "name_fr": "Braconnier"
     },
     "Prince of Wesnoth": {
       "name": "Prince of Wesnoth",
@@ -3607,7 +3680,8 @@
         "fire": 100,
         "cold": 100
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Prince de Wesnoth"
     },
     "Quintain": {
       "name": "Quintain",
@@ -3634,7 +3708,8 @@
       "resist": {
         "arcane": 0
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Quintaine"
     },
     "Ranger": {
       "name": "Ranger",
@@ -3685,7 +3760,8 @@
         "shallow_water": 2,
         "swamp_water": 2
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Rôdeur"
     },
     "Red Mage": {
       "name": "Red Mage",
@@ -3725,7 +3801,8 @@
       ],
       "resist": {
         "fire": 90
-      }
+      },
+      "name_fr": "Mage rouge"
     },
     "Revenant": {
       "name": "Revenant",
@@ -3759,7 +3836,8 @@
         "blade": 60,
         "pierce": 40,
         "impact": 120
-      }
+      },
+      "name_fr": "Revenant"
     },
     "Rogue": {
       "name": "Rogue",
@@ -3798,7 +3876,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Brigand"
     },
     "Royal Guard": {
       "name": "Royal Guard",
@@ -3827,7 +3906,8 @@
         "blade": 80,
         "impact": 80
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Garde royal"
     },
     "Shadow": {
       "name": "Shadow",
@@ -3859,7 +3939,8 @@
             "backstab"
           ]
         }
-      ]
+      ],
+      "name_fr": "Ombre"
     },
     "Shock Trooper": {
       "name": "Shock Trooper",
@@ -3888,7 +3969,8 @@
       ],
       "extra_traits": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Soldat de choc"
     },
     "Silver Mage": {
       "name": "Silver Mage",
@@ -3930,7 +4012,8 @@
         "fire": 50,
         "cold": 50
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Mage d'argent"
     },
     "Skeleton": {
       "name": "Skeleton",
@@ -3965,7 +4048,8 @@
         "blade": 60,
         "pierce": 40,
         "impact": 120
-      }
+      },
+      "name_fr": "Squelette"
     },
     "Skeleton Archer": {
       "name": "Skeleton Archer",
@@ -4007,7 +4091,8 @@
         "blade": 60,
         "pierce": 40,
         "impact": 120
-      }
+      },
+      "name_fr": "Archer squelette"
     },
     "Skiff": {
       "name": "Skiff",
@@ -4047,7 +4132,8 @@
       ],
       "musthave": [
         "oceangoing"
-      ]
+      ],
+      "name_fr": "Chaloupe"
     },
     "Soulless": {
       "name": "Soulless",
@@ -4086,7 +4172,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:ant": {
       "name": "Soulless",
@@ -4125,7 +4212,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:bat": {
       "name": "Soulless",
@@ -4168,7 +4256,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:beast_rider": {
       "name": "Soulless",
@@ -4207,7 +4296,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:boar": {
       "name": "Soulless",
@@ -4246,7 +4336,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:bug": {
       "name": "Soulless",
@@ -4285,7 +4376,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:cat": {
       "name": "Soulless",
@@ -4324,7 +4416,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:drake": {
       "name": "Soulless",
@@ -4363,7 +4456,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:dwarf": {
       "name": "Soulless",
@@ -4402,7 +4496,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:falcon": {
       "name": "Soulless",
@@ -4442,7 +4537,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:fish": {
       "name": "Soulless",
@@ -4485,7 +4581,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:goblin": {
       "name": "Soulless",
@@ -4524,7 +4621,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:gryphon": {
       "name": "Soulless",
@@ -4564,7 +4662,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:horse": {
       "name": "Soulless",
@@ -4603,7 +4702,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:mounted": {
       "name": "Soulless",
@@ -4642,7 +4742,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:rat": {
       "name": "Soulless",
@@ -4681,7 +4782,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:sand_scorpion": {
       "name": "Soulless",
@@ -4720,7 +4822,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:saurian": {
       "name": "Soulless",
@@ -4759,7 +4862,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:scorpion": {
       "name": "Soulless",
@@ -4803,7 +4907,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:serpent": {
       "name": "Soulless",
@@ -4846,7 +4951,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:spider": {
       "name": "Soulless",
@@ -4885,7 +4991,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:swimmer": {
       "name": "Soulless",
@@ -4926,7 +5033,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:troll": {
       "name": "Soulless",
@@ -4965,7 +5073,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:wolf": {
       "name": "Soulless",
@@ -5004,7 +5113,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Soulless:wose": {
       "name": "Soulless",
@@ -5043,7 +5153,8 @@
       "amla": 1,
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Sans-âme"
     },
     "Spearman": {
       "name": "Spearman",
@@ -5081,7 +5192,8 @@
           "num": 1,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Porte-lance"
     },
     "Statue": {
       "name": "Statue",
@@ -5100,7 +5212,8 @@
         "cold": 100,
         "fire": 100,
         "arcane": 40
-      }
+      },
+      "name_fr": "Statue"
     },
     "Swordsman": {
       "name": "Swordsman",
@@ -5130,7 +5243,8 @@
       "resist": {
         "blade": 80,
         "impact": 80
-      }
+      },
+      "name_fr": "Spadassin"
     },
     "Thief": {
       "name": "Thief",
@@ -5158,7 +5272,8 @@
             "backstab"
           ]
         }
-      ]
+      ],
+      "name_fr": "Voleur"
     },
     "Thug": {
       "name": "Thug",
@@ -5184,7 +5299,8 @@
           "num": 4,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Brute"
     },
     "Townsfolk": {
       "name": "Townsfolk",
@@ -5209,7 +5325,8 @@
       "costs": {
         "mountain": 2
       },
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Citadins"
     },
     "Trapdoor": {
       "name": "Cellar Trapdoor",
@@ -5230,7 +5347,8 @@
         "cold": 100,
         "fire": 100,
         "arcane": 40
-      }
+      },
+      "name_fr": "Trappe de la cave"
     },
     "Trapper": {
       "name": "Trapper",
@@ -5272,7 +5390,8 @@
       },
       "costs": {
         "swamp_water": 2
-      }
+      },
+      "name_fr": "Trappeur"
     },
     "Troll": {
       "name": "Troll",
@@ -5301,7 +5420,8 @@
           "num": 2,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Troll"
     },
     "Troll Rocklobber": {
       "name": "Troll Rocklobber",
@@ -5337,7 +5457,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Troll lanceur de pierres"
     },
     "Troll Warrior": {
       "name": "Troll Warrior",
@@ -5365,7 +5486,8 @@
           "spec": []
         }
       ],
-      "amla": 1
+      "amla": 1,
+      "name_fr": "Guerrier troll"
     },
     "Troll Whelp": {
       "name": "Troll Whelp",
@@ -5395,7 +5517,8 @@
           "num": 2,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Jeune troll"
     },
     "Vampire Bat": {
       "name": "Vampire Bat",
@@ -5432,7 +5555,8 @@
       },
       "musthave": [
         "feral"
-      ]
+      ],
+      "name_fr": "Chauve-souris vampire"
     },
     "Veteran Fencer": {
       "name": "Veteran Fencer",
@@ -5468,7 +5592,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Bretteur vétéran"
     },
     "Veteran Fencer:relaxed": {
       "name": "Veteran Fencer",
@@ -5504,7 +5629,8 @@
           "num": 3,
           "spec": []
         }
-      ]
+      ],
+      "name_fr": "Bretteur vétéran"
     },
     "Veteran Infantryman": {
       "name": "Veteran Infantryman",
@@ -5539,7 +5665,8 @@
             "slow"
           ]
         }
-      ]
+      ],
+      "name_fr": "Fantassin vétéran"
     },
     "Walking Corpse": {
       "name": "Walking Corpse",
@@ -5579,7 +5706,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:ant": {
       "name": "Walking Corpse",
@@ -5619,7 +5747,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:bat": {
       "name": "Walking Corpse",
@@ -5663,7 +5792,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:beast_rider": {
       "name": "Walking Corpse",
@@ -5703,7 +5833,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:boar": {
       "name": "Walking Corpse",
@@ -5743,7 +5874,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:bug": {
       "name": "Walking Corpse",
@@ -5783,7 +5915,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:cat": {
       "name": "Walking Corpse",
@@ -5823,7 +5956,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:drake": {
       "name": "Walking Corpse",
@@ -5863,7 +5997,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:dwarf": {
       "name": "Walking Corpse",
@@ -5903,7 +6038,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:falcon": {
       "name": "Walking Corpse",
@@ -5944,7 +6080,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:fish": {
       "name": "Walking Corpse",
@@ -5988,7 +6125,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:goblin": {
       "name": "Walking Corpse",
@@ -6028,7 +6166,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:gryphon": {
       "name": "Walking Corpse",
@@ -6069,7 +6208,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:horse": {
       "name": "Walking Corpse",
@@ -6109,7 +6249,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:mounted": {
       "name": "Walking Corpse",
@@ -6149,7 +6290,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:rat": {
       "name": "Walking Corpse",
@@ -6189,7 +6331,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:sand_scorpion": {
       "name": "Walking Corpse",
@@ -6229,7 +6372,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:saurian": {
       "name": "Walking Corpse",
@@ -6269,7 +6413,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:scorpion": {
       "name": "Walking Corpse",
@@ -6314,7 +6459,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:serpent": {
       "name": "Walking Corpse",
@@ -6358,7 +6504,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:spider": {
       "name": "Walking Corpse",
@@ -6398,7 +6545,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:swimmer": {
       "name": "Walking Corpse",
@@ -6440,7 +6588,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:troll": {
       "name": "Walking Corpse",
@@ -6480,7 +6629,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:wolf": {
       "name": "Walking Corpse",
@@ -6520,7 +6670,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "Walking Corpse:wose": {
       "name": "Walking Corpse",
@@ -6560,7 +6711,8 @@
       },
       "musthave": [
         "fearless"
-      ]
+      ],
+      "name_fr": "Zombi"
     },
     "White Mage": {
       "name": "White Mage",
@@ -6603,7 +6755,8 @@
       ],
       "resist": {
         "arcane": 70
-      }
+      },
+      "name_fr": "Mage blanc"
     },
     "Woodsman": {
       "name": "Woodsman",
@@ -6642,7 +6795,8 @@
       "defense": {
         "forest": 40,
         "swamp_water": 50
-      }
+      },
+      "name_fr": "Homme des bois"
     }
   }
 }

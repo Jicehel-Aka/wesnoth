@@ -21,11 +21,11 @@
     "Mebrin": "awb"
   },
   "fr_voice_map_used": {
-    "awb": "fr_FR-tom-medium",
-    "rms": "fr_FR-tom-medium",
-    "kal16": "fr_FR-siwis-medium",
     "kal": "fr_FR-tom-medium",
-    "slt": "fr_FR-siwis-medium"
+    "awb": "fr_FR-tom-medium",
+    "slt": "fr_FR-siwis-medium",
+    "kal16": "fr_FR-siwis-medium",
+    "rms": "fr_FR-tom-medium"
   },
   "lines": [
     {

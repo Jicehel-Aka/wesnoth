@@ -21,10 +21,10 @@ bool in_zone(const Unit& u, HexCoord h) {
 
 struct AttackPlan { double score = -1e9; HexCoord from; int target = 0; int weapon = 0; };
 
-AttackPlan best_attack(Game& g, Unit& u, double aggression) {
+AttackPlan best_attack(Game& g, Unit& u, double aggression,
+                        const std::unordered_map<int, PathNode>& r) {
     AttackPlan best;
     if (u.attacked || u.t->attacks.empty()) return best;
-    auto r = g.reach(u);
     for (auto& e : g.units()) {
         if (!e.alive() || g.allied(e.side, u.side)) continue;
         if (u.zone_x >= 0 && !in_zone(u, e.pos)) continue;
@@ -123,7 +123,15 @@ bool ai_step(Game& g, double aggression, AiStep& out) {
         const int uid = u.uid;
         HexCoord from = u.pos;
 
-        AttackPlan a = best_attack(g, u, aggression);
+        // Calculé une seule fois : sert à la fois à évaluer les cases
+        // d'attaque possibles (best_attack) et, si aucune attaque n'est
+        // jouée, au repli/déplacement ci-dessous -- avant, chaque appel
+        // relançait son propre Dijkstra (g.reach), soit deux parcours
+        // complets de la carte par unité dans le cas (fréquent) où elle ne
+        // trouve pas de cible à sa portée.
+        auto r = g.reach(u);
+
+        AttackPlan a = best_attack(g, u, aggression, r);
         if (a.score > 0) {
             if (!(a.from == u.pos)) g.move_unit(u, a.from);
             Unit* me = g.unit_by_uid(uid);
@@ -141,7 +149,9 @@ bool ai_step(Game& g, double aggression, AiStep& out) {
         if (u.zone_x >= 0) target = {u.zone_x, u.zone_y};
         else target = nearest_target(g, u, u.hp * 2 < u.max_hp);
         if (target.x < 0) continue;
-        auto r = g.reach(u);
+        // r déjà calculé plus haut (avant best_attack) pour cette unité ;
+        // toujours valide ici puisqu'on n'atteint ce point que si aucune
+        // attaque n'a été jouée (donc aucun move_unit sur u depuis).
         HexCoord best = u.pos;
         int bd = hex_distance(u.pos, target) * 100 + g.defense_of(u, u.pos);
         for (auto& [k, node] : r) {
