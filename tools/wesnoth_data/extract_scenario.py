@@ -24,6 +24,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -194,13 +195,63 @@ def hex_dist(ax, ay, bx, by):
     return max(abs(a[0] - b[0]), abs(a[1] - b[1]), abs(a[2] - b[2]))
 
 
+def resolve_var_field(st, name, field):
+    """$nom.champ : nom peut designer soit un [store_unit] (liste avec 1
+    element, cf. semantique WML des tableaux a un seul element), soit un dict
+    direct (this_item d'un [foreach])."""
+    v = st.vars.get(name)
+    if isinstance(v, list) and v:
+        v = v[0]
+    return v.get(field) if isinstance(v, dict) else None
+
+
+def eval_wml_int(s, st):
+    """Resout une position x/y qui peut etre un entier litteral, une
+    reference $var (WML) ou une petite formule $(var.champ +/- N) -- ex.
+    x=$($temp.x-1) dans Two_Brothers/utils/characters.cfg (NEED_MERCENARY).
+    Retourne None si irresoluble (appelant a charge de gerer ce cas)."""
+    if isinstance(s, int):
+        return s
+    if not isinstance(s, str):
+        return None
+    inner = s[2:-1] if s.startswith("$(") and s.endswith(")") else (s[1:] if s.startswith("$") else s)
+    m = re.match(r'^\$?([A-Za-z_]\w*)\.([A-Za-z_]\w*)\s*([+-])\s*(\d+)$', inner)
+    if m:
+        base = resolve_var_field(st, m.group(1), m.group(2))
+        try:
+            base = int(base)
+        except (TypeError, ValueError):
+            return None
+        return base + int(m.group(4)) if m.group(3) == "+" else base - int(m.group(4))
+    m = re.match(r'^\$?([A-Za-z_]\w*)\.([A-Za-z_]\w*)$', inner)
+    if m:
+        v = resolve_var_field(st, m.group(1), m.group(2))
+        try:
+            return int(v)
+        except (TypeError, ValueError):
+            return None
+    if inner != s:  # etait prefixe par $ ou $(...) mais pas var.champ -> $varname simple
+        try:
+            return int(st.vars.get(inner))
+        except (TypeError, ValueError):
+            return None
+    try:
+        return int(s)
+    except ValueError:
+        return None
+
+
 def unit_from(node, st):
     u = {k: v for k, v in node.attrs.items()
          if k in ("id", "type", "side", "name", "canrecruit", "facing", "ai_special",
                   "variation", "x", "y", "upkeep", "role", "random_traits")}
     for k in ("x", "y", "side"):
         if k in u:
-            u[k] = int(u[k])
+            v = eval_wml_int(u[k], st)
+            if v is None:
+                st.note("unit_pos_unresolved:" + str(u[k]))
+                return None
+            u[k] = v
     traits = []
     mods = node.first("modifications")
     if mods is not None:
@@ -263,7 +314,8 @@ def run_action(n, st, choose):
     t = n.tag
     if t == "unit":
         u = unit_from(n, st)
-        st.units.append(u)
+        if u is not None:
+            st.units.append(u)
     elif t == "modify_unit":
         f = n.first("filter")
         for u in st.find(f) if f is not None else []:
@@ -287,6 +339,38 @@ def run_action(n, st, choose):
     elif t == "replace_map":
         st.map_file = n.get("map_file")
         st.load_map()
+    elif t == "terrain":
+        # [terrain] modifie la carte AVANT le début de partie (portes
+        # secretes, etc. -- ex. Two Brothers/03_Guarded_Castle, "Making the
+        # gates impassable"). x= et y= sont des listes appariees position par
+        # position (x="5,6" y="5,10" -> (5,5) et (6,10)), PAS un rectangle
+        # comme dans [capture_village] : ne pas reutiliser parse_range() ici.
+        xs = [v.strip() for v in n.get("x", "").split(",") if v.strip()]
+        ys = [v.strip() for v in n.get("y", "").split(",") if v.strip()]
+        code = n.get("terrain")
+        if code and len(xs) == len(ys):
+            for xv, yv in zip(xs, ys):
+                x, y = int(xv), int(yv)
+                if 0 <= y < len(st.grid) and 0 <= x < len(st.grid[y]):
+                    st.grid[y][x] = code
+    elif t == "role":
+        # [role] : assigne un role logique (ex. "Mercenary", "Reporter") au
+        # premier soldat deja place/recrute correspondant au filtre (liste de
+        # types + [not] d'exclusion), sinon joue [else] (typiquement [unit]
+        # pour en creer un). [auto_recall] (reprise depuis la liste de rappel
+        # du scenario precedent) n'est pas modelise ici -- ce script n'a pas
+        # cette liste -- donc on tombe systematiquement sur [else], ce qui
+        # correspond au comportement d'une premiere partie (rien a rappeler).
+        role_name = n.get("role")
+        types = [x.strip() for x in (n.get("type") or "").split(",") if x.strip()]
+        excl_ids = {notn.get("id") for notn in n.all("not") if notn.get("id")}
+        candidates = [u for u in st.units
+                      if (not types or u.get("type") in types) and u.get("id") not in excl_ids]
+        if candidates:
+            candidates[0]["role"] = role_name
+        else:
+            for b in n.all("else"):
+                run_actions(b, st, choose)
     elif t == "capture_village":
         side = int(n.get("side", "0"))
         xs, ys = n.get("x"), n.get("y")
@@ -409,7 +493,8 @@ def run_action(n, st, choose):
     elif t in ("delay", "scroll_to", "sound", "music", "store_unit", "unstore_unit", "redraw", "animate_unit",
                "fade_out_music", "print", "micro_ai", "modify_ai", "allow_undo", "remove_event",
                "set_menu_item", "object", "lua", "tutor", "set_achievement", "hide_unit", "unhide_unit",
-               "lock_view", "unlock_view", "color_adjust", "screen_fade", "move_units_fake", "terrain_mask",
+               "lock_view", "unlock_view", "color_adjust", "screen_fade", "move_units_fake", "move_unit_fake",
+               "terrain_mask", "remove_shroud", "recall", "auto_recall",
                "item", "remove_item", "label", "floating_text", "clear_menu_item", "set_variables"):
         if t in ("micro_ai", "modify_ai", "object", "lua", "set_variables", "terrain_mask"):
             st.note(t)

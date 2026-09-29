@@ -5,9 +5,40 @@ récit de la campagne (campaign_bilingual.json), en anglais ET en français.
 - Anglais : flite (voix "kal16/rms/slt/kal/awb" selon le personnage,
   cf. VOICE_MAP ci-dessous — c'est la table utilisée depuis le début du
   projet).
-- Français : espeak-ng, avec les voix mbrola "mb-fr1" (masculin) et
-  "mb-fr4" (féminin) quand elles sont installées (bien plus naturelles que
-  la voix espeak-ng "fr-fr" de base), sinon repli automatique sur "fr-fr".
+- Français : Piper (TTS neuronal, voix "fr_FR-tom-medium"/"fr_FR-siwis-medium"
+  -- BEAUCOUP plus naturel que l'ancien espeak-ng/mbrola, cf. PIPER_VOICES_EN
+  ci-dessous) quand un modèle Piper est présent dans --piper-voices-dir ;
+  repli automatique sur espeak-ng avec les voix mbrola "mb-fr1" (masculin) et
+  "mb-fr4" (féminin) si elles sont installées (meilleures que la voix
+  espeak-ng "fr-fr" de base, mais nettement plus robotiques que Piper), et en
+  dernier recours sur "fr-fr" (la plus robotique des trois).
+
+  Piper ne peut PAS être utilisé tel quel dans ce bac à sable cloud : ses
+  modèles de voix (.onnx, ~60 Mo chacun) sont hébergés sur huggingface.co,
+  qui n'est pas joignable depuis cet environnement (seuls pypi/npm/github
+  sont autorisés). Il faut donc générer le doublage français sur une machine
+  avec accès internet complet (ex. le PC Windows du projet) -- voir
+  "Activer Piper" plus bas dans ce docstring.
+
+Activer Piper (une fois, sur la machine qui génère l'audio -- PAS ce bac à
+sable). Dans une console ESP-IDF Windows (idf.py export), l'interpréteur
+s'appelle "python" (pas "python3") :
+    python -m pip install piper-tts
+    python -m piper.download_voices fr_FR-tom-medium      # voix masculine
+    python -m piper.download_voices fr_FR-siwis-medium    # voix féminine
+  Si download_voices échoue (proxy, pare-feu...), téléchargement direct à la
+  place (mêmes fichiers, sur huggingface.co) :
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/tom/medium/fr_FR-tom-medium.onnx
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/tom/medium/fr_FR-tom-medium.onnx.json
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx.json
+  Les fichiers .onnx/.onnx.json téléchargés (dans le répertoire courant, ou
+  ~/.local/share/piper-voices selon la version) doivent être copiés/déplacés
+  dans --piper-voices-dir (par défaut : tools/wesnoth_data/voices/ à côté de
+  ce script). Le script détecte automatiquement leur présence et bascule sur
+  Piper pour le français ; si les fichiers sont absents, il retombe sur
+  espeak-ng/mbrola comme avant (aucune régression si Piper n'est pas dispo).
+  --fr-tts force explicitement piper|mbrola|auto (auto = piper si trouvé).
 
 Synthétise les écrans de récit (story_screen/dialogue de
 campaign_bilingual.json) ET, si --battle-scenarios-dir est fourni, les
@@ -82,6 +113,45 @@ EN_TO_FR_VOICE = {
     "slt": "mb-fr4",        # féminin
 }
 
+# --- Correspondance voix anglaise (flite) -> nom de voix Piper, même
+# principe qu'EN_TO_FR_VOICE mais pour le backend neuronal (voir docstring
+# "Activer Piper" en tête de fichier). "tom" = masculin, "siwis" = féminin ;
+# ce sont les deux voix fr_FR de meilleure qualité disponibles dans
+# piper-voices au moment d'écrire ce script. ---
+EN_TO_PIPER_VOICE = {
+    "kal16": "fr_FR-siwis-medium",   # narrateur : voix neutre/féminine, claire
+    "rms": "fr_FR-tom-medium",       # masculin
+    "kal": "fr_FR-tom-medium",       # masculin
+    "awb": "fr_FR-tom-medium",       # masculin
+    "slt": "fr_FR-siwis-medium",     # féminin
+}
+
+
+def find_piper_voices(voices_dir: Path) -> dict:
+    """Repère les modèles Piper présents dans --piper-voices-dir (une paire
+    <nom>.onnx + <nom>.onnx.json par voix, tels que produits par
+    `python -m piper.download_voices <nom>` (Windows/ESP-IDF) ou `python3 ...` (Linux)). Retourne {nom: chemin .onnx}
+    pour les seules voix complètes (les deux fichiers présents)."""
+    found = {}
+    if not voices_dir.is_dir():
+        return found
+    for onnx in voices_dir.glob("*.onnx"):
+        cfg = onnx.with_suffix(".onnx.json")
+        if cfg.exists():
+            found[onnx.stem] = onnx
+    return found
+
+
+def has_speakable_content(text: str) -> bool:
+    """False pour un texte reduit a de la ponctuation/des points de
+    suspension ("...", "!?", etc.) -- ce genre de repartie (grognement de
+    douleur, silence dramatique...) fait planter Piper (son phonemizeur
+    interne produit zero phoneme et sa boucle lines_to_wav() indexe alors
+    dans du vide) sans que ce soit un vrai probleme de traduction : on saute
+    juste la generation audio pour cette ligne (silence, ce qui est de toute
+    facon approprie pour ce type de repartie)."""
+    return any(c.isalpha() for c in text)
+
 
 def slugify(name: str) -> str:
     if not name:
@@ -120,6 +190,35 @@ def synth_en(text: str, voice: str, out_path: Path) -> bool:
         return False
 
 
+def synth_fr_piper(text: str, model_path: Path, out_path: Path) -> bool:
+    """Synthèse française via Piper (TTS neuronal) -- voir docstring
+    "Activer Piper" en tête de fichier. `model_path` pointe le .onnx ; le
+    .onnx.json associé est trouvé automatiquement par piper à côté de lui.
+    Sort déjà en 16kHz mono (config des voix fr_FR de piper-voices), donc pas
+    de passage par sox contrairement à synth_fr()."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        # sys.executable (pas "python3" en dur) : sous la console ESP-IDF de
+        # Windows, l'interpreteur s'appelle "python.exe" et est lance via
+        # "python", pas "python3" -- on reutilise donc le meme interpreteur
+        # que celui qui execute ce script, quel que soit son nom/chemin.
+        # encoding="utf-8" explicite : sous Windows, text=True sans encodage
+        # utilise le codepage de la console (cp1252 en general), qui ne sait
+        # pas encoder certains caracteres typographiques francais (espace
+        # fine insecable U+202F, tirets cadratins, guillemets courbes...) et
+        # fait planter l'ecriture sur stdin avec UnicodeEncodeError.
+        subprocess.run(
+            [sys.executable, "-m", "piper", "-m", str(model_path), "-f", str(out_path),
+             "--sentence-silence", "0.2"],
+            input=text, check=True, capture_output=True, text=True, timeout=120,
+            encoding="utf-8",
+        )
+        return out_path.exists() and out_path.stat().st_size > 0
+    except subprocess.CalledProcessError as e:
+        print(f"  ! piper a echoue ({model_path.name}): {e.stderr.strip()[:200]}", file=sys.stderr)
+        return False
+
+
 def synth_fr(text: str, voice: str, out_path: Path) -> bool:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     espeak_voice = voice if not voice.startswith("mb-") else f"mb/{voice}"
@@ -145,7 +244,35 @@ def synth_fr(text: str, voice: str, out_path: Path) -> bool:
         return False
 
 
-def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, args):
+def resolve_fr_voice_label(voice_en: str, piper_voices: dict, fr_tts_mode: str, mbrola_ok: dict) -> str:
+    """Comme synth_fr_any() mais sans synthétiser -- juste le libellé de voix
+    qui SERAIT utilisé, pour renseigner le manifest sur un fichier déjà
+    présent (non régénéré faute de --force)."""
+    piper_name = EN_TO_PIPER_VOICE.get(voice_en, "fr_FR-siwis-medium")
+    if fr_tts_mode in ("auto", "piper") and piper_name in piper_voices:
+        return piper_name
+    return resolve_fr_voice(voice_en, mbrola_ok)
+
+
+def synth_fr_any(text_fr: str, voice_en: str, out_path: Path, piper_voices: dict,
+                  fr_tts_mode: str, mbrola_ok: dict):
+    """Point d'entrée unique pour le doublage français, qui choisit entre
+    Piper (neuronal, prioritaire) et l'ancien espeak-ng/mbrola selon ce qui
+    est disponible et --fr-tts. Retourne (succès, libellé_voix_pour_manifest)."""
+    piper_name = EN_TO_PIPER_VOICE.get(voice_en, "fr_FR-siwis-medium")
+    use_piper = fr_tts_mode in ("auto", "piper") and piper_name in piper_voices
+    if fr_tts_mode == "piper" and piper_name not in piper_voices:
+        print(f"  ! --fr-tts=piper mais la voix {piper_name} est introuvable dans "
+              f"--piper-voices-dir -- voir docstring \"Activer Piper\"", file=sys.stderr)
+    if use_piper:
+        ok = synth_fr_piper(text_fr, piper_voices[piper_name], out_path)
+        return ok, piper_name
+    voice_fr = resolve_fr_voice(voice_en, mbrola_ok)
+    ok = synth_fr(text_fr, voice_fr, out_path)
+    return ok, voice_fr
+
+
+def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, piper_voices, args):
     """Doublage des messages d'ouverture de bataille (intro_messages des
     scenarios/*.json), désormais joués par battle_scene.cpp -- voir
     events.cpp::EventEngine::load(), qui calcule EXACTEMENT le même nom de
@@ -185,17 +312,19 @@ def process_battle_intros(scenarios_dir, out_dir, mbrola_ok, args):
                                   "lang": "en", "voice": voice_en, "text": text_en,
                                   "file": rel, "bytes": out_path.stat().st_size, "kind": "battle_intro"})
 
-            if args.lang in ("fr", "both") and text_fr:
-                voice_fr = resolve_fr_voice(voice_en, mbrola_ok)
+            if args.lang in ("fr", "both") and text_fr and has_speakable_content(text_fr):
                 rel_fr = f"{sc_id}_fr/intro_{idx:03d}_{slug}.wav"
                 out_path_fr = out_dir / rel_fr
                 if args.force or not out_path_fr.exists():
-                    if synth_fr(text_fr, voice_fr, out_path_fr):
+                    ok, voice_fr = synth_fr_any(text_fr, voice_en, out_path_fr, piper_voices,
+                                                 args.fr_tts, mbrola_ok)
+                    if ok:
                         n_gen_fr += 1
                         print(f"  [fr] {rel_fr} (voix={voice_fr})")
                     else:
                         continue
                 else:
+                    voice_fr = resolve_fr_voice_label(voice_en, piper_voices, args.fr_tts, mbrola_ok)
                     n_skip += 1
                 if out_path_fr.exists():
                     lines.append({"scenario": sc_id, "message_index": idx, "speaker": speaker,
@@ -217,19 +346,52 @@ def main():
     ap.add_argument("--battle-scenarios-dir", default=None,
                      help="Si fourni, double aussi les intro_messages des scenarios/*.json "
                           "de ce dossier (bataille) en plus des beats de --campaign (recit).")
+    ap.add_argument("--piper-voices-dir",
+                     default=str(Path(__file__).resolve().parent / "voices"),
+                     help="Dossier contenant les modeles Piper (.onnx + .onnx.json) telecharges "
+                          "via `python -m piper.download_voices fr_FR-...` -- voir docstring "
+                          "\"Activer Piper\" en tete de fichier. Par defaut : voices/ a cote de "
+                          "ce script.")
+    ap.add_argument("--fr-tts", choices=["auto", "piper", "mbrola"], default="auto",
+                     help="Backend de synthese francaise : auto (Piper si un modele est trouve, "
+                          "sinon espeak-ng/mbrola -- par defaut), piper (force Piper, erreur si "
+                          "le modele manque), mbrola (force l'ancien backend espeak-ng/mbrola "
+                          "meme si Piper est disponible).")
     args = ap.parse_args()
 
-    if not shutil.which("flite"):
+    # flite (anglais) et espeak-ng/mbrola (repli francais) ne sont requis que
+    # pour la langue effectivement demandee -- --lang fr avec Piper installe
+    # n'a besoin ni de l'un ni de l'autre (bug corrige : avant, les deux
+    # etaient exiges inconditionnellement meme en --lang fr).
+    if args.lang in ("en", "both") and not shutil.which("flite"):
         print("ERREUR : flite introuvable (apt-get install flite)", file=sys.stderr)
         sys.exit(1)
-    if not shutil.which("espeak-ng"):
+
+    piper_voices = find_piper_voices(Path(args.piper_voices_dir))
+
+    need_mbrola_fallback = args.lang in ("fr", "both") and (
+        args.fr_tts == "mbrola" or (args.fr_tts == "auto" and not piper_voices)
+    )
+    if need_mbrola_fallback and not shutil.which("espeak-ng"):
         print("ERREUR : espeak-ng introuvable (apt-get install espeak-ng)", file=sys.stderr)
         sys.exit(1)
 
+    # Calcule toujours mbrola_ok (verification sans effet de bord, cf.
+    # has_mbrola_voice -- renvoie juste des False si espeak-ng est absent) :
+    # utilise par resolve_fr_voice*() plus bas, meme si --lang fr + Piper
+    # n'en aura pas besoin en pratique.
     mbrola_ok = {"mb-fr1": has_mbrola_voice("mb-fr1"), "mb-fr4": has_mbrola_voice("mb-fr4")}
-    for name, ok in mbrola_ok.items():
-        state = "disponible" if ok else "absente -> repli sur fr-fr (apt-get install mbrola-fr1 mbrola-fr4 pour l'activer)"
-        print(f"Voix mbrola {name} : {state}")
+    if need_mbrola_fallback:
+        for name, ok in mbrola_ok.items():
+            state = "disponible" if ok else "absente -> repli sur fr-fr (apt-get install mbrola-fr1 mbrola-fr4 pour l'activer)"
+            print(f"Voix mbrola {name} : {state}")
+
+    if piper_voices:
+        print(f"Voix Piper trouvees dans {args.piper_voices_dir} : {', '.join(sorted(piper_voices))}")
+    else:
+        print(f"Aucune voix Piper dans {args.piper_voices_dir} -> repli sur espeak-ng/mbrola pour le "
+              f"francais (voir docstring \"Activer Piper\" en tete de fichier pour une bien meilleure "
+              f"qualite).")
 
     campaign = json.loads(Path(args.campaign).read_text(encoding="utf-8"))
     scenarios = campaign["scenarios"] if isinstance(campaign, dict) and "scenarios" in campaign else [campaign]
@@ -272,18 +434,19 @@ def main():
                     })
 
             # --- Français (seulement si une traduction existe pour ce beat) ---
-            if args.lang in ("fr", "both") and text_fr.strip():
-                voice_fr = resolve_fr_voice(voice_en, mbrola_ok)
+            if args.lang in ("fr", "both") and text_fr.strip() and has_speakable_content(text_fr):
                 rel_fr = f"{sc_id}_fr/{idx:03d}_{slug}.wav"
                 out_path_fr = out_dir / rel_fr
                 if args.force or not out_path_fr.exists():
-                    ok = synth_fr(text_fr, voice_fr, out_path_fr)
+                    ok, voice_fr = synth_fr_any(text_fr, voice_en, out_path_fr, piper_voices,
+                                                 args.fr_tts, mbrola_ok)
                     if ok:
                         n_gen_fr += 1
                         print(f"  [fr] {rel_fr} (voix={voice_fr})")
                     else:
                         continue
                 else:
+                    voice_fr = resolve_fr_voice_label(voice_en, piper_voices, args.fr_tts, mbrola_ok)
                     n_skip += 1
                 if out_path_fr.exists():
                     lines.append({
@@ -293,7 +456,7 @@ def main():
                     })
 
     if args.battle_scenarios_dir:
-        bl, be, bf, bs = process_battle_intros(Path(args.battle_scenarios_dir), out_dir, mbrola_ok, args)
+        bl, be, bf, bs = process_battle_intros(Path(args.battle_scenarios_dir), out_dir, mbrola_ok, piper_voices, args)
         lines += bl
         n_gen_en += be
         n_gen_fr += bf
@@ -319,7 +482,8 @@ def main():
 
     manifest = {
         "voice_map_used": VOICE_MAP_EN,
-        "fr_voice_map_used": {k: resolve_fr_voice(k, mbrola_ok) for k in set(VOICE_MAP_EN.values())},
+        "fr_voice_map_used": {k: resolve_fr_voice_label(k, piper_voices, args.fr_tts, mbrola_ok)
+                               for k in set(VOICE_MAP_EN.values())},
         "lines": merged_lines,
     }
     manifest_path.parent.mkdir(parents=True, exist_ok=True)

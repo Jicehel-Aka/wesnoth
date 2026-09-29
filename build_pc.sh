@@ -21,6 +21,7 @@ g++ -std=c++17 -Wno-narrowing -O2 -I pc/include \
     -I components/wesnoth_sg -I components/aka_font/include \
     components/wesnoth_sg/wesnoth_app.cpp \
     components/wesnoth_sg/scene/scene.cpp \
+    components/wesnoth_sg/scene/campaign_root.cpp \
     components/wesnoth_sg/scene/story_scene.cpp \
     components/wesnoth_sg/scene/battle_scene.cpp \
     components/wesnoth_sg/battle/wdata.cpp \
@@ -32,6 +33,7 @@ g++ -std=c++17 -Wno-narrowing -O2 -I pc/include \
     components/wesnoth_sg/platform/gb_port_sdl.cpp \
     components/wesnoth_sg/platform/gb_port_common.cpp \
     components/wesnoth_sg/story/campaign_loader.cpp \
+    components/wesnoth_sg/story/savegame.cpp \
     pc/main_sdl.cpp \
     $(pkg-config --cflags --libs sdl2 2>/dev/null || echo -lSDL2) \
     -lcjson \

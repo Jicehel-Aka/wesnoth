@@ -21,11 +21,11 @@
     "Mebrin": "awb"
   },
   "fr_voice_map_used": {
-    "slt": "mb-fr4",
-    "kal": "mb-fr1",
-    "rms": "mb-fr1",
-    "kal16": "fr-fr",
-    "awb": "mb-fr1"
+    "kal": "fr_FR-tom-medium",
+    "slt": "fr_FR-siwis-medium",
+    "awb": "fr_FR-tom-medium",
+    "kal16": "fr_FR-siwis-medium",
+    "rms": "fr_FR-tom-medium"
   },
   "lines": [
     {
@@ -43,10 +43,10 @@
       "beat_index": 0,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Notre histoire commence alors que Wesnoth connaissait un temps de paix et de grande prospérité. L'armée royale avait détruit les tombes des mort-vivants orientaux. Les forteresses orques nordiques étaient calmes et sûres. Les elfes de la forêt occidentale ne s'occupaient que de leurs affaires. Dans le sud, les hommes bâtissaient de nouvelles fermes et de nouvelles villes.",
       "file": "01_Tutorial_fr/000_narrator.wav",
-      "bytes": 528452
+      "bytes": 1211900
     },
     {
       "scenario": "01_Tutorial",
@@ -63,10 +63,10 @@
       "beat_index": 1,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Le temps passant, en l'absence de danger imminent, la Garde Sud devint trop confiante et paresseuse. Les rapports vers la capitale se firent plus rares et en l'espace de neuf ans, disparurent complètement. Agacé par la conduite de la garde, la Couronne décida d'envoyer quelqu'un pour enquêter...",
       "file": "01_Tutorial_fr/001_narrator.wav",
-      "bytes": 441226
+      "bytes": 935700
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -83,10 +83,10 @@
       "beat_index": 0,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Quoi encore ? Des soldats sur la route de Tahn — alors mon frère Mathin est mort ! Malédiction... le maître n'aurait jamais dû l'envoyer ici, à mes côtés.",
       "file": "02_Proven_by_the_Sword_fr/000_UrzaFastik.wav",
-      "bytes": 223752
+      "bytes": 1567740
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -103,10 +103,10 @@
       "beat_index": 1,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je vengerai sa mort. Pas un pas de plus, pauvres fous ! Je suis le deuxième de la fratrie Urza, et bien plus puissant que mon aîné. Voyez !",
       "file": "02_Proven_by_the_Sword_fr/001_UrzaFastik.wav",
-      "bytes": 205286
+      "bytes": 1394916
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -123,10 +123,10 @@
       "beat_index": 2,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Un autre frère Urza grossit ses rangs en relevant des morts. Les frères ont dû attendre des voyageurs sur la route, prenant en embuscade des civils et ranimant leurs cadavres comme mains d'œuvre.",
       "file": "02_Proven_by_the_Sword_fr/002_Deoran.wav",
-      "bytes": 232166
+      "bytes": 1142548
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -143,10 +143,10 @@
       "beat_index": 3,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je sais que les bandits sont monnaie courante dans ce Sud sans foi ni loi, mais la nécromancie !? Où donc est le reste de la Garde du Sud ? Comment se fait-il que les choses aient dégénéré à ce point ?",
       "file": "02_Proven_by_the_Sword_fr/003_Deoran.wav",
-      "bytes": 242070
+      "bytes": 1862652
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -163,10 +163,10 @@
       "beat_index": 4,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Nous allons vite le savoir. Deoran, toi et tes hommes, occupez-vous de ces bandits. Quiconque meurt aux mains de ces zombis devient l'un d'entre eux, donc pas de bêtises et souviens-toi de ton entraînement :",
       "file": "02_Proven_by_the_Sword_fr/004_Mari.wav",
-      "bytes": 241504
+      "bytes": 656660
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -183,10 +183,10 @@
       "beat_index": 5,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Nous allons vite le savoir. Deoran, toi et tes hommes, occupez-vous de ces bandits. Quiconque meurt aux mains de ces zombis devient l'un d'entre eux, donc pas de bêtises.",
       "file": "02_Proven_by_the_Sword_fr/005_Mari.wav",
-      "bytes": 205634
+      "bytes": 473876
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -203,10 +203,10 @@
       "beat_index": 6,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Pendant ce temps, je vais me faufiler par derrière et entrer en contact avec Westin — il y aura bien quelqu'un là-bas qui sait ce qui ce passe ici. Avec un peu de chance, je serai de retour avec des renforts.",
       "file": "02_Proven_by_the_Sword_fr/006_Mari.wav",
-      "bytes": 249124
+      "bytes": 578720
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -223,10 +223,10 @@
       "beat_index": 7,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Vous partez seul ? Ça a l'air plutôt dangereux. Qu'est-il arrivé à l'observatrice passive ?",
       "file": "02_Proven_by_the_Sword_fr/007_Deoran.wav",
-      "bytes": 132406
+      "bytes": 845820
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -243,10 +243,10 @@
       "beat_index": 8,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et bien. J'espère que Mari sera de retour avec le reste de la Garde du Sud, mais je ne devrais pas compter là-dessus. Je ne suis peut-être qu'un jeune officier, mais ce hors-la-loi me sous-estime si il pense que je ne peux pas le battre tout seul.",
       "file": "02_Proven_by_the_Sword_fr/008_Deoran.wav",
-      "bytes": 308594
+      "bytes": 1411068
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -263,10 +263,10 @@
       "beat_index": 9,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "À chaque combat, nous gagnons de l'expérience et devenons plus forts ! Si j'ai des soldats vétérans de la dernière bataille, je pourrais les rappeler pour qu'ils puissent continuer à gagner de l'expérience et éventuellement obtenir une promotion.",
       "file": "02_Proven_by_the_Sword_fr/009_Deoran.wav",
-      "bytes": 291834
+      "bytes": 1822996
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -283,10 +283,10 @@
       "beat_index": 11,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Bien, nous avons capturé un village ! Le petit drapeau qui flotte au-dessus nous indique qu'il est sous notre contrôle. Il le restera jusqu'à ce qu'un ennemi se déplace dessus.",
       "file": "02_Proven_by_the_Sword_fr/011_Deoran.wav",
-      "bytes": 231758
+      "bytes": 1158140
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -303,10 +303,10 @@
       "beat_index": 12,
       "speaker": "unit",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ha ha, ce zombi est tellement lent et faible ! Habituellement, me placer à côté d'un ennemi m'empêche de me déplacer plus loin. Mais ce frêle et fragile corps réanimé est facile à contourner.",
       "file": "02_Proven_by_the_Sword_fr/012_unit.wav",
-      "bytes": 232700
+      "bytes": 807700
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -323,10 +323,10 @@
       "beat_index": 13,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Contrairement à la plupart des unités, les unités de niveau 0 (comme les zombis) n'exercent pas de zone de contrôle. Vos unités peuvent se déplacer librement autour d'elles.",
       "file": "02_Proven_by_the_Sword_fr/013_narrator.wav",
-      "bytes": 268108
+      "bytes": 610976
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -343,10 +343,10 @@
       "beat_index": 14,
       "speaker": "unknown",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Je suis presque aveugle dans les ténèbres de la nuit... Si nous ne gardons pas nos distances avec les morts-vivants, nous allons être massacrés !",
       "file": "02_Proven_by_the_Sword_fr/014_unknown.wav",
-      "bytes": 205698
+      "bytes": 481836
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -363,10 +363,10 @@
       "beat_index": 15,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "L'aube approche. L'heure où les héros se relèvent alors que les méchants sont à bout de souffle. Hommes de la Garde du Sud, c'est à notre tour d'attaquer !",
       "file": "02_Proven_by_the_Sword_fr/015_Deoran.wav",
-      "bytes": 191298
+      "bytes": 1297404
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -383,10 +383,10 @@
       "beat_index": 16,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ah, excellent ! La Garde du Sud attaque mes combattants la nuit, quand nous sommes plus forts ! J'ai bien de la chance que leur commandant soit aussi inexpérimenté.",
       "file": "02_Proven_by_the_Sword_fr/016_UrzaFastik.wav",
-      "bytes": 209984
+      "bytes": 1272316
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -403,10 +403,10 @@
       "beat_index": 17,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Imbéciles de cadavres, qu'est-ce que vous faites ? N'attaquez pas la Garde du Sud le jour, quand ils sont les plus forts ! ...comment je contrôle ces fichus machins ?",
       "file": "02_Proven_by_the_Sword_fr/017_UrzaFastik.wav",
-      "bytes": 204248
+      "bytes": 1157628
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -423,10 +423,10 @@
       "beat_index": 18,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Oui, c'est bien, pauvre fous! Combattez à moitié enfoncés dans l'eau pendant que mes bandits sont bien à l'abri dans leur campement !",
       "file": "02_Proven_by_the_Sword_fr/018_UrzaFastik.wav",
-      "bytes": 168508
+      "bytes": 1019668
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -443,10 +443,10 @@
       "beat_index": 19,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "La plupart de vos unités n'ont que 20 % de chances d'esquiver lorsqu'elles se tiennent dans l'eau peu profonde, tandis que sur un terrain retranché, la plupart des bandits bénéficient de 60 %. Combattre avec vos unités sur un terrain défavorable n'est pas toujours une mauvaise idée, mais cela ne vaut souvent pas le désavantage infligé à vos troupes.",
       "file": "02_Proven_by_the_Sword_fr/019_narrator.wav",
-      "bytes": 526250
+      "bytes": 1258656
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -463,10 +463,10 @@
       "beat_index": 20,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Si seulement nous n'étions pas en plein jour, ce serait le combat parfait pour moi...",
       "file": "02_Proven_by_the_Sword_fr/020_UrzaFastik.wav",
-      "bytes": 101600
+      "bytes": 453676
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -483,10 +483,10 @@
       "beat_index": 21,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et au milieu de la nuit en plus ! C'est le combat parfait pour moi !",
       "file": "02_Proven_by_the_Sword_fr/021_UrzaFastik.wav",
-      "bytes": 87118
+      "bytes": 518420
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -503,10 +503,10 @@
       "beat_index": 22,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Hé, ce n'est pas du jeu ! J'ai passé des années à fortifier cette route, vous n'avez pas le droit de juste la contourner !",
       "file": "02_Proven_by_the_Sword_fr/022_UrzaFastik.wav",
-      "bytes": 158884
+      "bytes": 1000724
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -523,10 +523,10 @@
       "beat_index": 23,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je ferais mieux de me dépêcher d'en finir avec ces bandits ! Si je prend trop de temps il pourrait décider de fuir, et je n'aurai jamais l'occasion de découvrir ce qu'il sait !",
       "file": "02_Proven_by_the_Sword_fr/023_Deoran.wav",
-      "bytes": 213594
+      "bytes": 1495316
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -543,10 +543,10 @@
       "beat_index": 24,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Te voilà fait comme un rat, bandit ! Fais tes dernières prières !",
       "file": "02_Proven_by_the_Sword_fr/024_SirGerrick.wav",
-      "bytes": 92918
+      "bytes": 671508
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -563,10 +563,10 @@
       "beat_index": 25,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Argh, d'autres soldats arrivent de Westin... Oublions tout ça, je me tire de ce pétrin tant que j'ai encore une chance !",
       "file": "02_Proven_by_the_Sword_fr/025_UrzaFastik.wav",
-      "bytes": 153016
+      "bytes": 757292
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -583,10 +583,10 @@
       "beat_index": 26,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Il est parti ! Tu as fait du bon boulot avec ces morts-vivants, Deoran, mais leur chef s'est échappé...",
       "file": "02_Proven_by_the_Sword_fr/026_Mari.wav",
-      "bytes": 129242
+      "bytes": 352928
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -603,10 +603,10 @@
       "beat_index": 27,
       "speaker": "unit",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Même avec les pouvoirs des ténèbres à mon service... Non, je ne peux pas mourir maintenant ! Je — Je peux encore m'échapper !",
       "file": "02_Proven_by_the_Sword_fr/027_unit.wav",
-      "bytes": 172884
+      "bytes": 566944
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -623,10 +623,10 @@
       "beat_index": 28,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Pas si vite, brigand — nous t'avons enfin attrapé ! 'L est temps de te mettre derrière les barreaux.",
       "file": "02_Proven_by_the_Sword_fr/028_SirGerrick.wav",
-      "bytes": 131542
+      "bytes": 935700
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -643,10 +643,10 @@
       "beat_index": 29,
       "speaker": "Urza Fastik",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ergh ! Enlevez... ces chaînes...",
       "file": "02_Proven_by_the_Sword_fr/029_UrzaFastik.wav",
-      "bytes": 54746
+      "bytes": 393492
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -663,10 +663,10 @@
       "beat_index": 30,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Révérend, ne le laissez pas mourir ! C'est notre meilleur espoir d'obtenir quelques réponses.",
       "file": "02_Proven_by_the_Sword_fr/030_Mari.wav",
-      "bytes": 123868
+      "bytes": 442528
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -683,10 +683,10 @@
       "beat_index": 31,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mari, vous êtes de retour ! Et ce doit être l'officier de la Garde Sud que nous devions rencontrer ici.",
       "file": "02_Proven_by_the_Sword_fr/031_Deoran.wav",
-      "bytes": 142140
+      "bytes": 845588
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -703,10 +703,10 @@
       "beat_index": 32,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Révérend Hylas, archiviste et médecin du coin. Un plaisir de faire votre connaissance, lieutenant Deoran.",
       "file": "02_Proven_by_the_Sword_fr/032_MinisterHylas.wav",
-      "bytes": 177604
+      "bytes": 384160
     },
     {
       "scenario": "02_Proven_by_the_Sword",
@@ -723,10 +723,10 @@
       "beat_index": 33,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et moi j'suis seigneur Gerrick, commandant d'infanterie d'la Garde du Sud ! Mais c'est-y point le temps pour bavasser — ramenons notre prisonnier à la ville pour lui tirer les vers du nez.",
       "file": "02_Proven_by_the_Sword_fr/033_SirGerrick.wav",
-      "bytes": 228938
+      "bytes": 1107220
     },
     {
       "scenario": "02x_Westin",
@@ -743,10 +743,10 @@
       "beat_index": 0,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Le val des arbres en fleur.",
       "file": "02x_Westin_fr/000_MinisterHylas.wav",
-      "bytes": 52242
+      "bytes": 93228
     },
     {
       "scenario": "02x_Westin",
@@ -763,10 +763,10 @@
       "beat_index": 1,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "À part cette singulière information, je suis au regret de vous annoncer que Urza Fastik est tout aussi récalcitrant qu'au premier jour.",
       "file": "02x_Westin_fr/001_MinisterHylas.wav",
-      "bytes": 207136
+      "bytes": 385068
     },
     {
       "scenario": "02x_Westin",
@@ -783,10 +783,10 @@
       "beat_index": 2,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Le val... n'est ce pas dans l'enclave de la forêt d'Aethen ? Je peine à imaginer que les elfes d'Aethen ont à voir avec la nécromancie, ou même offrant de l'aide à des bandits... J'ai entendu qu'ils se tenaient plutôt à l'écart, ignorant même les invitations du roi. On ne peux pas en apprendre plus sur notre prisonnier ?",
       "file": "02x_Westin_fr/002_Deoran.wav",
-      "bytes": 394330
+      "bytes": 2244604
     },
     {
       "scenario": "02x_Westin",
@@ -803,10 +803,10 @@
       "beat_index": 3,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Moi j'dis que nous l'traitons trop gentiment. Les hommes comme Fastik ont la peau dure. Des vies sont en jeu, et le cuisiner gentiment ne nous mènera à rien.",
       "file": "02x_Westin_fr/003_SirGerrick.wav",
-      "bytes": 196712
+      "bytes": 998908
     },
     {
       "scenario": "02x_Westin",
@@ -823,10 +823,10 @@
       "beat_index": 4,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Je crains qu'il n'y ait de la corruption dans son âme, plus obscure que ce que ne peut éclairer ma lumière. Maintenant privé de la magie noire qui l'avait submergé, son esprit a commencé à s'effacer.",
       "file": "02x_Westin_fr/004_MinisterHylas.wav",
-      "bytes": 313398
+      "bytes": 709280
     },
     {
       "scenario": "02x_Westin",
@@ -843,10 +843,10 @@
       "beat_index": 5,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Même s'il le voulait, je ne suis pas sûr qu'il se rappellerait d'autre chose que ce qu'il nous a déjà dit.",
       "file": "02x_Westin_fr/005_MinisterHylas.wav",
-      "bytes": 153994
+      "bytes": 314412
     },
     {
       "scenario": "02x_Westin",
@@ -863,10 +863,10 @@
       "beat_index": 6,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Salut tout le monde ! J'ai fini de ranger le bazar qui servait de campement à Fastik, mais pas la moindre trace des deux autres frères.",
       "file": "02x_Westin_fr/006_Mari.wav",
-      "bytes": 162230
+      "bytes": 389280
     },
     {
       "scenario": "02x_Westin",
@@ -883,10 +883,10 @@
       "beat_index": 7,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Merci, Hylas. N'y a-t-il pas un duc, ou un prince, ou quelque chose comme ça par ici ? Comment les choses ont-elles tourné si mal ?",
       "file": "02x_Westin_fr/007_Mari.wav",
-      "bytes": 178948
+      "bytes": 510740
     },
     {
       "scenario": "02x_Westin",
@@ -903,10 +903,10 @@
       "beat_index": 8,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et bien, officiellement, ces terres sont la propriété du prince Arand, le plus jeune frère du roi Garard. Arand essaie de développer un peu l'coin. La dernière fois qu'il nous a honoré d'une visite, sa grandeur a dit qu'not' chez nous pourrait bien un jour être appelé les Joyaux du Sud !",
       "file": "02x_Westin_fr/008_SirGerrick.wav",
-      "bytes": 367040
+      "bytes": 2270716
     },
     {
       "scenario": "02x_Westin",
@@ -923,10 +923,10 @@
       "beat_index": 9,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais l'royaume est grand, le prince a beaucoup d'affaires à gérer, et Westin n'est qu'une petite ville aujourd'hui. Ces brigands d'Urza ont toujours été une nuisance, mais dès qu'ils ont commencé à r'lever les morts, les choses ont vite mal tourné.",
       "file": "02x_Westin_fr/009_SirGerrick.wav",
-      "bytes": 293860
+      "bytes": 1767700
     },
     {
       "scenario": "02x_Westin",
@@ -943,10 +943,10 @@
       "beat_index": 10,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Nous avons envoyé des messagers pour avertir de notre détresse, mais ils se sont fait intercepter sur la route ou arrêter au passage des rivières. Vous êtes le premier contact que nous ayons eu avec la couronne depuis un petit bout de temps, Mari et Deoran. Avec votre aide, nous pouvons vaincre ces hors-la-loi et nettoyer ces morts-vivants.",
       "file": "02x_Westin_fr/010_MinisterHylas.wav",
-      "bytes": 508074
+      "bytes": 914196
     },
     {
       "scenario": "02x_Westin",
@@ -963,10 +963,10 @@
       "beat_index": 11,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et bien, puisque nous n'avons pas d'autres indices, nous allons devoir investiguer dans ce « Val des Arbres en Fleur » et espérer que ce n'est ni une fausse piste ni un piège. Messieurs, ai-je votre permission d'emmener l'infanterie pour une petite sortie ?",
       "file": "02x_Westin_fr/011_Deoran.wav",
-      "bytes": 312812
+      "bytes": 1790228
     },
     {
       "scenario": "02x_Westin",
@@ -983,10 +983,10 @@
       "beat_index": 12,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Z'êtes volontaire pour commander la mission ? Brave garçon, mais vous ne devriez pas y aller tout seul. Deux d'entre nous doivent rester pour défendre la ville, mais au moins un officier devrait aller avec vous.",
       "file": "02x_Westin_fr/012_SirGerrick.wav",
-      "bytes": 270016
+      "bytes": 1390588
     },
     {
       "scenario": "02x_Westin",
@@ -1003,10 +1003,10 @@
       "beat_index": 13,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Faites vot' choix — moi-même, révérend Hylas, ou cet' Mari qu'vous nous avez amené. Vous ne savez pas grand chose de comment chacun d'nous se bat, alors demandez-nous et nous vous l'dirons.",
       "file": "02x_Westin_fr/013_SirGerrick.wav",
-      "bytes": 257080
+      "bytes": 1436436
     },
     {
       "scenario": "02x_Westin",
@@ -1023,10 +1023,10 @@
       "beat_index": 14,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Hé, le bleu. Je suis à court de quintaine, donc si tu veux récolter des bosses, trouve-toi un autre objet inanimé à combattre.",
       "file": "02x_Westin_fr/014_Mari.wav",
-      "bytes": 170300
+      "bytes": 517792
     },
     {
       "scenario": "02x_Westin",
@@ -1043,10 +1043,10 @@
       "beat_index": 15,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "...mais j'imagine que tu veux parler de mes compétences, et non des tiennes. Tu n'as jamais eu l'occasion de me voir au combat.",
       "file": "02x_Westin_fr/015_Mari.wav",
-      "bytes": 147514
+      "bytes": 315552
     },
     {
       "scenario": "02x_Westin",
@@ -1063,10 +1063,10 @@
       "beat_index": 16,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Hé, le bleu. Ouais, tu n'as jamais eu l'occasion de me voir combattre.",
       "file": "02x_Westin_fr/016_Mari.wav",
-      "bytes": 102650
+      "bytes": 214176
     },
     {
       "scenario": "02x_Westin",
@@ -1083,10 +1083,10 @@
       "beat_index": 17,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Eh bien, je suis une battante. Rapide comme l’éclair, légère sur mes appuis ; je sais esquiver et je sais frapper où il faut. Difficile de me coincer, que ce soit lorsqu’il faut attaquer ou prendre la fuite.",
       "file": "02x_Westin_fr/017_Mari.wav",
-      "bytes": 270756
+      "bytes": 750868
     },
     {
       "scenario": "02x_Westin",
@@ -1103,10 +1103,10 @@
       "beat_index": 18,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Mari bénéficie de défenses de terrain exceptionnellement élevées, ce qui augmente ses chances d’esquiver les attaques ennemies. Sa capacité tirailleur lui permet d’ignorer les zones de contrôle ennemies : elle peut se déplacer librement autour des unités adverses sans être arrêtée.",
       "file": "02x_Westin_fr/018_narrator.wav",
-      "bytes": 411868
+      "bytes": 1187488
     },
     {
       "scenario": "02x_Westin",
@@ -1123,10 +1123,10 @@
       "beat_index": 19,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "J'ai aussi une bonne fronde, car y'a pas beaucoup d'armes à distances qui peuvent être chargée d'une seule main. Avec tout ça, je parie que je peux durer dans un match à un contre un plus longtemps que Hylas et Gerrick. Et toi aussi, mais ça va sans dire.",
       "file": "02x_Westin_fr/019_Mari.wav",
-      "bytes": 291776
+      "bytes": 739604
     },
     {
       "scenario": "02x_Westin",
@@ -1143,10 +1143,10 @@
       "beat_index": 20,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et... si vous venez avec moi, vous allez vraiment m'aider à combattre ? Fini l'entraînement, ou l'observation, ou partir en courant juste avant le début du combat ?",
       "file": "02x_Westin_fr/020_Deoran.wav",
-      "bytes": 217422
+      "bytes": 1259284
     },
     {
       "scenario": "02x_Westin",
@@ -1163,10 +1163,10 @@
       "beat_index": 21,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Bien sûr. Des bandits de grand chemin sont une chose, mais la nécromancie est quelque chose de sérieux... je pensais juste... et bien, après avoir perdu un bras face au morts-vivants dans les marches de l'Est, j'espérais que je n'aurais plus à faire face à ce genre de choses.",
       "file": "02x_Westin_fr/021_Mari.wav",
-      "bytes": 315548
+      "bytes": 779936
     },
     {
       "scenario": "02x_Westin",
@@ -1183,10 +1183,10 @@
       "beat_index": 22,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Je te l’ai déjà dit, non ? Essaie donc d’écouter cette fois-ci : je manie l’épée et la fronde, je suis douée pour esquiver les attaques, et je peux me déplacer librement autour de mes ennemis sans qu’ils ne puissent m’arrêter.",
       "file": "02x_Westin_fr/022_Mari.wav",
-      "bytes": 257580
+      "bytes": 985760
     },
     {
       "scenario": "02x_Westin",
@@ -1203,10 +1203,10 @@
       "beat_index": 23,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Je suis un homme de médecine, lieutenant Deoran. Ma lumière intérieure peut soigner les unités adjacentes aussi vite que si elles étaient dans un village. Ce n'est malheureusement pas cumulable avec les soins fournis par les villages ou les autres soigneurs.",
       "file": "02x_Westin_fr/023_MinisterHylas.wav",
-      "bytes": 381236
+      "bytes": 816404
     },
     {
       "scenario": "02x_Westin",
@@ -1223,10 +1223,10 @@
       "beat_index": 24,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Au combat à distance, j'invoque aussi une attaque magique très précise. Les attaques magiques ont toujours une très grande chance de toucher leur cible et ne sont pas affectées par le terrain, ce qui les rend idéales contre des unités évasives ou fortifiées.",
       "file": "02x_Westin_fr/024_MinisterHylas.wav",
-      "bytes": 367682
+      "bytes": 938656
     },
     {
       "scenario": "02x_Westin",
@@ -1243,10 +1243,10 @@
       "beat_index": 25,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je ne voudrais pas paraître impoli, mais... votre jambe a l'air salement amochée. Si vous êtes doué de guérison magique, ne devriez-vous être capable de la soigner ?",
       "file": "02x_Westin_fr/025_Deoran.wav",
-      "bytes": 219424
+      "bytes": 1623828
     },
     {
       "scenario": "02x_Westin",
@@ -1263,10 +1263,10 @@
       "beat_index": 26,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Un os tordu, je le crains. À l'époque il n'y avait pas de guérisseur à Westin, et l'os s'est mal remis en place.",
       "file": "02x_Westin_fr/026_MinisterHylas.wav",
-      "bytes": 182590
+      "bytes": 398496
     },
     {
       "scenario": "02x_Westin",
@@ -1283,10 +1283,10 @@
       "beat_index": 27,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "J'ai accepté depuis longtemps mon handicap. Mais en tant que mon potentiel commandant, vous devez savoir que cela me ralentit dans mes mouvements sur le champ de bataille, encore plus que seigneur Gerrick avec son armure.",
       "file": "02x_Westin_fr/027_MinisterHylas.wav",
-      "bytes": 331340
+      "bytes": 565408
     },
     {
       "scenario": "02x_Westin",
@@ -1303,10 +1303,10 @@
       "beat_index": 28,
       "speaker": "Minister Hylas",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Déjà oublié ? Je peux guérir les unités adjacentes d'une certaine quantité à chaque tour. J'invoque une attaque magique qui est très précise, peu importe le terrain occupé par mon adversaire.",
       "file": "02x_Westin_fr/028_MinisterHylas.wav",
-      "bytes": 299508
+      "bytes": 982292
     },
     {
       "scenario": "02x_Westin",
@@ -1323,10 +1323,10 @@
       "beat_index": 29,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et bien mon garçon, je suis un monstre au corps-à-corps, si vous m'permettez cette petite vantardise. Ma vouge frappe plus fort que n'importe quelle lance, et mon coup de bouclier peut ralentir les ennemis.",
       "file": "02x_Westin_fr/029_SirGerrick.wav",
-      "bytes": 258820
+      "bytes": 1101076
     },
     {
       "scenario": "02x_Westin",
@@ -1343,10 +1343,10 @@
       "beat_index": 30,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Les ennemis ralentis se déplacent moitié moins vite et infligent moitié moins de dégâts.",
       "file": "02x_Westin_fr/030_narrator.wav",
-      "bytes": 125670
+      "bytes": 418348
     },
     {
       "scenario": "02x_Westin",
@@ -1363,10 +1363,10 @@
       "beat_index": 31,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et mon armure est peut-être lourde et encombrante, elle m'offre une grande résistance face aux armes tranchantes ou perforantes. Si vous avez besoin d'quelqu'un pour briser une ligne ennemie, je suis votre homme.",
       "file": "02x_Westin_fr/031_SirGerrick.wav",
-      "bytes": 263816
+      "bytes": 1252116
     },
     {
       "scenario": "02x_Westin",
@@ -1383,10 +1383,10 @@
       "beat_index": 32,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Et bien, comme je l'ai dit, j'ai une grande résistance grâce à ma lourde armure, et je peux ralentir les ennemis à la moitié de leur vitesse et de leurs dégâts. Essaie de ne pas l'oublier cette fois !",
       "file": "02x_Westin_fr/032_SirGerrick.wav",
-      "bytes": 243872
+      "bytes": 1569044
     },
     {
       "scenario": "02x_Westin",
@@ -1403,10 +1403,10 @@
       "beat_index": 33,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J'ai décidé : capitaine Mari, j'aimerais que vous m'accompagniez dans notre mission au val elfique. Rassemblez les hommes — nous partons demain à l'aube !",
       "file": "02x_Westin_fr/033_Deoran.wav",
-      "bytes": 197628
+      "bytes": 1322772
     },
     {
       "scenario": "02x_Westin",
@@ -1423,10 +1423,10 @@
       "beat_index": 34,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Bonne chance, Deoran et Mari. Nous comptons sur vous pour stopper ces bandits et ces mort-vivants!",
       "file": "02x_Westin_fr/034_SirGerrick.wav",
-      "bytes": 124508
+      "bytes": 526612
     },
     {
       "scenario": "02x_Westin",
@@ -1443,10 +1443,10 @@
       "beat_index": 35,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J'ai décidé : révérend Hylas, j'aimerai que vous m'accompagnez dans notre mission au val elfique. Rassemblez les hommes — nous partons demain à l'aube !",
       "file": "02x_Westin_fr/035_Deoran.wav",
-      "bytes": 194550
+      "bytes": 1585428
     },
     {
       "scenario": "02x_Westin",
@@ -1463,10 +1463,10 @@
       "beat_index": 36,
       "speaker": "Sir Gerrick",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Bonne chance, Deoran et Hylas. Nous comptons sur vous pour stopper ces bandits et ces mort-vivants!",
       "file": "02x_Westin_fr/036_SirGerrick.wav",
-      "bytes": 122308
+      "bytes": 525076
     },
     {
       "scenario": "02x_Westin",
@@ -1483,10 +1483,10 @@
       "beat_index": 37,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J'ai décidé : seigneur Gerrick, j'aimerai que vous m'accompagniez dans notre mission au val elfique. Rassemblez les hommes — nous partons demain à l'aube !",
       "file": "02x_Westin_fr/037_Deoran.wav",
-      "bytes": 198062
+      "bytes": 1362708
     },
     {
       "scenario": "02x_Westin",
@@ -1503,10 +1503,10 @@
       "beat_index": 38,
       "speaker": "Mari",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Bonne chance, le bleu. Nous comptons sur vous pour stopper ces bandits et ces mort-vivants!",
       "file": "02x_Westin_fr/038_Mari.wav",
-      "bytes": 110984
+      "bytes": 246944
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1523,10 +1523,10 @@
       "beat_index": 0,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Cette rune magique a dû déclencher les illusions que nous avons vues plus tôt. La magie qu'elle retenait est maintenant dissipée.",
       "file": "03_Vale_of_Tears_fr/000_Deoran.wav",
-      "bytes": 155262
+      "bytes": 873748
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1543,10 +1543,10 @@
       "beat_index": 1,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "La rune magique qui gardait ce côté de l'isthme a déjà été dissipée.",
       "file": "03_Vale_of_Tears_fr/001_Deoran.wav",
-      "bytes": 87770
+      "bytes": 943148
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1563,10 +1563,10 @@
       "beat_index": 2,
       "speaker": "Galdrad",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Halte ! Qui est entré dans notre val sacré sans permission ?",
       "file": "03_Vale_of_Tears_fr/002_Galdrad.wav",
-      "bytes": 89836
+      "bytes": 685844
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1583,10 +1583,10 @@
       "beat_index": 3,
       "speaker": "Galdrad",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Exprime-toi avec prudence, bandit. Parle, et sache que nous punissons de mort quiconque entre sur nos domaines.",
       "file": "03_Vale_of_Tears_fr/003_Galdrad.wav",
-      "bytes": 161422
+      "bytes": 626452
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1603,10 +1603,10 @@
       "beat_index": 5,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ce n'est pas un bandit, ces humains arborent la bannière de la Garde Sud, pas les loques des Urzas. Reste à voir si cela est signe d'une amélioration — pourquoi avez-vous pénétré le sanctuaire de l'île d'Elrath ?",
       "file": "03_Vale_of_Tears_fr/005_Ethiliel.wav",
-      "bytes": 261304
+      "bytes": 785568
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1623,10 +1623,10 @@
       "beat_index": 7,
       "speaker": "Vaenuith",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Pour demander notre aide, sans nul doute. Il y a de la noirceur dans l'air, de la corruption dans le sol. Quelqu'un a introduit de la magie noire. N'oubliez pas que ce sont les humains qui ont apporté les premiers cette sorcellerie perverse dans notre grand continent, lorsqu'ils sont arrivés il y a des siècles de cela.",
       "file": "03_Vale_of_Tears_fr/007_Vaenuith.wav",
-      "bytes": 385650
+      "bytes": 845192
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1643,10 +1643,10 @@
       "beat_index": 9,
       "speaker": "Talchar",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Le passé a montré qu'on ne peux avoir confiance en votre race. Un humain non entraîné à manier les arts mystiques a bien plus de chance d'être corrompu par de telles forces que d'avoir la connaissance ou le pouvoir de les bannir.",
       "file": "03_Vale_of_Tears_fr/009_Talchar.wav",
-      "bytes": 274288
+      "bytes": 1677076
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1663,10 +1663,10 @@
       "beat_index": 11,
       "speaker": "Vaenuith",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Pourquoi devrions-nous traiter avec vous maintenant, quand c'est l'inaction de vos semblables qui a permis à ce fléau de s'étendre de cette façon ? Allez-vous-en, éphémères, et laissez-nous dans notre quiétude.",
       "file": "03_Vale_of_Tears_fr/011_Vaenuith.wav",
-      "bytes": 242596
+      "bytes": 738976
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1683,10 +1683,10 @@
       "beat_index": 12,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "—mais, mais, je suis arrivé il y a à peine un mois ! Je ne peux pas avoir agit sur quelque chose qui a eu lieu avant mon arrivée ! Et de plus, ce n'est pas la faute « des miens » mais des frères Ur—",
       "file": "03_Vale_of_Tears_fr/012_Deoran.wav",
-      "bytes": 248300
+      "bytes": 2008060
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1703,10 +1703,10 @@
       "beat_index": 13,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "(inspiration profonde)",
       "file": "03_Vale_of_Tears_fr/013_Deoran.wav",
-      "bytes": 42212
+      "bytes": 156716
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1723,10 +1723,10 @@
       "beat_index": 14,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "...honorables elfes, je suis le commandant Deoran, de la Garde du Sud de Westin. Je ne peux pas parler pour le passé, mais dans le présent nous avons besoin de votre aide.",
       "file": "03_Vale_of_Tears_fr/014_Deoran.wav",
-      "bytes": 218506
+      "bytes": 1070356
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1743,10 +1743,10 @@
       "beat_index": 15,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Nos fermes et nos villages sont pillés par des criminels, lançant des sorts ténébreux et profanant les morts. Nous avons appris que ce val est un endroit important pour eux, et nous sommes venus chercher des réponses.",
       "file": "03_Vale_of_Tears_fr/015_Deoran.wav",
-      "bytes": 254692
+      "bytes": 1503508
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1763,10 +1763,10 @@
       "beat_index": 16,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Où donc nos adversaire ont-ils acquis leurs sombres pouvoirs ? Comment pouvons-nous trouver la source de la corruption qui se répand, pour que nous puissions la détruire ? Bon elfes du val, pouvez-vous nous aider dans notre détresse ?",
       "file": "03_Vale_of_Tears_fr/016_Deoran.wav",
-      "bytes": 288538
+      "bytes": 1698300
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1783,10 +1783,10 @@
       "beat_index": 18,
       "speaker": "Ithelden",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "...très bien, étranger. Tu as réussi le défi. Entre, et viens nous rencontrer comme nous sommes réellement.",
       "file": "03_Vale_of_Tears_fr/018_Ithelden.wav",
-      "bytes": 145570
+      "bytes": 1129980
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1803,10 +1803,10 @@
       "beat_index": 20,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Il n'y avait pas d'elfe du tout ! Ce n'étaient que des sortes de... d'illusions pré-enregistrées ? Des simples reflets ? Était-ce quelque chose pour aider à protéger la vallée des intrus ?",
       "file": "03_Vale_of_Tears_fr/020_Deoran.wav",
-      "bytes": 236234
+      "bytes": 1745124
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1823,10 +1823,10 @@
       "beat_index": 21,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Des morts-vivants ! Dans une vallée elfe ?? Et un elfe en cage, aussi !",
       "file": "03_Vale_of_Tears_fr/021_Deoran.wav",
-      "bytes": 103810
+      "bytes": 813052
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1843,10 +1843,10 @@
       "beat_index": 23,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "La pluie ou la neige n'ont aucun impact sur le jeu.",
       "file": "03_Vale_of_Tears_fr/023_narrator.wav",
-      "bytes": 79836
+      "bytes": 158764
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1863,10 +1863,10 @@
       "beat_index": 24,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Les humains sont de retour, mais cette fois ils arborent la bannière de Westin... Si vous êtes là pour aider, attaquez cette odieuse cage et frappez-là pour l'ouvrir !",
       "file": "03_Vale_of_Tears_fr/024_Ethiliel.wav",
-      "bytes": 198232
+      "bytes": 507436
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1883,10 +1883,10 @@
       "beat_index": 26,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Oh, la joie d'une fois encore déployer mes ailes ! Et d'être sauvée par des humains du reste... qui êtes vous ? N'est-ce pas là une nouvelle tromperie des Urza ?",
       "file": "03_Vale_of_Tears_fr/026_Ethiliel.wav",
-      "bytes": 200576
+      "bytes": 684308
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1903,10 +1903,10 @@
       "beat_index": 27,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je vous reconnais, vous étiez l'une des illusions ! Paix l'amie, je suis Deoran de la Garde du Sud, et mon allégeance va à Westin, et non aux déplorables frères Urza. Mais par Haldric, pourriez-vous s'il vous plaît nous expliquer ce qui s'est passé ici !?",
       "file": "03_Vale_of_Tears_fr/027_Deoran.wav",
-      "bytes": 331564
+      "bytes": 2127356
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1923,10 +1923,10 @@
       "beat_index": 28,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ce qui est arrivé ? Vous, créatures de boue, avez occis mes amis, pris notre sage, et vous m'avez emprisonné ici pendant pendant ces longues et terribles lunes ! ...mais si vous êtes vraiment de la Garde Sud, vous n'êtes pas responsables.",
       "file": "03_Vale_of_Tears_fr/028_Ethiliel.wav",
-      "bytes": 294418
+      "bytes": 949012
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1943,10 +1943,10 @@
       "beat_index": 29,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ils sont venus de nuit, il y a plus d'une saison de cela. Je n'ai pas vu tout ce qui ce passais, mais j'entendais les cris... La plupart d'entre nous étaient des artisans et des érudits, incapables de faire face à vos bâtons et vos haches ! Mon maître, le grand sage Mebrin, a été emmené enchaîné ; une insulte odieuse pour un elfe si vieux et si sage.",
       "file": "03_Vale_of_Tears_fr/029_Ethiliel.wav",
-      "bytes": 412074
+      "bytes": 1300244
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1963,10 +1963,10 @@
       "beat_index": 30,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "J'ai moi aussi été laissée vivante — peut-être grâce à mon haut rang — mais le reste des survivants ont été exécutés un par un, de sang froid. Peu de temps après, leurs corps ont commencé à être souillés par ces infectes morts-vivants, relevés par les frères hors-la-loi pour servir leurs noirs dessins...",
       "file": "03_Vale_of_Tears_fr/030_Ethiliel.wav",
-      "bytes": 348936
+      "bytes": 1414304
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -1983,10 +1983,10 @@
       "beat_index": 31,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ah, quel merveilleux picotement dans le bout de mes doigts ! Grisant, exaltant... la magie du maître murmure des promesses de vie éternelle, murmure de si beaux secrets...",
       "file": "03_Vale_of_Tears_fr/031_UrzaNalmath.wav",
-      "bytes": 221356
+      "bytes": 1203476
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2003,10 +2003,10 @@
       "beat_index": 32,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais, qu'est-ce que c'est que ça ? Je suis arrivé juste à temps, nous avons des invités, des invités humains ! Bienvenue, bienvenue. C'est un plaisir d'avoir des visiteurs, je n'ai pas vu âme qui vive depuis que le dernier de mes serviteur vivant a rejoint la horde des éternels sans-vie.",
       "file": "03_Vale_of_Tears_fr/032_UrzaNalmath.wav",
-      "bytes": 364256
+      "bytes": 2282212
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2023,10 +2023,10 @@
       "beat_index": 33,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vermine ! Ordure ! Dégénéré corrompu ! Où est ton plus jeune frère ? Qu'as-tu fait de mon sage Mebrin ?",
       "file": "03_Vale_of_Tears_fr/033_Ethiliel.wav",
-      "bytes": 159122
+      "bytes": 737276
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2043,10 +2043,10 @@
       "beat_index": 34,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ethiliel, je suis horrifié ! N'avez-vous pris plaisir à nos tendres moments ensembles ? Tant de bons souvenirs... si seulement le maître ne m'avait pas ordonné de vous laisser intacte, nous aurions pu en faire tellement plus !",
       "file": "03_Vale_of_Tears_fr/034_UrzaNalmath.wav",
-      "bytes": 279710
+      "bytes": 1723388
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2063,10 +2063,10 @@
       "beat_index": 35,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais cet ordre était il y a tellement de lunes... maintenant que le petit oiseau s'est échappé de sa cage, peut-être que les règles peuvent être différentes, hein ?",
       "file": "03_Vale_of_Tears_fr/035_UrzaNalmath.wav",
-      "bytes": 197210
+      "bytes": 1345068
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2083,10 +2083,10 @@
       "beat_index": 36,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vous avez toujours été le plus cruel de mes ravisseurs, Urza Nalmath. Puisse votre créateur avoir pitié de vous maintenant que je suis libre, car je n'en aurai aucune !",
       "file": "03_Vale_of_Tears_fr/036_Ethiliel.wav",
-      "bytes": 215524
+      "bytes": 610976
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2103,10 +2103,10 @@
       "beat_index": 37,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ethiliel, pauvre fille pleine d'illusions. Vous plus que tout autre devez savoir juste combien de morts-vivants j'ai relevé des ruines de votre petit village. Vous et moi et tous vos nouveaux amis humains allons tellement nous amuser tous ensemble...",
       "file": "03_Vale_of_Tears_fr/037_UrzaNalmath.wav",
-      "bytes": 293136
+      "bytes": 1367036
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2123,10 +2123,10 @@
       "beat_index": 38,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vermine ! Ordure ! Dégénéré corrompu ! Vous avez toujours été le plus cruel de mes ravisseurs, Urza Nalmath. Puisse votre créateur avoir pitié de vous maintenant que je suis libre, car je n'en aurai aucune !",
       "file": "03_Vale_of_Tears_fr/038_Ethiliel.wav",
-      "bytes": 297170
+      "bytes": 1092092
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2143,10 +2143,10 @@
       "beat_index": 39,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ethiliel, je suis horrifié ! Ne prenez donc vous pas plaisir à nos tendres moments ensembles ? Tant de bons souvenirs... si seulement le maître ne m'avait pas ordonné de vous laisser intacte, nous aurions pu en faire tellement plus !",
       "file": "03_Vale_of_Tears_fr/039_UrzaNalmath.wav",
-      "bytes": 288004
+      "bytes": 1786364
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2163,10 +2163,10 @@
       "beat_index": 40,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais je ne peux certainement pas laisser ces visiteurs humains vous libérer. Vous plus que tout autre devez savoir juste combien de morts-vivants j'ai relevé des ruines de votre petit village. Vous et moi et tous vos nouveaux amis humains allons tellement nous amuser tous ensemble...",
       "file": "03_Vale_of_Tears_fr/040_UrzaNalmath.wav",
-      "bytes": 312096
+      "bytes": 1555452
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2183,10 +2183,10 @@
       "beat_index": 41,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Attendez un peu, saviez-vous, humains, que je venais ? Vous n'êtes pas supposés être aussi près de mon campement, vous ne devriez pas être là du tout... Non, vraiment pas. Je vais devoir lever un peu plus de mes beautés pour vous ralentir.",
       "file": "03_Vale_of_Tears_fr/041_UrzaNalmath.wav",
-      "bytes": 302560
+      "bytes": 2069500
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2203,10 +2203,10 @@
       "beat_index": 42,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Même les plus larges hordes ont leurs limites — nous devons défendre ces ruines jusqu'à ce que la magie de ce bandit s'épuise ! Préparez-vos pour la bataille, soldat de la Garde du Sud, et tenez ferme pour l'attaque qui arrive !",
       "file": "03_Vale_of_Tears_fr/042_Deoran.wav",
-      "bytes": 281608
+      "bytes": 1665300
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2223,10 +2223,10 @@
       "beat_index": 44,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je ne suis pas habitué à me battre dans un tel brouillard ! Quelle pagaille...",
       "file": "03_Vale_of_Tears_fr/044_Deoran.wav",
-      "bytes": 95326
+      "bytes": 593172
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2243,10 +2243,10 @@
       "beat_index": 45,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Le soleil est notre allié ! Ils ont peur de se battre dans la lumière.",
       "file": "03_Vale_of_Tears_fr/045_Deoran.wav",
-      "bytes": 95516
+      "bytes": 670484
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2263,10 +2263,10 @@
       "beat_index": 46,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je vais devoir recruter des troupes pour resister a l'assaut des morts-vivants ! Je dois d'abord me rendre sur un donjon, puis utiliser le menu (bouton MENU) pour recruter ou rappeler.",
       "file": "03_Vale_of_Tears_fr/046_Deoran.wav",
-      "bytes": 234694
+      "bytes": 878356
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2283,10 +2283,10 @@
       "beat_index": 47,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J'ai recruté des troupes fraîches, mais je n'ai encore rappelé aucun de mes vétérans ! Si je ne rappelle pas mes vétérans, j'aurais bien du mal à construire une armée forte.",
       "file": "03_Vale_of_Tears_fr/047_Deoran.wav",
-      "bytes": 210826
+      "bytes": 1783572
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2303,10 +2303,10 @@
       "beat_index": 48,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Si vous avez des survivants experimentes des batailles precedentes, rappelez-les depuis le menu (bouton MENU) pour continuer a gagner de l'experience.",
       "file": "03_Vale_of_Tears_fr/048_Deoran.wav",
-      "bytes": 190748
+      "bytes": 717868
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2323,10 +2323,10 @@
       "beat_index": 50,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Quelle sorcellerie ces morts-vivants ont-ils infligé à ce pauvre elfe ! C'est encore pire que les zombis que nous avons combattus, si une telle chose est possible.",
       "file": "03_Vale_of_Tears_fr/050_Deoran.wav",
-      "bytes": 199876
+      "bytes": 1020180
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2343,10 +2343,10 @@
       "beat_index": 51,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mort-vivant !? Vous m'offensez, mon bon seigneur — cette adorable jeune dame est encore en vie... mais maintenant que j'y pense, elle préférerait sûrement que ce ne soit pas le cas. Un corps si souple, une voix si délicieuse. N'est-elle pas tout à fait charmante ?",
       "file": "03_Vale_of_Tears_fr/051_UrzaNalmath.wav",
-      "bytes": 342660
+      "bytes": 2036964
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2363,10 +2363,10 @@
       "beat_index": 53,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Tant de mes soldats sont empoisonnés ! Je devrai les positionner dans un village ou à côté d'Ethiliel, pour qu'ils puissent commencer à récupérer.",
       "file": "03_Vale_of_Tears_fr/053_Deoran.wav",
-      "bytes": 183228
+      "bytes": 1288468
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2383,10 +2383,10 @@
       "beat_index": 54,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Regardez ! Le brouillard se lève ! Je pense que nous avons survécu à l'attaque !",
       "file": "03_Vale_of_Tears_fr/054_Deoran.wav",
-      "bytes": 117470
+      "bytes": 892924
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2403,10 +2403,10 @@
       "beat_index": 55,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Non, ma magie s'en va ! Les doux murmures s'éteignent ! Mes mains tremblent, mon visage transpire ; j'ai besoin que vous reveniez, s'il vous plaît... Je ne peux supporter de vivre le monde comme ça !",
       "file": "03_Vale_of_Tears_fr/055_UrzaNalmath.wav",
-      "bytes": 267456
+      "bytes": 1512444
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2423,10 +2423,10 @@
       "beat_index": 56,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Plus de pouvoir, j'ai besoin de serviteurs plus puissants. Plus de pouvoir va m'exalter encore, me griser encore ! Les autres m'ont averti de ne pas le faire, mais le maître m'a toujours dit ce que j'avais besoin de savoir. Oui, oui !",
       "file": "03_Vale_of_Tears_fr/056_UrzaNalmath.wav",
-      "bytes": 316034
+      "bytes": 1551076
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2443,10 +2443,10 @@
       "beat_index": 57,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Nnrrgh !! Non, je vous ai crées ! Attaquez-les eux, pas moi ! Le maître ne m'a jamais dit comment contrôler ces machins !",
       "file": "03_Vale_of_Tears_fr/057_UrzaNalmath.wav",
-      "bytes": 185942
+      "bytes": 1328868
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2463,10 +2463,10 @@
       "beat_index": 58,
       "speaker": "Urza Nalmath",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Vous n'existeriez même pas sans moi ! Mon pouvoir est ce qui vous fait tenir debout ! Vous scellez votre propre re-mort !",
       "file": "03_Vale_of_Tears_fr/058_UrzaNalmath.wav",
-      "bytes": 162542
+      "bytes": 954364
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2483,10 +2483,10 @@
       "beat_index": 59,
       "speaker": "unknown",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Plus... de pouvoir...",
       "file": "03_Vale_of_Tears_fr/059_unknown.wav",
-      "bytes": 41636
+      "bytes": 53804
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2503,10 +2503,10 @@
       "beat_index": 60,
       "speaker": "unknown",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Plus... de mort...",
       "file": "03_Vale_of_Tears_fr/060_unknown.wav",
-      "bytes": 34856
+      "bytes": 44076
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2523,10 +2523,10 @@
       "beat_index": 61,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Détruit par ses propres créations ; une fin appropriée pour un tel scélérat ! Bon débarras.",
       "file": "03_Vale_of_Tears_fr/061_Deoran.wav",
-      "bytes": 134860
+      "bytes": 1295636
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2543,10 +2543,10 @@
       "beat_index": 62,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Quand à vous, Ethiliel, vous avez enduré beaucoup. Je sais que ce n'était qu'une petite enclave en comparaison aux grandes forêts elfes, mais ils étaient tout de même vos amis.",
       "file": "03_Vale_of_Tears_fr/062_Deoran.wav",
-      "bytes": 213442
+      "bytes": 1394452
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2563,10 +2563,10 @@
       "beat_index": 63,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ethiliel, vous avez enduré beaucoup. Je sais que ce n'était qu'une petite enclave en comparaison aux grandes forêts elfes, mais ils étaient tout de même vos amis.",
       "file": "03_Vale_of_Tears_fr/063_Deoran.wav",
-      "bytes": 196062
+      "bytes": 1317140
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2583,10 +2583,10 @@
       "beat_index": 64,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Venez, laissez-nous vous emmener loin de cette place maudite. Mes hommes et moi seront ravis de vous escorter jusqu'au Nord de la forêt d'Aethen, où vous serez parmi les vôtres et à l'abri du danger.",
       "file": "03_Vale_of_Tears_fr/064_Deoran.wav",
-      "bytes": 243518
+      "bytes": 1170708
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2603,10 +2603,10 @@
       "beat_index": 65,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "... Ethiliel ? Je sais que vous devez être bouleversée d'être la dernière survivante de votre ville, mais—",
       "file": "03_Vale_of_Tears_fr/065_Deoran.wav",
-      "bytes": 144642
+      "bytes": 1032980
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2623,10 +2623,10 @@
       "beat_index": 66,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Bouleversée ? Bouleversée !? Je suis furieuse ! Je ne suis PAS la dernière des habitants de ce val — n'oubliez pas que notre grand sage Mebrin est encore en vie. J'ai vu qu'on le traînait avec des chaînes vers le Sud, en direction de la Forêt Noire.",
       "file": "03_Vale_of_Tears_fr/066_Ethiliel.wav",
-      "bytes": 319548
+      "bytes": 1071612
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2643,10 +2643,10 @@
       "beat_index": 67,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ne parlez pas à tort de ce que vous ne pouvez pas comprendre, humain. Mon maître est peut-être âgé, mais je sais qu'il est vif et résilient : un maître de la magie, à la fois l'ombre et la lumière, et tenu en haute estime par tous ceux de la forêt d'Aethen. Nous ne devons pas abandonner le dernier de mes amis à un avenir incertain — ne m'aiderez-vous donc pas à le retrouver et à le secourir ?",
       "file": "03_Vale_of_Tears_fr/067_Ethiliel.wav",
-      "bytes": 447280
+      "bytes": 1418516
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2663,10 +2663,10 @@
       "beat_index": 68,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais en dépit du danger, mon instinct me pousse à vous offrir mon aide. Il reste encore un frère Urza. Si nous pouvions le trouver et le prendre dans la Forêt Noire, nous pourrions mettre un terme à toute cette nécromancie ! Et si Mebrin est vraiment encore en vie, et bien le secourir est simplement la chose juste à faire.",
       "file": "03_Vale_of_Tears_fr/068_Deoran.wav",
-      "bytes": 388846
+      "bytes": 2195172
     },
     {
       "scenario": "03_Vale_of_Tears",
@@ -2683,10 +2683,10 @@
       "beat_index": 69,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ethiliel, nous y irons.",
       "file": "03_Vale_of_Tears_fr/069_Deoran.wav",
-      "bytes": 40572
+      "bytes": 227884
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2703,10 +2703,10 @@
       "beat_index": 0,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Il fait si froid ici ! Et ce brouillard est si épais. Cela change du combat contre les bandits dans les campagnes autour de Westin !",
       "file": "04_Choice_in_the_Fog_fr/000_Deoran.wav",
-      "bytes": 174020
+      "bytes": 932860
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2723,10 +2723,10 @@
       "beat_index": 1,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "En effet. Devant nous s’étend la Rivière Noire — et Mebrin, grand sage des elfes, doit s’y trouver lui aussi. Il est ici ! Je sens les volutes de sa magie m’effleurer, tout près de nous…",
       "file": "04_Choice_in_the_Fog_fr/001_Ethiliel.wav",
-      "bytes": 245928
+      "bytes": 822664
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2743,10 +2743,10 @@
       "beat_index": 2,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Écoutez bien, humains, car le grand sage Mebrin est d’une ancienneté telle qu’il n’a guère d’affection pour votre espèce. Il fut témoin en personne du seigneur-liche Jevyan et de sa terrible invasion, en des temps où la terre était encore jeune. Si quelqu’un peut comprendre les morts-vivants et la manière dont les Urzas apprirent à les invoquer, c’est bien Mebrin.",
       "file": "04_Choice_in_the_Fog_fr/002_Ethiliel.wav",
-      "bytes": 421330
+      "bytes": 1276180
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2763,10 +2763,10 @@
       "beat_index": 3,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Les trois frères aînés Urza étant défaits, il ne reste que le plus jeune pour s’opposer à nous. Mebrin doit être son prisonnier, et ces bois doivent fourmiller de bandits et de morts-vivants. ",
       "file": "04_Choice_in_the_Fog_fr/003_Deoran.wav",
-      "bytes": 235314
+      "bytes": 1669396
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2783,10 +2783,10 @@
       "beat_index": 5,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Nous devrions retrouver leur chef, le dernier frère Urza. Cela jettera sans doute quelque lumière sur la situation.",
       "file": "04_Choice_in_the_Fog_fr/005_Deoran.wav",
-      "bytes": 168590
+      "bytes": 813332
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2803,10 +2803,10 @@
       "beat_index": 6,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ces morts-vivants sont trop nombreux ! Je succombe…",
       "file": "04_Choice_in_the_Fog_fr/006_Afalas.wav",
-      "bytes": 69140
+      "bytes": 481044
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2823,10 +2823,10 @@
       "beat_index": 7,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Nous sommes venus ici pour combattre les bandits, mais les trouver tous déjà morts n’est pas rassurant, il y a vraiment quelque chose qui ne tourne pas rond ici...",
       "file": "04_Choice_in_the_Fog_fr/007_Deoran.wav",
-      "bytes": 180908
+      "bytes": 938540
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2843,10 +2843,10 @@
       "beat_index": 8,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je vois des torches bouger dans le brouillard… Par la lumière, ce sont des hommes vivants !",
       "file": "04_Choice_in_the_Fog_fr/008_Afalas.wav",
-      "bytes": 114108
+      "bytes": 561196
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2863,10 +2863,10 @@
       "beat_index": 9,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Pitié, pitié, écoutez-moi. Je sais que moi et mes hommes sommes des malfaiteurs et que vous cherchez à nous détruire par vengeance. Je suis désolé que mes frères vous aient attaqués. Je n’ai jamais eu l’intention d'imposer autant de souffrance.",
       "file": "04_Choice_in_the_Fog_fr/009_Afalas.wav",
-      "bytes": 307314
+      "bytes": 2179812
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2903,10 +2903,10 @@
       "beat_index": 11,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je jure que je ne suis pas votre ennemi ! Je vous dirai tout ce que je sais. J'avoue qu'il y a un an, nous nous sommes aventurés discrètement dans le pays des elfes pour piller et voler. Beaucoup de victimes. C'était mal, je le sais et j'en suis désolé.",
       "file": "04_Choice_in_the_Fog_fr/011_Afalas.wav",
-      "bytes": 315360
+      "bytes": 1873356
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2923,10 +2923,10 @@
       "beat_index": 12,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais celui que nous avions capturé était un puissant sage en magie. Loin de son peuple, il nous a proposé de nous enseigner l'art d'invoquer les morts.",
       "file": "04_Choice_in_the_Fog_fr/012_Afalas.wav",
-      "bytes": 186118
+      "bytes": 1034004
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2943,10 +2943,10 @@
       "beat_index": 13,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Un mensonge pur et simple, venant d’une engeance tout aussi vile. J’ai étudié la magie auprès de Mebrin pendant de nombreuses décennies et je le connais bien — jamais mon maître n’aurait guidé les morts-vivants, il les aurait détruits !",
       "file": "04_Choice_in_the_Fog_fr/013_Ethiliel.wav",
-      "bytes": 263978
+      "bytes": 1030816
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2963,10 +2963,10 @@
       "beat_index": 14,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "C'est vrai que Mebrin était plus puissant que n’importe lequel des cadavres que nous avons animés, et pourtant il n’a pas résisté. Ils l’ont emmené dans les profondeurs des cavernes, et bientôt des horreurs squelettiques en ont émergé.",
       "file": "04_Choice_in_the_Fog_fr/014_Afalas.wav",
-      "bytes": 276302
+      "bytes": 2173716
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -2983,10 +2983,10 @@
       "beat_index": 15,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "À présent, mes hommes et moi sommes revenus pour tenter d’y mettre un terme, mais ils sont bien trop nombreux. Si vous ne m’aidez pas maintenant, les morts-vivants de Mebrin pourraient bientôt être assez puissants pour assiéger Westin elle-même !",
       "file": "04_Choice_in_the_Fog_fr/015_Afalas.wav",
-      "bytes": 286126
+      "bytes": 1703188
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3003,10 +3003,10 @@
       "beat_index": 16,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je suis un criminel pour vous. Moi et mes hommes avons commis des erreurs dans le passé, mais dans le combat contre les morts-vivants, nous pouvons être vos alliés ! Ils sont autant nos ennemis que les vôtres !",
       "file": "04_Choice_in_the_Fog_fr/016_Afalas.wav",
-      "bytes": 248972
+      "bytes": 1469436
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3023,10 +3023,10 @@
       "beat_index": 17,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Deoran, tu ferais donc confiance à la parole d’un voleur et d’un meurtrier plutôt qu’à la mienne, celle de ton amie et alliée ? Ce criminel t’abandonnera dès qu’il en aura l’occasion !",
       "file": "04_Choice_in_the_Fog_fr/017_Ethiliel.wav",
-      "bytes": 223830
+      "bytes": 748704
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3043,10 +3043,10 @@
       "beat_index": 18,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Pensez aux ravages que cet homme et ses frères ont infligés à votre peuple. Pensez aux horreurs qu'ils m'ont fait subir, enfermée et abandonnée à mon sort parmi les cadavres putrides de mes amis ! ",
       "file": "04_Choice_in_the_Fog_fr/018_Ethiliel.wav",
-      "bytes": 222032
+      "bytes": 698528
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3063,10 +3063,10 @@
       "beat_index": 19,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Du calme, laissez-moi réfléchir ! Si j'écoute Ethiliel, je dois combattre les hors-la-loi, mais si je m'allie avec les hors-la-loi Ethiliel nous abandonnera certainement…",
       "file": "04_Choice_in_the_Fog_fr/019_Deoran.wav",
-      "bytes": 231496
+      "bytes": 1410836
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3083,10 +3083,10 @@
       "beat_index": 20,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Vos crimes sont trop graves, Urza Afalas, et votre parole n’est pas digne de confiance. Vous tomberez aux côtés des morts-vivants que vous avez contribué à créer !",
       "file": "04_Choice_in_the_Fog_fr/020_Deoran.wav",
-      "bytes": 201206
+      "bytes": 1308436
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3103,10 +3103,10 @@
       "beat_index": 21,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vous paierez pour nous avoir enlevé Mebrin ! Une fois que je l’aurai tiré de vos griffes, je ne le quitterai plus jamais.",
       "file": "04_Choice_in_the_Fog_fr/021_Ethiliel.wav",
-      "bytes": 146712
+      "bytes": 413856
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3123,10 +3123,10 @@
       "beat_index": 22,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Cette discussion est donc finie ! Vous avez sans doute causé notre perte à tous !",
       "file": "04_Choice_in_the_Fog_fr/022_Afalas.wav",
-      "bytes": 115430
+      "bytes": 720660
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3143,10 +3143,10 @@
       "beat_index": 24,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Cela doit être la caverne dont parlait le bandit, mais il n’y a aucune trace de Mebrin. Peut-être qu’Afalas mentait vraiment.",
       "file": "04_Choice_in_the_Fog_fr/024_Deoran.wav",
-      "bytes": 166530
+      "bytes": 975124
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3163,10 +3163,10 @@
       "beat_index": 25,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "La goule qui gardait la caverne est vaincue ! J’ai accepté d’aider Ethiliel à traduire Urza Afalas en justice, mais il serait peut-être plus judicieux de s’enfoncer plus loin à l’intérieur…",
       "file": "04_Choice_in_the_Fog_fr/025_Deoran.wav",
-      "bytes": 239546
+      "bytes": 1735444
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3183,10 +3183,10 @@
       "beat_index": 26,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Deoran, que fais-tu ? Vas-tu vraiment abandonner notre combat et laisser ce criminel s’en aller librement !?",
       "file": "04_Choice_in_the_Fog_fr/026_Ethiliel.wav",
-      "bytes": 137176
+      "bytes": 312480
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3203,10 +3203,10 @@
       "beat_index": 27,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Note de l’auteur — il s’agit d’une voie secrète, plus ardue que les chemins habituels. Êtes-vous sûr de vouloir continuer ?",
       "file": "04_Choice_in_the_Fog_fr/027_narrator.wav",
-      "bytes": 203726
+      "bytes": 534688
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3223,10 +3223,10 @@
       "beat_index": 28,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je suis désolé, Ethiliel, mais combattre ces bandits ne me semble pas juste. Mes soldats et moi allons descendre dans cette caverne, pour découvrir la vérité par nous-mêmes.",
       "file": "04_Choice_in_the_Fog_fr/028_Deoran.wav",
-      "bytes": 234194
+      "bytes": 1572628
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3243,10 +3243,10 @@
       "beat_index": 29,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Et comment suis-je censée vaincre Urza Afalas sans ton aide ? Il s’échappera sûrement, échappant à la justice pour ses crimes odieux ! Était-ce là ton plan depuis le début, me mener en bateau avec de fausses promesses ?",
       "file": "04_Choice_in_the_Fog_fr/029_Ethiliel.wav",
-      "bytes": 255910
+      "bytes": 803092
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3263,10 +3263,10 @@
       "beat_index": 30,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Humains ! Vous êtes tous les mêmes ! Je n’aurais jamais dû espérer que votre espèce m’aide à retrouver Mebrin. Deoran, même tes viles conspirations n’empêcheront pas les elfes de retrouver leur plus grand sage. Bientôt, vous vous rendrez tous compte que la forêt de l'Aethen sait protèger les siens !",
       "file": "04_Choice_in_the_Fog_fr/030_Ethiliel.wav",
-      "bytes": 363178
+      "bytes": 1268732
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3283,10 +3283,10 @@
       "beat_index": 31,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Eh bien, cela aurait pu mieux tourner… Je ne peux qu’espérer que la vérité nous attende dans ces cavernes.",
       "file": "04_Choice_in_the_Fog_fr/031_Deoran.wav",
-      "bytes": 134964
+      "bytes": 1002540
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3303,10 +3303,10 @@
       "beat_index": 32,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Tu… nous as tous condamnés…",
       "file": "04_Choice_in_the_Fog_fr/032_Afalas.wav",
-      "bytes": 45180
+      "bytes": 550956
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3323,10 +3323,10 @@
       "beat_index": 33,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Justice a été rendue. Merci pour ton aide, Deoran. Je sais qu’il n’a pas été facile pour toi de te retourner contre les tiens — tu as gagné mon respect.",
       "file": "04_Choice_in_the_Fog_fr/033_Ethiliel.wav",
-      "bytes": 207186
+      "bytes": 738580
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3343,10 +3343,10 @@
       "beat_index": 34,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J’ai fouillé toutes les tentes, mais je ne trouve nulle trace de Mebrin dans le camp des bandits. Ethiliel, ressens-tu encore sa magie tout près d’ici ?",
       "file": "04_Choice_in_the_Fog_fr/034_Deoran.wav",
-      "bytes": 183498
+      "bytes": 1159956
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3363,10 +3363,10 @@
       "beat_index": 35,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Oui, je le sens. Et sans la présence de ce criminel pour troubler mon esprit, je perçois Mebrin plus nettement que jamais. Je sens la joie… je sens le pouvoir… je sens…",
       "file": "04_Choice_in_the_Fog_fr/035_Ethiliel.wav",
-      "bytes": 233234
+      "bytes": 711444
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3383,10 +3383,10 @@
       "beat_index": 37,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "…Humains, nous devons partir.",
       "file": "04_Choice_in_the_Fog_fr/037_Ethiliel.wav",
-      "bytes": 42044
+      "bytes": 189484
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3403,10 +3403,10 @@
       "beat_index": 38,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Quoi ? Mais et le sauvetage—",
       "file": "04_Choice_in_the_Fog_fr/038_Deoran.wav",
-      "bytes": 47342
+      "bytes": 241940
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3423,10 +3423,10 @@
       "beat_index": 39,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Il faut partir, sur le champ !!",
       "file": "04_Choice_in_the_Fog_fr/039_Ethiliel.wav",
-      "bytes": 48460
+      "bytes": 91692
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3443,10 +3443,10 @@
       "beat_index": 40,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je suis désolé, Ethiliel, mais les paroles d’Afalas sonnent vraies. Si Mebrin a réellement succombé à la non-vie, alors l’humanité doit s’unir contre lui.",
       "file": "04_Choice_in_the_Fog_fr/040_Deoran.wav",
-      "bytes": 203910
+      "bytes": 1627412
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3463,10 +3463,10 @@
       "beat_index": 41,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Tu m’aurais libérée d’un Urza pour me livrer à un autre ? Vous autres humains êtes tous les mêmes ! Vous ne valez pas mieux que ces hors-la-loi, ces porcs mêmes qui ont profané vos morts et saccagé vos fermes.",
       "file": "04_Choice_in_the_Fog_fr/041_Ethiliel.wav",
-      "bytes": 242492
+      "bytes": 929044
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3483,10 +3483,10 @@
       "beat_index": 42,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Deoran, même tes complots avec des criminels n’empêcheront pas les elfes de retrouver leur plus grand sage. Bientôt, vous tous, vils humains, vous vous rendrez compte que la forêt de l’Aethen sait protèger les siens !",
       "file": "04_Choice_in_the_Fog_fr/042_Ethiliel.wav",
-      "bytes": 267578
+      "bytes": 773280
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3503,10 +3503,10 @@
       "beat_index": 43,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ça a dû être une décision difficile. J'te remercie.",
       "file": "04_Choice_in_the_Fog_fr/043_Afalas.wav",
-      "bytes": 87136
+      "bytes": 631572
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3523,10 +3523,10 @@
       "beat_index": 44,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ne me la fais pas regretter. Conduis-nous à Mebrin, et nous vérifierons ton récit par nous-mêmes.",
       "file": "04_Choice_in_the_Fog_fr/044_Deoran.wav",
-      "bytes": 125336
+      "bytes": 904468
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3543,10 +3543,10 @@
       "beat_index": 45,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "La caverne du vieil elfe se trouve au Sud-Est de mon camp. Mes hors-la-loi s’occuperont de ses hordes de traînards, mais je vous laisse, soldats, le soin de pénétrer dans la caverne de Mebrin et de porter le coup de grâce.",
       "file": "04_Choice_in_the_Fog_fr/045_Afalas.wav",
-      "bytes": 278272
+      "bytes": 1639700
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3563,10 +3563,10 @@
       "beat_index": 47,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ack ! Merci pour ton aide face aux morts, mes hommes et moi avons tout donné. Il me reste maintenant un devoir à accomplir.",
       "file": "04_Choice_in_the_Fog_fr/047_Afalas.wav",
-      "bytes": 163236
+      "bytes": 814588
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3583,10 +3583,10 @@
       "beat_index": 48,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "C’est ce qui arrive quand on se fie à des hors-la-loi… Nous devrons affronter Mebrin et ses morts-vivants seuls.",
       "file": "04_Choice_in_the_Fog_fr/048_Deoran.wav",
-      "bytes": 127338
+      "bytes": 765996
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3603,10 +3603,10 @@
       "beat_index": 49,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Qui vient… mes anciens bourreaux ?",
       "file": "04_Choice_in_the_Fog_fr/049_Mebrin.wav",
-      "bytes": 49412
+      "bytes": 314924
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3623,10 +3623,10 @@
       "beat_index": 50,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Je suis Deoran, soldat de la Garde du Sud ! Nous sommes venus mettre un terme à tes crimes, Mebrin des elfes — si tel est bien ton nom.",
       "file": "04_Choice_in_the_Fog_fr/050_Deoran.wav",
-      "bytes": 184858
+      "bytes": 866580
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3643,10 +3643,10 @@
       "beat_index": 51,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mebrin ? Non, je me nomme désormais Mal M’Brin, mortels. C’est le nom que j’ai choisi lorsque je me suis affranchi de l’étroitesse d’esprit des miens et que je suis passé dans l'entendement.",
       "file": "04_Choice_in_the_Fog_fr/051_Mebrin.wav",
-      "bytes": 255532
+      "bytes": 1630204
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3663,10 +3663,10 @@
       "beat_index": 52,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Il y a l’infini au seuil de la mort… J’ai touché le vide au cœur de toutes choses, et j’ai commencé à sonder les arts mystiques bien au-delà de ce que tout elfe vivant peut concevoir.",
       "file": "04_Choice_in_the_Fog_fr/052_Mebrin.wav",
-      "bytes": 209862
+      "bytes": 1514540
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3683,10 +3683,10 @@
       "beat_index": 53,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Tu es devenu encore bien plus fou qu’avant. Par Haldric, puissions-nous n’avoir jamais croisé ton regard, mes frères et moi.",
       "file": "04_Choice_in_the_Fog_fr/053_Afalas.wav",
-      "bytes": 166778
+      "bytes": 975124
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3703,10 +3703,10 @@
       "beat_index": 54,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Fou ? Je suis furieux plutôt !! Vous, misérables créatures de boue, m’avez capturé et tourmenté, torturé pour votre divertissement ! Je ne distinguais plus le jour de la nuit… la lumière et les ombres, la chaleur et le froid se mêlaient dans ma douleur…",
       "file": "04_Choice_in_the_Fog_fr/054_Mebrin.wav",
-      "bytes": 342248
+      "bytes": 2479844
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3723,10 +3723,10 @@
       "beat_index": 55,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Il ment, Deoran ! Mes frères et moi l’avons questionné de près, peut-être un peu malmené, mais nous n’avons jamais fait pire que ça !",
       "file": "04_Choice_in_the_Fog_fr/055_Afalas.wav",
-      "bytes": 175362
+      "bytes": 1189652
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3743,10 +3743,10 @@
       "beat_index": 56,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Vous me croyiez faible, brisé sous votre joug. Mais j’ai pris ma revanche — j’ai étudié l’art d’invoquer des puissances hors du contrôle de votre race fragile, des forces nourries par votre corruption et votre avidité. Je savais que dès l’instant où la première flammèche de magie noire quitterait mes mains, il n’y aurait plus de retour en arrière possible. Mais je ne supportais plus cette humiliation…",
       "file": "04_Choice_in_the_Fog_fr/056_Mebrin.wav",
-      "bytes": 505438
+      "bytes": 3255524
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3763,10 +3763,10 @@
       "beat_index": 57,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Satisfaits de vos pitoyables ruses, vous, vulgaires mortels, n’avez jamais perçu que je vous asservissais à mon rythme ! Les frères Urza voulaient m’asservir, mais ce sont eux qui ont fini par devenir mes serviteurs.",
       "file": "04_Choice_in_the_Fog_fr/057_Mebrin.wav",
-      "bytes": 286246
+      "bytes": 1360660
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3783,10 +3783,10 @@
       "beat_index": 58,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Urza Afalas disait vrai ! Quelle qu'ait été ta nature de ton vivant, dans la mort tu t’es laissé emporter par la folie du pouvoir !",
       "file": "04_Choice_in_the_Fog_fr/058_Deoran.wav",
-      "bytes": 164166
+      "bytes": 1007892
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3803,10 +3803,10 @@
       "beat_index": 59,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Fou ? Je suis furieux plutôt !!  Vous, maudites créatures de boue, m’avez capturé et tourmenté, torturé pour votre plaisir ! Je savais que dès l’instant où la première flammèche de magie noire quitterait mes mains, il n’y aurait plus de retour en arrière possible. Mais je ne supportais plus cette humiliation…",
       "file": "04_Choice_in_the_Fog_fr/059_Mebrin.wav",
-      "bytes": 408246
+      "bytes": 2656204
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3823,10 +3823,10 @@
       "beat_index": 60,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J’ai étudié l’art d’invoquer des puissances hors du contrôle de votre race fragile, des forces nourries par votre corruption et votre avidité de votre race. Satisfaits de vos misérables tours, vous, simples mortels, n’avez jamais perçu que je vous enchaînais lentement à ma volonté ! Les frères Urza voulaient m’asservir, mais ce sont eux qui ont fini par devenir mes serviteurs.",
       "file": "04_Choice_in_the_Fog_fr/060_Mebrin.wav",
-      "bytes": 482514
+      "bytes": 2945532
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3843,10 +3843,10 @@
       "beat_index": 61,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Rejoins-moi ! Viens à mes côtés ! Nous nous dresserons pour balayer les humains de ce monde verdoyant. Leurs corps seront à notre service ! Leurs os danseront pour notre bon plaisir ! Ils deviendront les serviteurs sans cervelle qu'ils méritent d'être !",
       "file": "04_Choice_in_the_Fog_fr/061_Mebrin.wav",
-      "bytes": 344106
+      "bytes": 2272436
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3863,10 +3863,10 @@
       "beat_index": 62,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "J’ai fait assez de mal dans ma vie. Il est temps de faire quelque chose de bien pour changer.",
       "file": "04_Choice_in_the_Fog_fr/062_Afalas.wav",
-      "bytes": 112914
+      "bytes": 596244
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3883,10 +3883,10 @@
       "beat_index": 64,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Oui, c'est ça, pénètre dans la gueule de ma caverne. Combats-moi au cœur de la nuit, quand je suis à mon apogée !",
       "file": "04_Choice_in_the_Fog_fr/064_Mebrin.wav",
-      "bytes": 157368
+      "bytes": 1110292
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3903,10 +3903,10 @@
       "beat_index": 65,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Vous osez m'attaquer ?! Piteux humains, je suis les ténèbres incarnées ! Mon pouvoir est au-delà de votre compréhension !",
       "file": "04_Choice_in_the_Fog_fr/065_Mebrin.wav",
-      "bytes": 163930
+      "bytes": 1254908
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3923,10 +3923,10 @@
       "beat_index": 66,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Tu penses pouvoir me détruire ? Si Ethiliel était ici, je me serais peut-être retenu, mais vous autres humains n’êtes qu’un fléau insignifiant accablant ce monde misérable. Souffrir et mourir.",
       "file": "04_Choice_in_the_Fog_fr/066_Mebrin.wav",
-      "bytes": 258486
+      "bytes": 1782268
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3943,10 +3943,10 @@
       "beat_index": 67,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ah… ha ha ha ha ! Tu crois qu’on peut me vaincre aussi facilement ? Battu par de simples mortels ? Devrais-je fuir dans mes cavernes, devrais-je appeler mes grandes armées des profondeurs…",
       "file": "04_Choice_in_the_Fog_fr/067_Mebrin.wav",
-      "bytes": 245440
+      "bytes": 1453796
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3963,10 +3963,10 @@
       "beat_index": 68,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Mais pourquoi m’en préoccuper ? La souffrance ne m’est pas inconnue, Deoran des humains. La paix viendra enfin… pour moi. Mais pas pour toi…",
       "file": "04_Choice_in_the_Fog_fr/068_Mebrin.wav",
-      "bytes": 195672
+      "bytes": 1385700
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -3983,10 +3983,10 @@
       "beat_index": 69,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Tu n’as fait que semer les graines de ta propre destruction, car Ethiliel me vengera. J’ai senti ses émotions, j’ai senti ses intentions, j’ai nourri ses intentions… Maudits humains, vous m’avez peut-être abattu, mais j’ai déjà obtenu ma vengeance…",
       "file": "04_Choice_in_the_Fog_fr/069_Mebrin.wav",
-      "bytes": 325922
+      "bytes": 2313492
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4003,10 +4003,10 @@
       "beat_index": 70,
       "speaker": "Ethiliel",
       "lang": "fr",
-      "voice": "mb-fr4",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ne traînons pas, Deoran ! Si nous n’achevons pas vite cette vermine d'Afalas, il nous échappera à coup sûr !",
       "file": "04_Choice_in_the_Fog_fr/070_Ethiliel.wav",
-      "bytes": 143688
+      "bytes": 450208
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4023,10 +4023,10 @@
       "beat_index": 71,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Dépêche-toi, Deoran. Quels que soient les plans de Mebrin, il se rapproche de leur accomplissement chaque jour. Il faut qu’on l’arrête avant qu’il n’aille trop loin !",
       "file": "04_Choice_in_the_Fog_fr/071_Afalas.wav",
-      "bytes": 211192
+      "bytes": 1471484
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4043,10 +4043,10 @@
       "beat_index": 72,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Il ne reste plus beaucoup de tours ! Consultez vos objectifs depuis le menu (bouton MENU) ; la limite de tours est affichee en haut a gauche.",
       "file": "04_Choice_in_the_Fog_fr/072_narrator.wav",
-      "bytes": 218820
+      "bytes": 337568
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4063,10 +4063,10 @@
       "beat_index": 73,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Nous avons traîné bien trop longtemps ! Pour peu que le dernier frère Urza ait jamais été là, il a déjà sûrement pris la fuite, et nous n’avons encore trouvé aucune réponse…",
       "file": "04_Choice_in_the_Fog_fr/073_Deoran.wav",
-      "bytes": 212530
+      "bytes": 2080020
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4083,10 +4083,10 @@
       "beat_index": 74,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vous avez dépassé la limite de tours pour ce scénario. Vous avez été vaincu !",
       "file": "04_Choice_in_the_Fog_fr/074_narrator.wav",
-      "bytes": 134206
+      "bytes": 438944
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4103,10 +4103,10 @@
       "beat_index": 75,
       "speaker": "unknown",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Hé, chef, c’est moi. Y a encore quelqu’un de vivant par ici ?",
       "file": "04_Choice_in_the_Fog_fr/075_unknown.wav",
-      "bytes": 114400
+      "bytes": 264352
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4123,10 +4123,10 @@
       "beat_index": 76,
       "speaker": "Afalas",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Enfin, te voilà, pas trop tôt ! Dépêche-toi, sortons tous d’ici avant que la folie de cette dame elfe ne fasse encore des victimes !",
       "file": "04_Choice_in_the_Fog_fr/076_Afalas.wav",
-      "bytes": 189104
+      "bytes": 1109268
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4143,10 +4143,10 @@
       "beat_index": 77,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Urza Afalas s’est enfui en remontant la rivière ! S’il a jamais retenu Mebrin prisonnier, le bienveillant sage est désormais hors de portée…",
       "file": "04_Choice_in_the_Fog_fr/077_Deoran.wav",
-      "bytes": 176194
+      "bytes": 1304852
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4163,10 +4163,10 @@
       "beat_index": 78,
       "speaker": "unknown",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Bip, bip !",
       "file": "04_Choice_in_the_Fog_fr/078_unknown.wav",
-      "bytes": 32610
+      "bytes": 57388
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4183,10 +4183,10 @@
       "beat_index": 79,
       "speaker": "Mebrin",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Ah ha, ha ha ha ! Vous avez trop tardé, misérables éphémères ! Mon messager apporte des nouvelles : votre chère ville de Westin a été anéantie !",
       "file": "04_Choice_in_the_Fog_fr/079_Mebrin.wav",
-      "bytes": 208232
+      "bytes": 1640444
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4203,10 +4203,10 @@
       "beat_index": 80,
       "speaker": "Deoran",
       "lang": "fr",
-      "voice": "mb-fr1",
+      "voice": "fr_FR-tom-medium",
       "text": "Quoi ? Comment est-ce possible ! Avec les armées de morts-vivants qui nous affrontent ici, comment Westin a-t-elle déjà pu tomber ?",
       "file": "04_Choice_in_the_Fog_fr/080_Deoran.wav",
-      "bytes": 177840
+      "bytes": 931324
     },
     {
       "scenario": "04_Choice_in_the_Fog",
@@ -4223,10 +4223,10 @@
       "beat_index": 81,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Vous avez dépassé la limite de tours pour ce scénario. Vous avez été vaincu !",
       "file": "04_Choice_in_the_Fog_fr/081_narrator.wav",
-      "bytes": 134206
+      "bytes": 461984
     },
     {
       "scenario": "06x_Epilogue",
@@ -4243,10 +4243,10 @@
       "beat_index": 0,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Les soldats de la Garde du Sud tinrent bon sur les murs de Westin, rendant coup pour coup aux elfes. La nuit suivit son cours, et à l'aube les combats continuaient, les humains tenant ferme le mur tandis que les elfes affluaient toujours plus nombreux.\n\nPuis, alors que le soleil commençait à se lever, la lumière faiblit et un épais brouillard se répandit sur le champ de bataille. Le bruit des combats se dissipa, et bientôt un silence total s'installa tandis que les elfes se retiraient. Les humains avancèrent avec prudence, toujours en formation, prêts à réagir au moindre signe de danger.",
       "file": "06x_Epilogue_fr/000_narrator.wav",
-      "bytes": 876694
+      "bytes": 1635208
     },
     {
       "scenario": "06x_Epilogue",
@@ -4263,10 +4263,10 @@
       "beat_index": 1,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Le brouillard se dissipa, révélant Ethiliel et Deoran côte à côte, face au mur de lances. Leurs visages étaient marqués par le chagrin et l'épuisement. Pourtant la voix de Deoran s'éleva, étonnamment claire, s'adressant aux hommes du Wesnoth : « Arrêtez ! Assez de sang a été versé aujourd'hui, humain comme elfe. La forêt d'Aethen renonce au combat. »\n\nSous les yeux de toute la ligne d'infanterie, l'homme et l'elfe se serrèrent la main. Ethiliel présenta de longues excuses, les larmes aux yeux.",
       "file": "06x_Epilogue_fr/001_narrator.wav",
-      "bytes": 781242
+      "bytes": 1982692
     },
     {
       "scenario": "06x_Epilogue",
@@ -4283,10 +4283,10 @@
       "beat_index": 2,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Pendant plusieurs jours, les guérisseurs d'Aethenwood s'activèrent sans relâche pour sauver le plus de blessés possible, elfes comme humains. Ils furent d'abord accueillis avec colère, puis avec une acceptation résignée. Les villageois entreprirent de reconstruire leurs maisons et d'enterrer leurs morts au nord de la ville, où de nombreux tertres vinrent rejoindre le petit cimetière déjà existant.",
       "file": "06x_Epilogue_fr/002_narrator.wav",
-      "bytes": 581666
+      "bytes": 1302292
     },
     {
       "scenario": "06x_Epilogue",
@@ -4303,10 +4303,10 @@
       "beat_index": 3,
       "speaker": "narrator",
       "lang": "fr",
-      "voice": "fr-fr",
+      "voice": "fr_FR-siwis-medium",
       "text": "Ainsi, l'homme et l'elfe se retrouvèrent alliés une fois encore, les excuses faites et l'amitié renouée.\n\nDe longues années de reconstruction attendaient Westin, mais elles se dérouleraient dans l'harmonie, grâce à la conduite de Deoran et à l'héroïsme de la Garde du Sud.",
       "file": "06x_Epilogue_fr/003_narrator.wav",
-      "bytes": 402112
+      "bytes": 991788
     },
     {
       "scenario": "01_Born_to_the_Banner",
@@ -6045,6 +6045,76 @@
       "file": "06a_Vengeance_fr/intro_011_Deoran.wav",
       "bytes": 340512,
       "kind": "battle_intro"
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 4,
+      "speaker": "Deoran",
+      "lang": "fr",
+      "voice": "fr_FR-tom-medium",
+      "text": "Je—",
+      "file": "03_Vale_of_Tears_fr/004_Deoran.wav",
+      "bytes": 106540
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 6,
+      "speaker": "Deoran",
+      "lang": "fr",
+      "voice": "fr_FR-tom-medium",
+      "text": "Pour—",
+      "file": "03_Vale_of_Tears_fr/006_Deoran.wav",
+      "bytes": 111660
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 8,
+      "speaker": "Deoran",
+      "lang": "fr",
+      "voice": "fr_FR-tom-medium",
+      "text": "Je—",
+      "file": "03_Vale_of_Tears_fr/008_Deoran.wav",
+      "bytes": 104492
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 10,
+      "speaker": "Deoran",
+      "lang": "fr",
+      "voice": "fr_FR-tom-medium",
+      "text": "Mais—",
+      "file": "03_Vale_of_Tears_fr/010_Deoran.wav",
+      "bytes": 102444
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 49,
+      "speaker": "unknown",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Geuuuhhh...",
+      "file": "03_Vale_of_Tears_fr/049_unknown.wav",
+      "bytes": 23084
+    },
+    {
+      "scenario": "03_Vale_of_Tears",
+      "beat_index": 52,
+      "speaker": "unknown",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Graaahhh...",
+      "file": "03_Vale_of_Tears_fr/052_unknown.wav",
+      "bytes": 33836
+    },
+    {
+      "scenario": "04_Choice_in_the_Fog",
+      "beat_index": 63,
+      "speaker": "Deoran",
+      "lang": "fr",
+      "voice": "fr_FR-tom-medium",
+      "text": "À l’attaque !",
+      "file": "04_Choice_in_the_Fog_fr/063_Deoran.wav",
+      "bytes": 223276
     }
   ]
 }

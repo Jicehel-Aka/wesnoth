@@ -1,0 +1,575 @@
+{
+ "id": "04_Return_to_the_Village",
+ "name": "Return to the Village",
+ "next_scenario": "05_Epilogue",
+ "difficulty": "NORMAL",
+ "map_file": "04_Return_to_the_Village.map",
+ "schedule": {
+  "type": "default",
+  "start_index": 3,
+  "order": [
+   "dawn",
+   "morning",
+   "afternoon",
+   "dusk",
+   "first_watch",
+   "second_watch"
+  ]
+ },
+ "experience_modifier": 100,
+ "turns": 24,
+ "current_turn": 1,
+ "sides": [
+  {
+   "side": 1,
+   "controller": "human",
+   "recruit": "Horseman,Bowman,Spearman,Footpad",
+   "gold": "120",
+   "team_name": "good",
+   "user_team_name": "Humans"
+  },
+  {
+   "side": 2,
+   "controller": "ai",
+   "recruit": "Orcish Warrior, Goblin Impaler, Wolf Rider, Orcish Crossbowman, Troll Whelp, Orcish Assassin",
+   "gold": "200",
+   "income": "16",
+   "team_name": "evil",
+   "user_team_name": "Enemies"
+  },
+  {
+   "side": 3,
+   "controller": "ai",
+   "recruit": "Bowman,Spearman",
+   "gold": "35",
+   "team_name": "good",
+   "user_team_name": "Humans"
+  }
+ ],
+ "units": [
+  {
+   "side": 1,
+   "type": "Knight",
+   "id": "Arvith",
+   "name": "Arvith",
+   "canrecruit": "yes",
+   "facing": "ne"
+  },
+  {
+   "side": 2,
+   "type": "Orcish Warlord",
+   "id": "Tairach",
+   "name": "Tairach",
+   "canrecruit": "yes",
+   "facing": "sw"
+  },
+  {
+   "side": 3,
+   "type": "Longbowman",
+   "id": "Reeve Hoban",
+   "name": "Reeve Hoban",
+   "canrecruit": "yes",
+   "facing": "se"
+  }
+ ],
+ "villages": [],
+ "objectives": [],
+ "gold_carryover": null,
+ "victory_on_death": [],
+ "defeat_on_death": [
+  {
+   "id": "Baran"
+  },
+  {
+   "id": "Arvith"
+  }
+ ],
+ "runtime_events": [],
+ "intro_messages": [
+  {
+   "speaker": "Arvith",
+   "message": "There. The village is just across those hills, and already I see men coming to greet us!",
+   "message_fr": "Voilà. Le village est juste derrière ces collines, et je vois déjà des hommes venir à notre rencontre !"
+  },
+  {
+   "speaker": "Baran",
+   "message": "No, they are fleeing from something. We must find out what is happening over there!",
+   "message_fr": "Non, ils fuient quelque chose. Nous devons découvrir ce qui se passe là-bas !"
+  },
+  {
+   "speaker": "Arvith",
+   "message": "Men! Ready your arms!",
+   "message_fr": "Mes hommes ! Aux armes !"
+  },
+  {
+   "speaker": "Baran",
+   "message": "We should find Reeve Hoban. Maybe he knows what is going on here.",
+   "message_fr": "Nous devrions trouver le bailli Hoban. Il sait peut-être ce qui se passe ici."
+  }
+ ],
+ "events": [
+  {
+   "t": "event",
+   "a": {
+    "name": "prestart"
+   },
+   "c": [
+    {
+     "t": "objectives",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "objective",
+       "a": {
+        "description": "Find out what is happening in the village",
+        "condition": "win"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Arvith",
+        "condition": "lose"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Baran",
+        "condition": "lose"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "condition": "lose",
+        "description": "Turns run out",
+        "__turns": "1"
+       }
+      }
+     ]
+    },
+    {
+     "t": "recall",
+     "a": {
+      "id": "Baran"
+     }
+    },
+    {
+     "t": "modify_unit",
+     "a": {
+      "facing": "ne"
+     },
+     "c": [
+      {
+       "t": "filter",
+       "a": {
+        "id": "Baran"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "sighted"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Tairach"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "second_unit",
+      "message": "We’re almost there!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "That warlord! It’s..."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "Yes, I’d know that face anywhere. Especially after what you did to it."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "The warlord from Toen Caric."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Tairach",
+      "message": "You! The mage who scarred me with fire! KILL THEM!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "Let’s finish what we started, brother."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "Aye. I’ll be the right arm, and you’ll be the left. Let’s go!"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "defeat_enemy_leader_objectives"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "sighted"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "side": "3"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "side": "1"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Reeve Hoban",
+      "message": "I am glad to see you returned."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "No gladder than I am to be here. But what has happened to Maghre?"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Reeve Hoban",
+      "message": "Soon after you departed we were beset by orcs. With half the men of Maghre gone, we could not stop them."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Reeve Hoban",
+      "message": "The orcish warlord aims to enslave us. We will not be able to hold out for much longer."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Reeve Hoban",
+      "message": "Have a care, his men are fell fighters and have killed many. Very few remain who can bear arms, but I will send them to aid you in battle."
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "defeat_enemy_leader_objectives"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "defeat_enemy_leader_objectives"
+   },
+   "c": [
+    {
+     "t": "objectives",
+     "a": {
+      "side": "1"
+     },
+     "c": [
+      {
+       "t": "objective",
+       "a": {
+        "description": "Slay the Orcish Warlord to free the village",
+        "condition": "win"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Arvith",
+        "condition": "lose"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "description": "Death of Baran",
+        "condition": "lose"
+       }
+      },
+      {
+       "t": "objective",
+       "a": {
+        "condition": "lose",
+        "description": "Turns run out",
+        "__turns": "1"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack",
+    "first_time_only": "yes"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Tairach"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "id": "Baran"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "battle text"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "attack",
+    "first_time_only": "yes"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Baran"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "id": "Tairach"
+     }
+    },
+    {
+     "t": "fire_event",
+     "a": {
+      "name": "battle text"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "battle text",
+    "first_time_only": "yes"
+   },
+   "c": [
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Tairach",
+      "message": "Today, you shall pay for disfiguring my face, mage!"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "I have already paid with the lives of my men at Toen Caric. It is time I righted that mistake and finished this once and for all."
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "die"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Tairach"
+     }
+    },
+    {
+     "t": "filter_second",
+     "a": {
+      "id": "Baran"
+     }
+    },
+    {
+     "t": "set_achievement",
+     "a": {
+      "content_for": "two_brothers",
+      "id": "baran_returns"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "enemies defeated"
+   },
+   "c": [
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "It is finished. We’ve defeated him at last. It was good to have you at my side, Baran."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "So much has been destroyed. It will be difficult to repair all that the orcs and undead have wrecked. And they could come again."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "I must go back to earning my living. But you have my word, little brother; if you are beset again, I will come."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "victory",
+      "carryover_report": "no"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Baran"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "It is over, I am vanquished."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "last breath"
+   },
+   "c": [
+    {
+     "t": "filter",
+     "a": {
+      "id": "Arvith"
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "All is lost now that I am dead..."
+     }
+    },
+    {
+     "t": "endlevel",
+     "a": {
+      "result": "defeat"
+     }
+    }
+   ]
+  },
+  {
+   "t": "event",
+   "a": {
+    "name": "time over"
+   },
+   "c": [
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Arvith",
+      "message": "I don’t think we can rescue anyone from these villages. It is too late."
+     }
+    },
+    {
+     "t": "message",
+     "a": {
+      "speaker": "Baran",
+      "message": "I was too weak to protect these people. Oh, why did this happen to me?!"
+     }
+    }
+   ]
+  }
+ ],
+ "unsupported": {}
+}

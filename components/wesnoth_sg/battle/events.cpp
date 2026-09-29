@@ -10,6 +10,7 @@
 #include "battle/campaign_state.h"
 #include "cJSON.h"
 #include "platform/gb_port.h"
+#include "scene/campaign_root.h"
 #include "text_markup.h"
 
 namespace wsg {
@@ -89,7 +90,7 @@ std::string safe(std::string n) {
     for (auto& c : n) { if (c == '^') c = '-'; else if (c == ' ') c = '_'; else if (c == ':') c = '+'; }
     return n;
 }
-const char* kPortraits = "/sdcard/WESNOTH_SG/images/portraits/";
+inline std::string kPortraitsStr() { return wesnoth_sg::sd_root() + "images/portraits/"; }
 
 // Même convention que slugify() dans tools/wesnoth_data/generate_audio.py :
 // ne garde que les lettres/chiffres ASCII (nos noms de personnages n'ont pas
@@ -380,15 +381,15 @@ std::string EventEngine::portrait_for(const Unit* u, const std::string& image) c
         std::string b = image.substr(image.find_last_of('/') + 1);
         b = b.substr(0, b.find('~'));
         b = b.substr(0, b.find('.'));
-        std::string p = std::string(kPortraits) + b + ".bmp";
+        std::string p = kPortraitsStr() + b + ".bmp";
         if (exists(p)) return p;
     }
     if (!u) return "";
-    std::string p = std::string(kPortraits) + lower_slug(u->id) + ".bmp";
+    std::string p = kPortraitsStr() + lower_slug(u->id) + ".bmp";
     if (!u->id.empty() && exists(p)) return p;
-    p = std::string(kPortraits) + "types/" + safe(u->type_id) + ".bmp";
+    p = kPortraitsStr() + "types/" + safe(u->type_id) + ".bmp";
     if (exists(p)) return p;
-    p = std::string(kPortraits) + "types/" + safe(u->type_id.substr(0, u->type_id.find(':'))) + ".bmp";
+    p = kPortraitsStr() + "types/" + safe(u->type_id.substr(0, u->type_id.find(':'))) + ".bmp";
     return exists(p) ? p : "";
 }
 

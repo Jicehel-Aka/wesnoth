@@ -49,15 +49,25 @@ std::string as_bmp(const std::string& path) {
 
 StoryScene& story_scene() { static StoryScene s; return s; }
 
-// TODO(à ajuster avec de vrais assets) : chemins de campagne sur SD. Suit la
-// convention akaRuntime : /sdcard/<gameId>/... -- gameId="WESNOTH_SG" fixé
-// dans main.cpp (akaRuntime.begin("WESNOTH_SG")).
-static constexpr const char* kCampaignPath = "/sdcard/WESNOTH_SG/campaign_bilingual.json";
-static constexpr const char* kManifestPath = "/sdcard/WESNOTH_SG/manifest.json";
+// Chemins de campagne sur SD. Suit la convention akaRuntime :
+// /sdcard/<gameId>/... -- mais gameId n'est plus figé à "WESNOTH_SG" : il
+// vaut g_campaign_root (scene/campaign_root.h), choisi par le joueur à
+// l'écran affiché avant le menu titre (voir update_campaign_select()).
 
 void StoryScene::enter() {
-    if (loaded_) return;
-    loaded_ = campaign_load(kCampaignPath, kManifestPath, &campaign_);
+    // Ne recharge rien tant que la campagne n'a pas été choisie : le premier
+    // écran affiché est désormais le choix de campagne, avant même le menu
+    // titre habituel (Nouvelle partie / Continuer / ...).
+    if (loaded_ || campaign_chosen_) return;
+    campaign_chosen_ = false;
+    campaign_sel_ = 0;
+}
+
+void StoryScene::load_chosen_campaign() {
+    g_campaign_root = kCampaigns[campaign_sel_].sd_folder;
+    std::string campaign_path = sd_root() + "campaign_bilingual.json";
+    std::string manifest_path = sd_root() + "manifest.json";
+    loaded_ = campaign_load(campaign_path.c_str(), manifest_path.c_str(), &campaign_);
     if (!loaded_) {
         gb::log("StoryScene: echec chargement campagne");
         return;
@@ -69,6 +79,28 @@ void StoryScene::enter() {
     at_title_ = true;
     title_mode_ = TitleMode::Menu;
     title_sel_ = 0;
+}
+
+void StoryScene::update_campaign_select(SceneManager&) {
+    uint32_t p = gb::buttons_pressed();
+    if (p & gb::BTN_UP) campaign_sel_ = (campaign_sel_ + kCampaignCount - 1) % kCampaignCount;
+    if (p & gb::BTN_DOWN) campaign_sel_ = (campaign_sel_ + 1) % kCampaignCount;
+    if (p & gb::BTN_A) {
+        campaign_chosen_ = true;
+        load_chosen_campaign();
+    }
+}
+
+void StoryScene::render_campaign_select() {
+    const gb::Color kBg = gb::rgb(20, 16, 24);
+    const gb::Color kSel = gb::rgb(230, 220, 200);
+    const gb::Color kOff = gb::rgb(120, 112, 104);
+    const gb::Color kTitle = gb::rgb(230, 190, 80);
+    gb::clear(kBg);
+    gb::text(70, 40, "Choisir une campagne", kTitle);
+    for (int i = 0; i < kCampaignCount; ++i) {
+        gb::text(60, 100 + i * 20, kCampaigns[i].title, i == campaign_sel_ ? kSel : kOff);
+    }
 }
 
 void StoryScene::start_new_game() {
@@ -144,6 +176,7 @@ const std::string& StoryScene::current_text(const Beat& beat) const {
 }
 
 void StoryScene::update(SceneManager& mgr) {
+    if (!campaign_chosen_) { update_campaign_select(mgr); return; }
     if (!loaded_) {
         mgr.set(SceneId::QUIT);
         return;
@@ -187,7 +220,7 @@ void StoryScene::update(SceneManager& mgr) {
                                        ? beat.audio_path_fr
                                        : beat.audio_path;
         if (!path.empty()) {
-            std::string full_path = std::string("/sdcard/WESNOTH_SG/audio/") + path;
+            std::string full_path = sd_root() + "audio/" + path;
             story_audio::play_line(full_path);
         }
         beat_just_entered_ = false;
@@ -224,7 +257,7 @@ int StoryScene::dialog_text_x(const Beat& beat) const {
     const int kPortraitSize = 96;
     std::string portrait_path = beat.image.empty() ? default_portrait_for(beat.speaker) : beat.image;
     if (portrait_path.empty()) return 10;
-    std::string full = "/sdcard/WESNOTH_SG/images/" + as_bmp(portrait_path);
+    std::string full = sd_root() + "images/" + as_bmp(portrait_path);
     return gb::file_exists(full.c_str()) ? kPortraitSize + 14 : 10;
 }
 
@@ -233,7 +266,7 @@ int StoryScene::dialog_text_x(const Beat& beat) const {
 // d'ouverture ; les dialogues sont joués par les événements pendant la
 // bataille (comme dans Wesnoth). Sinon, tout le scénario est lu comme avant.
 bool StoryScene::has_battle(const std::string& id) const {
-    std::string p = "/sdcard/WESNOTH_SG/data/scenarios/" + id + ".json";
+    std::string p = sd_root() + "data/scenarios/" + id + ".json";
     return gb::file_exists(p.c_str());
 }
 
@@ -286,7 +319,7 @@ void StoryScene::render_title() {
     const gb::Color kOff = gb::rgb(120, 112, 104);
     const gb::Color kTitle = gb::rgb(230, 190, 80);
     gb::clear(kBg);
-    gb::text(96, 40, "The South Guard", kTitle);
+    gb::text(96, 40, kCampaigns[campaign_sel_].title, kTitle);
     if (title_mode_ == TitleMode::Menu) {
         const bool has_continue = slot_info(kAutoSlot).used;
         const char* items[3] = {"Nouvelle partie", "Continuer", "Charger une sauvegarde"};
@@ -308,6 +341,7 @@ void StoryScene::render_title() {
 }
 
 void StoryScene::render() {
+    if (!campaign_chosen_) { render_campaign_select(); return; }
     if (at_title_) { render_title(); return; }
     if (!loaded_ || scenario_index_ >= campaign_.scenarios.size()) return;
     const Scenario& scenario = campaign_.scenarios[scenario_index_];
@@ -331,7 +365,7 @@ void StoryScene::render() {
             // écrans suivants).
             gb::clear(kBg);
             if (!beat.image.empty()) {
-                std::string bg_path = "/sdcard/WESNOTH_SG/images/" + as_bmp(beat.image);
+                std::string bg_path = sd_root() + "images/" + as_bmp(beat.image);
                 gb::blit_bmp(bg_path.c_str());
             }
             // Bande de texte en bas d'écran, sur le fond narratif : sa hauteur
@@ -363,7 +397,7 @@ void StoryScene::render() {
 
             int text_x = 10;
             if (!portrait_path.empty()) {
-                std::string full = "/sdcard/WESNOTH_SG/images/" + as_bmp(portrait_path);
+                std::string full = sd_root() + "images/" + as_bmp(portrait_path);
                 if (gb::draw_image(full.c_str(), 4, kPortraitY)) {
                     text_x = kPortraitSize + 14;  // décale le texte à droite du portrait
                 }

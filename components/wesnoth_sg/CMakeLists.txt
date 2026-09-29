@@ -5,6 +5,7 @@ idf_component_register(
   SRCS
     "wesnoth_app.cpp"
     "scene/scene.cpp"
+    "scene/campaign_root.cpp"
     "scene/story_scene.cpp"
     "scene/battle_scene.cpp"
     "battle/wdata.cpp"

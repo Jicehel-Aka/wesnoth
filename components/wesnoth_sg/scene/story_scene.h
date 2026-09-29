@@ -2,6 +2,7 @@
 #pragma once
 #include <vector>
 
+#include "scene/campaign_root.h"
 #include "scene/scene.h"
 #include "scene/language.h"
 #include "story/campaign_loader.h"
@@ -49,9 +50,21 @@ private:
     // pour StoryScreen (marge fixe des deux côtés).
     int dialog_text_x(const Beat& beat) const;
 
+    // --- choix de campagne (nouveau, avant le menu titre) : liste kCampaigns
+    // (scene/campaign_root.h). Une fois choisie, g_campaign_root est fixé et
+    // campaign_bilingual.json/manifest.json de CETTE campagne sont chargés
+    // (voir enter() -- le chargement n'a plus lieu tant qu'aucun choix n'a
+    // été fait, contrairement à l'ancienne version mono-campagne).
+    bool campaign_chosen_ = false;
+    int campaign_sel_ = 0;
+    void update_campaign_select(SceneManager&);
+    void render_campaign_select();
+    void load_chosen_campaign();
+
     // --- menu titre (Nouvelle partie / Continuer / Charger une sauvegarde) --
-    // affiché une fois au lancement, avant tout beat -- voir story/savegame.h
-    // pour ce que "Continuer" (autosave) et les 5 emplacements restaurent.
+    // affiché une fois la campagne choisie, avant tout beat -- voir
+    // story/savegame.h pour ce que "Continuer" (autosave) et les 5
+    // emplacements restaurent (indépendants par campagne, cf. sd_root()).
     enum class TitleMode { Menu, LoadList };
     bool at_title_ = true;
     TitleMode title_mode_ = TitleMode::Menu;

@@ -9,13 +9,16 @@
 #include "battle/game.h"
 #include "cJSON.h"
 #include "platform/gb_port.h"
+#include "scene/campaign_root.h"
 
 namespace wesnoth_sg {
 namespace {
 
 std::string path_for(int slot) {
+    // sd_root() (pas un chemin fixe "WESNOTH_SG") : chaque campagne a ses
+    // propres emplacements de sauvegarde, cf. scene/campaign_root.h.
     std::string name = (slot == kAutoSlot) ? "save_auto.json" : ("save_slot" + std::to_string(slot) + ".json");
-    return "/sdcard/WESNOTH_SG/" + name;
+    return sd_root() + name;
 }
 
 std::string slurp(const std::string& logical_path) {

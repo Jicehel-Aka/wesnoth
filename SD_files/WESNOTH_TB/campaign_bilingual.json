@@ -1,0 +1,124 @@
+{
+ "scenarios": [
+  {
+   "id": "01_Rooting_Out_a_Mage",
+   "name": "Rooting Out a Mage",
+   "next_scenario": "02_The_Chase",
+   "beats": [
+    {
+     "type": "story_screen",
+     "text": "The remote freehold of Maghre in the western reaches of the Kingdom of Wesnoth was once a peaceful place, its inhabitants largely unaware of the comings and goings of the wider world. Wars and the rumor of wars touched them not. Even merchants were rarely seen, although caravans between Aldril and Dan’Tonk might send a wagon when called by the beacon tower.",
+     "text_fr": "Le lointain domaine de Maghre, dans les confins occidentaux du royaume de Wesnoth, fut autrefois un endroit paisible, dont les habitants ignoraient largement les allées et venues du vaste monde. Ni les guerres ni les rumeurs de guerre ne les touchaient. Même les marchands s'y montraient rarement, bien que les caravanes entre Aldril et Dan'Tonk envoyaient parfois un chariot lorsqu'appelées par la tour à signaux."
+    },
+    {
+     "type": "story_screen",
+     "text": "Then came the day that a dark mage settled in the region and began seeking sacrifices for his summonings.\n\nSkeletons and zombies killed cattle and fired fields. <i>“Fear and obey Mordak the Mage!”</i> they cried in fell voices as they did their foul deeds. People vanished from isolated farmsteads. Men and women began to fear the night, and their children even the bright day. But the nearest lord was more than a day’s ride distant, and messengers sent to seek his help did not return.",
+     "text_fr": "Puis vint le jour où un mage noir s'installa dans la région et se mit en quête de sacrifices pour ses invocations.\n\nSquelettes et zombies tuaient le bétail et incendiaient les champs. « Craignez et obéissez à Mordak le Mage ! » criaient-ils de leurs voix funestes en commettant leurs sinistres méfaits. Des gens disparaissaient des fermes isolées. Hommes et femmes se mirent à craindre la nuit, et leurs enfants, même le plein jour. Mais le seigneur le plus proche se trouvait à plus d'une journée de cheval, et les messagers envoyés chercher son aide ne revenaient pas.",
+     "image": "story/Two_Brothers_M1P1.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "There was a man named Baran who had shown talent as a mage when he was young, gone to the great Academy on the Isle of Alduin, and returned to work his magic in the land where he was born. The people looked to him for help and leadership. He found weapons half-forgotten from the times of their sires and grandsires hanging in many houses, and bade the villagers to take them down and clean and oil them. He set the smiths of Maghre to making spearheads and ax-blades for the rest.",
+     "text_fr": "Il y avait un homme nommé Baran qui avait montré un talent pour la magie dans sa jeunesse, était parti pour la grande Académie de l'Île d'Alduin, et était revenu pratiquer son art dans la terre qui l'avait vu naître. Les gens se tournèrent vers lui pour trouver aide et direction. Il retrouva des armes à moitié oubliées, datant du temps de leurs pères et grands-pères, accrochées dans nombre de maisons, et demanda aux villageois de les décrocher, de les nettoyer et de les huiler. Il chargea les forgerons de Maghre de fabriquer des fers de lance et des lames de hache pour les autres.",
+     "image": "portraits/baran.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "Now Baran had a brother named Arvith who had also left Maghre to seek his fortune, and had become the leader of a small band of horsemen who hired out as guards to merchant caravans. Fortunate it was for all that, in better times, the brothers had talked of using trade beacons for other signals when in dire need. Baran sent out that call.",
+     "text_fr": "Or Baran avait un frère nommé Arvith, qui avait lui aussi quitté Maghre pour chercher fortune, et était devenu le chef d'une petite troupe de cavaliers qui louaient leurs services comme gardes de caravanes marchandes. Il fut heureux qu'en des temps meilleurs, les deux frères eussent convenu d'utiliser les tours à signaux marchandes pour d'autres messages en cas de grand besoin. Baran lança cet appel.",
+     "image": "story/Two_Brothers_M1P2.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "12 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Baran of Maghre\n\nIf I could but face this ‘Mordak’! I think my magic might prove stronger than his. But he bides in the hills, well-guarded by his servants, and I muster frightened peasants to fight his minions with blades and sticks.\n\nI need my brother; he always had a better head for battle than I. Yet we have not spoken since that evil day at Toen Caric. If he will not come for me, perhaps he will return to aid our village in its hour of desperate need.",
+     "text_fr": "12 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nSi seulement je pouvais affronter ce « Mordak » ! Je pense que ma magie pourrait se révéler plus forte que la sienne. Mais il se terre dans les collines, bien gardé par ses serviteurs, et je ne rassemble que des paysans apeurés pour combattre ses sbires à coups de lames et de bâtons.\n\nJ'ai besoin de mon frère ; il a toujours eu plus de sens tactique que moi. Pourtant nous ne nous sommes pas parlé depuis ce funeste jour à Toen Caric. S'il ne vient pas pour moi, peut-être reviendra-t-il porter secours à notre village en cette heure de désespoir.",
+     "image": "story/Two_Brothers_M1P2.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "Heeding the call, Arvith gathered such men as he could and hurried to Maghre to help Baran.",
+     "text_fr": "Répondant à l'appel, Arvith rassembla les hommes qu'il put et se hâta vers Maghre pour aider Baran."
+    }
+   ]
+  },
+  {
+   "id": "02_The_Chase",
+   "name": "The Chase",
+   "next_scenario": "03_Guarded_Castle",
+   "beats": [
+    {
+     "type": "story_screen",
+     "text": "Arvith and his band rode north in search of his missing brother.",
+     "text_fr": "Arvith et sa troupe chevauchèrent vers le nord à la recherche de son frère disparu.",
+     "image": "story/Two_Brothers_M2P1.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "16 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Arvith of Maghre\n\nWe’ve been searching three days for Baran, and turned up nothing. My best hunch was to head north into the borderlands, where the necromancer’s minions could safely hide; everywhere else is more farmland. At first I thought the search might be useless, but late in the first day we found a set of tracks. Some of them had been made by skeletal feet, although after their first campsite the tracks were merely those of men carrying heavy loads.\n\nWe’re close enough to be certain now: those tracks are heading into the Grey Woods. No one from Maghre or any of the other villages has gone into that forest in living memory. Stories have been passed down for generations warning against it. Supposedly the place is haunted by lost souls who hunger for the living, and anyone who dies there is doomed to join them.",
+     "text_fr": "16 Floraison des Voyants, 363 AW\nExtrait du journal d'Arvith de Maghre\n\nCela fait trois jours que nous cherchons Baran, sans succès. Mon meilleur pressentiment était de me diriger vers le nord, dans les terres frontalières, où les sbires du nécromancien pouvaient se cacher en sécurité ; partout ailleurs, ce ne sont que terres agricoles. Au début, j'ai cru la recherche vaine, mais tard le premier jour, nous avons trouvé des traces. Certaines avaient été laissées par des pieds squelettiques, bien qu'après leur premier campement, les traces ne soient plus que celles d'hommes portant de lourdes charges.\n\nNous sommes désormais assez proches pour en être certains : ces traces mènent vers le Bois Gris. Personne de Maghre ni des autres villages n'est entré dans cette forêt de mémoire d'homme. Des histoires s'y transmettent de génération en génération, mettant en garde contre elle. On dit que l'endroit est hanté par des âmes perdues affamées des vivants, et que quiconque y meurt est condamné à les rejoindre.",
+     "image": "story/Two_Brothers_M2P1.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "16 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Arvith of Maghre\n\nBut I’m past superstitions now; I’ve seen enough of the world to guess at the truth behind these sorts of tales. The forest is home to elves — unfriendly ones, if the stories have any basis at all. I worry for my men; horses don’t fight well in forests, and the elves will be more dangerous in their own territory. But there are things that need done and questions that need answered. Something bigger is happening. One necromancer terrorizing townsfolk is nothing new, but why didn’t his servants scatter when he was killed? Where are they headed now? And most importantly, why did they take Baran with them?\n\nBesides... I want my brother back.",
+     "text_fr": "16 Floraison des Voyants, 363 AW\nExtrait du journal d'Arvith de Maghre\n\nMais j'ai dépassé les superstitions à présent ; j'ai vu assez du monde pour deviner la vérité derrière ce genre de récits. La forêt abrite des elfes — peu amicaux, si ces histoires ont le moindre fondement. Je m'inquiète pour mes hommes ; les chevaux ne combattent pas bien en forêt, et les elfes seront plus dangereux sur leur propre territoire. Mais il y a des choses à faire et des questions qui exigent réponse. Quelque chose de plus grand se trame. Un nécromancien terrorisant des villageois, ce n'est rien de nouveau, mais pourquoi ses serviteurs ne se sont-ils pas dispersés après sa mort ? Où se dirigent-ils à présent ? Et surtout, pourquoi ont-ils emmené Baran avec eux ?\n\nEt puis... je veux récupérer mon frère.",
+     "image": "story/Two_Brothers_M2P1.webp"
+    }
+   ]
+  },
+  {
+   "id": "03_Guarded_Castle",
+   "name": "Guarded Castle",
+   "next_scenario": "04_Return_to_the_Village",
+   "beats": [
+    {
+     "type": "story_screen",
+     "text": "19 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Rotharik the Clanless\n\nThe last of Mordak’s servants arrived this morning bearing the news of his death, as well as a bundle so well-bound it was barely recognizable as a man. Mordak was always reckless. This whole desperate scheme was his, and I suppose I could blame him for everything that we have suffered through if it still mattered. It was he who brought the wrath of the orcs down on us, too. But all the same, he managed to accomplish what he set out to do. I still cannot believe the finality of what has happened; until now we had always managed to make it through somehow.\n\nWe had hoped to deliver the mage to Tairach in return for our lives. I do not know what the warlord wants with this man, but he matches the description. I suppose that Mordak’s plan would have worked perfectly if not for the appearance of the horse warriors. Now they are coming here, led by a man rumored to be this mage’s brother. If that is true, he will stop at nothing, no more than would I if they held Mordak.",
+     "text_fr": "19 Floraison des Voyants, 363 AW\nExtrait du journal de Rotharik le Sans-Clan\n\nLe dernier des serviteurs de Mordak est arrivé ce matin, porteur de la nouvelle de sa mort, ainsi que d'un paquet si bien ficelé qu'on le reconnaissait à peine comme celui d'un homme. Mordak a toujours été imprudent. Tout ce plan désespéré était le sien, et je pourrais lui reprocher tout ce que nous avons enduré si cela avait encore de l'importance. C'est aussi lui qui a attiré la colère des orcs sur nous. Mais malgré tout, il est parvenu à accomplir ce qu'il avait entrepris. Je n'arrive toujours pas à croire au caractère définitif de ce qui s'est passé ; jusqu'ici, nous avions toujours réussi à nous en sortir d'une manière ou d'une autre.\n\nNous espérions livrer le mage à Tairach en échange de nos vies. J'ignore ce que le seigneur de guerre veut de cet homme, mais il correspond à la description. Je suppose que le plan de Mordak aurait parfaitement fonctionné sans l'apparition des cavaliers. Maintenant ils viennent ici, menés par un homme que l'on dit être le frère de ce mage. Si c'est vrai, il ne reculera devant rien, pas plus que moi si c'était Mordak qu'ils détenaient."
+    },
+    {
+     "type": "story_screen",
+     "text": "19 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Rotharik the Clanless\n\nI have done what I can to fortify this dilapidated castle. The orcs who came with us stand guard at the gates, and I am gathering all of my servants to me in the inner sanctum. But ill fate awaits. Whether I defeat this horse-warrior or no, the orcs will still come for me; they have been scouring the borderlands and raiding the northern farm country in search of us.\n\nYet for some reason I fear these brothers more. If Mordak were here it would be different, but we are broken... and these two men are whole. In each other, in the ties that bind them, they have strength.",
+     "text_fr": "19 Floraison des Voyants, 363 AW\nExtrait du journal de Rotharik le Sans-Clan\n\nJ'ai fait ce que j'ai pu pour fortifier ce château délabré. Les orcs venus avec nous montent la garde aux portes, et je rassemble tous mes serviteurs dans le sanctuaire intérieur. Mais un funeste destin nous attend. Que je batte ou non ce cavalier, les orcs viendront quand même pour moi ; ils ont fouillé les terres frontalières et pillé les fermes du nord à notre recherche.\n\nEt pourtant, pour quelque raison, je crains davantage ces frères. Si Mordak était encore là, ce serait différent, mais nous sommes brisés... tandis que ces deux hommes sont entiers. L'un dans l'autre, dans les liens qui les unissent, ils trouvent leur force."
+    }
+   ]
+  },
+  {
+   "id": "04_Return_to_the_Village",
+   "name": "Return to the Village",
+   "next_scenario": "05_Epilogue",
+   "beats": [
+    {
+     "type": "story_screen",
+     "text": "27 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Baran of Maghre\n\nAlmost home now. The last week has been full of mixed feelings for me — blissful and difficult by turns. It was wonderful to be out of that dungeon cell and in the sunlight again without the threat of death or worse hanging over my head... but with that behind me, I turned to the almost equally daunting task of making amends with my brother.\n\nArvith had largely forgiven me by the time he freed me from my cell. All the same, it has taken all of the past week for us to rebuild the sense of comfort in each other we once had. It is fortunate that we have been able to take our time getting back — we gave the Grey Woods a wide berth, and on our way around it we traveled through some truly beautiful countryside. It has given us plenty of time to talk.",
+     "text_fr": "27 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nPresque à la maison, maintenant. La dernière semaine a été pleine de sentiments contradictoires pour moi — tour à tour bienheureuse et pénible. C'était merveilleux de sortir de cette cellule et de revoir le soleil sans la menace de la mort, ou pire, planant sur ma tête... mais une fois cela derrière moi, je me suis tourné vers la tâche presque aussi redoutable de me réconcilier avec mon frère.\n\nArvith m'avait largement pardonné au moment où il m'a libéré de ma cellule. Il nous a tout de même fallu toute la semaine passée pour reconstruire cette complicité que nous avions autrefois. Heureusement, nous avons pu prendre notre temps pour rentrer — nous avons donné une large marge au Bois Gris, et en le contournant, nous avons traversé une campagne vraiment magnifique. Cela nous a donné largement le temps de parler."
+    },
+    {
+     "type": "story_screen",
+     "text": "27 Scryer’s Bloom, 363 YW\nExcerpt from the journal of Baran of Maghre\n\nThough I am more at ease now, my thoughts often turn back to Toen Caric. We should have been able to repel the orcs without great loss — the pincer attack Arvith devised would surely have carried the day but for me. It was reckless of me to leave my men behind — I wounded the warlord and forced him to flee the field, but the cost far outweighed the gain. Those under my command could have been saved if I had remained with them.\n\nI can hardly blame Arvith for having taken their deaths ill, and I can never undo the wrong that I have done, but I suppose that time heals some things. We return to the village as brothers once more.\n\nBut I am still troubled. I wonder... is this sense of foreboding I feel merely a remnant of my time locked away in that dungeon, or is it a sign of something real?",
+     "text_fr": "27 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nBien que plus apaisé désormais, mes pensées reviennent souvent à Toen Caric. Nous aurions dû pouvoir repousser les orcs sans grande perte — l'attaque en tenaille conçue par Arvith aurait sûrement emporté la victoire, sans moi. J'ai été imprudent d'abandonner mes hommes — j'ai blessé le seigneur de guerre et l'ai forcé à fuir le champ de bataille, mais le prix a largement dépassé le gain. Ceux sous mon commandement auraient pu être sauvés si j'étais resté avec eux.\n\nJe ne peux guère reprocher à Arvith d'avoir mal pris leur mort, et je ne pourrai jamais réparer le tort que j'ai causé, mais je suppose que le temps guérit certaines choses. Nous revenons au village à nouveau frères.\n\nMais je reste troublé. Je me demande... ce sentiment de mauvais présage que je ressens n'est-il que le reliquat de mon temps enfermé dans ce donjon, ou le signe de quelque chose de réel ?"
+    }
+   ]
+  },
+  {
+   "id": "05_Epilogue",
+   "name": "A Tale of Two Brothers — Epilogue",
+   "next_scenario": "",
+   "beats": [
+    {
+     "type": "story_screen",
+     "text": "22 Stillseed, 365 YW\nExcerpt from the journal of Arvith of Maghre\n\nMaghre is looking much better than the last time I saw it. Baran has done wonders in two years. The village is rebuilt, and the surrounding farmlands are restored and reoccupied. Despite my brother’s worries, our people have faced no new threats in that time.\n\nIt has been more difficult to stay away in those two years, but I have my calling and Baran has his, and we have had little opportunity to meet again. But as the company and I are passing through this part of the kingdom with a new patron, I have asked leave of him to visit my brother and he gave it.",
+     "text_fr": "22 Grain Dormant, 365 AW\nExtrait du journal d'Arvith de Maghre\n\nMaghre a bien meilleure allure que la dernière fois que je l'ai vue. Baran a accompli des merveilles en deux ans. Le village est reconstruit, et les terres agricoles environnantes sont restaurées et de nouveau habitées. Malgré les craintes de mon frère, notre peuple n'a fait face à aucune nouvelle menace durant tout ce temps.\n\nIl a été plus difficile de rester loin pendant ces deux années, mais j'ai ma vocation et Baran a la sienne, et nous avons eu peu d'occasions de nous revoir. Mais comme la compagnie et moi traversons cette partie du royaume avec un nouveau commanditaire, je lui ai demandé la permission de rendre visite à mon frère, et il me l'a accordée.",
+     "image": "story/Two_Brothers_M4P1_the_end.webp"
+    },
+    {
+     "type": "story_screen",
+     "text": "22 Stillseed, 365 YW\nExcerpt from the journal of Arvith of Maghre\n\nThis patron is, of all things, an elf. I never thought I’d befriend one, but he is less arrogant than the rest. Kalenz, he calls himself. He’s seen too much; I can tell that just by meeting his eyes. I think we will have to work for our pay soon.\n\nIn the meantime, though, it’s good to relax and enjoy the peace.",
+     "text_fr": "22 Grain Dormant, 365 AW\nExtrait du journal d'Arvith de Maghre\n\nCe commanditaire est, entre toutes choses, un elfe. Je n'aurais jamais cru me lier d'amitié avec l'un d'eux, mais il est moins arrogant que les autres. Kalenz, qu'il se nomme. Il en a trop vu ; je le devine rien qu'en croisant son regard. Je pense que nous devrons bientôt travailler pour gagner notre solde.\n\nEn attendant, cependant, il fait bon se détendre et profiter de la paix.",
+     "image": "story/Two_Brothers_M4P1_the_end.webp"
+    }
+   ]
+  }
+ ],
+ "missing": []
+}

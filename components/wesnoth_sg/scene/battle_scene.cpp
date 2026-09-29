@@ -9,6 +9,8 @@
 //   RUN    : unité suivante ayant encore des actions (touche « n » de Wesnoth)
 #include "scene/battle_scene.h"
 
+#include "scene/campaign_root.h"
+
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
@@ -36,7 +38,7 @@ constexpr int TOP = 12;                                   // bandeau du haut
 constexpr int BOTTOM = 26;                                // panneau du bas
 constexpr int VIEW_H = gb::SCREEN_H - TOP - BOTTOM;
 constexpr uint16_t KEY = 0xF81F;
-const char* kRoot = "/sdcard/WESNOTH_SG/";
+inline std::string kRootStr() { return sd_root(); }
 
 std::string slurp(const std::string& p) {
     std::ifstream f(gb::sd_path(p.c_str()), std::ios::binary);
@@ -84,11 +86,11 @@ bool Aki::load(const std::string& path) {
 // ---------------------------------------------------------------------------
 bool BattleScene::load() {
     if (!data_ok_) {
-        data_ok_ = data_.load(slurp(std::string(kRoot) + "data/units.json"),
-                              slurp(std::string(kRoot) + "data/terrain.json"));
+        data_ok_ = data_.load(slurp(kRootStr() + "data/units.json"),
+                              slurp(kRootStr() + "data/terrain.json"));
         if (!data_ok_) { gb::log("BattleScene: données units/terrain introuvables"); return false; }
     }
-    std::string sj = slurp(std::string(kRoot) + "data/scenarios/" + scenario_id_ + ".json");
+    std::string sj = slurp(kRootStr() + "data/scenarios/" + scenario_id_ + ".json");
     cJSON* j = cJSON_Parse(sj.c_str());
     if (!j) { gb::log("BattleScene: scénario introuvable"); return false; }
     const cJSON* mf = cJSON_GetObjectItemCaseSensitive(j, "map_file");
@@ -99,7 +101,7 @@ bool BattleScene::load() {
     scenario_name_ = (nm && cJSON_IsString(nm)) ? nm->valuestring : scenario_id_;
     cJSON_Delete(j);
     game_.reset(new wsg::Game(data_));
-    if (!game_->load_scenario(sj, slurp(std::string(kRoot) + "maps/" + map_file))) {
+    if (!game_->load_scenario(sj, slurp(kRootStr() + "maps/" + map_file))) {
         gb::log("BattleScene: échec du chargement du scénario");
         return false;
     }
@@ -164,7 +166,7 @@ void BattleScene::build_canvas() {
             auto it = tiles.find(code);
             if (it == tiles.end()) {
                 Aki a;
-                a.load(std::string(kRoot) + "gfx/terrain/" + safe(code) + ".aki");
+                a.load(kRootStr() + "gfx/terrain/" + safe(code) + ".aki");
                 it = tiles.emplace(code, std::move(a)).first;
             }
             const Aki& t = it->second;
@@ -186,7 +188,7 @@ const Aki* BattleScene::sprite(const wsg::Unit& u) {
     auto it = sprites_.find(k);
     if (it == sprites_.end()) {
         Aki a;
-        a.load(std::string(kRoot) + "gfx/units/" + k + ".aki");
+        a.load(kRootStr() + "gfx/units/" + k + ".aki");
         it = sprites_.emplace(k, std::move(a)).first;
     }
     return it->second.w ? &it->second : nullptr;
@@ -485,7 +487,7 @@ void BattleScene::update(SceneManager& mgr) {
             const std::string& path = (language_ == Language::French && !m.audio_path_fr.empty())
                                            ? m.audio_path_fr
                                            : m.audio_path;
-            if (!path.empty()) story_audio::play_line(std::string(kRoot) + "audio/" + path);
+            if (!path.empty()) story_audio::play_line(kRootStr() + "audio/" + path);
             msg_audio_pending_ = false;
         }
         int max_lines = dialog_max_lines();
