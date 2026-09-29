@@ -1,0 +1,102 @@
+========================================================================
+ THE SOUTH GUARD - Portage Gamebuino AKA / PC
+ Version PC (SDL2) - build automatique
+========================================================================
+
+CE PORTAGE
+
+Ce jeu est un portage non officiel, à but non commercial, de la campagne
+"The South Guard" (branche master) du jeu libre Battle for Wesnoth
+(https://www.wesnoth.org), adapté pour tourner sur la console Gamebuino
+AKA (ESP32-S3) ainsi que sur PC via une émulation SDL2 fidèle à l'écran
+320x240 de la console.
+
+Portage réalisé par Jicehel.
+
+
+------------------------------------------------------------------------
+FICHIERS NECESSAIRES
+------------------------------------------------------------------------
+
+Le dossier doit contenir, à côté de l'exécutable (wesnoth_sg_pc / .exe
+et, sous Windows, ses DLL SDL2/cJSON/pthread) :
+
+  sdcard_files/
+    WESNOTH_SG/
+      manifest.json
+      campaign_bilingual.json
+      audio/                     (musiques et sons par scénario)
+      images/
+        portraits/                (portraits des personnages)
+        story/                    (fonds d'écran d'introduction)
+      maps/                       (cartes des scénarios, .map)
+      data/
+        units.json                (données des unités)
+        terrain.json               (données des terrains)
+        scenarios/                 (etat + evenements de chaque scenario, .json)
+      gfx/
+        terrain/                   (tuiles de terrain, .aki)
+        units/                     (sprites d'unités, .aki)
+
+Le dossier "sdcard_files/WESNOTH_SG" reproduit exactement l'arborescence
+attendue sur la carte SD de la console AKA. Ce build automatique ne
+contient pas ces données (elles ne sont pas dans le dépôt de code) : si
+un pack "SD_update_WESNOTH_SG.zip" t'a été fourni séparément, dézippe-le
+dans ce dossier (il ajoute/actualise data/, gfx/, images/portraits/types
+et campaign_bilingual.json) : sans data/ et gfx/, le jeu ne peut afficher
+que les écrans narratifs, pas la carte de bataille.
+
+
+------------------------------------------------------------------------
+CONTROLES
+------------------------------------------------------------------------
+
+Le jeu suit les mêmes conventions que les autres jeux AKA de Jicehel :
+
+  Déplacement du curseur .......... flèches directionnelles
+  A (valider / sélectionner) ...... touche configurée pour "A"
+  B (annuler / retour) ............ touche configurée pour "B"
+  D (annuler un déplacement) ....... touche configurée pour "D"
+  L1 / R1 (unité suivante / précédente) .. touches configurées pour L1 / R1
+  MENU (appui court) .............. ouvrir le menu (Recruter / Rappeler,
+                                     Objectifs, Fin de tour, ...)
+  MENU (appui long) ............... capture d'écran
+  RUN + MENU (maintenu) ........... retour au menu de lancement (sur AKA)
+
+Sur la version PC, ces actions sont mappées sur le clavier (voir les
+touches indiquées à l'écran en cas de doute) ; les touches exactes
+peuvent évoluer d'une build à l'autre.
+
+
+------------------------------------------------------------------------
+REMERCIEMENTS
+------------------------------------------------------------------------
+
+- L'équipe et la communauté de Battle for Wesnoth (wesnoth.org), pour
+  la campagne "The South Guard", les données d'unités/terrains et les
+  illustrations originales dont ce portage est dérivé.
+- jmp42, auteur de la bibliothèque Gamebuino AKA sur laquelle repose
+  la coquille (shell) commune à tous les jeux AKA de Jicehel.
+- Jicehel, pour le portage, l'interpréteur de scénarios et le moteur
+  tactique adaptés à la console AKA.
+
+
+------------------------------------------------------------------------
+LICENCE
+------------------------------------------------------------------------
+
+Battle for Wesnoth est un jeu libre distribué sous licence GNU General
+Public License version 2 ou ultérieure (GPLv2+) pour le code, et sous
+des licences libres compatibles (notamment CC BY-SA) pour une partie
+de ses illustrations et musiques. Ce portage est une œuvre dérivée non
+officielle, non affiliée au projet Battle for Wesnoth, distribuée sans
+but commercial dans le même esprit de partage.
+
+Le code propre à ce portage (moteur tactique, interpréteur d'évènements,
+intégration console/PC) est distribué sous licence GPLv2+, dans la
+continuité de la licence des données et scénarios originaux dont il
+s'inspire.
+
+Voir https://www.wesnoth.org et le fichier COPYING du dépôt Battle for
+Wesnoth pour le texte complet de la licence GPL applicable aux données
+et scénarios d'origine.

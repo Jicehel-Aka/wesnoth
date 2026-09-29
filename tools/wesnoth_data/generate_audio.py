@@ -66,10 +66,12 @@ manifest.json / lus par campaign_loader.cpp) :
 """
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+import time
 import unicodedata
 from pathlib import Path
 
@@ -197,26 +199,60 @@ def synth_fr_piper(text: str, model_path: Path, out_path: Path) -> bool:
     Sort déjà en 16kHz mono (config des voix fr_FR de piper-voices), donc pas
     de passage par sox contrairement à synth_fr()."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        # sys.executable (pas "python3" en dur) : sous la console ESP-IDF de
-        # Windows, l'interpreteur s'appelle "python.exe" et est lance via
-        # "python", pas "python3" -- on reutilise donc le meme interpreteur
-        # que celui qui execute ce script, quel que soit son nom/chemin.
-        # encoding="utf-8" explicite : sous Windows, text=True sans encodage
-        # utilise le codepage de la console (cp1252 en general), qui ne sait
-        # pas encoder certains caracteres typographiques francais (espace
-        # fine insecable U+202F, tirets cadratins, guillemets courbes...) et
-        # fait planter l'ecriture sur stdin avec UnicodeEncodeError.
-        subprocess.run(
-            [sys.executable, "-m", "piper", "-m", str(model_path), "-f", str(out_path),
-             "--sentence-silence", "0.2"],
-            input=text, check=True, capture_output=True, text=True, timeout=120,
-            encoding="utf-8",
-        )
-        return out_path.exists() and out_path.stat().st_size > 0
-    except subprocess.CalledProcessError as e:
-        print(f"  ! piper a echoue ({model_path.name}): {e.stderr.strip()[:200]}", file=sys.stderr)
-        return False
+    # Retente 3 fois : la plupart des echecs observes sont transitoires
+    # (verrouillage de fichier passager -- p.ex. si le dossier de sortie est
+    # synchronise par OneDrive, qui peut verrouiller un .wav fraichement
+    # ecrit le temps de l'indexer/l'uploader -- ou une contention CPU/E-S
+    # passagere pendant un gros lot). Un court delai avant de reessayer
+    # suffit en general.
+    last_err = None
+    for attempt in range(3):
+        try:
+            # sys.executable (pas "python3" en dur) : sous la console ESP-IDF de
+            # Windows, l'interpreteur s'appelle "python.exe" et est lance via
+            # "python", pas "python3" -- on reutilise donc le meme interpreteur
+            # que celui qui execute ce script, quel que soit son nom/chemin.
+            # encoding="utf-8" explicite : sous Windows, text=True sans encodage
+            # utilise le codepage de la console (cp1252 en general), qui ne sait
+            # pas encoder certains caracteres typographiques francais (espace
+            # fine insecable U+202F, tirets cadratins, guillemets courbes...) et
+            # fait planter l'ecriture sur stdin avec UnicodeEncodeError.
+            #
+            # Mais encoding="utf-8" ici ne regle que l'ENVOI (les octets qu'on
+            # ecrit sur son entree standard sont du vrai UTF-8) -- pas la
+            # LECTURE : le sous-processus Piper est lui-meme un interpreteur
+            # Python, et sur Windows son stdin se decode par defaut avec le
+            # codepage de la console (cp1252), pas UTF-8, sauf si on le lui dit
+            # explicitement. Resultat : "e" accentue (2 octets UTF-8, dont le
+            # premier vaut 0xC3) se fait redecoder en cp1252 en "A tilde" (Ã),
+            # d'ou "a tilde" prononce a voix haute, et "©" pour d'autres
+            # sequences mal redecodees -- symptome classique du mojibake
+            # UTF-8/cp1252. On force donc PYTHONUTF8/PYTHONIOENCODING dans
+            # l'environnement du sous-processus pour que SA lecture soit elle
+            # aussi en UTF-8.
+            env = dict(os.environ)
+            env["PYTHONUTF8"] = "1"
+            env["PYTHONIOENCODING"] = "utf-8"
+            subprocess.run(
+                [sys.executable, "-m", "piper", "-m", str(model_path), "-f", str(out_path),
+                 "--sentence-silence", "0.2"],
+                input=text, check=True, capture_output=True, text=True, timeout=120,
+                encoding="utf-8", env=env,
+            )
+            if out_path.exists() and out_path.stat().st_size > 0:
+                return True
+            last_err = "fichier de sortie vide ou absent"
+        except subprocess.CalledProcessError as e:
+            # La ligne utile (nom de l'exception) est en fin de traceback, pas
+            # au debut (qui n'est que le boilerplate "frozen runpy") -- on
+            # affiche donc les 300 derniers caracteres, pas les 200 premiers.
+            last_err = e.stderr.strip()[-300:]
+        except subprocess.TimeoutExpired:
+            last_err = f"timeout ({attempt+1}/3)"
+        if attempt < 2:
+            time.sleep(1.5)
+    print(f"  ! piper a echoue apres 3 essais ({model_path.name}): {last_err}", file=sys.stderr)
+    return False
 
 
 def synth_fr(text: str, voice: str, out_path: Path) -> bool:
