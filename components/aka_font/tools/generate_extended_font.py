@@ -132,10 +132,14 @@ GLYPHS[0x00BF] = [0b00001100, 0b00000000, 0b00001100, 0b00011000,
                   0b00110000, 0b00110011, 0b00011110, 0b00000000]  # ¿ (? inverse)
 GLYPHS[0x00A1] = [0b00011000, 0b00000000, 0b00011000, 0b00011000,
                   0b00011000, 0b00011000, 0b00011000, 0b00000000]  # ¡ (! inverse)
-GLYPHS[0x00AB] = [0b00000000, 0b00010010, 0b00100100, 0b01001000,
-                  0b00100100, 0b00010010, 0b00000000, 0b00000000]  # «
-GLYPHS[0x00BB] = [0b00000000, 0b01001000, 0b00100100, 0b00010010,
-                  0b00100100, 0b01001000, 0b00000000, 0b00000000]  # »
+# NB (2026-09-30) : ces deux bitmaps etaient echangees (« pointait a droite,
+# » pointait a gauche -- bug decouvert via un rapport utilisateur "chevrons
+# inverses" sur le texte francais). Corrige ici en plus du .h genere, pour
+# qu'une regeneration future ne reintroduise pas le bug.
+GLYPHS[0x00AB] = [0b00000000, 0b01001000, 0b00100100, 0b00010010,
+                  0b00100100, 0b01001000, 0b00000000, 0b00000000]  # «
+GLYPHS[0x00BB] = [0b00000000, 0b00010010, 0b00100100, 0b01001000,
+                  0b00100100, 0b00010010, 0b00000000, 0b00000000]  # »
 
 # --- Generation du header C++ ---
 out = []

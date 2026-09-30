@@ -99,7 +99,8 @@ void StoryScene::render_campaign_select() {
     gb::clear(kBg);
     gb::text(70, 40, "Choisir une campagne", kTitle);
     for (int i = 0; i < kCampaignCount; ++i) {
-        gb::text(60, 100 + i * 20, kCampaigns[i].title, i == campaign_sel_ ? kSel : kOff);
+        const char* name = (language_ == Language::French) ? kCampaigns[i].title_fr : kCampaigns[i].title;
+        gb::text(60, 100 + i * 20, name, i == campaign_sel_ ? kSel : kOff);
     }
 }
 
@@ -320,7 +321,8 @@ void StoryScene::render_title() {
     const gb::Color kOff = gb::rgb(120, 112, 104);
     const gb::Color kTitle = gb::rgb(230, 190, 80);
     gb::clear(kBg);
-    gb::text(96, 40, kCampaigns[campaign_sel_].title, kTitle);
+    const CampaignInfo& ci = kCampaigns[campaign_sel_];
+    gb::text(96, 40, (language_ == Language::French) ? ci.title_fr : ci.title, kTitle);
     if (title_mode_ == TitleMode::Menu) {
         const bool has_continue = slot_info(kAutoSlot).used;
         const char* items[3] = {"Nouvelle partie", "Continuer", "Charger une sauvegarde"};

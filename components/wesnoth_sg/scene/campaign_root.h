@@ -11,14 +11,17 @@ namespace wesnoth_sg {
 struct CampaignInfo {
     const char* sd_folder;   // dossier sous /sdcard/, ex. "WESNOTH_SG"
     const char* title;       // affiché au menu de choix de campagne
+    const char* title_fr;    // idem, traduction officielle Wesnoth (po/wesnoth-tsg,
+                              // wesnoth-tb/fr.po) -- lu quand campaign_state().lang_fr
+                              // est vrai, repli sur title sinon (voir story_scene.cpp).
 };
 
 // Ordre = ordre d'affichage au menu. Ajouter une campagne ici + son dossier
 // sur la carte SD suffit à la rendre choisissable (aucun autre code à
 // toucher : tous les chemins passent par sd_root()).
 inline const CampaignInfo kCampaigns[] = {
-    {"WESNOTH_SG", "The South Guard"},
-    {"WESNOTH_TB", "A Tale of Two Brothers"},
+    {"WESNOTH_SG", "The South Guard", "La Garde Sud"},
+    {"WESNOTH_TB", "A Tale of Two Brothers", "L'Histoire de deux frères"},
 };
 inline constexpr int kCampaignCount = 2;
 

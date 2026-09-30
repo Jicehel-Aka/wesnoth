@@ -133,16 +133,32 @@ class State:
         self.removed = set()
 
     def load_map(self):
+        # side_start : side (int) -> (x, y) case de "depart" de ce camp, telle
+        # qu'encodee dans le .map lui-meme -- une cellule "N <terrain>" (ex.
+        # "1 Ke", "2 Khr") au lieu du terrain seul, marquant le chateau/donjon
+        # ou le camp N est place. Beaucoup de scenarios (ex. toute la
+        # campagne Two Brothers) ne mettent PAS x=/y= sur le chef declare
+        # dans [side] : Wesnoth le place alors sur cette case-la. Notre
+        # ancien parseur ignorait purement et simplement ce numero de camp en
+        # ne gardant que `c.split()[-1]` (le code de terrain) -- resultat, le
+        # chef ressortait sans x/y du tout, et game.cpp le placait par
+        # defaut en (0,0) (voir jint()) : aucune unite jouable sur la carte
+        # en debut de partie. Corrige le 2026-09-30, cf. unit_from()/main().
+        self.side_start = {}
         self.grid = []
         path = os.path.join(self.map_dir, self.map_file)
-        for line in open(path, encoding="utf-8"):
+        for y, line in enumerate(open(path, encoding="utf-8")):
             if not line.strip():
                 continue
             row = []
-            for c in line.split(","):
+            for x, c in enumerate(line.split(",")):
                 c = c.strip()
-                if c:
-                    row.append(c.split()[-1])
+                if not c:
+                    continue
+                parts = c.split()
+                row.append(parts[-1])
+                if len(parts) > 1 and parts[0].isdigit():
+                    self.side_start[int(parts[0])] = (x, y)
             self.grid.append(row)
 
     def is_village(self, x, y):
@@ -646,9 +662,21 @@ def main():
         st.sides[int(s.get("side"))] = sd
         for u in s.all("unit"):
             uu = unit_from(u, st); uu["side"] = int(s.get("side"))
+            if uu.get("canrecruit") == "yes" and ("x" not in uu or "y" not in uu):
+                pos = st.side_start.get(uu["side"])
+                if pos:
+                    uu["x"], uu["y"] = pos
+                else:
+                    st.note("leader_pos_unresolved:side_" + str(uu["side"]))
             st.units.append(uu)
         if s.get("type"):  # chef déclaré directement dans [side]
             uu = unit_from(s, st); uu["side"] = int(s.get("side")); uu["canrecruit"] = "yes"
+            if "x" not in uu or "y" not in uu:
+                pos = st.side_start.get(uu["side"])
+                if pos:
+                    uu["x"], uu["y"] = pos
+                else:
+                    st.note("leader_pos_unresolved:side_" + str(uu["side"]))
             st.units.append(uu)
     # événements globaux de la campagne ([campaign] de _main.cfg) : ils
     # s'appliquent à chaque scénario (ex. défaite à la mort de Deoran)
