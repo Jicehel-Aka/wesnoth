@@ -21,11 +21,11 @@
     "Mebrin": "awb"
   },
   "fr_voice_map_used": {
-    "rms": "mb-fr1",
-    "slt": "mb-fr4",
-    "kal16": "fr-fr",
-    "kal": "mb-fr1",
-    "awb": "mb-fr1"
+    "kal": "fr_FR-tom-medium",
+    "slt": "fr_FR-siwis-medium",
+    "rms": "fr_FR-tom-medium",
+    "kal16": "fr_FR-siwis-medium",
+    "awb": "fr_FR-tom-medium"
   },
   "lines": [
     {
@@ -451,6 +451,442 @@
       "text": "We should find Reeve Hoban. Maybe he knows what is going on here.",
       "file": "04_Return_to_the_Village/intro_003_Baran.wav",
       "bytes": 131208,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Le lointain domaine de Maghre, dans les confins occidentaux du royaume de Wesnoth, fut autrefois un endroit paisible, dont les habitants ignoraient largement les allées et venues du vaste monde. Ni les guerres ni les rumeurs de guerre ne les touchaient. Même les marchands s'y montraient rarement, bien que les caravanes entre Aldril et Dan'Tonk envoyaient parfois un chariot lorsqu'appelées par la tour à signaux.",
+      "file": "01_Rooting_Out_a_Mage_fr/000_narrator.wav",
+      "bytes": 923412
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Puis vint le jour où un mage noir s'installa dans la région et se mit en quête de sacrifices pour ses invocations.\n\nSquelettes et zombies tuaient le bétail et incendiaient les champs. « Craignez et obéissez à Mordak le Mage ! » criaient-ils de leurs voix funestes en commettant leurs sinistres méfaits. Des gens disparaissaient des fermes isolées. Hommes et femmes se mirent à craindre la nuit, et leurs enfants, même le plein jour. Mais le seigneur le plus proche se trouvait à plus d'une journée de cheval, et les messagers envoyés chercher son aide ne revenaient pas.",
+      "file": "01_Rooting_Out_a_Mage_fr/001_narrator.wav",
+      "bytes": 1330800
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 2,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Il y avait un homme nommé Baran qui avait montré un talent pour la magie dans sa jeunesse, était parti pour la grande Académie de l'Île d'Alduin, et était revenu pratiquer son art dans la terre qui l'avait vu naître. Les gens se tournèrent vers lui pour trouver aide et direction. Il retrouva des armes à moitié oubliées, datant du temps de leurs pères et grands-pères, accrochées dans nombre de maisons, et demanda aux villageois de les décrocher, de les nettoyer et de les huiler. Il chargea les forgerons de Maghre de fabriquer des fers de lance et des lames de hache pour les autres.",
+      "file": "01_Rooting_Out_a_Mage_fr/002_narrator.wav",
+      "bytes": 1293704
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 3,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Or Baran avait un frère nommé Arvith, qui avait lui aussi quitté Maghre pour chercher fortune, et était devenu le chef d'une petite troupe de cavaliers qui louaient leurs services comme gardes de caravanes marchandes. Il fut heureux qu'en des temps meilleurs, les deux frères eussent convenu d'utiliser les tours à signaux marchandes pour d'autres messages en cas de grand besoin. Baran lança cet appel.",
+      "file": "01_Rooting_Out_a_Mage_fr/003_narrator.wav",
+      "bytes": 899860
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 4,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "12 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nSi seulement je pouvais affronter ce « Mordak » ! Je pense que ma magie pourrait se révéler plus forte que la sienne. Mais il se terre dans les collines, bien gardé par ses serviteurs, et je ne rassemble que des paysans apeurés pour combattre ses sbires à coups de lames et de bâtons.\n\nJ'ai besoin de mon frère ; il a toujours eu plus de sens tactique que moi. Pourtant nous ne nous sommes pas parlé depuis ce funeste jour à Toen Caric. S'il ne vient pas pour moi, peut-être reviendra-t-il porter secours à notre village en cette heure de désespoir.",
+      "file": "01_Rooting_Out_a_Mage_fr/004_narrator.wav",
+      "bytes": 1432060
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "beat_index": 5,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Répondant à l'appel, Arvith rassembla les hommes qu'il put et se hâta vers Maghre pour aider Baran.",
+      "file": "01_Rooting_Out_a_Mage_fr/005_narrator.wav",
+      "bytes": 245292
+    },
+    {
+      "scenario": "02_The_Chase",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Arvith et sa troupe chevauchèrent vers le nord à la recherche de son frère disparu.",
+      "file": "02_The_Chase_fr/000_narrator.wav",
+      "bytes": 203820
+    },
+    {
+      "scenario": "02_The_Chase",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "16 Floraison des Voyants, 363 AW\nExtrait du journal d'Arvith de Maghre\n\nCela fait trois jours que nous cherchons Baran, sans succès. Mon meilleur pressentiment était de me diriger vers le nord, dans les terres frontalières, où les sbires du nécromancien pouvaient se cacher en sécurité ; partout ailleurs, ce ne sont que terres agricoles. Au début, j'ai cru la recherche vaine, mais tard le premier jour, nous avons trouvé des traces. Certaines avaient été laissées par des pieds squelettiques, bien qu'après leur premier campement, les traces ne soient plus que celles d'hommes portant de lourdes charges.\n\nNous sommes désormais assez proches pour en être certains : ces traces mènent vers le Bois Gris. Personne de Maghre ni des autres villages n'est entré dans cette forêt de mémoire d'homme. Des histoires s'y transmettent de génération en génération, mettant en garde contre elle. On dit que l'endroit est hanté par des âmes perdues affamées des vivants, et que quiconque y meurt est condamné à les rejoindre.",
+      "file": "02_The_Chase_fr/001_narrator.wav",
+      "bytes": 2308324
+    },
+    {
+      "scenario": "02_The_Chase",
+      "beat_index": 2,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "16 Floraison des Voyants, 363 AW\nExtrait du journal d'Arvith de Maghre\n\nMais j'ai dépassé les superstitions à présent ; j'ai vu assez du monde pour deviner la vérité derrière ce genre de récits. La forêt abrite des elfes — peu amicaux, si ces histoires ont le moindre fondement. Je m'inquiète pour mes hommes ; les chevaux ne combattent pas bien en forêt, et les elfes seront plus dangereux sur leur propre territoire. Mais il y a des choses à faire et des questions qui exigent réponse. Quelque chose de plus grand se trame. Un nécromancien terrorisant des villageois, ce n'est rien de nouveau, mais pourquoi ses serviteurs ne se sont-ils pas dispersés après sa mort ? Où se dirigent-ils à présent ? Et surtout, pourquoi ont-ils emmené Baran avec eux ?\n\nEt puis... je veux récupérer mon frère.",
+      "file": "02_The_Chase_fr/002_narrator.wav",
+      "bytes": 1913688
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "19 Floraison des Voyants, 363 AW\nExtrait du journal de Rotharik le Sans-Clan\n\nLe dernier des serviteurs de Mordak est arrivé ce matin, porteur de la nouvelle de sa mort, ainsi que d'un paquet si bien ficelé qu'on le reconnaissait à peine comme celui d'un homme. Mordak a toujours été imprudent. Tout ce plan désespéré était le sien, et je pourrais lui reprocher tout ce que nous avons enduré si cela avait encore de l'importance. C'est aussi lui qui a attiré la colère des orcs sur nous. Mais malgré tout, il est parvenu à accomplir ce qu'il avait entrepris. Je n'arrive toujours pas à croire au caractère définitif de ce qui s'est passé ; jusqu'ici, nous avions toujours réussi à nous en sortir d'une manière ou d'une autre.\n\nNous espérions livrer le mage à Tairach en échange de nos vies. J'ignore ce que le seigneur de guerre veut de cet homme, mais il correspond à la description. Je suppose que le plan de Mordak aurait parfaitement fonctionné sans l'apparition des cavaliers. Maintenant ils viennent ici, menés par un homme que l'on dit être le frère de ce mage. Si c'est vrai, il ne reculera devant rien, pas plus que moi si c'était Mordak qu'ils détenaient.",
+      "file": "03_Guarded_Castle_fr/000_narrator.wav",
+      "bytes": 2753600
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "19 Floraison des Voyants, 363 AW\nExtrait du journal de Rotharik le Sans-Clan\n\nJ'ai fait ce que j'ai pu pour fortifier ce château délabré. Les orcs venus avec nous montent la garde aux portes, et je rassemble tous mes serviteurs dans le sanctuaire intérieur. Mais un funeste destin nous attend. Que je batte ou non ce cavalier, les orcs viendront quand même pour moi ; ils ont fouillé les terres frontalières et pillé les fermes du nord à notre recherche.\n\nEt pourtant, pour quelque raison, je crains davantage ces frères. Si Mordak était encore là, ce serait différent, mais nous sommes brisés... tandis que ces deux hommes sont entiers. L'un dans l'autre, dans les liens qui les unissent, ils trouvent leur force.",
+      "file": "03_Guarded_Castle_fr/001_narrator.wav",
+      "bytes": 1705072
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "27 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nPresque à la maison, maintenant. La dernière semaine a été pleine de sentiments contradictoires pour moi — tour à tour bienheureuse et pénible. C'était merveilleux de sortir de cette cellule et de revoir le soleil sans la menace de la mort, ou pire, planant sur ma tête... mais une fois cela derrière moi, je me suis tourné vers la tâche presque aussi redoutable de me réconcilier avec mon frère.\n\nArvith m'avait largement pardonné au moment où il m'a libéré de ma cellule. Il nous a tout de même fallu toute la semaine passée pour reconstruire cette complicité que nous avions autrefois. Heureusement, nous avons pu prendre notre temps pour rentrer — nous avons donné une large marge au Bois Gris, et en le contournant, nous avons traversé une campagne vraiment magnifique. Cela nous a donné largement le temps de parler.",
+      "file": "04_Return_to_the_Village_fr/000_narrator.wav",
+      "bytes": 2083440
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "27 Floraison des Voyants, 363 AW\nExtrait du journal de Baran de Maghre\n\nBien que plus apaisé désormais, mes pensées reviennent souvent à Toen Caric. Nous aurions dû pouvoir repousser les orcs sans grande perte — l'attaque en tenaille conçue par Arvith aurait sûrement emporté la victoire, sans moi. J'ai été imprudent d'abandonner mes hommes — j'ai blessé le seigneur de guerre et l'ai forcé à fuir le champ de bataille, mais le prix a largement dépassé le gain. Ceux sous mon commandement auraient pu être sauvés si j'étais resté avec eux.\n\nJe ne peux guère reprocher à Arvith d'avoir mal pris leur mort, et je ne pourrai jamais réparer le tort que j'ai causé, mais je suppose que le temps guérit certaines choses. Nous revenons au village à nouveau frères.\n\nMais je reste troublé. Je me demande... ce sentiment de mauvais présage que je ressens n'est-il que le reliquat de mon temps enfermé dans ce donjon, ou le signe de quelque chose de réel ?",
+      "file": "04_Return_to_the_Village_fr/001_narrator.wav",
+      "bytes": 2185840
+    },
+    {
+      "scenario": "05_Epilogue",
+      "beat_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "22 Grain Dormant, 365 AW\nExtrait du journal d'Arvith de Maghre\n\nMaghre a bien meilleure allure que la dernière fois que je l'ai vue. Baran a accompli des merveilles en deux ans. Le village est reconstruit, et les terres agricoles environnantes sont restaurées et de nouveau habitées. Malgré les craintes de mon frère, notre peuple n'a fait face à aucune nouvelle menace durant tout ce temps.\n\nIl a été plus difficile de rester loin pendant ces deux années, mais j'ai ma vocation et Baran a la sienne, et nous avons eu peu d'occasions de nous revoir. Mais comme la compagnie et moi traversons cette partie du royaume avec un nouveau commanditaire, je lui ai demandé la permission de rendre visite à mon frère, et il me l'a accordée.",
+      "file": "05_Epilogue_fr/000_narrator.wav",
+      "bytes": 1702396
+    },
+    {
+      "scenario": "05_Epilogue",
+      "beat_index": 1,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "22 Grain Dormant, 365 AW\nExtrait du journal d'Arvith de Maghre\n\nCe commanditaire est, entre toutes choses, un elfe. Je n'aurais jamais cru me lier d'amitié avec l'un d'eux, mais il est moins arrogant que les autres. Kalenz, qu'il se nomme. Il en a trop vu ; je le devine rien qu'en croisant son regard. Je pense que nous devrons bientôt travailler pour gagner notre solde.\n\nEn attendant, cependant, il fait bon se détendre et profiter de la paix.",
+      "file": "05_Epilogue_fr/001_narrator.wav",
+      "bytes": 1116668
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 0,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Salut, mon frère, et bienvenue chez toi.",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_000_Baran.wav",
+      "bytes": 112172,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 1,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Salut à toi.",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_001_Arvith.wav",
+      "bytes": 39980,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 2,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "C'est tout, Arvith ? Je comprends, mais...",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_002_Baran.wav",
+      "bytes": 130720,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 3,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Tu as appelé, et je suis venu ; contente-toi de cela. Qu'est-ce qui afflige Maghre ?",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_003_Arvith.wav",
+      "bytes": 202912,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 4,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Un mage noir s'est abattu sur nous ; ses créatures l'appellent Mordak. Elles terrorisent les fermes isolées, et nous craignons qu'elles n'attaquent bientôt le village lui-même ! Les villageois de Maghre ont pris les armes, mais ce ne sont pas des combattants aguerris ; nous avons besoin de tes hommes, et de toi pour les mener.",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_004_Baran.wav",
+      "bytes": 728852,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 5,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Je sens le contact immonde de Mordak sur les courants cachés de la terre et de l'air. Il se trouve quelque part au nord d'ici, je dirais à pas plus de deux jours de cheval.",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_005_Baran.wav",
+      "bytes": 387232,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 6,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Très bien. Je le ferai pour le village. Peux-tu nous garder le mage hors du dos ?",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_006_Arvith.wav",
+      "bytes": 205588,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 7,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "J'irai discrètement avec une poignée de nos meilleurs éclaireurs et bûcherons. Pendant que tu feras diversion contre lui et tueras ses créatures, j'essaierai de vaincre Mordak lui-même par la magie, à un moment où il sera sans garde. Tu seras la main droite, moi la gauche... n'est-ce pas, mon frère ?",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_007_Baran.wav",
+      "bytes": 660756,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "01_Rooting_Out_a_Mage",
+      "message_index": 8,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "... Oui. Assure-toi simplement d'être là quand nous aurons besoin de toi.",
+      "file": "01_Rooting_Out_a_Mage_fr/intro_008_Arvith.wav",
+      "bytes": 169632,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 0,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Allons, mes hommes. Une promenade à travers de si jolis bois verdoyants, quoi de plus agréable ?",
+      "file": "02_The_Chase_fr/intro_000_Arvith.wav",
+      "bytes": 242336,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 1,
+      "speaker": "Nil-Galion",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Vous, là ! Halte, et expliquez-vous.",
+      "file": "02_The_Chase_fr/intro_001_NilGalion.wav",
+      "bytes": 129696,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 2,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Nous poursuivons des hommes qui ont enlevé mon frère !",
+      "file": "02_The_Chase_fr/intro_002_Arvith.wav",
+      "bytes": 109100,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 3,
+      "speaker": "Nil-Galion",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Ces hommes ont surpris leur prisonnier en train de pratiquer la nécromancie ; pour votre bien, j'espère que ce n'était pas votre frère. Considérez que l'homme qu'ils ont capturé est l'assassin de votre frère, et soyez assuré que les mages gris libéreront toutes les âmes que la magie maléfique de leur prisonnier a liées à ce monde.",
+      "file": "02_The_Chase_fr/intro_003_NilGalion.wav",
+      "bytes": 703648,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 4,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Nous avons tué le nécromancien sur le champ de bataille ! J'ai vu le coup fatal de mes propres yeux.",
+      "file": "02_The_Chase_fr/intro_004_Arvith.wav",
+      "bytes": 231584,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 5,
+      "speaker": "Nil-Galion",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Nous avons entendu les bruits de la bataille il y a trois jours, mais l'infâme relent de la mort était sans équivoque lorsque le prisonnier est passé près de nous ; si votre frère est vraiment le prisonnier, alors il est également nécromancien. Souvenez-vous de votre frère tel que nous espérons tous qu'il était, et sachez que le sort du prisonnier sera une vengeance aussi terrible que vous pourriez le souhaiter.\n\nDans tous les cas, rien ne sera gagné par votre intrusion dans nos bois. N'avancez pas plus loin, car nous défendrons notre terre.",
+      "file": "02_The_Chase_fr/intro_005_NilGalion.wav",
+      "bytes": 1206548,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 6,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Voilà pour ces histoires de fantômes, mais même des fantômes auraient sans doute été plus observateurs que ces elfes. Cela dit, ils ne m'empêcheront pas de libérer Baran !",
+      "file": "02_The_Chase_fr/intro_006_Arvith.wav",
+      "bytes": 386208,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 7,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Je suis au moins content que nous n'ayons pas à affronter des fantômes. Mais ces elfes nous mettront en position de faiblesse ; nos chevaux ne manœuvreront pas bien parmi les arbres.",
+      "file": "02_The_Chase_fr/intro_007_narrator.wav",
+      "bytes": 382624,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "02_The_Chase",
+      "message_index": 8,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Bah, restez simplement sur les chemins ; nos piquiers et nos archers peuvent combattre au cœur des bois. Nous avons affronté et surmonté de plus grands périls que ce que ces amateurs peuvent offrir.",
+      "file": "02_The_Chase_fr/intro_008_Arvith.wav",
+      "bytes": 467104,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "message_index": 0,
+      "speaker": "narrator",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Arvith et ses hommes s'arrêtent devant le château, contemplant un instant la masse imposante de pierre se dressant dans le brouillard. Il y a un mouvement dans la brume.",
+      "file": "03_Guarded_Castle_fr/intro_000_narrator.wav",
+      "bytes": 382112,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "message_index": 1,
+      "speaker": "Guard_leader",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Halte ! Ami ou ennemi ? Donnez le mot de passe.",
+      "file": "03_Guarded_Castle_fr/intro_001_Guardleader.wav",
+      "bytes": 169236,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "message_index": 2,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Le mot de passe est",
+      "file": "03_Guarded_Castle_fr/intro_002_Arvith.wav",
+      "bytes": 49708,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "03_Guarded_Castle",
+      "message_index": 3,
+      "speaker": "Guard_leader",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Faux ! Mourez !",
+      "file": "03_Guarded_Castle_fr/intro_003_Guardleader.wav",
+      "bytes": 67232,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "message_index": 0,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Voilà. Le village est juste derrière ces collines, et je vois déjà des hommes venir à notre rencontre !",
+      "file": "04_Return_to_the_Village_fr/intro_000_Arvith.wav",
+      "bytes": 264352,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "message_index": 1,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Non, ils fuient quelque chose. Nous devons découvrir ce qui se passe là-bas !",
+      "file": "04_Return_to_the_Village_fr/intro_001_Baran.wav",
+      "bytes": 191648,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "message_index": 2,
+      "speaker": "Arvith",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Mes hommes ! Aux armes !",
+      "file": "04_Return_to_the_Village_fr/intro_002_Arvith.wav",
+      "bytes": 80032,
+      "kind": "battle_intro"
+    },
+    {
+      "scenario": "04_Return_to_the_Village",
+      "message_index": 3,
+      "speaker": "Baran",
+      "lang": "fr",
+      "voice": "fr_FR-siwis-medium",
+      "text": "Nous devrions trouver le bailli Hoban. Il sait peut-être ce qui se passe ici.",
+      "file": "04_Return_to_the_Village_fr/intro_003_Baran.wav",
+      "bytes": 170144,
       "kind": "battle_intro"
     }
   ]
