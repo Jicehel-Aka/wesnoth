@@ -90,8 +90,9 @@ amont qu'il faut re-matcher.
   remplit `name_fr` sur chaque type d'unité (`data/units.json`), lu par
   `UnitTypeDef::name_fr` (moteur) pour le nom affiché en bataille et dans
   le journal de combat.
-- `add_objectives_fr.py --scenario data/scenarios/<fichier>.json --po po/wesnoth-base_fr.po --po po/wesnoth-units_fr.po --po po/wesnoth-tsg_fr.po` :
-  **un scénario à la fois** (contrairement aux deux scripts ci-dessus).
+- `add_objectives_fr.py --scenarios-dir data/scenarios --po po/wesnoth-base_fr.po --po po/wesnoth-units_fr.po --po po/wesnoth-tsg_fr.po` :
+  traite tout le dossier en un seul appel, comme `add_intro_fr.py`
+  (`--scenario <fichier>` reste possible pour n'en traiter qu'un seul).
   Remplit `text_fr` sur les objectifs statiques (`objectives[]`) et
   `description_fr` sur les objectifs dynamiques (`[objectives][objective]`
   dans `events`), lus par le menu Objectifs (Ctrl+J) en bataille.

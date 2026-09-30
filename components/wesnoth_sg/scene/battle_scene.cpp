@@ -46,6 +46,22 @@ std::string slurp(const std::string& p) {
     s << f.rdbuf();
     return s.str();
 }
+// Tronque avec une ellipse si le texte dépasse max_width_px (mesuré via
+// gb::text_width(), donc exact quel que soit le rendu -- device/host/SDL --
+// contrairement à une limite en nombre de caractères). Utilisé pour les
+// libellés sur une seule ligne fixe (menu de sauvegarde) là où
+// wrap_text_lines() ne convient pas (pas de budget vertical pour une 2e
+// ligne, cf. bug signalé : "Emplacement 1 : Born to the Banner" débordait
+// hors de la boîte, voire de l'écran, pour les noms de scénario longs).
+std::string ellipsize(const std::string& s, int max_width_px) {
+    if (gb::text_width(s.c_str()) <= max_width_px) return s;
+    const std::string ell = "...";
+    const int ell_w = gb::text_width(ell.c_str());
+    std::string cut = s;
+    while (!cut.empty() && gb::text_width(cut.c_str()) + ell_w > max_width_px) cut.pop_back();
+    return cut + ell;
+}
+
 std::string safe(std::string n) {
     for (auto& c : n) { if (c == '^') c = '-'; else if (c == ' ') c = '_'; else if (c == ':') c = '+'; }
     return n;
@@ -763,7 +779,11 @@ void BattleScene::draw_menu(const std::vector<std::string>& items, int sel, cons
     gb::text(x + 6, y + 4, title, YELLOW);
     for (size_t i = 0; i < items.size(); ++i) {
         if ((int)i == sel) gb::fill_rect(x + 2, y + 14 + (int)i * 12, w - 4, 11, gb::rgb(60, 60, 90));
-        gb::text(x + 8, y + 16 + (int)i * 12, items[i].c_str(), WHITE);
+        // Menu partage par Menu/Recruter/Objectifs -- ces derniers affichent
+        // maintenant du texte francais (add_objectives_fr.py) qui peut etre
+        // plus long que l'anglais d'origine ; meme filet de securite que le
+        // menu de sauvegarde (ellipsize) pour ne jamais deborder de la boite.
+        gb::text(x + 8, y + 16 + (int)i * 12, ellipsize(items[i], w - 16).c_str(), WHITE);
     }
 }
 
@@ -841,12 +861,26 @@ void BattleScene::render() {
     if (mode_ == Mode::Ai) gb::text(gb::SCREEN_W - 40, TOP + 3, "IA...", YELLOW);
     if (events_ && events_->has_message()) { draw_dialog(); return; }
     if (mode_ == Mode::Over || mode_ == Mode::SaveMenu) {
+        // Hauteur/lignes calculees a partir du contenu reel (au lieu d'une
+        // boite fixe 240x64 avec du texte dessine tel quel) -- la ligne de
+        // touches ("A : continuer  MENU : sauvegarder", ~270px) depassait
+        // largement la boite (240px) et l'ecran (320px) faute de retour a
+        // la ligne, meme probleme que le menu de sauvegarde (cf. plus haut).
         bool win = g.outcome() == wsg::Outcome::Victory;
-        gb::fill_rect(40, 84, 240, 64, PANEL);
-        gb::text(60, 92, win ? "VICTOIRE" : "DÉFAITE", win ? GREEN : RED);
-        gb::text_wrapped(60, 106, 210, 10, g.outcome_reason(), WHITE);
-        if (mode_ == Mode::Over) {
-            gb::text(60, 134, win ? "A : continuer  MENU : sauvegarder" : "A : recommencer  B : quitter", GREY);
+        const int x = 40, y = 84, w = 240, text_w = w - 30;
+        auto reason_lines = gb::wrap_text_lines(text_w, g.outcome_reason());
+        const char* prompt_str = win ? "A : continuer  MENU : sauvegarder" : "A : recommencer  B : quitter";
+        auto prompt_lines = (mode_ == Mode::Over) ? gb::wrap_text_lines(text_w, prompt_str)
+                                                   : std::vector<std::string>{};
+        int h = 22 + (int)reason_lines.size() * 10 + (prompt_lines.empty() ? 0 : 6 + (int)prompt_lines.size() * 10) + 8;
+        h = std::max(h, 64);
+        gb::fill_rect(x, y, w, h, PANEL);
+        gb::text(x + 20, y + 8, win ? "VICTOIRE" : "DÉFAITE", win ? GREEN : RED);
+        int ry = y + 22;
+        for (const auto& l : reason_lines) { gb::text(x + 20, ry, l.c_str(), WHITE); ry += 10; }
+        if (!prompt_lines.empty()) {
+            ry += 6;
+            for (const auto& l : prompt_lines) { gb::text(x + 20, ry, l.c_str(), GREY); ry += 10; }
         }
     }
     if (mode_ == Mode::SaveMenu) draw_save_menu();
@@ -863,6 +897,10 @@ void BattleScene::draw_save_menu() {
         std::string label = "Emplacement " + std::to_string(i + 1) + " : ";
         label += slots[i].used ? (slots[i].scenario_name + (slots[i].turn > 0 ? " (tour " + std::to_string(slots[i].turn) + ")" : ""))
                                 : "(vide)";
+        // Un nom de scenario long ("Born to the Banner", "Proven by the
+        // Sword"...) + le suffixe tour pouvait deborder de la boite (voire
+        // de l'ecran) faute de largeur max -- cf. bug signale en capture.
+        label = ellipsize(label, w - 20);
         gb::text(x + 10, ry, label.c_str(), WHITE);
     }
     gb::text(x + 8, y + h - 16, save_feedback_.empty() ? "A : sauvegarder ici   B : retour" : save_feedback_.c_str(), GREY);
