@@ -1,620 +1,642 @@
 {
- "id": "01_Rooting_Out_a_Mage",
- "name": "Rooting Out a Mage",
- "next_scenario": "02_The_Chase",
- "difficulty": "NORMAL",
- "map_file": "01_Rooting_Out_a_Mage.map",
- "schedule": {
-  "type": "default",
-  "start_index": 3,
-  "order": [
-   "dawn",
-   "morning",
-   "afternoon",
-   "dusk",
-   "first_watch",
-   "second_watch"
-  ]
- },
- "experience_modifier": 100,
- "turns": 18,
- "current_turn": 1,
- "sides": [
-  {
-   "side": 1,
-   "controller": "human",
-   "recruit": "Horseman,Bowman,Spearman,Footpad",
-   "gold": "25",
-   "team_name": "good",
-   "user_team_name": "Humans"
+  "id": "01_Rooting_Out_a_Mage",
+  "name": "Rooting Out a Mage",
+  "next_scenario": "02_The_Chase",
+  "difficulty": "NORMAL",
+  "map_file": "01_Rooting_Out_a_Mage.map",
+  "schedule": {
+    "type": "default",
+    "start_index": 3,
+    "order": [
+      "dawn",
+      "morning",
+      "afternoon",
+      "dusk",
+      "first_watch",
+      "second_watch"
+    ]
   },
-  {
-   "side": 2,
-   "controller": "ai",
-   "recruit": "Skeleton,Walking Corpse,Vampire Bat,Ghost,Dark Adept,Ghoul",
-   "gold": "200",
-   "team_name": "evil",
-   "user_team_name": "Enemies"
-  }
- ],
- "units": [
-  {
-   "side": 1,
-   "type": "Knight",
-   "id": "Arvith",
-   "name": "Arvith",
-   "canrecruit": "yes",
-   "facing": "nw"
-  },
-  {
-   "side": 2,
-   "type": "Dark Sorcerer",
-   "id": "Mordak",
-   "name": "Mordak",
-   "canrecruit": "yes",
-   "facing": "se"
-  }
- ],
- "villages": [],
- "objectives": [],
- "gold_carryover": null,
- "victory_on_death": [
-  {
-   "id": "Mordak"
-  }
- ],
- "defeat_on_death": [
-  {
-   "id": "Arvith"
-  }
- ],
- "runtime_events": [],
- "intro_messages": [
-  {
-   "speaker": "Baran",
-   "message": "Greetings, brother, and welcome home.",
-   "message_fr": "Salut, mon frère, et bienvenue chez toi."
-  },
-  {
-   "speaker": "Arvith",
-   "message": "Hail.",
-   "message_fr": "Salut à toi."
-  },
-  {
-   "speaker": "Baran",
-   "message": "Is that all, Arvith? I understand, but...",
-   "message_fr": "C'est tout, Arvith ? Je comprends, mais..."
-  },
-  {
-   "speaker": "Arvith",
-   "message": "You called, and I came; be content with that. What ails Maghre?",
-   "message_fr": "Tu as appelé, et je suis venu ; contente-toi de cela. Qu'est-ce qui afflige Maghre ?"
-  },
-  {
-   "speaker": "Baran",
-   "message": "A dark mage has come upon us; his creatures call him Mordak. They have been terrorizing outlying farms, and we fear they may soon attack the village itself! The villagers of Maghre have taken up weapons but they are not trained fighters; we need your men, and you to lead them.",
-   "message_fr": "Un mage noir s'est abattu sur nous ; ses créatures l'appellent Mordak. Elles terrorisent les fermes isolées, et nous craignons qu'elles n'attaquent bientôt le village lui-même ! Les villageois de Maghre ont pris les armes, mais ce ne sont pas des combattants aguerris ; nous avons besoin de tes hommes, et de toi pour les mener."
-  },
-  {
-   "speaker": "Baran",
-   "message": "I can feel Mordak’s foul touch on the hidden currents of the earth and air. He is somewhere due north of here, I would say not more than two days’ ride.",
-   "message_fr": "Je sens le contact immonde de Mordak sur les courants cachés de la terre et de l'air. Il se trouve quelque part au nord d'ici, je dirais à pas plus de deux jours de cheval."
-  },
-  {
-   "speaker": "Arvith",
-   "message": "All right. I will do this for the village. Can you keep the mage off our backs?",
-   "message_fr": "Très bien. Je le ferai pour le village. Peux-tu nous garder le mage hors du dos ?"
-  },
-  {
-   "speaker": "Baran",
-   "message": "I will go stealthily with a handful of our best scouts and woodsmen. While you demonstrate against him and kill his creatures, I will try to defeat Mordak himself with magic at an unguarded moment. You shall be the right hand, I the left... aye, brother?",
-   "message_fr": "J'irai discrètement avec une poignée de nos meilleurs éclaireurs et bûcherons. Pendant que tu feras diversion contre lui et tueras ses créatures, j'essaierai de vaincre Mordak lui-même par la magie, à un moment où il sera sans garde. Tu seras la main droite, moi la gauche... n'est-ce pas, mon frère ?"
-  },
-  {
-   "speaker": "Arvith",
-   "message": "... Aye. Just make sure you’re there when we need you.",
-   "message_fr": "... Oui. Assure-toi simplement d'être là quand nous aurons besoin de toi."
-  }
- ],
- "events": [
-  {
-   "t": "event",
-   "a": {
-    "name": "prestart"
-   },
-   "c": [
+  "experience_modifier": 100,
+  "turns": 18,
+  "current_turn": 1,
+  "sides": [
     {
-     "t": "kill",
-     "a": {
-      "id": "Alwyn,Brent,Cadell,Dannen,Efran,Faren,Tarek,Hann,Magrid"
-     }
+      "side": 1,
+      "controller": "human",
+      "recruit": "Horseman,Bowman,Spearman,Footpad",
+      "gold": "25",
+      "team_name": "good",
+      "user_team_name": "Humans"
     },
     {
-     "t": "recall",
-     "a": {
-      "id": "Baran",
-      "x": "31",
-      "y": "21"
-     }
-    },
-    {
-     "t": "if",
-     "c": [
-      {
-       "t": "not",
-       "c": [
-        {
-         "t": "have_unit",
-         "a": {
-          "side": "1",
-          "id": "Baran"
-         }
-        }
-       ]
-      },
-      {
-       "t": "then",
-       "a": {
-        "facing": "se"
-       }
-      }
-     ]
-    },
-    {
-     "t": "unit",
-     "a": {
-      "facing": "nw"
-     }
-    },
-    {
-     "t": "objectives",
-     "a": {
-      "side": "1"
-     },
-     "c": [
-      {
-       "t": "objective",
-       "a": {
-        "description": "Slay Mordak, the evil mage",
-        "condition": "win"
-       }
-      },
-      {
-       "t": "objective",
-       "a": {
-        "description": "Death of Arvith",
-        "condition": "lose"
-       }
-      },
-      {
-       "t": "objective",
-       "a": {
-        "condition": "lose",
-        "description": "Turns run out",
-        "__turns": "1"
-       }
-      },
-      {
-       "t": "gold_carryover",
-       "a": {
-        "bonus": "yes",
-        "carryover_percentage": "40"
-       }
-      }
-     ]
+      "side": 2,
+      "controller": "ai",
+      "recruit": "Skeleton,Walking Corpse,Vampire Bat,Ghost,Dark Adept,Ghoul",
+      "gold": "200",
+      "team_name": "evil",
+      "user_team_name": "Enemies"
     }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "recruit"
-   },
-   "c": [
+  ],
+  "units": [
     {
-     "t": "filter",
-     "a": {
-      "side": "1"
-     }
+      "side": 1,
+      "type": "Knight",
+      "id": "Arvith",
+      "name": "Arvith",
+      "canrecruit": "yes",
+      "facing": "nw",
+      "x": 32,
+      "y": 20
     },
     {
-     "t": "set_variable",
-     "a": {
-      "name": "s1_failed_achievement",
-      "value": "yes"
-     }
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "turn 6"
-   },
-   "c": [
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "Baran should be in position by now. Press them, distract the adept so Baran can spring his trap!"
-     }
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "turn 10"
-   },
-   "c": [
-    {
-     "t": "role",
-     "a": {
-      "role": "Mercenary",
-      "type": "Paladin,Grand Knight,Knight,Lancer,Horseman",
-      "reassign": "no"
-     },
-     "c": [
-      {
-       "t": "not",
-       "a": {
-        "id": "Arvith"
-       }
-      },
-      {
-       "t": "auto_recall"
-      },
-      {
-       "t": "else",
-       "c": [
-        {
-         "t": "store_unit",
-         "a": {
-          "variable": "temp"
-         },
-         "c": [
-          {
-           "t": "filter",
-           "a": {
-            "id": "Arvith"
-           }
-          }
-         ]
-        },
-        {
-         "t": "move_unit_fake",
-         "a": {
-          "type": "Horseman",
-          "x": "38,$($temp.x-1)",
-          "y": "30,$temp.y"
-         }
-        },
-        {
-         "t": "unit",
-         "a": {
-          "role": "Mercenary",
-          "side": "1",
-          "type": "Horseman",
-          "x": "$($temp.x-1)",
-          "y": "$temp.y",
-          "facing": "ne",
-          "animate": "no"
-         }
-        },
-        {
-         "t": "clear_variable",
-         "a": {
-          "name": "temp"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "Baran has not made his attack!"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "role": "Mercenary",
-      "message": "Could he have abandoned us?"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "No... No. This is something else. I’m worried about him... but right now it means we have to deal with this Mordak ourselves."
-     }
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "last breath"
-   },
-   "c": [
-    {
-     "t": "filter",
-     "a": {
-      "id": "Mordak"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "unit",
-      "message": "Argh!"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "Good work, men! But what has become of my brother?"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "unit",
-      "message": "Worried about him, are you? E-he-he... hergh... gaargh..."
-     }
-    },
-    {
-     "t": "kill",
-     "a": {
+      "side": 2,
+      "type": "Dark Sorcerer",
       "id": "Mordak",
-      "animate": "yes"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "There’s nothing more to be had from this one; we will have to search for Baran ourselves!"
-     }
-    },
-    {
-     "t": "role",
-     "a": {
-      "type": "Royal Guard,Halberdier,Master Bowman,Paladin,Grand Knight,Fugitive,Swordsman,Pikeman,Javelineer,Longbowman,Knight,Lancer,Outlaw,Spearman,Bowman,Horseman,Footpad",
-      "role": "Reporter"
-     },
-     "c": [
-      {
-       "t": "not",
-       "a": {
-        "id": "Arvith"
-       }
-      },
-      {
-       "t": "else",
-       "c": [
-        {
-         "t": "unit",
-         "a": {
-          "role": "Reporter",
-          "type": "Spearman",
-          "placement": "leader"
-         }
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "t": "message",
-     "a": {
-      "role": "Reporter",
-      "message": "Sir, our scouts report that Baran was seen captured and carried away further north!"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "That they should dare this! We will give chase at once."
-     }
-    },
-    {
-     "t": "set_variable",
-     "a": {
-      "name": "who_slew_mordak",
-      "value": "$second_unit.id"
-     }
-    },
-    {
-     "t": "endlevel",
-     "a": {
-      "result": "victory",
-      "bonus": "yes"
-     }
+      "name": "Mordak",
+      "canrecruit": "yes",
+      "facing": "se",
+      "x": 9,
+      "y": 4
     }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "last breath"
-   },
-   "c": [
+  ],
+  "villages": [],
+  "objectives": [],
+  "gold_carryover": null,
+  "victory_on_death": [
     {
-     "t": "filter",
-     "a": {
+      "id": "Mordak"
+    }
+  ],
+  "defeat_on_death": [
+    {
       "id": "Arvith"
-     }
-    },
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "All is lost now that I am dead..."
-     }
-    },
-    {
-     "t": "endlevel",
-     "a": {
-      "result": "defeat"
-     }
     }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "victory"
-   },
-   "c": [
+  ],
+  "runtime_events": [],
+  "intro_messages": [
     {
-     "t": "if",
-     "c": [
-      {
-       "t": "variable",
-       "a": {
-        "name": "s1_failed_achievement",
-        "not_equals": "yes"
-       }
-      },
-      {
-       "t": "then",
-       "c": [
-        {
-         "t": "set_achievement",
-         "a": {
-          "content_for": "two_brothers",
-          "id": "heroes_of_maghre"
-         }
-        }
-       ]
-      }
-     ]
+      "speaker": "Baran",
+      "message": "Greetings, brother, and welcome home.",
+      "message_fr": "Salut, mon frère, et bienvenue chez toi."
     },
     {
-     "t": "clear_variable",
-     "a": {
-      "name": "s1_failed_achievement"
-     }
+      "speaker": "Arvith",
+      "message": "Hail.",
+      "message_fr": "Salut à toi."
     },
     {
-     "t": "if",
-     "c": [
-      {
-       "t": "variable",
-       "a": {
-        "name": "baran_store.id",
-        "equals": "Baran"
-       }
+      "speaker": "Baran",
+      "message": "Is that all, Arvith? I understand, but...",
+      "message_fr": "C'est tout, Arvith ? Je comprends, mais..."
+    },
+    {
+      "speaker": "Arvith",
+      "message": "You called, and I came; be content with that. What ails Maghre?",
+      "message_fr": "Tu as appelé, et je suis venu ; contente-toi de cela. Qu'est-ce qui afflige Maghre ?"
+    },
+    {
+      "speaker": "Baran",
+      "message": "A dark mage has come upon us; his creatures call him Mordak. They have been terrorizing outlying farms, and we fear they may soon attack the village itself! The villagers of Maghre have taken up weapons but they are not trained fighters; we need your men, and you to lead them.",
+      "message_fr": "Un mage noir s'est abattu sur nous ; ses créatures l'appellent Mordak. Elles terrorisent les fermes isolées, et nous craignons qu'elles n'attaquent bientôt le village lui-même ! Les villageois de Maghre ont pris les armes, mais ce ne sont pas des combattants aguerris ; nous avons besoin de tes hommes, et de toi pour les mener."
+    },
+    {
+      "speaker": "Baran",
+      "message": "I can feel Mordak’s foul touch on the hidden currents of the earth and air. He is somewhere due north of here, I would say not more than two days’ ride.",
+      "message_fr": "Je sens le contact immonde de Mordak sur les courants cachés de la terre et de l'air. Il se trouve quelque part au nord d'ici, je dirais à pas plus de deux jours de cheval."
+    },
+    {
+      "speaker": "Arvith",
+      "message": "All right. I will do this for the village. Can you keep the mage off our backs?",
+      "message_fr": "Très bien. Je le ferai pour le village. Peux-tu nous garder le mage hors du dos ?"
+    },
+    {
+      "speaker": "Baran",
+      "message": "I will go stealthily with a handful of our best scouts and woodsmen. While you demonstrate against him and kill his creatures, I will try to defeat Mordak himself with magic at an unguarded moment. You shall be the right hand, I the left... aye, brother?",
+      "message_fr": "J'irai discrètement avec une poignée de nos meilleurs éclaireurs et bûcherons. Pendant que tu feras diversion contre lui et tueras ses créatures, j'essaierai de vaincre Mordak lui-même par la magie, à un moment où il sera sans garde. Tu seras la main droite, moi la gauche... n'est-ce pas, mon frère ?"
+    },
+    {
+      "speaker": "Arvith",
+      "message": "... Aye. Just make sure you’re there when we need you.",
+      "message_fr": "... Oui. Assure-toi simplement d'être là quand nous aurons besoin de toi."
+    }
+  ],
+  "events": [
+    {
+      "t": "event",
+      "a": {
+        "name": "prestart"
       },
-      {
-       "t": "then",
-       "c": [
+      "c": [
         {
-         "t": "unstore_unit",
-         "a": {
-          "variable": "baran_store",
-          "x": "recall",
-          "y": "recall"
-         }
+          "t": "kill",
+          "a": {
+            "id": "Alwyn,Brent,Cadell,Dannen,Efran,Faren,Tarek,Hann,Magrid"
+          }
         },
         {
-         "t": "clear_variable",
-         "a": {
-          "name": "baran_store"
-         }
+          "t": "recall",
+          "a": {
+            "id": "Baran",
+            "x": "31",
+            "y": "21"
+          }
+        },
+        {
+          "t": "if",
+          "c": [
+            {
+              "t": "not",
+              "c": [
+                {
+                  "t": "have_unit",
+                  "a": {
+                    "side": "1",
+                    "id": "Baran"
+                  }
+                }
+              ]
+            },
+            {
+              "t": "then",
+              "a": {
+                "facing": "se"
+              }
+            }
+          ]
+        },
+        {
+          "t": "unit",
+          "a": {
+            "facing": "nw"
+          }
+        },
+        {
+          "t": "objectives",
+          "a": {
+            "side": "1"
+          },
+          "c": [
+            {
+              "t": "objective",
+              "a": {
+                "description": "Slay Mordak, the evil mage",
+                "condition": "win",
+                "description_fr": "Éliminer Mordak, le mage noir"
+              }
+            },
+            {
+              "t": "objective",
+              "a": {
+                "description": "Death of Arvith",
+                "condition": "lose",
+                "description_fr": "Mort de Arvith"
+              }
+            },
+            {
+              "t": "objective",
+              "a": {
+                "condition": "lose",
+                "description": "Turns run out",
+                "__turns": "1",
+                "description_fr": "Fin des tours atteinte"
+              }
+            },
+            {
+              "t": "gold_carryover",
+              "a": {
+                "bonus": "yes",
+                "carryover_percentage": "40"
+              }
+            }
+          ]
         }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "time over"
-   },
-   "c": [
-    {
-     "t": "message",
-     "a": {
-      "speaker": "Mordak",
-      "message": "Your brother’s plan to ambush me has failed. He is our prisoner now."
-     }
+      ]
     },
     {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "My brother, kidnapped? I have failed you, Baran! And even now Mordak’s forces descend upon the village!"
-     }
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "attack"
-   },
-   "c": [
-    {
-     "t": "filter_second",
-     "a": {
-      "side": "2"
-     },
-     "c": [
-      {
-       "t": "not",
-       "a": {
-        "type": "Dark Adept,Dark Sorcerer,Vampire Bat,Blood Bat,Dread Bat,Necromancer,Soulless,Walking Corpse"
-       }
-      }
-     ]
+      "t": "event",
+      "a": {
+        "name": "recruit"
+      },
+      "c": [
+        {
+          "t": "filter",
+          "a": {
+            "side": "1"
+          }
+        },
+        {
+          "t": "set_variable",
+          "a": {
+            "name": "s1_failed_achievement",
+            "value": "yes"
+          }
+        }
+      ]
     },
     {
-     "t": "message",
-     "a": {
-      "speaker": "Arvith",
-      "message": "I hear these creatures are nigh-immune to our weapons, let us see!"
-     }
-    }
-   ]
-  },
-  {
-   "t": "event",
-   "a": {
-    "name": "die"
-   },
-   "c": [
-    {
-     "t": "filter",
-     "a": {
-      "side": "2"
-     },
-     "c": [
-      {
-       "t": "not",
-       "a": {
-        "type": "Dark Adept,Dark Sorcerer,Vampire Bat,Blood Bat,Dread Bat,Necromancer"
-       }
-      }
-     ]
+      "t": "event",
+      "a": {
+        "name": "turn 6"
+      },
+      "c": [
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "Baran should be in position by now. Press them, distract the adept so Baran can spring his trap!",
+            "message_fr": "Baran devrait être en position maintenant. Attaquons-les, attirons l'attention des adeptes pour que Baran puisse mettre son piège en œuvre !"
+          }
+        }
+      ]
     },
     {
-     "t": "message",
-     "a": {
-      "speaker": "second_unit",
-      "message": "That was not so hard!"
-     }
+      "t": "event",
+      "a": {
+        "name": "turn 10"
+      },
+      "c": [
+        {
+          "t": "role",
+          "a": {
+            "role": "Mercenary",
+            "type": "Paladin,Grand Knight,Knight,Lancer,Horseman",
+            "reassign": "no"
+          },
+          "c": [
+            {
+              "t": "not",
+              "a": {
+                "id": "Arvith"
+              }
+            },
+            {
+              "t": "auto_recall"
+            },
+            {
+              "t": "else",
+              "c": [
+                {
+                  "t": "store_unit",
+                  "a": {
+                    "variable": "temp"
+                  },
+                  "c": [
+                    {
+                      "t": "filter",
+                      "a": {
+                        "id": "Arvith"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "t": "move_unit_fake",
+                  "a": {
+                    "type": "Horseman",
+                    "x": "38,$($temp.x-1)",
+                    "y": "30,$temp.y"
+                  }
+                },
+                {
+                  "t": "unit",
+                  "a": {
+                    "role": "Mercenary",
+                    "side": "1",
+                    "type": "Horseman",
+                    "x": "$($temp.x-1)",
+                    "y": "$temp.y",
+                    "facing": "ne",
+                    "animate": "no"
+                  }
+                },
+                {
+                  "t": "clear_variable",
+                  "a": {
+                    "name": "temp"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "Baran has not made his attack!",
+            "message_fr": "Baran n'a pas encore lancé son attaque !"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "role": "Mercenary",
+            "message": "Could he have abandoned us?",
+            "message_fr": "Se pourrait-il qu'il nous ait abandonnés ?"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "No... No. This is something else. I’m worried about him... but right now it means we have to deal with this Mordak ourselves.",
+            "message_fr": "Non... Non, c'est autre chose. Je suis inquiet pour lui... mais maintenant, cela signifie que nous devons faire face à Mordak nous-mêmes !"
+          }
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "last breath"
+      },
+      "c": [
+        {
+          "t": "filter",
+          "a": {
+            "id": "Mordak"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "unit",
+            "message": "Argh!",
+            "message_fr": "Argh !"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "Good work, men! But what has become of my brother?",
+            "message_fr": "Bon travail, soldats ! Mais qu'est devenu mon frère ?"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "unit",
+            "message": "Worried about him, are you? E-he-he... hergh... gaargh...",
+            "message_fr": "Vous êtes inquiet pour lui, n'est-ce pas ? Hé hé hé... hergh... gaargh..."
+          }
+        },
+        {
+          "t": "kill",
+          "a": {
+            "id": "Mordak",
+            "animate": "yes"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "There’s nothing more to be had from this one; we will have to search for Baran ourselves!",
+            "message_fr": "Il n'y a rien de plus à en tirer ; nous devrons chercher Baran nous-mêmes !"
+          }
+        },
+        {
+          "t": "role",
+          "a": {
+            "type": "Royal Guard,Halberdier,Master Bowman,Paladin,Grand Knight,Fugitive,Swordsman,Pikeman,Javelineer,Longbowman,Knight,Lancer,Outlaw,Spearman,Bowman,Horseman,Footpad",
+            "role": "Reporter"
+          },
+          "c": [
+            {
+              "t": "not",
+              "a": {
+                "id": "Arvith"
+              }
+            },
+            {
+              "t": "else",
+              "c": [
+                {
+                  "t": "unit",
+                  "a": {
+                    "role": "Reporter",
+                    "type": "Spearman",
+                    "placement": "leader"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "message",
+          "a": {
+            "role": "Reporter",
+            "message": "Sir, our scouts report that Baran was seen captured and carried away further north!",
+            "message_fr": "Nos éclaireurs ont vu Baran se faire capturer et emmener plus au nord !"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "That they should dare this! We will give chase at once.",
+            "message_fr": "Ils ont osé ! Nous allons les poursuivre."
+          }
+        },
+        {
+          "t": "set_variable",
+          "a": {
+            "name": "who_slew_mordak",
+            "value": "$second_unit.id"
+          }
+        },
+        {
+          "t": "endlevel",
+          "a": {
+            "result": "victory",
+            "bonus": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "last breath"
+      },
+      "c": [
+        {
+          "t": "filter",
+          "a": {
+            "id": "Arvith"
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "All is lost now that I am dead...",
+            "message_fr": "Tout est perdu maintenant que je suis mort..."
+          }
+        },
+        {
+          "t": "endlevel",
+          "a": {
+            "result": "defeat"
+          }
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "victory"
+      },
+      "c": [
+        {
+          "t": "if",
+          "c": [
+            {
+              "t": "variable",
+              "a": {
+                "name": "s1_failed_achievement",
+                "not_equals": "yes"
+              }
+            },
+            {
+              "t": "then",
+              "c": [
+                {
+                  "t": "set_achievement",
+                  "a": {
+                    "content_for": "two_brothers",
+                    "id": "heroes_of_maghre"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "clear_variable",
+          "a": {
+            "name": "s1_failed_achievement"
+          }
+        },
+        {
+          "t": "if",
+          "c": [
+            {
+              "t": "variable",
+              "a": {
+                "name": "baran_store.id",
+                "equals": "Baran"
+              }
+            },
+            {
+              "t": "then",
+              "c": [
+                {
+                  "t": "unstore_unit",
+                  "a": {
+                    "variable": "baran_store",
+                    "x": "recall",
+                    "y": "recall"
+                  }
+                },
+                {
+                  "t": "clear_variable",
+                  "a": {
+                    "name": "baran_store"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "time over"
+      },
+      "c": [
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Mordak",
+            "message": "Your brother’s plan to ambush me has failed. He is our prisoner now.",
+            "message_fr": "Le piège tendu par votre frère a échoué. C'est notre prisonnier maintenant."
+          }
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "My brother, kidnapped? I have failed you, Baran! And even now Mordak’s forces descend upon the village!",
+            "message_fr": "Mon frère, kidnappé ? J'ai manqué à mon devoir, Baran ! Et maintenant les forces de Mordak attaquent le village !"
+          }
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "attack"
+      },
+      "c": [
+        {
+          "t": "filter_second",
+          "a": {
+            "side": "2"
+          },
+          "c": [
+            {
+              "t": "not",
+              "a": {
+                "type": "Dark Adept,Dark Sorcerer,Vampire Bat,Blood Bat,Dread Bat,Necromancer,Soulless,Walking Corpse"
+              }
+            }
+          ]
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "Arvith",
+            "message": "I hear these creatures are nigh-immune to our weapons, let us see!",
+            "message_fr": "J'ai entendu dire que ces créatures étaient presque insensibles à nos armes, voyons cela !"
+          }
+        }
+      ]
+    },
+    {
+      "t": "event",
+      "a": {
+        "name": "die"
+      },
+      "c": [
+        {
+          "t": "filter",
+          "a": {
+            "side": "2"
+          },
+          "c": [
+            {
+              "t": "not",
+              "a": {
+                "type": "Dark Adept,Dark Sorcerer,Vampire Bat,Blood Bat,Dread Bat,Necromancer"
+              }
+            }
+          ]
+        },
+        {
+          "t": "message",
+          "a": {
+            "speaker": "second_unit",
+            "message": "That was not so hard!",
+            "message_fr": "Ce n'était pas si difficile !"
+          }
+        }
+      ]
     }
-   ]
-  }
- ],
- "unsupported": {}
+  ],
+  "unsupported": {}
 }
